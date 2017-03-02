@@ -7,142 +7,165 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		040D874AEAEC4E0A91B1C75952D01EC5 /* Canvas.h in Headers */ = {isa = PBXBuildFile; fileRef = 73E2E1A73E8CDF76469FCA97D5C1C4FA /* Canvas.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		060D3DD429FF975BC9E1B1CD682A3398 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		0DD7213BAF6205B2E72800AF0357603D /* CSAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DC5C6D6BB89E15E9AACB140312E1B49 /* CSAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		146630EFBC4D2231A50CB9F11A337EC6 /* UINavigationBar+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = D3C9602BB2DB5F5FBE3513B95A8D25A1 /* UINavigationBar+TCCustomFont.m */; };
+		00E4279605B778ECB09411C167B90476 /* SwiftSpinner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E6AE5D09EB5C3375D93CE66F5BC248 /* SwiftSpinner-dummy.m */; };
+		040D874AEAEC4E0A91B1C75952D01EC5 /* Canvas.h in Headers */ = {isa = PBXBuildFile; fileRef = E7245874A216960B17E966A9F56005B2 /* Canvas.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		060D3DD429FF975BC9E1B1CD682A3398 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		0DD7213BAF6205B2E72800AF0357603D /* CSAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6A18DDC0C655123666DB384F1F5269 /* CSAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		146630EFBC4D2231A50CB9F11A337EC6 /* UINavigationBar+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F381CD927972CF43AFCCF00B35FAA14 /* UINavigationBar+TCCustomFont.m */; };
+		14DEC3A08EBF27BF2C23236D242DF7A1 /* Pods-NBPS SportsTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A3C8C22FBF6D035118B7299F75601CDC /* Pods-NBPS SportsTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CABAB0351157A43C9E972F1DFBA02F4 /* Pods-NBPS Sports-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5319B67193D3FE942F0EA91619431CE9 /* Pods-NBPS Sports-dummy.m */; };
-		1ED8CB9123077805739DDD87286C23BF /* UITextField+PlaceholderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = FFEE4834DD8A56CC0E98C47A9C50B430 /* UITextField+PlaceholderColor.m */; };
-		3159D7CAFD56B809F40CA3330DA10889 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		3A5D78EF2A1342D0396C1C4AF0451491 /* CSAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA34024E67ECB686242B376F69120DE /* CSAnimationView.m */; };
-		3A5FCCCB61472AD8DFFA13B906E5CB17 /* UITextView+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B53A7BFCEA48D3ADFEA59D032DB911 /* UITextView+TCCustomFont.m */; };
-		4C778137BBA41922618A1EA457F691D1 /* CSBlurView.h in Headers */ = {isa = PBXBuildFile; fileRef = 319598D6197E69D3F3F87FD0086B1441 /* CSBlurView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		541C5362289CC44D4F067D097F231250 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 32FF687F6F7FB1CD8EB4CE726F36F98A /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		54B06073BC396D015044362E5C58166F /* UITextField+TCCustomFont.h in Headers */ = {isa = PBXBuildFile; fileRef = F9A0E0C6B10498BEEB8038F91AB693C8 /* UITextField+TCCustomFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5CC3111F76F6E705205BB03C7ED4E248 /* UIButton+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FCCF445512DD860E252DEFCA4EDE7F7 /* UIButton+TCCustomFont.m */; };
-		6549C61A563E8A6EA19294978B65CDE4 /* CSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B461E1692681BF636382C1373898B51 /* CSNavigationController.m */; };
-		6F3485BC7D459A35BB4B0FF564F7BC3D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		722043CDFAD463446C6662F706DFB995 /* UITextField+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB96EE740CACD97D701FF0BFDEDA2CF /* UITextField+TCCustomFont.m */; };
+		1ED8CB9123077805739DDD87286C23BF /* UITextField+PlaceholderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 08558BCA2A6EEDDB624F0E1282D6CEEB /* UITextField+PlaceholderColor.m */; };
+		3159D7CAFD56B809F40CA3330DA10889 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		3A5D78EF2A1342D0396C1C4AF0451491 /* CSAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E22197761229D2BAC19332E4E7B02FC /* CSAnimationView.m */; };
+		3A5FCCCB61472AD8DFFA13B906E5CB17 /* UITextView+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 8326024E8272C77F974E17EBA735F528 /* UITextView+TCCustomFont.m */; };
+		4C778137BBA41922618A1EA457F691D1 /* CSBlurView.h in Headers */ = {isa = PBXBuildFile; fileRef = D57154D55FC7F2576CD227F22667E7A8 /* CSBlurView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		541C5362289CC44D4F067D097F231250 /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = C5E2C158BA33DC283B384AA3A9F05CC3 /* GTMDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54B06073BC396D015044362E5C58166F /* UITextField+TCCustomFont.h in Headers */ = {isa = PBXBuildFile; fileRef = FF88C3310E9B6684463A5E765822E4FD /* UITextField+TCCustomFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5CC3111F76F6E705205BB03C7ED4E248 /* UIButton+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F468C65B595E26E96131D8B44EA617 /* UIButton+TCCustomFont.m */; };
+		5F86B3BF73CF4AC335CBEEB2678A42B4 /* SwiftSpinner.h in Headers */ = {isa = PBXBuildFile; fileRef = E5BBEF8AB2139EE2AA682FA096F6CEDB /* SwiftSpinner.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6549C61A563E8A6EA19294978B65CDE4 /* CSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFC47830F0B0FFA56141BEA655A31DB /* CSNavigationController.m */; };
+		6F3485BC7D459A35BB4B0FF564F7BC3D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		722043CDFAD463446C6662F706DFB995 /* UITextField+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = AAE47C2CC06D0075F480053205D77B0A /* UITextField+TCCustomFont.m */; };
 		73DBFEC56F40F90EE357C7ED7B73E904 /* Pods-NBPS Sports-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D01FD2ADD2154CBA3DB6AF5FB9248A71 /* Pods-NBPS Sports-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		81E4B6988FF26F9249B79C6C8CC667B4 /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 83CF43F05A238CF77B9C64E6DA5CCEA5 /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		97FFDF0D73192DA33462C72DE63CB60E /* Pods-NBPS SportsTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BB346DEC06D314A0EDC2AF855933C2 /* Pods-NBPS SportsTests-dummy.m */; };
-		9C5C1641E652073320C3AF57420D76D2 /* UILabel+TCCustomFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 3099EAB94FECFACD243F736245D11312 /* UILabel+TCCustomFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A3A139238863301FC0CE6490DCF26CE4 /* Pods-NBPS SportsTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A3C8C22FBF6D035118B7299F75601CDC /* Pods-NBPS SportsTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A7D7FC71A7D85B613D23C5691D94AD20 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		B2D3C435370C60A1018320FE3ADEEBB6 /* Canvas-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F157DD46DA2D5A8A2AA302F185A5E7F1 /* Canvas-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B39819FF29E15C9E4636B09B4627D46C /* CSBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1164F6694F5E1CAF0D8D3A2AED9BA94 /* CSBlurView.m */; };
-		B6358E1AED1AD2949B366E7EBE95E139 /* Canvas-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F0F0C42023B0D1A444104385124B0F7 /* Canvas-dummy.m */; };
-		B8177C9C855257D6F67D3FD2FA4CBB6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		B97E4D9EF786C37745533D53E461EEFE /* CSNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 697044DBEC887A0DB22AA5A687D18339 /* CSNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BEA3281085FA13AF921E88B84ED5D3F8 /* UILabel+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = CD59BE31F9049C428F0DE348B39A1974 /* UILabel+TCCustomFont.m */; };
-		CF3FEFAD0F17B31334D7890ECD2B8DFE /* UITextField+PlaceholderColor.h in Headers */ = {isa = PBXBuildFile; fileRef = ADF1535E6A4AB77622E79A5BE0979326 /* UITextField+PlaceholderColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D5B84B208FBA94896DCB2F353F10E105 /* UITextView+TCCustomFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A3AF4CB143A28BDE781424846C88452 /* UITextView+TCCustomFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D8A033E57E90F3646D39E7BC566F2067 /* CSAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D719027C1A92717ACFA401FB0296DD40 /* CSAnimation.m */; };
+		798333B69D68C8F39AF2F73B98389997 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		7ECA72F152C8B31FAD0439E7F9A5E280 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */; };
+		81E4B6988FF26F9249B79C6C8CC667B4 /* GoogleToolboxForMac-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BCFC1268AA7591D5800CA44BE97E10CF /* GoogleToolboxForMac-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9C5C1641E652073320C3AF57420D76D2 /* UILabel+TCCustomFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 3018F4227DD14351351E8046F3F64753 /* UILabel+TCCustomFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1D9A260EDC4EE835B5034A00E97120F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		A5CF5C371951770970A743F5E5ABF61C /* Pods-NBPS SportsTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46BB346DEC06D314A0EDC2AF855933C2 /* Pods-NBPS SportsTests-dummy.m */; };
+		B2D3C435370C60A1018320FE3ADEEBB6 /* Canvas-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A3E176B54FB0BDDED0B9645806058F0E /* Canvas-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B39819FF29E15C9E4636B09B4627D46C /* CSBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF7A849C10651A81A491E9065F264E5E /* CSBlurView.m */; };
+		B6358E1AED1AD2949B366E7EBE95E139 /* Canvas-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A5508758672F2C0D4BD43F398ED86C /* Canvas-dummy.m */; };
+		B8177C9C855257D6F67D3FD2FA4CBB6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		B97E4D9EF786C37745533D53E461EEFE /* CSNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AB8A210C18C534D5E6E213D5249D907 /* CSNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BEA3281085FA13AF921E88B84ED5D3F8 /* UILabel+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 0619135E075B8D17DE7B622BA9BFAC3D /* UILabel+TCCustomFont.m */; };
+		BF79C5B9AD4472A8DD73ED83C48BC42A /* SwiftSpinner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 830D9E3F9B5C18FE145E1A47805D4D83 /* SwiftSpinner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CF3FEFAD0F17B31334D7890ECD2B8DFE /* UITextField+PlaceholderColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 481BCD3D2964C18D1805B8955D77D7B4 /* UITextField+PlaceholderColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5B84B208FBA94896DCB2F353F10E105 /* UITextView+TCCustomFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 462A281CDB0CEB7CAA4768E0128A2787 /* UITextView+TCCustomFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8A033E57E90F3646D39E7BC566F2067 /* CSAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 70ADA27C6C4F12EF5614768F21ACFEB5 /* CSAnimation.m */; };
 		D9A1E341F074A6A75ED04D47AA75DADE /* Pods-NBPS SportsUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 26825F0972BD8B0913D43A18E86B89F7 /* Pods-NBPS SportsUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DBFECCB0BBE3F11CC41A3C1A8C4879D3 /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C7EA481FF4FFD118A12EB2970C82BB5 /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DCCCA02E94D84C1C07F9F17D90C3EFD8 /* UINavigationBar+TCCustomFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 486362882E797E4D4A1A3D617CA75598 /* UINavigationBar+TCCustomFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E088F64BC2C60DCB23A5C84889A66442 /* UIButton+TCCustomFont.h in Headers */ = {isa = PBXBuildFile; fileRef = 06A64E168B2E618E54D8239037CD9F34 /* UIButton+TCCustomFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F7251150A6F3BC6662A1548688226AB3 /* CSAnimationView.h in Headers */ = {isa = PBXBuildFile; fileRef = C56B4FE9405710ECAC27E02762A0A9C0 /* CSAnimationView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F7D889906DECB078EAAECB9D4A320E9C /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 864BE7EA9891D7416B661A8F052EE332 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		FAC3F3CAABA60EF76069431C5BB5032A /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B24FDBE9ABD1C5E81F844D8F27E4F0C3 /* GoogleToolboxForMac-dummy.m */; };
+		DBFECCB0BBE3F11CC41A3C1A8C4879D3 /* GTMNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = E46BCCAB93E5F19DF8C822874E5106B7 /* GTMNSData+zlib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DCCCA02E94D84C1C07F9F17D90C3EFD8 /* UINavigationBar+TCCustomFont.h in Headers */ = {isa = PBXBuildFile; fileRef = C26936208D2E4320BA786512B312C6DC /* UINavigationBar+TCCustomFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E088F64BC2C60DCB23A5C84889A66442 /* UIButton+TCCustomFont.h in Headers */ = {isa = PBXBuildFile; fileRef = DCD6FB3C5953D5494B5139CB6606CA46 /* UIButton+TCCustomFont.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF4145338EA134FC70D8D5016831F205 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6297A781E826DCFFA32568B440BB881D /* SwiftSpinner.swift */; };
+		F7251150A6F3BC6662A1548688226AB3 /* CSAnimationView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E695F1021433166C725F695D232BCEC /* CSAnimationView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7D889906DECB078EAAECB9D4A320E9C /* GTMNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 431689946070AF2D682A994C5E486F38 /* GTMNSData+zlib.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		FAC3F3CAABA60EF76069431C5BB5032A /* GoogleToolboxForMac-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 488733DC3E683E35B5D4A668A7B18690 /* GoogleToolboxForMac-dummy.m */; };
 		FDA92FC333BD994E2719914B4AF3C36A /* Pods-NBPS SportsUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 394081A7C545B2584B2C73E8B8E29674 /* Pods-NBPS SportsUITests-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1CF26C71A87B0E6A8614D27ED46CEBC6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F6497E6E7D485D7D0D7E0CD8E84BFCD4;
-			remoteInfo = Canvas;
-		};
-		B04AC82AC2612E82E9C9FD3E1314DAA3 /* PBXContainerItemProxy */ = {
+		0131475302F735B6DF2B9BB2AA313C9E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 00103D6C821BE85971C563025527BA5D;
 			remoteInfo = GoogleToolboxForMac;
 		};
+		50D1C9AC452057CBC1FE30DAAC344524 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F6497E6E7D485D7D0D7E0CD8E84BFCD4;
+			remoteInfo = Canvas;
+		};
+		EBFDC4795FB8A18C2D10CCEEE0EDA1BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 731B3AEFDD3EA8CC6A8600DCB0FEC76C;
+			remoteInfo = SwiftSpinner;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		01384D47C5E4D456B1E0627BDD4A400F /* Pods-NBPS SportsTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NBPS SportsTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		02CA4C70F9FE21161791C221227DD054 /* Pods_NBPS_SportsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NBPS_SportsUITests.framework; path = "Pods-NBPS SportsUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		06A64E168B2E618E54D8239037CD9F34 /* UIButton+TCCustomFont.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+TCCustomFont.h"; path = "CanvasLibrary/UIButton+TCCustomFont.h"; sourceTree = "<group>"; };
+		0619135E075B8D17DE7B622BA9BFAC3D /* UILabel+TCCustomFont.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UILabel+TCCustomFont.m"; path = "CanvasLibrary/UILabel+TCCustomFont.m"; sourceTree = "<group>"; };
 		0750F84D613F02E75D62C2E8C1DF571D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0BCB35B30F989B48C963498F07D77BBA /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
+		08558BCA2A6EEDDB624F0E1282D6CEEB /* UITextField+PlaceholderColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+PlaceholderColor.m"; path = "CanvasLibrary/UITextField+PlaceholderColor.m"; sourceTree = "<group>"; };
+		0BDED062B38E73DDAA04B7EEE3A2EE98 /* Pods_NBPS_SportsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NBPS_SportsUITests.framework; path = "Pods-NBPS SportsUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		160209DDD8F1624E67994F35EFBB0790 /* Pods-NBPS SportsUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NBPS SportsUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		1A1005B6361D0E49BB7AD6F7EF2462E8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CD0EB560EF9EA993E8F83DB1B97A885 /* Pods-NBPS SportsUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-NBPS SportsUITests.modulemap"; sourceTree = "<group>"; };
-		21DF3B089C32A63C82D71CA5264E3539 /* Canvas-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Canvas-prefix.pch"; sourceTree = "<group>"; };
 		26825F0972BD8B0913D43A18E86B89F7 /* Pods-NBPS SportsUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NBPS SportsUITests-umbrella.h"; sourceTree = "<group>"; };
-		29E4DE972ECCBB38AF1E8ABD2B920326 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
-		2F0F0C42023B0D1A444104385124B0F7 /* Canvas-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Canvas-dummy.m"; sourceTree = "<group>"; };
-		3099EAB94FECFACD243F736245D11312 /* UILabel+TCCustomFont.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+TCCustomFont.h"; path = "CanvasLibrary/UILabel+TCCustomFont.h"; sourceTree = "<group>"; };
-		319598D6197E69D3F3F87FD0086B1441 /* CSBlurView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSBlurView.h; path = CanvasLibrary/CSBlurView.h; sourceTree = "<group>"; };
-		32FF687F6F7FB1CD8EB4CE726F36F98A /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
-		352078BD4F1B42F6BAF8B199C8CA0E49 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3018F4227DD14351351E8046F3F64753 /* UILabel+TCCustomFont.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UILabel+TCCustomFont.h"; path = "CanvasLibrary/UILabel+TCCustomFont.h"; sourceTree = "<group>"; };
+		345619593581F704730FBBDD278FFB61 /* Canvas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Canvas.framework; path = Canvas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		35A341A41E519EE6302D2A6231D32929 /* Pods-NBPS SportsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NBPS SportsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		37B53A7BFCEA48D3ADFEA59D032DB911 /* UITextView+TCCustomFont.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextView+TCCustomFont.m"; path = "CanvasLibrary/UITextView+TCCustomFont.m"; sourceTree = "<group>"; };
-		3819A2EC1BBBB4AED503EC7E14121FAC /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
 		394081A7C545B2584B2C73E8B8E29674 /* Pods-NBPS SportsUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NBPS SportsUITests-dummy.m"; sourceTree = "<group>"; };
-		3AA34024E67ECB686242B376F69120DE /* CSAnimationView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSAnimationView.m; path = CanvasLibrary/CSAnimationView.m; sourceTree = "<group>"; };
-		4264E9B185F494916E91EDB968806325 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		39A5508758672F2C0D4BD43F398ED86C /* Canvas-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Canvas-dummy.m"; sourceTree = "<group>"; };
+		431689946070AF2D682A994C5E486F38 /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
+		462A281CDB0CEB7CAA4768E0128A2787 /* UITextView+TCCustomFont.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextView+TCCustomFont.h"; path = "CanvasLibrary/UITextView+TCCustomFont.h"; sourceTree = "<group>"; };
 		46BB346DEC06D314A0EDC2AF855933C2 /* Pods-NBPS SportsTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NBPS SportsTests-dummy.m"; sourceTree = "<group>"; };
 		46FDFFBC36A3D50FE995788CFDC55681 /* Pods-NBPS SportsTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NBPS SportsTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		486362882E797E4D4A1A3D617CA75598 /* UINavigationBar+TCCustomFont.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+TCCustomFont.h"; path = "CanvasLibrary/UINavigationBar+TCCustomFont.h"; sourceTree = "<group>"; };
+		481BCD3D2964C18D1805B8955D77D7B4 /* UITextField+PlaceholderColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+PlaceholderColor.h"; path = "CanvasLibrary/UITextField+PlaceholderColor.h"; sourceTree = "<group>"; };
+		488733DC3E683E35B5D4A668A7B18690 /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
 		48C2CB62BFCB401CD56C50C4FDC31C04 /* Pods-NBPS SportsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NBPS SportsTests.release.xcconfig"; sourceTree = "<group>"; };
-		4C8B15D3AA8C88F806BA7DCC9D6DB728 /* Canvas.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Canvas.modulemap; sourceTree = "<group>"; };
-		4DC5C6D6BB89E15E9AACB140312E1B49 /* CSAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSAnimation.h; path = CanvasLibrary/CSAnimation.h; sourceTree = "<group>"; };
-		4FCCF445512DD860E252DEFCA4EDE7F7 /* UIButton+TCCustomFont.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+TCCustomFont.m"; path = "CanvasLibrary/UIButton+TCCustomFont.m"; sourceTree = "<group>"; };
+		4AD316BC53A200C835A34D52AAAE3564 /* Canvas.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Canvas.modulemap; sourceTree = "<group>"; };
 		51599CAD0A737AC791224DD51E84757E /* Pods-NBPS SportsUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NBPS SportsUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		52A3073DCE247C9F4889F92EE3437F25 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		515FA2A41750865259515B89CB1431C4 /* SwiftSpinner-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSpinner-prefix.pch"; sourceTree = "<group>"; };
+		52EBC610747587BDBA4BC342FD4AB556 /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
 		5319B67193D3FE942F0EA91619431CE9 /* Pods-NBPS Sports-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NBPS Sports-dummy.m"; sourceTree = "<group>"; };
-		5BCD02827FA6A818BE6BA182F0CA1146 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		697044DBEC887A0DB22AA5A687D18339 /* CSNavigationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSNavigationController.h; path = CanvasLibrary/CSNavigationController.h; sourceTree = "<group>"; };
+		5E695F1021433166C725F695D232BCEC /* CSAnimationView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSAnimationView.h; path = CanvasLibrary/CSAnimationView.h; sourceTree = "<group>"; };
+		5FFC47830F0B0FFA56141BEA655A31DB /* CSNavigationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSNavigationController.m; path = CanvasLibrary/CSNavigationController.m; sourceTree = "<group>"; };
+		5FFCFA20FB5773A027FF89C163023F09 /* SwiftSpinner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftSpinner.framework; path = SwiftSpinner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6297A781E826DCFFA32568B440BB881D /* SwiftSpinner.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSpinner.swift; path = SwiftSpinner/SwiftSpinner.swift; sourceTree = "<group>"; };
+		663194D49DCF34CFDADD2D2F756300F6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69A3B0B0F253D1D9A743FAB829CEEF32 /* Pods-NBPS SportsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NBPS SportsUITests.release.xcconfig"; sourceTree = "<group>"; };
-		6A3AF4CB143A28BDE781424846C88452 /* UITextView+TCCustomFont.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextView+TCCustomFont.h"; path = "CanvasLibrary/UITextView+TCCustomFont.h"; sourceTree = "<group>"; };
-		6AB96EE740CACD97D701FF0BFDEDA2CF /* UITextField+TCCustomFont.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+TCCustomFont.m"; path = "CanvasLibrary/UITextField+TCCustomFont.m"; sourceTree = "<group>"; };
+		69F6026DF8D2B9B87B256FB82AA03055 /* SwiftSpinner.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftSpinner.xcconfig; sourceTree = "<group>"; };
+		6A1F74AA5DD91A07A931BF6C51E1029B /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		6F381CD927972CF43AFCCF00B35FAA14 /* UINavigationBar+TCCustomFont.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+TCCustomFont.m"; path = "CanvasLibrary/UINavigationBar+TCCustomFont.m"; sourceTree = "<group>"; };
 		701E13D6B1A3823C5B263BE1BA927A6B /* Pods-NBPS Sports.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-NBPS Sports.modulemap"; sourceTree = "<group>"; };
-		73E2E1A73E8CDF76469FCA97D5C1C4FA /* Canvas.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Canvas.h; path = CanvasLibrary/Canvas.h; sourceTree = "<group>"; };
+		70ADA27C6C4F12EF5614768F21ACFEB5 /* CSAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSAnimation.m; path = CanvasLibrary/CSAnimation.m; sourceTree = "<group>"; };
+		71F468C65B595E26E96131D8B44EA617 /* UIButton+TCCustomFont.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+TCCustomFont.m"; path = "CanvasLibrary/UIButton+TCCustomFont.m"; sourceTree = "<group>"; };
+		75577C3DA0C3FF6C409D79021414A598 /* SwiftSpinner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftSpinner.modulemap; sourceTree = "<group>"; };
+		7AB8A210C18C534D5E6E213D5249D907 /* CSNavigationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSNavigationController.h; path = CanvasLibrary/CSNavigationController.h; sourceTree = "<group>"; };
 		7D50E532DDB04AB458C9CCE8778909C1 /* Pods-NBPS Sports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NBPS Sports.debug.xcconfig"; sourceTree = "<group>"; };
-		83CF43F05A238CF77B9C64E6DA5CCEA5 /* GoogleToolboxForMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-umbrella.h"; sourceTree = "<group>"; };
+		7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		830D9E3F9B5C18FE145E1A47805D4D83 /* SwiftSpinner-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSpinner-umbrella.h"; sourceTree = "<group>"; };
+		8326024E8272C77F974E17EBA735F528 /* UITextView+TCCustomFont.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextView+TCCustomFont.m"; path = "CanvasLibrary/UITextView+TCCustomFont.m"; sourceTree = "<group>"; };
 		85F21264B58682F0656BA75160492A27 /* Pods-NBPS SportsTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-NBPS SportsTests.modulemap"; sourceTree = "<group>"; };
-		8620EB4221D9AF36EDAD192EB77CAD24 /* Pods_NBPS_SportsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NBPS_SportsTests.framework; path = "Pods-NBPS SportsTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		864BE7EA9891D7416B661A8F052EE332 /* GTMNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GTMNSData+zlib.m"; path = "Foundation/GTMNSData+zlib.m"; sourceTree = "<group>"; };
 		87774DF6D12D41B758EA016A4F73F494 /* Pods-NBPS Sports-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NBPS Sports-resources.sh"; sourceTree = "<group>"; };
-		8B461E1692681BF636382C1373898B51 /* CSNavigationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSNavigationController.m; path = CanvasLibrary/CSNavigationController.m; sourceTree = "<group>"; };
+		8982BB22D7704FE6397C02E42B2A152D /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		94B810A71C3C80BF5A8A27093E793488 /* Pods_NBPS_Sports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NBPS_Sports.framework; path = "Pods-NBPS Sports.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9510F1AA3C1F41020CAF4B8D5EAB65A3 /* Pods-NBPS Sports-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NBPS Sports-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9C7EA481FF4FFD118A12EB2970C82BB5 /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
+		96E6AE5D09EB5C3375D93CE66F5BC248 /* SwiftSpinner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftSpinner-dummy.m"; sourceTree = "<group>"; };
+		9E22197761229D2BAC19332E4E7B02FC /* CSAnimationView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSAnimationView.m; path = CanvasLibrary/CSAnimationView.m; sourceTree = "<group>"; };
+		9FC6F91B5729F6689D93A4B5910FAB34 /* GoogleToolboxForMac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleToolboxForMac.xcconfig; sourceTree = "<group>"; };
+		A3501D094F97E4C19EB320CF5F9691C4 /* Pods_NBPS_SportsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NBPS_SportsTests.framework; path = "Pods-NBPS SportsTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3C8C22FBF6D035118B7299F75601CDC /* Pods-NBPS SportsTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NBPS SportsTests-umbrella.h"; sourceTree = "<group>"; };
-		A5ADFE465694FF30851C78433CEB68CD /* Canvas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Canvas.framework; path = Canvas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADF1535E6A4AB77622E79A5BE0979326 /* UITextField+PlaceholderColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+PlaceholderColor.h"; path = "CanvasLibrary/UITextField+PlaceholderColor.h"; sourceTree = "<group>"; };
+		A3E176B54FB0BDDED0B9645806058F0E /* Canvas-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Canvas-umbrella.h"; sourceTree = "<group>"; };
+		A7D8DFE86073938A2BBB6E9BD3FC60BD /* Canvas-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Canvas-prefix.pch"; sourceTree = "<group>"; };
+		A874E109D70E007F8AF91361ED3E0E32 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
+		A8C8CE0D37D17EBF19D52F27D2FD6BC2 /* Pods_NBPS_Sports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_NBPS_Sports.framework; path = "Pods-NBPS Sports.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAE47C2CC06D0075F480053205D77B0A /* UITextField+TCCustomFont.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+TCCustomFont.m"; path = "CanvasLibrary/UITextField+TCCustomFont.m"; sourceTree = "<group>"; };
+		AF478003A49988B05DC79B7B39EA82DF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF678374423AD2C4F606344BF96563E3 /* Pods-NBPS SportsUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NBPS SportsUITests-frameworks.sh"; sourceTree = "<group>"; };
-		B24FDBE9ABD1C5E81F844D8F27E4F0C3 /* GoogleToolboxForMac-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleToolboxForMac-dummy.m"; sourceTree = "<group>"; };
-		C56B4FE9405710ECAC27E02762A0A9C0 /* CSAnimationView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSAnimationView.h; path = CanvasLibrary/CSAnimationView.h; sourceTree = "<group>"; };
+		BBACA2930D82FA534C274C7ED49CF822 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCFC1268AA7591D5800CA44BE97E10CF /* GoogleToolboxForMac-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-umbrella.h"; sourceTree = "<group>"; };
+		BF7A849C10651A81A491E9065F264E5E /* CSBlurView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSBlurView.m; path = CanvasLibrary/CSBlurView.m; sourceTree = "<group>"; };
+		C26936208D2E4320BA786512B312C6DC /* UINavigationBar+TCCustomFont.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+TCCustomFont.h"; path = "CanvasLibrary/UINavigationBar+TCCustomFont.h"; sourceTree = "<group>"; };
+		C5E2C158BA33DC283B384AA3A9F05CC3 /* GTMDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
+		C5F4DB040A3B1564F143D3554730E350 /* Canvas.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Canvas.xcconfig; sourceTree = "<group>"; };
 		C9DB514AA5B70821931396382D392516 /* Pods-NBPS SportsTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NBPS SportsTests-frameworks.sh"; sourceTree = "<group>"; };
-		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CD59BE31F9049C428F0DE348B39A1974 /* UILabel+TCCustomFont.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UILabel+TCCustomFont.m"; path = "CanvasLibrary/UILabel+TCCustomFont.m"; sourceTree = "<group>"; };
+		CE6A18DDC0C655123666DB384F1F5269 /* CSAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSAnimation.h; path = CanvasLibrary/CSAnimation.h; sourceTree = "<group>"; };
 		D01FD2ADD2154CBA3DB6AF5FB9248A71 /* Pods-NBPS Sports-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NBPS Sports-umbrella.h"; sourceTree = "<group>"; };
-		D1164F6694F5E1CAF0D8D3A2AED9BA94 /* CSBlurView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSBlurView.m; path = CanvasLibrary/CSBlurView.m; sourceTree = "<group>"; };
-		D3C9602BB2DB5F5FBE3513B95A8D25A1 /* UINavigationBar+TCCustomFont.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+TCCustomFont.m"; path = "CanvasLibrary/UINavigationBar+TCCustomFont.m"; sourceTree = "<group>"; };
-		D719027C1A92717ACFA401FB0296DD40 /* CSAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CSAnimation.m; path = CanvasLibrary/CSAnimation.m; sourceTree = "<group>"; };
+		D57154D55FC7F2576CD227F22667E7A8 /* CSBlurView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CSBlurView.h; path = CanvasLibrary/CSBlurView.h; sourceTree = "<group>"; };
 		DA3E83BFF1243006CA7FA4D1024D5BDF /* Pods-NBPS SportsUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NBPS SportsUITests-resources.sh"; sourceTree = "<group>"; };
-		DD0B5DFAEFF4CB933C459FE4595CF099 /* GoogleToolboxForMac.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GoogleToolboxForMac.modulemap; sourceTree = "<group>"; };
+		DCD6FB3C5953D5494B5139CB6606CA46 /* UIButton+TCCustomFont.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+TCCustomFont.h"; path = "CanvasLibrary/UIButton+TCCustomFont.h"; sourceTree = "<group>"; };
 		DF32E2B383028A2691AA1BC635C0F67A /* Pods-NBPS Sports-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NBPS Sports-frameworks.sh"; sourceTree = "<group>"; };
 		E388EEC5ADE6F124530DEEA241F62534 /* Pods-NBPS Sports-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NBPS Sports-acknowledgements.plist"; sourceTree = "<group>"; };
-		E9D6A4FAB641F65150959AC1104A1149 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
-		EB5B228D281C7E79A814577B5397E671 /* Canvas.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Canvas.xcconfig; sourceTree = "<group>"; };
+		E46BCCAB93E5F19DF8C822874E5106B7 /* GTMNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GTMNSData+zlib.h"; path = "Foundation/GTMNSData+zlib.h"; sourceTree = "<group>"; };
+		E5BBEF8AB2139EE2AA682FA096F6CEDB /* SwiftSpinner.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwiftSpinner.h; path = SwiftSpinner/SwiftSpinner.h; sourceTree = "<group>"; };
+		E7245874A216960B17E966A9F56005B2 /* Canvas.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Canvas.h; path = CanvasLibrary/Canvas.h; sourceTree = "<group>"; };
+		ED5ECCBA1CD9869B273750953C809A56 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
+		EE4AA828632643CA9BD8E6463CD7FB46 /* GoogleToolboxForMac-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleToolboxForMac-prefix.pch"; sourceTree = "<group>"; };
 		F085BB0FB3BBE562F8A8DB16CA48A96F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F157DD46DA2D5A8A2AA302F185A5E7F1 /* Canvas-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Canvas-umbrella.h"; sourceTree = "<group>"; };
-		F7543D6C510A08B107E24B7B44C32531 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2A7685EE3DA6602497578BB7B2E305E /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GoogleToolboxForMac.framework; path = GoogleToolboxForMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F86E2709933AEBDA7C9115E095ABB4B3 /* Pods-NBPS Sports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NBPS Sports.release.xcconfig"; sourceTree = "<group>"; };
-		F9A0E0C6B10498BEEB8038F91AB693C8 /* UITextField+TCCustomFont.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+TCCustomFont.h"; path = "CanvasLibrary/UITextField+TCCustomFont.h"; sourceTree = "<group>"; };
 		FBA45DCC0DDB79ED616B0EF3D44A5856 /* Pods-NBPS SportsTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NBPS SportsTests-resources.sh"; sourceTree = "<group>"; };
 		FE669FFBD9852103A2B5A2A0D4D7A1E0 /* Pods-NBPS SportsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NBPS SportsUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		FFEE4834DD8A56CC0E98C47A9C50B430 /* UITextField+PlaceholderColor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+PlaceholderColor.m"; path = "CanvasLibrary/UITextField+PlaceholderColor.m"; sourceTree = "<group>"; };
+		FF88C3310E9B6684463A5E765822E4FD /* UITextField+TCCustomFont.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+TCCustomFont.h"; path = "CanvasLibrary/UITextField+TCCustomFont.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,11 +185,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EDE0E7D04FCAF9CB1AD225C52943155C /* Frameworks */ = {
+		BC4B340EAC705BD81F701B3940AF31FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7D7FC71A7D85B613D23C5691D94AD20 /* Foundation.framework in Frameworks */,
+				798333B69D68C8F39AF2F73B98389997 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EACB09BDC77F28AB7BA555E660EC5F28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1D9A260EDC4EE835B5034A00E97120F /* Foundation.framework in Frameworks */,
+				7ECA72F152C8B31FAD0439E7F9A5E280 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +231,14 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		0C58D9D2FDAEEF5BE802B8D2C87C9770 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8982BB22D7704FE6397C02E42B2A152D /* FirebaseInstanceID.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0F20321EC4E8AA9CB8AA1F04A767954D /* Pods-NBPS SportsTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,65 +257,59 @@
 			path = "Target Support Files/Pods-NBPS SportsTests";
 			sourceTree = "<group>";
 		};
-		1E963F096C8EA6D7682458B3DBA28AE8 /* Frameworks */ = {
+		0F9F3676794F51EBF3022F7EC7E3C0CD /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
-				4264E9B185F494916E91EDB968806325 /* FirebaseInstanceID.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		32B7262F86B35358E91D1F35C04B3ED8 /* GoogleToolboxForMac */ = {
-			isa = PBXGroup;
-			children = (
-				EC3EC81FEBA33E517D6BFFCE45241FEA /* Defines */,
-				86DA2EF48BC873246A1105E7F41112CF /* NSData+zlib */,
-				CB65C4FF26F5465B94DEA07AC9C3E831 /* Support Files */,
-			);
-			name = GoogleToolboxForMac;
-			path = GoogleToolboxForMac;
-			sourceTree = "<group>";
-		};
-		4CE3C13F63334E61406B391EF8DC8F97 /* Canvas */ = {
-			isa = PBXGroup;
-			children = (
-				73E2E1A73E8CDF76469FCA97D5C1C4FA /* Canvas.h */,
-				4DC5C6D6BB89E15E9AACB140312E1B49 /* CSAnimation.h */,
-				D719027C1A92717ACFA401FB0296DD40 /* CSAnimation.m */,
-				C56B4FE9405710ECAC27E02762A0A9C0 /* CSAnimationView.h */,
-				3AA34024E67ECB686242B376F69120DE /* CSAnimationView.m */,
-				319598D6197E69D3F3F87FD0086B1441 /* CSBlurView.h */,
-				D1164F6694F5E1CAF0D8D3A2AED9BA94 /* CSBlurView.m */,
-				697044DBEC887A0DB22AA5A687D18339 /* CSNavigationController.h */,
-				8B461E1692681BF636382C1373898B51 /* CSNavigationController.m */,
-				06A64E168B2E618E54D8239037CD9F34 /* UIButton+TCCustomFont.h */,
-				4FCCF445512DD860E252DEFCA4EDE7F7 /* UIButton+TCCustomFont.m */,
-				3099EAB94FECFACD243F736245D11312 /* UILabel+TCCustomFont.h */,
-				CD59BE31F9049C428F0DE348B39A1974 /* UILabel+TCCustomFont.m */,
-				486362882E797E4D4A1A3D617CA75598 /* UINavigationBar+TCCustomFont.h */,
-				D3C9602BB2DB5F5FBE3513B95A8D25A1 /* UINavigationBar+TCCustomFont.m */,
-				ADF1535E6A4AB77622E79A5BE0979326 /* UITextField+PlaceholderColor.h */,
-				FFEE4834DD8A56CC0E98C47A9C50B430 /* UITextField+PlaceholderColor.m */,
-				F9A0E0C6B10498BEEB8038F91AB693C8 /* UITextField+TCCustomFont.h */,
-				6AB96EE740CACD97D701FF0BFDEDA2CF /* UITextField+TCCustomFont.m */,
-				6A3AF4CB143A28BDE781424846C88452 /* UITextView+TCCustomFont.h */,
-				37B53A7BFCEA48D3ADFEA59D032DB911 /* UITextView+TCCustomFont.m */,
-				A58905AC4F9069909F94E9A66AE3B852 /* Support Files */,
+				E7245874A216960B17E966A9F56005B2 /* Canvas.h */,
+				CE6A18DDC0C655123666DB384F1F5269 /* CSAnimation.h */,
+				70ADA27C6C4F12EF5614768F21ACFEB5 /* CSAnimation.m */,
+				5E695F1021433166C725F695D232BCEC /* CSAnimationView.h */,
+				9E22197761229D2BAC19332E4E7B02FC /* CSAnimationView.m */,
+				D57154D55FC7F2576CD227F22667E7A8 /* CSBlurView.h */,
+				BF7A849C10651A81A491E9065F264E5E /* CSBlurView.m */,
+				7AB8A210C18C534D5E6E213D5249D907 /* CSNavigationController.h */,
+				5FFC47830F0B0FFA56141BEA655A31DB /* CSNavigationController.m */,
+				DCD6FB3C5953D5494B5139CB6606CA46 /* UIButton+TCCustomFont.h */,
+				71F468C65B595E26E96131D8B44EA617 /* UIButton+TCCustomFont.m */,
+				3018F4227DD14351351E8046F3F64753 /* UILabel+TCCustomFont.h */,
+				0619135E075B8D17DE7B622BA9BFAC3D /* UILabel+TCCustomFont.m */,
+				C26936208D2E4320BA786512B312C6DC /* UINavigationBar+TCCustomFont.h */,
+				6F381CD927972CF43AFCCF00B35FAA14 /* UINavigationBar+TCCustomFont.m */,
+				481BCD3D2964C18D1805B8955D77D7B4 /* UITextField+PlaceholderColor.h */,
+				08558BCA2A6EEDDB624F0E1282D6CEEB /* UITextField+PlaceholderColor.m */,
+				FF88C3310E9B6684463A5E765822E4FD /* UITextField+TCCustomFont.h */,
+				AAE47C2CC06D0075F480053205D77B0A /* UITextField+TCCustomFont.m */,
+				462A281CDB0CEB7CAA4768E0128A2787 /* UITextView+TCCustomFont.h */,
+				8326024E8272C77F974E17EBA735F528 /* UITextView+TCCustomFont.m */,
+				7F75F00AEA6D1337C946CC79042DF333 /* Support Files */,
 			);
 			name = Canvas;
 			path = Canvas;
 			sourceTree = "<group>";
 		};
-		50F997A08075DD0869EFD480F3912407 /* Products */ = {
+		2708A76F02078E9F392FC25CEE9D6AAB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A5ADFE465694FF30851C78433CEB68CD /* Canvas.framework */,
-				352078BD4F1B42F6BAF8B199C8CA0E49 /* GoogleToolboxForMac.framework */,
-				94B810A71C3C80BF5A8A27093E793488 /* Pods_NBPS_Sports.framework */,
-				8620EB4221D9AF36EDAD192EB77CAD24 /* Pods_NBPS_SportsTests.framework */,
-				02CA4C70F9FE21161791C221227DD054 /* Pods_NBPS_SportsUITests.framework */,
+				6A1F74AA5DD91A07A931BF6C51E1029B /* FirebaseAnalytics.framework */,
 			);
-			name = Products;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6EE98446B568159EE277B68FD442AF0 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5164D95C778C89342E98F3CE73AF713D /* FirebaseInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				0C58D9D2FDAEEF5BE802B8D2C87C9770 /* Frameworks */,
+			);
+			name = FirebaseInstanceID;
+			path = FirebaseInstanceID;
 			sourceTree = "<group>";
 		};
 		52FA415301E03537374299025279192A /* Pods-NBPS SportsUITests */ = {
@@ -296,102 +330,116 @@
 			path = "Target Support Files/Pods-NBPS SportsUITests";
 			sourceTree = "<group>";
 		};
-		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+		5FDA68BC10411A4554C9BC4F24A1EBA1 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+				52EBC610747587BDBA4BC342FD4AB556 /* GoogleToolboxForMac.modulemap */,
+				9FC6F91B5729F6689D93A4B5910FAB34 /* GoogleToolboxForMac.xcconfig */,
+				488733DC3E683E35B5D4A668A7B18690 /* GoogleToolboxForMac-dummy.m */,
+				EE4AA828632643CA9BD8E6463CD7FB46 /* GoogleToolboxForMac-prefix.pch */,
+				BCFC1268AA7591D5800CA44BE97E10CF /* GoogleToolboxForMac-umbrella.h */,
+				BBACA2930D82FA534C274C7ED49CF822 /* Info.plist */,
 			);
-			name = iOS;
+			name = "Support Files";
+			path = "../Target Support Files/GoogleToolboxForMac";
 			sourceTree = "<group>";
 		};
-		773EB1FB0BFD7E5870424B9E4FC6ED22 /* Pods */ = {
+		724650CFEA1C1256F1C65AB62D517030 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				4CE3C13F63334E61406B391EF8DC8F97 /* Canvas */,
-				9F0E7C5A9D9FC38F2FD3747D1D44DBCD /* Firebase */,
-				7C7D8FDCF85DF6DA6069E5BE378A9D53 /* FirebaseAnalytics */,
-				B1531283FF3E02A696342DC92CCD6BDD /* FirebaseCore */,
-				C8271F551DE19E85C2594AED936E7D74 /* FirebaseInstanceID */,
-				32B7262F86B35358E91D1F35C04B3ED8 /* GoogleToolboxForMac */,
+				A874E109D70E007F8AF91361ED3E0E32 /* Firebase.h */,
 			);
-			name = Pods;
+			name = Core;
 			sourceTree = "<group>";
 		};
-		7A6922B026A88423D016BCE9BC336AF2 /* Frameworks */ = {
+		7671BAC3E000A8DD350C4297A6213B2C /* FirebaseCore */ = {
 			isa = PBXGroup;
 			children = (
-				E9D6A4FAB641F65150959AC1104A1149 /* FirebaseCore.framework */,
+				80B0761D033BA4E4B7342ABAAA0F450F /* Frameworks */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7C7D8FDCF85DF6DA6069E5BE378A9D53 /* FirebaseAnalytics */ = {
-			isa = PBXGroup;
-			children = (
-				7D0D0CACED803FDD400F3BD1DADE2699 /* Frameworks */,
-			);
-			name = FirebaseAnalytics;
-			path = FirebaseAnalytics;
-			sourceTree = "<group>";
-		};
-		7D0D0CACED803FDD400F3BD1DADE2699 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5BCD02827FA6A818BE6BA182F0CA1146 /* FirebaseAnalytics.framework */,
-			);
-			name = Frameworks;
+			name = FirebaseCore;
+			path = FirebaseCore;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				773EB1FB0BFD7E5870424B9E4FC6ED22 /* Pods */,
-				50F997A08075DD0869EFD480F3912407 /* Products */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				AE20FCE0FCF08EAD8A94E8A4BF37F714 /* Pods */,
+				BE2457BE6FC95C26297FED6FB16A9B18 /* Products */,
 				08F9FDECAF15E6ABCF708F37B8432894 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		86DA2EF48BC873246A1105E7F41112CF /* NSData+zlib */ = {
+		7DB3BEF238E58334A80109CCB0961918 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				9C7EA481FF4FFD118A12EB2970C82BB5 /* GTMNSData+zlib.h */,
-				864BE7EA9891D7416B661A8F052EE332 /* GTMNSData+zlib.m */,
+				663194D49DCF34CFDADD2D2F756300F6 /* Info.plist */,
+				75577C3DA0C3FF6C409D79021414A598 /* SwiftSpinner.modulemap */,
+				69F6026DF8D2B9B87B256FB82AA03055 /* SwiftSpinner.xcconfig */,
+				96E6AE5D09EB5C3375D93CE66F5BC248 /* SwiftSpinner-dummy.m */,
+				515FA2A41750865259515B89CB1431C4 /* SwiftSpinner-prefix.pch */,
+				830D9E3F9B5C18FE145E1A47805D4D83 /* SwiftSpinner-umbrella.h */,
 			);
-			name = "NSData+zlib";
+			name = "Support Files";
+			path = "../Target Support Files/SwiftSpinner";
 			sourceTree = "<group>";
 		};
-		9F0E7C5A9D9FC38F2FD3747D1D44DBCD /* Firebase */ = {
+		7F75F00AEA6D1337C946CC79042DF333 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E17C5E258C7C3D2E5AA24BF499DCF5CB /* Core */,
-			);
-			name = Firebase;
-			path = Firebase;
-			sourceTree = "<group>";
-		};
-		A58905AC4F9069909F94E9A66AE3B852 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				4C8B15D3AA8C88F806BA7DCC9D6DB728 /* Canvas.modulemap */,
-				EB5B228D281C7E79A814577B5397E671 /* Canvas.xcconfig */,
-				2F0F0C42023B0D1A444104385124B0F7 /* Canvas-dummy.m */,
-				21DF3B089C32A63C82D71CA5264E3539 /* Canvas-prefix.pch */,
-				F157DD46DA2D5A8A2AA302F185A5E7F1 /* Canvas-umbrella.h */,
-				F7543D6C510A08B107E24B7B44C32531 /* Info.plist */,
+				4AD316BC53A200C835A34D52AAAE3564 /* Canvas.modulemap */,
+				C5F4DB040A3B1564F143D3554730E350 /* Canvas.xcconfig */,
+				39A5508758672F2C0D4BD43F398ED86C /* Canvas-dummy.m */,
+				A7D8DFE86073938A2BBB6E9BD3FC60BD /* Canvas-prefix.pch */,
+				A3E176B54FB0BDDED0B9645806058F0E /* Canvas-umbrella.h */,
+				AF478003A49988B05DC79B7B39EA82DF /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Canvas";
 			sourceTree = "<group>";
 		};
-		B1531283FF3E02A696342DC92CCD6BDD /* FirebaseCore */ = {
+		80B0761D033BA4E4B7342ABAAA0F450F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7A6922B026A88423D016BCE9BC336AF2 /* Frameworks */,
+				ED5ECCBA1CD9869B273750953C809A56 /* FirebaseCore.framework */,
 			);
-			name = FirebaseCore;
-			path = FirebaseCore;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		80D5849A47FD928BBD71516ACDF01E84 /* SwiftSpinner */ = {
+			isa = PBXGroup;
+			children = (
+				E5BBEF8AB2139EE2AA682FA096F6CEDB /* SwiftSpinner.h */,
+				6297A781E826DCFFA32568B440BB881D /* SwiftSpinner.swift */,
+				7DB3BEF238E58334A80109CCB0961918 /* Support Files */,
+			);
+			name = SwiftSpinner;
+			path = SwiftSpinner;
+			sourceTree = "<group>";
+		};
+		A670CDA696326A8C1752E8BE710E3BE8 /* FirebaseAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				2708A76F02078E9F392FC25CEE9D6AAB /* Frameworks */,
+			);
+			name = FirebaseAnalytics;
+			path = FirebaseAnalytics;
+			sourceTree = "<group>";
+		};
+		AE20FCE0FCF08EAD8A94E8A4BF37F714 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0F9F3676794F51EBF3022F7EC7E3C0CD /* Canvas */,
+				C65795AD2DB7EE40A68D64B9FC4C6576 /* Firebase */,
+				A670CDA696326A8C1752E8BE710E3BE8 /* FirebaseAnalytics */,
+				7671BAC3E000A8DD350C4297A6213B2C /* FirebaseCore */,
+				5164D95C778C89342E98F3CE73AF713D /* FirebaseInstanceID */,
+				D0591C631531E133BB6262EE08B9CF59 /* GoogleToolboxForMac */,
+				80D5849A47FD928BBD71516ACDF01E84 /* SwiftSpinner */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		B18045363030FC39C5C15546D8DFB7CD /* Pods-NBPS Sports */ = {
@@ -412,69 +460,82 @@
 			path = "Target Support Files/Pods-NBPS Sports";
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		BB2B244C7C9193E10DC8B96795BD8BEE /* Defines */ = {
 			isa = PBXGroup;
 			children = (
-				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C8271F551DE19E85C2594AED936E7D74 /* FirebaseInstanceID */ = {
-			isa = PBXGroup;
-			children = (
-				1E963F096C8EA6D7682458B3DBA28AE8 /* Frameworks */,
-			);
-			name = FirebaseInstanceID;
-			path = FirebaseInstanceID;
-			sourceTree = "<group>";
-		};
-		CB65C4FF26F5465B94DEA07AC9C3E831 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				DD0B5DFAEFF4CB933C459FE4595CF099 /* GoogleToolboxForMac.modulemap */,
-				0BCB35B30F989B48C963498F07D77BBA /* GoogleToolboxForMac.xcconfig */,
-				B24FDBE9ABD1C5E81F844D8F27E4F0C3 /* GoogleToolboxForMac-dummy.m */,
-				3819A2EC1BBBB4AED503EC7E14121FAC /* GoogleToolboxForMac-prefix.pch */,
-				83CF43F05A238CF77B9C64E6DA5CCEA5 /* GoogleToolboxForMac-umbrella.h */,
-				52A3073DCE247C9F4889F92EE3437F25 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/GoogleToolboxForMac";
-			sourceTree = "<group>";
-		};
-		E17C5E258C7C3D2E5AA24BF499DCF5CB /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				29E4DE972ECCBB38AF1E8ABD2B920326 /* Firebase.h */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		EC3EC81FEBA33E517D6BFFCE45241FEA /* Defines */ = {
-			isa = PBXGroup;
-			children = (
-				32FF687F6F7FB1CD8EB4CE726F36F98A /* GTMDefines.h */,
+				C5E2C158BA33DC283B384AA3A9F05CC3 /* GTMDefines.h */,
 			);
 			name = Defines;
+			sourceTree = "<group>";
+		};
+		BB956236AED6795235D9A243964849F7 /* NSData+zlib */ = {
+			isa = PBXGroup;
+			children = (
+				E46BCCAB93E5F19DF8C822874E5106B7 /* GTMNSData+zlib.h */,
+				431689946070AF2D682A994C5E486F38 /* GTMNSData+zlib.m */,
+			);
+			name = "NSData+zlib";
+			sourceTree = "<group>";
+		};
+		BE2457BE6FC95C26297FED6FB16A9B18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				345619593581F704730FBBDD278FFB61 /* Canvas.framework */,
+				F2A7685EE3DA6602497578BB7B2E305E /* GoogleToolboxForMac.framework */,
+				A8C8CE0D37D17EBF19D52F27D2FD6BC2 /* Pods_NBPS_Sports.framework */,
+				A3501D094F97E4C19EB320CF5F9691C4 /* Pods_NBPS_SportsTests.framework */,
+				0BDED062B38E73DDAA04B7EEE3A2EE98 /* Pods_NBPS_SportsUITests.framework */,
+				5FFCFA20FB5773A027FF89C163023F09 /* SwiftSpinner.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C65795AD2DB7EE40A68D64B9FC4C6576 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				724650CFEA1C1256F1C65AB62D517030 /* Core */,
+			);
+			name = Firebase;
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		D0591C631531E133BB6262EE08B9CF59 /* GoogleToolboxForMac */ = {
+			isa = PBXGroup;
+			children = (
+				BB2B244C7C9193E10DC8B96795BD8BEE /* Defines */,
+				BB956236AED6795235D9A243964849F7 /* NSData+zlib */,
+				5FDA68BC10411A4554C9BC4F24A1EBA1 /* Support Files */,
+			);
+			name = GoogleToolboxForMac;
+			path = GoogleToolboxForMac;
+			sourceTree = "<group>";
+		};
+		E6EE98446B568159EE277B68FD442AF0 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */,
+				7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		0242B73A62D5D4E9CFEFDD2F0023AB2B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BF79C5B9AD4472A8DD73ED83C48BC42A /* SwiftSpinner-umbrella.h in Headers */,
+				5F86B3BF73CF4AC335CBEEB2678A42B4 /* SwiftSpinner.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4185952BFE59F93390B06FB507D5FA7A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D9A1E341F074A6A75ED04D47AA75DADE /* Pods-NBPS SportsUITests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6946C26C2CDD33D0469FB795B02F1CA1 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A3A139238863301FC0CE6490DCF26CE4 /* Pods-NBPS SportsTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +555,14 @@
 				CF3FEFAD0F17B31334D7890ECD2B8DFE /* UITextField+PlaceholderColor.h in Headers */,
 				54B06073BC396D015044362E5C58166F /* UITextField+TCCustomFont.h in Headers */,
 				D5B84B208FBA94896DCB2F353F10E105 /* UITextView+TCCustomFont.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86B2424AA98F1740B502E9C589AF96B3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14DEC3A08EBF27BF2C23236D242DF7A1 /* Pods-NBPS SportsTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,7 +601,7 @@
 			);
 			name = GoogleToolboxForMac;
 			productName = GoogleToolboxForMac;
-			productReference = 352078BD4F1B42F6BAF8B199C8CA0E49 /* GoogleToolboxForMac.framework */;
+			productReference = F2A7685EE3DA6602497578BB7B2E305E /* GoogleToolboxForMac.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		36484E2686CF2961A04EA69B8C3AE6B6 /* Pods-NBPS Sports */ = {
@@ -549,7 +618,44 @@
 			);
 			name = "Pods-NBPS Sports";
 			productName = "Pods-NBPS Sports";
-			productReference = 94B810A71C3C80BF5A8A27093E793488 /* Pods_NBPS_Sports.framework */;
+			productReference = A8C8CE0D37D17EBF19D52F27D2FD6BC2 /* Pods_NBPS_Sports.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		60E9BA7D260231FC7A24C2F47D3ED944 /* Pods-NBPS SportsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79B3AD751E7C6050A6C23764E994E841 /* Build configuration list for PBXNativeTarget "Pods-NBPS SportsTests" */;
+			buildPhases = (
+				2C8F80A568606E54294692CEEF8BB2DC /* Sources */,
+				BC4B340EAC705BD81F701B3940AF31FE /* Frameworks */,
+				86B2424AA98F1740B502E9C589AF96B3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3293B5659A4E3CC446AEA215D94FB94E /* PBXTargetDependency */,
+				A6FB68A345F9D29896ADC2B7A8E03FC8 /* PBXTargetDependency */,
+				BB954BEC06B7DF1DCD8DFBE709827F2F /* PBXTargetDependency */,
+			);
+			name = "Pods-NBPS SportsTests";
+			productName = "Pods-NBPS SportsTests";
+			productReference = A3501D094F97E4C19EB320CF5F9691C4 /* Pods_NBPS_SportsTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		731B3AEFDD3EA8CC6A8600DCB0FEC76C /* SwiftSpinner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55114BB32B63118B31C20D3478BF8260 /* Build configuration list for PBXNativeTarget "SwiftSpinner" */;
+			buildPhases = (
+				A4755BC83598F44E72F4498E78FEF4CC /* Sources */,
+				EACB09BDC77F28AB7BA555E660EC5F28 /* Frameworks */,
+				0242B73A62D5D4E9CFEFDD2F0023AB2B /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftSpinner;
+			productName = SwiftSpinner;
+			productReference = 5FFCFA20FB5773A027FF89C163023F09 /* SwiftSpinner.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9506C21DDC31EBDC85392C30D4A53F19 /* Pods-NBPS SportsUITests */ = {
@@ -566,26 +672,7 @@
 			);
 			name = "Pods-NBPS SportsUITests";
 			productName = "Pods-NBPS SportsUITests";
-			productReference = 02CA4C70F9FE21161791C221227DD054 /* Pods_NBPS_SportsUITests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		B5E90F7F142D84F2ED438313B34D3C5A /* Pods-NBPS SportsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 83FF94C34159AB2703DCD9C8F57E68B2 /* Build configuration list for PBXNativeTarget "Pods-NBPS SportsTests" */;
-			buildPhases = (
-				40F7D92B40262C92C7345519291A52DF /* Sources */,
-				EDE0E7D04FCAF9CB1AD225C52943155C /* Frameworks */,
-				6946C26C2CDD33D0469FB795B02F1CA1 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				47CA39305462931DC4C5583DD0D7CB88 /* PBXTargetDependency */,
-				80A96AE3346E1EC46FC8968779C9C044 /* PBXTargetDependency */,
-			);
-			name = "Pods-NBPS SportsTests";
-			productName = "Pods-NBPS SportsTests";
-			productReference = 8620EB4221D9AF36EDAD192EB77CAD24 /* Pods_NBPS_SportsTests.framework */;
+			productReference = 0BDED062B38E73DDAA04B7EEE3A2EE98 /* Pods_NBPS_SportsUITests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F6497E6E7D485D7D0D7E0CD8E84BFCD4 /* Canvas */ = {
@@ -602,7 +689,7 @@
 			);
 			name = Canvas;
 			productName = Canvas;
-			productReference = A5ADFE465694FF30851C78433CEB68CD /* Canvas.framework */;
+			productReference = 345619593581F704730FBBDD278FFB61 /* Canvas.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -622,33 +709,34 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 50F997A08075DD0869EFD480F3912407 /* Products */;
+			productRefGroup = BE2457BE6FC95C26297FED6FB16A9B18 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				F6497E6E7D485D7D0D7E0CD8E84BFCD4 /* Canvas */,
 				00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */,
 				36484E2686CF2961A04EA69B8C3AE6B6 /* Pods-NBPS Sports */,
-				B5E90F7F142D84F2ED438313B34D3C5A /* Pods-NBPS SportsTests */,
+				60E9BA7D260231FC7A24C2F47D3ED944 /* Pods-NBPS SportsTests */,
 				9506C21DDC31EBDC85392C30D4A53F19 /* Pods-NBPS SportsUITests */,
+				731B3AEFDD3EA8CC6A8600DCB0FEC76C /* SwiftSpinner */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2C8F80A568606E54294692CEEF8BB2DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5CF5C371951770970A743F5E5ABF61C /* Pods-NBPS SportsTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		30283883DB067661F3B822C512D364E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				FDA92FC333BD994E2719914B4AF3C36A /* Pods-NBPS SportsUITests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		40F7D92B40262C92C7345519291A52DF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				97FFDF0D73192DA33462C72DE63CB60E /* Pods-NBPS SportsTests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +754,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CABAB0351157A43C9E972F1DFBA02F4 /* Pods-NBPS Sports-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A4755BC83598F44E72F4498E78FEF4CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00E4279605B778ECB09411C167B90476 /* SwiftSpinner-dummy.m in Sources */,
+				EF4145338EA134FC70D8D5016831F205 /* SwiftSpinner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -690,17 +787,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		47CA39305462931DC4C5583DD0D7CB88 /* PBXTargetDependency */ = {
+		3293B5659A4E3CC446AEA215D94FB94E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Canvas;
 			target = F6497E6E7D485D7D0D7E0CD8E84BFCD4 /* Canvas */;
-			targetProxy = 1CF26C71A87B0E6A8614D27ED46CEBC6 /* PBXContainerItemProxy */;
+			targetProxy = 50D1C9AC452057CBC1FE30DAAC344524 /* PBXContainerItemProxy */;
 		};
-		80A96AE3346E1EC46FC8968779C9C044 /* PBXTargetDependency */ = {
+		A6FB68A345F9D29896ADC2B7A8E03FC8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GoogleToolboxForMac;
 			target = 00103D6C821BE85971C563025527BA5D /* GoogleToolboxForMac */;
-			targetProxy = B04AC82AC2612E82E9C9FD3E1314DAA3 /* PBXContainerItemProxy */;
+			targetProxy = 0131475302F735B6DF2B9BB2AA313C9E /* PBXContainerItemProxy */;
+		};
+		BB954BEC06B7DF1DCD8DFBE709827F2F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftSpinner;
+			target = 731B3AEFDD3EA8CC6A8600DCB0FEC76C /* SwiftSpinner */;
+			targetProxy = EBFDC4795FB8A18C2D10CCEEE0EDA1BE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -775,6 +878,38 @@
 			};
 			name = Debug;
 		};
+		649403DEBA974C4979A2E8463243262F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69F6026DF8D2B9B87B256FB82AA03055 /* SwiftSpinner.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftSpinner/SwiftSpinner-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftSpinner/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftSpinner/SwiftSpinner.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftSpinner;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		673254EEAF0B5BF4596080C749645884 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -815,9 +950,45 @@
 			};
 			name = Release;
 		};
+		766A4D0AC592A0DBF93DC36987D40474 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35A341A41E519EE6302D2A6231D32929 /* Pods-NBPS SportsTests.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-NBPS SportsTests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NBPS SportsTests/Pods-NBPS SportsTests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_NBPS_SportsTests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		7A8173FF6D49E5A3EFD67A2C2C6130E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB5B228D281C7E79A814577B5397E671 /* Canvas.xcconfig */;
+			baseConfigurationReference = C5F4DB040A3B1564F143D3554730E350 /* Canvas.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -847,15 +1018,15 @@
 			};
 			name = Debug;
 		};
-		AA0995767A166CC976E6DA7A19B9EFB7 /* Debug */ = {
+		9ADC9C99090DE185FAD8D55E9004E2D4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35A341A41E519EE6302D2A6231D32929 /* Pods-NBPS SportsTests.debug.xcconfig */;
+			baseConfigurationReference = 48C2CB62BFCB401CD56C50C4FDC31C04 /* Pods-NBPS SportsTests.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -868,7 +1039,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-NBPS SportsTests/Pods-NBPS SportsTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -876,6 +1047,39 @@
 				PRODUCT_NAME = Pods_NBPS_SportsTests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A23F736F41E73DD5B4C46C3CFCEFD375 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69F6026DF8D2B9B87B256FB82AA03055 /* SwiftSpinner.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftSpinner/SwiftSpinner-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftSpinner/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftSpinner/SwiftSpinner.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftSpinner;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -919,7 +1123,7 @@
 		};
 		C7B6F108C89AD1CB0DA28A0E294631D0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EB5B228D281C7E79A814577B5397E671 /* Canvas.xcconfig */;
+			baseConfigurationReference = C5F4DB040A3B1564F143D3554730E350 /* Canvas.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -943,41 +1147,6 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		CD065AB2A41BD9B8D6880E9795B83595 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48C2CB62BFCB401CD56C50C4FDC31C04 /* Pods-NBPS SportsTests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-NBPS SportsTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-NBPS SportsTests/Pods-NBPS SportsTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_NBPS_SportsTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1021,7 +1190,7 @@
 		};
 		D60CD877A708870E2BE96B83BA32F883 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BCB35B30F989B48C963498F07D77BBA /* GoogleToolboxForMac.xcconfig */;
+			baseConfigurationReference = 9FC6F91B5729F6689D93A4B5910FAB34 /* GoogleToolboxForMac.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1097,7 +1266,7 @@
 		};
 		F066921CBDBDB5F45795E50FBC5AC972 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0BCB35B30F989B48C963498F07D77BBA /* GoogleToolboxForMac.xcconfig */;
+			baseConfigurationReference = 9FC6F91B5729F6689D93A4B5910FAB34 /* GoogleToolboxForMac.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1139,6 +1308,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		55114BB32B63118B31C20D3478BF8260 /* Build configuration list for PBXNativeTarget "SwiftSpinner" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A23F736F41E73DD5B4C46C3CFCEFD375 /* Debug */,
+				649403DEBA974C4979A2E8463243262F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		596FCB5904178E733A3C78618222D49A /* Build configuration list for PBXNativeTarget "Canvas" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1157,11 +1335,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83FF94C34159AB2703DCD9C8F57E68B2 /* Build configuration list for PBXNativeTarget "Pods-NBPS SportsTests" */ = {
+		79B3AD751E7C6050A6C23764E994E841 /* Build configuration list for PBXNativeTarget "Pods-NBPS SportsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AA0995767A166CC976E6DA7A19B9EFB7 /* Debug */,
-				CD065AB2A41BD9B8D6880E9795B83595 /* Release */,
+				766A4D0AC592A0DBF93DC36987D40474 /* Debug */,
+				9ADC9C99090DE185FAD8D55E9004E2D4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -11,6 +11,7 @@ target 'NBPS Sports' do
     inherit! :search_paths
     pod 'Firebase'
     pod 'Canvas'
+    pod 'SwiftSpinner'
   end
 
   target 'NBPS SportsUITests' do

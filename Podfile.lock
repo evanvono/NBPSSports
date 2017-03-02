@@ -15,10 +15,12 @@ PODS:
   - GoogleToolboxForMac/Defines (2.1.1)
   - GoogleToolboxForMac/NSData+zlib (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
+  - SwiftSpinner (1.1.0)
 
 DEPENDENCIES:
   - Canvas
   - Firebase
+  - SwiftSpinner
 
 SPEC CHECKSUMS:
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
@@ -27,7 +29,8 @@ SPEC CHECKSUMS:
   FirebaseCore: 225d40532489835a034b8f4e2c9c87fbf4f615a2
   FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  SwiftSpinner: c03815614599b91eea46594bd52ba742849d0414
 
-PODFILE CHECKSUM: 7e6ed036bdec0018c98bd635a39ed37d03ab8769
+PODFILE CHECKSUM: e8bf26190071cc3efca08fc9f22632e65b9f29be
 
 COCOAPODS: 1.2.0
