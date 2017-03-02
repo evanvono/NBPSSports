@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>GTMSessionFetcher.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -19,17 +24,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-NBPS SportsTests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-NBPS SportsUITests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>SwiftSpinner.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Timepiece.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,27 +37,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>00103D6C821BE85971C563025527BA5D</key>
+		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>36484E2686CF2961A04EA69B8C3AE6B6</key>
+		<key>39BFE4BB434FDA7A47E2ABCF30E0A6A1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>60E9BA7D260231FC7A24C2F47D3ED944</key>
+		<key>B0738C4A1D4B00FFB826D6AC5C7ADC5B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>731B3AEFDD3EA8CC6A8600DCB0FEC76C</key>
+		<key>C052BEBFBD0AB5218CC64BA3450F6547</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9506C21DDC31EBDC85392C30D4A53F19</key>
+		<key>D776B9EBB58ACE919147BD2191BFAE33</key>
 		<dict>
 			<key>primary</key>
 			<true/>
