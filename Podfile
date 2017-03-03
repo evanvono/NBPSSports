@@ -1,22 +1,15 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+ platform :ios, '10.0'
 
 target 'NBPS Sports' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
-  use_frameworks!
+# Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+use_frameworks!
 
-  # Pods for NBPS Sports
-
-  target 'NBPS SportsTests' do
-    inherit! :search_paths
     pod 'Firebase'
-    pod 'Canvas'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Database'
+    pod 'Canvas', ‘~>0.1'
     pod 'SwiftSpinner'
-  end
-
-  target 'NBPS SportsUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+    pod 'Timepiece'
 
 end

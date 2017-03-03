@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07EEC84E1F73EE9F8743E871 /* Pods_NBPS_Sports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11F3D03C5B1A6C017B50CD28 /* Pods_NBPS_Sports.framework */; };
+		207A87D41E68B99600BA38AA /* SwiftSpinner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207A87D31E68B99600BA38AA /* SwiftSpinner.framework */; };
 		20EF9E441E645DE700F45DBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EF9E431E645DE700F45DBB /* AppDelegate.swift */; };
 		20EF9E461E645DE700F45DBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EF9E451E645DE700F45DBB /* ViewController.swift */; };
 		20EF9E491E645DE700F45DBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20EF9E471E645DE700F45DBB /* Main.storyboard */; };
@@ -14,9 +16,6 @@
 		20EF9E4E1E645DE700F45DBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20EF9E4C1E645DE700F45DBB /* LaunchScreen.storyboard */; };
 		20EF9E591E645DE700F45DBB /* NBPS_SportsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EF9E581E645DE700F45DBB /* NBPS_SportsTests.swift */; };
 		20EF9E641E645DE700F45DBB /* NBPS_SportsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EF9E631E645DE700F45DBB /* NBPS_SportsUITests.swift */; };
-		279C39200DEA8310FBE1C106 /* Pods_NBPS_SportsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B7AC3C7BA614A5AE0813B9F /* Pods_NBPS_SportsTests.framework */; };
-		925731C06322AB0A15029CCE /* Pods_NBPS_Sports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E70B718A641F70AF36E62BA2 /* Pods_NBPS_Sports.framework */; };
-		BED76FE084B115E5D168C9AD /* Pods_NBPS_SportsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA9033575D1BEAAC119C689E /* Pods_NBPS_SportsUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11F3D03C5B1A6C017B50CD28 /* Pods_NBPS_Sports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NBPS_Sports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		207A87D31E68B99600BA38AA /* SwiftSpinner.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftSpinner.framework; sourceTree = "<group>"; };
 		20EF9E401E645DE700F45DBB /* NBPS Sports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NBPS Sports.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20EF9E431E645DE700F45DBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20EF9E451E645DE700F45DBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,15 +51,8 @@
 		20EF9E5F1E645DE700F45DBB /* NBPS SportsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NBPS SportsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20EF9E631E645DE700F45DBB /* NBPS_SportsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBPS_SportsUITests.swift; sourceTree = "<group>"; };
 		20EF9E651E645DE700F45DBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26E3269950AB29F9F021682A /* Pods-NBPS Sports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NBPS Sports.release.xcconfig"; path = "Pods/Target Support Files/Pods-NBPS Sports/Pods-NBPS Sports.release.xcconfig"; sourceTree = "<group>"; };
-		2ACD96CC2925C8B70855C3D0 /* Pods-NBPS SportsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NBPS SportsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NBPS SportsTests/Pods-NBPS SportsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		32CC15C2C535B010F193ABF3 /* Pods-NBPS Sports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NBPS Sports.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NBPS Sports/Pods-NBPS Sports.debug.xcconfig"; sourceTree = "<group>"; };
-		4B8D3C59B2488787768573E0 /* Pods-NBPS SportsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NBPS SportsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NBPS SportsUITests/Pods-NBPS SportsUITests.release.xcconfig"; sourceTree = "<group>"; };
-		5FAA0E505B03939E7E453B5F /* Pods-NBPS SportsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NBPS SportsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NBPS SportsUITests/Pods-NBPS SportsUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		60F542D2FFDCBE2B08EACC7C /* Pods-NBPS SportsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NBPS SportsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NBPS SportsTests/Pods-NBPS SportsTests.release.xcconfig"; sourceTree = "<group>"; };
-		9B7AC3C7BA614A5AE0813B9F /* Pods_NBPS_SportsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NBPS_SportsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CA9033575D1BEAAC119C689E /* Pods_NBPS_SportsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NBPS_SportsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E70B718A641F70AF36E62BA2 /* Pods_NBPS_Sports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NBPS_Sports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		23D1215639B6DF0E16272AD3 /* Pods-NBPS Sports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NBPS Sports.release.xcconfig"; path = "Pods/Target Support Files/Pods-NBPS Sports/Pods-NBPS Sports.release.xcconfig"; sourceTree = "<group>"; };
+		9A0A055936AB3D9741529DD3 /* Pods-NBPS Sports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NBPS Sports.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NBPS Sports/Pods-NBPS Sports.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				925731C06322AB0A15029CCE /* Pods_NBPS_Sports.framework in Frameworks */,
+				207A87D41E68B99600BA38AA /* SwiftSpinner.framework in Frameworks */,
+				07EEC84E1F73EE9F8743E871 /* Pods_NBPS_Sports.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +69,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				279C39200DEA8310FBE1C106 /* Pods_NBPS_SportsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,13 +76,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BED76FE084B115E5D168C9AD /* Pods_NBPS_SportsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		190D9F614B04B27CB3709418 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9A0A055936AB3D9741529DD3 /* Pods-NBPS Sports.debug.xcconfig */,
+				23D1215639B6DF0E16272AD3 /* Pods-NBPS Sports.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		20EF9E371E645DE700F45DBB = {
 			isa = PBXGroup;
 			children = (
@@ -96,8 +98,8 @@
 				20EF9E571E645DE700F45DBB /* NBPS SportsTests */,
 				20EF9E621E645DE700F45DBB /* NBPS SportsUITests */,
 				20EF9E411E645DE700F45DBB /* Products */,
-				863D6CD0006E5A78B632B833 /* Pods */,
-				5E2CAD3A66A7E6FC96BDE66F /* Frameworks */,
+				190D9F614B04B27CB3709418 /* Pods */,
+				860531FB41CFCFC1198083E0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,27 +144,13 @@
 			path = "NBPS SportsUITests";
 			sourceTree = "<group>";
 		};
-		5E2CAD3A66A7E6FC96BDE66F /* Frameworks */ = {
+		860531FB41CFCFC1198083E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E70B718A641F70AF36E62BA2 /* Pods_NBPS_Sports.framework */,
-				9B7AC3C7BA614A5AE0813B9F /* Pods_NBPS_SportsTests.framework */,
-				CA9033575D1BEAAC119C689E /* Pods_NBPS_SportsUITests.framework */,
+				207A87D31E68B99600BA38AA /* SwiftSpinner.framework */,
+				11F3D03C5B1A6C017B50CD28 /* Pods_NBPS_Sports.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		863D6CD0006E5A78B632B833 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				32CC15C2C535B010F193ABF3 /* Pods-NBPS Sports.debug.xcconfig */,
-				26E3269950AB29F9F021682A /* Pods-NBPS Sports.release.xcconfig */,
-				2ACD96CC2925C8B70855C3D0 /* Pods-NBPS SportsTests.debug.xcconfig */,
-				60F542D2FFDCBE2B08EACC7C /* Pods-NBPS SportsTests.release.xcconfig */,
-				5FAA0E505B03939E7E453B5F /* Pods-NBPS SportsUITests.debug.xcconfig */,
-				4B8D3C59B2488787768573E0 /* Pods-NBPS SportsUITests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,12 +180,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20EF9E6B1E645DE700F45DBB /* Build configuration list for PBXNativeTarget "NBPS SportsTests" */;
 			buildPhases = (
-				782330A2011F14450FF3B114 /* [CP] Check Pods Manifest.lock */,
 				20EF9E501E645DE700F45DBB /* Sources */,
 				20EF9E511E645DE700F45DBB /* Frameworks */,
 				20EF9E521E645DE700F45DBB /* Resources */,
-				C6E639DCFC44E61275A6A5AC /* [CP] Embed Pods Frameworks */,
-				A1E18BD2E855ECFC8DF31703 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -213,12 +198,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20EF9E6E1E645DE700F45DBB /* Build configuration list for PBXNativeTarget "NBPS SportsUITests" */;
 			buildPhases = (
-				C4358DEDBBCF6E8CC99A070C /* [CP] Check Pods Manifest.lock */,
 				20EF9E5B1E645DE700F45DBB /* Sources */,
 				20EF9E5C1E645DE700F45DBB /* Frameworks */,
 				20EF9E5D1E645DE700F45DBB /* Resources */,
-				CE2554522DD0E8F6EE6F2B8C /* [CP] Embed Pods Frameworks */,
-				F50566CA3E373E34DEB53862 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -334,81 +316,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NBPS Sports/Pods-NBPS Sports-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		782330A2011F14450FF3B114 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A1E18BD2E855ECFC8DF31703 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NBPS SportsTests/Pods-NBPS SportsTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C4358DEDBBCF6E8CC99A070C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		C6E639DCFC44E61275A6A5AC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NBPS SportsTests/Pods-NBPS SportsTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CE2554522DD0E8F6EE6F2B8C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NBPS SportsUITests/Pods-NBPS SportsUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		D554DD054BF7985F8E45F1C5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -422,21 +329,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		F50566CA3E373E34DEB53862 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NBPS SportsUITests/Pods-NBPS SportsUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -595,9 +487,13 @@
 		};
 		20EF9E691E645DE700F45DBB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32CC15C2C535B010F193ABF3 /* Pods-NBPS Sports.debug.xcconfig */;
+			baseConfigurationReference = 9A0A055936AB3D9741529DD3 /* Pods-NBPS Sports.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "NBPS Sports/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NBPS.NBPS-Sports";
@@ -608,9 +504,13 @@
 		};
 		20EF9E6A1E645DE700F45DBB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26E3269950AB29F9F021682A /* Pods-NBPS Sports.release.xcconfig */;
+			baseConfigurationReference = 23D1215639B6DF0E16272AD3 /* Pods-NBPS Sports.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "NBPS Sports/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "NBPS.NBPS-Sports";
@@ -621,7 +521,6 @@
 		};
 		20EF9E6C1E645DE700F45DBB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2ACD96CC2925C8B70855C3D0 /* Pods-NBPS SportsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -636,7 +535,6 @@
 		};
 		20EF9E6D1E645DE700F45DBB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 60F542D2FFDCBE2B08EACC7C /* Pods-NBPS SportsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -651,7 +549,6 @@
 		};
 		20EF9E6F1E645DE700F45DBB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5FAA0E505B03939E7E453B5F /* Pods-NBPS SportsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "NBPS SportsUITests/Info.plist";
@@ -665,7 +562,6 @@
 		};
 		20EF9E701E645DE700F45DBB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B8D3C59B2488787768573E0 /* Pods-NBPS SportsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = "NBPS SportsUITests/Info.plist";
@@ -696,6 +592,7 @@
 				20EF9E6A1E645DE700F45DBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		20EF9E6B1E645DE700F45DBB /* Build configuration list for PBXNativeTarget "NBPS SportsTests" */ = {
 			isa = XCConfigurationList;
@@ -704,6 +601,7 @@
 				20EF9E6D1E645DE700F45DBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		20EF9E6E1E645DE700F45DBB /* Build configuration list for PBXNativeTarget "NBPS SportsUITests" */ = {
 			isa = XCConfigurationList;
@@ -712,6 +610,7 @@
 				20EF9E701E645DE700F45DBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

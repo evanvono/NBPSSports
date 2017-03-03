@@ -1,5 +1,5 @@
 
-//  Verson 0.015
+//  Verson 0.016
 //
 //  ViewController.swift
 //  NBPS Sports
@@ -9,11 +9,14 @@
 //
 
 import UIKit
+import SwiftSpinner
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         print("hello")
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -21,6 +24,13 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func demoSpinner(){
+        
+        SwiftSpinner.show(delay: 0.5, title:"Test it looks good", animated: true)
+        SwiftSpinner.hide()
+        
     }
 
 
