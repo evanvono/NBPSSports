@@ -9,12 +9,20 @@
 //
 
 import UIKit
-import SwiftSpinner
+import FirebaseAuth
+import FirebaseDatabase
 
 class ViewController: UIViewController {
+    @IBOutlet var menuButton: UIBarButtonItem!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         
         
         print("hello")
@@ -26,13 +34,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func demoSpinner(){
-        
-        SwiftSpinner.show(delay: 0.5, title:"Test it looks good", animated: true)
-        SwiftSpinner.hide()
-        
-    }
-
+    
 
 }
 
