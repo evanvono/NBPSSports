@@ -1,5 +1,5 @@
 
-//  Verson 0.016
+//  Verson 0.021
 //
 //  ViewController.swift
 //  NBPS Sports
@@ -11,30 +11,36 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import Social
 
 class ViewController: UIViewController {
-    @IBOutlet var menuButton: UIBarButtonItem!
 
+    
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if self.revealViewController() != nil {
+            print("not nil")
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
         
-        print("hello")
+ 
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
+    override var prefersStatusBarHidden: Bool {
+        return false
+    }
 
 }
 
