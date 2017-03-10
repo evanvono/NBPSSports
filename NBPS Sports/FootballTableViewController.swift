@@ -1,4 +1,4 @@
-// Version 0.021
+// Version 0.022
 
 //  FootballTableViewController.swift
 //  NBPS Sports
@@ -11,11 +11,18 @@ import UIKit
 
 class FootballTableViewController: UITableViewController {
 
+    //var games: [[Dictionary<String,Int>]]!
+    var games = [[["Game0":0, "Year":2016,"Month":3,"Day":12]]]
+    
+    var gamesCount = 0
+    
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        games.append([["Game1":1]])
         
         if self.revealViewController() != nil {
             print("not nil")
@@ -40,23 +47,34 @@ class FootballTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        var sections:Int = 1
+        
+        if games.count != 0 {
+            
+            sections = games.count
+            
+        }
+        
+        return sections
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        let tempCount = games[section].count
+        
+        return tempCount
+            
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "scoreCell", for: indexPath)
 
-        // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
