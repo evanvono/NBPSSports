@@ -12,7 +12,7 @@ import UIKit
 class FootballTableViewController: UITableViewController {
 
     //var games: [[Dictionary<String,Int>]]!
-    var games = [[["Game0":0, "Year":2016,"Month":3,"Day":12]]]
+    var games = [[["Game":0, "Year":2016,"Month":3,"Day":12]],[["Game":1, "Year":2017,"Month":3,"Day":18]]]
     
     var gamesCount = 0
     
@@ -35,7 +35,7 @@ class FootballTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,13 +50,12 @@ class FootballTableViewController: UITableViewController {
         
         var sections:Int = 1
         
-        if games.count != 0 {
+        print("The amount of games: \(games.count)")
+        sections = games.count
             
-            sections = games.count
-            
-        }
         
-        return sections
+        
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,6 +66,12 @@ class FootballTableViewController: UITableViewController {
             
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        let height:CGFloat = 61
+        
+        return height
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "scoreCell", for: indexPath)
@@ -74,6 +79,27 @@ class FootballTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let dateHeader = tableView.dequeueReusableCell(withIdentifier: "header")
+        
+        (dateHeader?.contentView.viewWithTag(1) as! UILabel).text = "Thu Mar 2"
+        
+        return dateHeader
+    }
+    
+/*    open func headerView(forSection section: Int) -> UITableViewHeaderFooterView? {
+        
+      //  let header = tableView.dequeueReusableCell(withIdentifier: "header")
+        let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "header")
+        
+        (header?.contentView.viewWithTag(1) as! UILabel).text = "Thu Mar 2"
+        
+        return header
+    }*/
+    
+    
     
 
     /*

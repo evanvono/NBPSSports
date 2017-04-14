@@ -13,6 +13,7 @@
 		20472BBF1E69C8E30065205A /* Unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 20472BBC1E69C8E30065205A /* Unknown.png */; };
 		20472BC01E69C8E30065205A /* Screen-Shot-2015-09-30-at-8.05.56-AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 20472BBD1E69C8E30065205A /* Screen-Shot-2015-09-30-at-8.05.56-AM.png */; };
 		20472BC11E69C8E30065205A /* Football.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20472BBE1E69C8E30065205A /* Football.jpg */; };
+		2072828B1E745275009C87FF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2072828A1E745275009C87FF /* WebViewController.swift */; };
 		20DBD3D01E6C85F800D4D690 /* FootballTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBD3CF1E6C85F800D4D690 /* FootballTableViewController.swift */; };
 		20DBD3D21E6C868600D4D690 /* exampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBD3D11E6C868600D4D690 /* exampleTableViewController.swift */; };
 		20EF9E441E645DE700F45DBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EF9E431E645DE700F45DBB /* AppDelegate.swift */; };
@@ -50,6 +51,7 @@
 		20472BBC1E69C8E30065205A /* Unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unknown.png; sourceTree = "<group>"; };
 		20472BBD1E69C8E30065205A /* Screen-Shot-2015-09-30-at-8.05.56-AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen-Shot-2015-09-30-at-8.05.56-AM.png"; sourceTree = "<group>"; };
 		20472BBE1E69C8E30065205A /* Football.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Football.jpg; sourceTree = "<group>"; };
+		2072828A1E745275009C87FF /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		20DBD3CF1E6C85F800D4D690 /* FootballTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballTableViewController.swift; sourceTree = "<group>"; };
 		20DBD3D11E6C868600D4D690 /* exampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = exampleTableViewController.swift; sourceTree = "<group>"; };
 		20EF9E401E645DE700F45DBB /* NBPS Sports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NBPS Sports.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +155,7 @@
 				20EF9E431E645DE700F45DBB /* AppDelegate.swift */,
 				20EF9E451E645DE700F45DBB /* ViewController.swift */,
 				20EF9E471E645DE700F45DBB /* Main.storyboard */,
+				2072828A1E745275009C87FF /* WebViewController.swift */,
 				20DBD3D11E6C868600D4D690 /* exampleTableViewController.swift */,
 				20DBD3CF1E6C85F800D4D690 /* FootballTableViewController.swift */,
 				2034E8A41E6C81E2004CB19A /* SlideMenu */,
@@ -381,6 +384,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20EF9E461E645DE700F45DBB /* ViewController.swift in Sources */,
+				2072828B1E745275009C87FF /* WebViewController.swift in Sources */,
 				20EF9E441E645DE700F45DBB /* AppDelegate.swift in Sources */,
 				20DBD3D21E6C868600D4D690 /* exampleTableViewController.swift in Sources */,
 				20DBD3D01E6C85F800D4D690 /* FootballTableViewController.swift in Sources */,
