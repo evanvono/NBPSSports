@@ -1,22 +1,17 @@
-
-//  Verson 0.023
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  NBPS Sports
 //
-//  Created by Evan Von Oehsen on 2/27/17.
+//  Created by Evan Von Oehsen on 4/14/17.
 //  Copyright © 2017 NBPS Athletics. All rights reserved.
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseDatabase
-import Social
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
-    
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,11 +21,8 @@ class ViewController: UIViewController {
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
-        
- 
-        
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,9 +30,21 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override var prefersStatusBarHidden: Bool {
-        return false
+    @IBAction func loginPressed(_ sender: Any) {
+        
+        print("Logged in")
+        
+        
     }
 
-}
+    /*
+    // MARK: - Navigation
 
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
