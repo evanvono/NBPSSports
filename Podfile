@@ -11,5 +11,8 @@ use_frameworks!
     pod 'Canvas', ‘~>0.1'
     pod 'SwiftSpinner'
     pod 'Timepiece'
+    pod 'Alamofire', '~> 4.0'
+    pod "AlamofireRSSParser"
 
 end
+

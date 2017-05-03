@@ -15,6 +15,7 @@
 		20472BBF1E69C8E30065205A /* Unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 20472BBC1E69C8E30065205A /* Unknown.png */; };
 		20472BC01E69C8E30065205A /* Screen-Shot-2015-09-30-at-8.05.56-AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 20472BBD1E69C8E30065205A /* Screen-Shot-2015-09-30-at-8.05.56-AM.png */; };
 		20472BC11E69C8E30065205A /* Football.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20472BBE1E69C8E30065205A /* Football.jpg */; };
+		206EA2651EA59D8E00F73B36 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 206EA2641EA59D8E00F73B36 /* GoogleService-Info.plist */; };
 		2072828B1E745275009C87FF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2072828A1E745275009C87FF /* WebViewController.swift */; };
 		20DBD3D01E6C85F800D4D690 /* FootballTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBD3CF1E6C85F800D4D690 /* FootballTableViewController.swift */; };
 		20DBD3D21E6C868600D4D690 /* exampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBD3D11E6C868600D4D690 /* exampleTableViewController.swift */; };
@@ -55,6 +56,7 @@
 		20472BBC1E69C8E30065205A /* Unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unknown.png; sourceTree = "<group>"; };
 		20472BBD1E69C8E30065205A /* Screen-Shot-2015-09-30-at-8.05.56-AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen-Shot-2015-09-30-at-8.05.56-AM.png"; sourceTree = "<group>"; };
 		20472BBE1E69C8E30065205A /* Football.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Football.jpg; sourceTree = "<group>"; };
+		206EA2641EA59D8E00F73B36 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2072828A1E745275009C87FF /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		20DBD3CF1E6C85F800D4D690 /* FootballTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FootballTableViewController.swift; sourceTree = "<group>"; };
 		20DBD3D11E6C868600D4D690 /* exampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = exampleTableViewController.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				20EF9E4A1E645DE700F45DBB /* Assets.xcassets */,
 				20EF9E4C1E645DE700F45DBB /* LaunchScreen.storyboard */,
 				20EF9E4F1E645DE700F45DBB /* Info.plist */,
+				206EA2641EA59D8E00F73B36 /* GoogleService-Info.plist */,
 			);
 			path = "NBPS Sports";
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				20472BBF1E69C8E30065205A /* Unknown.png in Resources */,
 				20472BC11E69C8E30065205A /* Football.jpg in Resources */,
 				20EF9E491E645DE700F45DBB /* Main.storyboard in Resources */,
+				206EA2651EA59D8E00F73B36 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
