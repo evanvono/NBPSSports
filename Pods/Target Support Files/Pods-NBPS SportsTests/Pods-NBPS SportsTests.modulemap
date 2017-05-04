@@ -1,6 +1,0 @@
-framework module Pods_NBPS_SportsTests {
-  umbrella header "Pods-NBPS SportsTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

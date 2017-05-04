@@ -546,11 +546,41 @@ to apply, email john@nbps
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="editorLabel" destination="DCS-KW-ko2" id="1EN-Gb-Di8"/>
+                        <outlet property="editorView" destination="izN-xe-qPu" id="Yo9-aB-S8x"/>
                         <outlet property="menuButton" destination="oaq-vL-wrs" id="ftk-jz-g2X"/>
                         <outlet property="spinner" destination="dhN-Ml-xG8" id="IQI-WG-nsB"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qnt-8R-HVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="izN-xe-qPu">
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvU-jt-hgc">
+                            <rect key="frame" x="132" y="142" width="37" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Done"/>
+                            <connections>
+                                <action selector="doneTapped:" destination="kub-1r-Cjn" eventType="touchUpInside" id="IKG-UX-0LL"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCS-KW-ko2">
+                            <rect key="frame" x="134" y="0.0" width="33" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="qCm-a6-zwk"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="0.9019505033557047" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="DCS-KW-ko2" firstAttribute="top" secondItem="izN-xe-qPu" secondAttribute="top" id="UDD-2S-UNx"/>
+                        <constraint firstItem="DCS-KW-ko2" firstAttribute="centerX" secondItem="izN-xe-qPu" secondAttribute="centerX" id="bh7-su-YGy"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="2172" y="-770"/>
         </scene>

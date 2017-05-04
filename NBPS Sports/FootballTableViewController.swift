@@ -15,6 +15,14 @@ import Social
 
 class FootballTableViewController: UITableViewController {
 
+    @IBOutlet weak var editorLabel: UILabel!
+    @IBOutlet var editorView: UIView!
+    
+    var blurEffect: UIBlurEffect!
+    
+    var blurEffectView: UIVisualEffectView!
+    
+    
     
     var ref: FIRDatabaseReference!
     fileprivate var _refHandle: FIRDatabaseHandle?
@@ -38,7 +46,15 @@ class FootballTableViewController: UITableViewController {
         
         
         
+        
         ref = FIRDatabase.database().reference()
+        
+        
+        
+        editorView.layer.cornerRadius = 10
+        
+        
+        
         
         
         if self.revealViewController() != nil {
@@ -73,6 +89,74 @@ class FootballTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    
+    func animateIn(){
+        
+        
+        //blurView.
+        
+        
+        
+        
+        self.view.addSubview(editorView)
+        editorView.center = self.view.center
+        
+        editorView.transform = CGAffineTransform.init(scaleX: 0.5, y:0.5)
+        
+        NSLayoutConstraint(item: editorView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .topMargin, multiplier: 1.0, constant: 20.0).isActive = true
+        
+        NSLayoutConstraint(item: editorView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottomMargin, multiplier: 1.0, constant: 20.0).isActive = true
+        
+        
+        
+        editorView.alpha = 0
+        
+        self.blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        
+        self.blurEffectView = UIVisualEffectView(effect: self.blurEffect)
+        self.blurEffectView.frame = self.view.bounds
+        self.blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.view.insertSubview(self.blurEffectView, at: 6)
+        self.blurEffectView.isUserInteractionEnabled = true
+        self.tableView.isScrollEnabled = false
+
+        UIView.animate(withDuration: 0.4) {
+            
+            
+            
+            
+            self.editorView.alpha = 1
+            self.editorView.transform = CGAffineTransform.identity
+            
+            
+        }
+        
+    }
+    func animateOut(){
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            
+            self.editorView.transform = CGAffineTransform.init(scaleX: 1.3, y:1.3)
+            self.editorView.alpha = 0
+            
+            self.blurEffectView.effect = nil
+            
+            self.blurEffectView.isUserInteractionEnabled = true
+            
+            self.tableView.isScrollEnabled = true
+            
+        }) { (success:Bool) in
+            
+            self.editorView.removeFromSuperview()
+            self.blurEffectView.removeFromSuperview()
+
+            
+        }
+        
+        
+    }
+    
     
     
     func getNewData(){
@@ -457,7 +541,17 @@ class FootballTableViewController: UITableViewController {
 
     }
     
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        editorLabel.text = games[indexPath.section][indexPath.row]["Date"] as? String
+        animateIn()
+        
+    }
+    @IBAction func doneTapped(_ sender: Any) {
+        
+        animateOut()
+        
+    }
     
     /*open func headerView(forSection section: Int) -> UITableViewHeaderFooterView? {
         
