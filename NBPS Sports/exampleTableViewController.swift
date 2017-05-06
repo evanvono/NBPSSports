@@ -105,7 +105,7 @@ class MenuTableViewController: UITableViewController {
             
             if label.text == "Football" {
                 print("selected Football")
-                let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                //let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 /*let desController = mainStoryboard.instantiateViewController(withIdentifier: "Football-main") as! UITableViewController
                 let newFrontViewController = UINavigationController.init(rootViewController:desController)
                 //revealViewController.pushFrontViewController(newFrontViewController, animated: true)*/

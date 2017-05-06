@@ -10,6 +10,7 @@
 		07EEC84E1F73EE9F8743E871 /* Pods_NBPS_Sports.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11F3D03C5B1A6C017B50CD28 /* Pods_NBPS_Sports.framework */; };
 		2023F0531EA17EB40041E165 /* BaseballTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023F0521EA17EB40041E165 /* BaseballTableViewController.swift */; };
 		2023F0551EA1845B0041E165 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023F0541EA1845B0041E165 /* LoginViewController.swift */; };
+		203B2EE21EBBDABC009F1488 /* TwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203B2EE11EBBDABC009F1488 /* TwitchViewController.swift */; };
 		20472BB71E69C6320065205A /* SwiftSpinner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20472BB61E69C6320065205A /* SwiftSpinner.framework */; };
 		20472BBB1E69C6660065205A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20472BBA1E69C6660065205A /* SWRevealViewController.m */; };
 		20472BBF1E69C8E30065205A /* Unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 20472BBC1E69C8E30065205A /* Unknown.png */; };
@@ -49,6 +50,7 @@
 		11F3D03C5B1A6C017B50CD28 /* Pods_NBPS_Sports.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NBPS_Sports.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2023F0521EA17EB40041E165 /* BaseballTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseballTableViewController.swift; sourceTree = "<group>"; };
 		2023F0541EA1845B0041E165 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		203B2EE11EBBDABC009F1488 /* TwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitchViewController.swift; sourceTree = "<group>"; };
 		20472BB61E69C6320065205A /* SwiftSpinner.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftSpinner.framework; sourceTree = "<group>"; };
 		20472BB81E69C65D0065205A /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		20472BB91E69C6660065205A /* NBPS Sports-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NBPS Sports-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				20EF9E431E645DE700F45DBB /* AppDelegate.swift */,
 				20EF9E451E645DE700F45DBB /* ViewController.swift */,
 				20EF9E471E645DE700F45DBB /* Main.storyboard */,
+				203B2EE11EBBDABC009F1488 /* TwitchViewController.swift */,
 				2023F0541EA1845B0041E165 /* LoginViewController.swift */,
 				2023F0521EA17EB40041E165 /* BaseballTableViewController.swift */,
 				2072828A1E745275009C87FF /* WebViewController.swift */,
@@ -400,6 +403,7 @@
 				2023F0551EA1845B0041E165 /* LoginViewController.swift in Sources */,
 				20DBD3D01E6C85F800D4D690 /* FootballTableViewController.swift in Sources */,
 				20472BBB1E69C6660065205A /* SWRevealViewController.m in Sources */,
+				203B2EE21EBBDABC009F1488 /* TwitchViewController.swift in Sources */,
 				2023F0531EA17EB40041E165 /* BaseballTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

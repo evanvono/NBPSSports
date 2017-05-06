@@ -13,16 +13,16 @@ import Timepiece
 import Social
 
 
-class FootballTableViewController: UITableViewController {
+class FootballTableViewController: UITableViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var editField: UITextField!
     @IBOutlet weak var editorLabel: UILabel!
     @IBOutlet var editorView: UIView!
     
     var blurEffect: UIBlurEffect!
-    
     var blurEffectView: UIVisualEffectView!
     
-    
+    var currentGame: String!
     
     var ref: FIRDatabaseReference!
     fileprivate var _refHandle: FIRDatabaseHandle?
@@ -30,7 +30,10 @@ class FootballTableViewController: UITableViewController {
     var pastGame = true
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-
+    
+    var editorOpen:Bool!
+    
+    
  //   var games: [[Dictionary<String,String>]]?
     var gamesArray = [FIRDataSnapshot]()
     var games = [[Dictionary<String, Any>]]()
@@ -45,7 +48,8 @@ class FootballTableViewController: UITableViewController {
         super.viewDidLoad()
         
         
-        
+        self.hideKeyboardWhenTappedAround()
+
         
         ref = FIRDatabase.database().reference()
         
@@ -54,6 +58,7 @@ class FootballTableViewController: UITableViewController {
         editorView.layer.cornerRadius = 10
         
         
+        editorOpen = false
         
         
         
@@ -70,6 +75,8 @@ class FootballTableViewController: UITableViewController {
         
         getChangedData()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(FootballTableViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(FootballTableViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     deinit {
@@ -80,7 +87,14 @@ class FootballTableViewController: UITableViewController {
             
             self.ref.child("Sports").removeObserver(withHandle: refHandle)
             
+            print("removed _refHandle")
+            
         }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,22 +105,69 @@ class FootballTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     
+    
+    
+    func keyboardWillShow(_ notification: NSNotification){
+        
+        print("keyboard is here")
+        
+        let userInfo:NSDictionary = notification.userInfo! as NSDictionary
+        let keyboardFrame:NSValue = userInfo.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        let keyboardHeight = keyboardRectangle.height
+        
+        
+        if editorOpen == false {
+            
+            self.editorView.transform = CGAffineTransform( translationX: 0.0, y: -keyboardHeight)
+            
+            editorOpen = true
+            
+        }
+        
+        
+        
+        // Do something here
+    }
+    
+    func keyboardWillHide(_ notification: NSNotification){
+        // Do something here
+        
+        let userInfo:NSDictionary = notification.userInfo! as NSDictionary
+        let keyboardFrame:NSValue = userInfo.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
+        let keyboardRectangle = keyboardFrame.cgRectValue
+        let keyboardHeight = keyboardRectangle.height
+        
+        
+        if editorOpen == true {
+            
+            self.editorView.transform = CGAffineTransform( translationX: 0.0, y: keyboardHeight)
+            
+            editorOpen = false
+        }
+        
+        
+        print("keyboard gone")
+    }
+
+    
     func animateIn(){
         
         
         //blurView.
         
         
-        
+        editorView.frame = CGRect(x: self.view.bounds.width/2 , y: self.view.bounds.height/2+60, width: self.view.bounds.width-10, height: self.view.bounds.height-60)
         
         self.view.addSubview(editorView)
         editorView.center = self.view.center
         
+        
         editorView.transform = CGAffineTransform.init(scaleX: 0.5, y:0.5)
         
-        NSLayoutConstraint(item: editorView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .topMargin, multiplier: 1.0, constant: 20.0).isActive = true
+       // NSLayoutConstraint(item: editorView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .topMargin, multiplier: 1.0, constant: 20.0).isActive = true
         
-        NSLayoutConstraint(item: editorView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottomMargin, multiplier: 1.0, constant: 20.0).isActive = true
+        //NSLayoutConstraint(item: editorView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottomMargin, multiplier: 1.0, constant: 20.0).isActive = true
         
         
         
@@ -352,19 +413,29 @@ class FootballTableViewController: UITableViewController {
         
         _refHandle = self.ref.child("Sports").child("Football").observe(FIRDataEventType.childChanged, with: { (snapshot) in
             
-            var index: Int!
+            var section: Int!
+            var row: Int!
             
-            for i in 0...self.gamesArray.count-1 {
+            
+            for i in 0...self.games.count-1 {
                 
-                if self.gamesArray[i].childSnapshot(forPath: "game").value as! String == snapshot.childSnapshot(forPath: "game").value as! String {
+                for j in 0...self.games[i].count-1 {
                     
-                    index = i
+                    if (self.games[i][j]["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "game").value as! String == snapshot.childSnapshot(forPath: "game").value as! String {
+                        
+                        section = i
+                        row = j
+                        
+                    }
+
+                    
                 }
+                
                 
             }
         
         
-            let cell = self.tableView.cellForRow(at: IndexPath(row: index, section: 0))
+            let cell = self.tableView.cellForRow(at: IndexPath(row: row, section: section))
             
             let homeTeam = snapshot.childSnapshot(forPath: "homeTeam").value as! String
             
@@ -544,7 +615,16 @@ class FootballTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         editorLabel.text = games[indexPath.section][indexPath.row]["Date"] as? String
+        
+        let snapshot = games[indexPath.section][indexPath.row]["Snapshot"] as? FIRDataSnapshot
+        
+        let game = snapshot?.childSnapshot(forPath: "game").value as? String
+        
+        currentGame = game
+        
         animateIn()
+        
+        tableView.deselectRow(at: indexPath, animated: false)
         
     }
     @IBAction func doneTapped(_ sender: Any) {
@@ -552,6 +632,54 @@ class FootballTableViewController: UITableViewController {
         animateOut()
         
     }
+    
+    @IBAction func changeTapped(_ sender: Any) {
+        
+        if editField.text != ""{
+            
+            ref = FIRDatabase.database().reference()
+            let gameDirec = ref.child("Sports").child("Football").child(currentGame)
+            gameDirec.child("homeTeam").setValue(editField.text)
+            
+            gameDirec.child("homeTeam").setValue(editField.text, withCompletionBlock: { (error, ref) in
+                
+                if error != nil {
+                    
+                    print(error?.localizedDescription ?? "Sorry, your connection didn't work")
+                } else {
+                    
+                    print("success in posting")
+                }
+                
+            })
+            
+            
+            _refHandle = self.ref.child("Sports").child("Football").child(currentGame).observe(FIRDataEventType.value, with: { (snapshot) in
+                
+                let newVal = snapshot.childSnapshot(forPath: "homeTeam").value as! String
+                
+                print("Edited the value to \(newVal)")
+                
+            })
+            
+        
+        
+            editField.text = ""
+                
+                
+            
+            //let newVal = gameDirec.childSnapshot("homeTeam").value as! String
+            
+            
+            
+            
+            //setValue(editField.text)
+            
+            
+        }
+        
+    }
+    
     
     /*open func headerView(forSection section: Int) -> UITableViewHeaderFooterView? {
         
@@ -611,4 +739,16 @@ class FootballTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

@@ -25,6 +25,7 @@ import AlamofireRSSParser
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableContainer: UIView!
     
     @IBOutlet weak var mainTableView: UITableView!
     
@@ -42,6 +43,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
+        tableContainer.layer.cornerRadius = 10
+        
+        mainTableView.layer.cornerRadius = 10
+        
         getRSS()
     
  
@@ -57,43 +62,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func getRSS(){
         
-        /*
-        let url = "http://www.nbpsathletics.org/announcements.rss"
+        _ = "http://www.nbpsathletics.org/organizations/3072/announcements"
         
-        Alamofire.request(url).responseRSS() { (response) -> Void in
-            if let feed: RSSFeed = response.result.value {
-                //do something with your new RSSFeed object!
-                
-                print(feed)
-                for item in feed.items {
-                    print("item\n\n\n",item)
-                }
-            }
-        }*/
-        /*
-        let url = "http://rss.cnn.com/rss/cnn_topstories.rss"
+
         
-        Alamofire.request(url).responseRSS() { (response) -> Void in
-            if let feed: RSSFeed = response.result.value {
-                //do something with your new RSSFeed object!
-                for item in feed.items {
-                    print(item)
-                }
-            }
-        }*/
-        
-        let myURLString = "view-source:www.nbpsathletics.org/organizations/3072/announcements?page=6"
-        guard let myURL = URL(string: myURLString) else {
-            print("Error: \(myURLString) doesn't seem to be a valid URL")
-            return
-        }
-        
-        do {
-            let myHTMLString = try String(contentsOf: myURL, encoding: .ascii)
-            print("HTML : \(myHTMLString)")
-        } catch let error {
-            print("Error: \(error)")
-        }
     }
     
     

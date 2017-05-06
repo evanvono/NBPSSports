@@ -1,19 +1,20 @@
 //
-//  WebViewController.swift
+//  TwitchViewController.swift
 //  NBPS Sports
 //
-//  Created by Evan Von Oehsen on 3/11/17.
+//  Created by Evan Von Oehsen on 5/4/17.
 //  Copyright © 2017 NBPS Athletics. All rights reserved.
 //
 
 import UIKit
 
-class WebViewController: UIViewController, UIWebViewDelegate {
+class TwitchViewController: UIViewController {
 
-    @IBOutlet weak var progressHolder: UIView!
-    @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var progressBar: UIProgressView!
-    @IBOutlet weak var mainView: UIWebView!
+    
+    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
     var loadedBool:Bool = false
     var myTimer: Timer!
     var barTimer:Timer!
@@ -30,7 +31,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         }
         
         
-
+        
         
         
         // Do any additional setup after loading the view.
@@ -38,11 +39,11 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
         
         
-        loadWebView(request: URLRequest(url: URL(string: "http://www.twitter.com/nbpsathletics")!))
+        loadWebView(request: URLRequest(url: URL(string: "https://m.twitch.tv/brainwashsports")!))
         
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -50,7 +51,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     func loadWebView(request: URLRequest) {
         
         
-        mainView.loadRequest(request)
+        webView.loadRequest(request)
         //progressBar.isHidden = true
     }
     
@@ -62,8 +63,8 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         
     }
     func webViewDidStartLoad(_ webView: UIWebView) {
-        progressBar.alpha = 1
         progressBar.progress = 0
+        progressBar.alpha = 1
         progressBar.isHidden = false
         progressBar.setProgress(0.01, animated: true)
         loadedBool = false
@@ -74,7 +75,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         loadedBool = true
         progressBar.setProgress(1, animated: true)
         myTimer.invalidate()
-        let timer:Timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (Timer) in
+        let _:Timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (Timer) in
             
             
             self.fadeBar()
@@ -90,7 +91,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         
         
         
-    
+        
     }
     func alphaFade () {
         if progressBar.alpha > 0 {
@@ -103,9 +104,6 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         
         
     }
-    
-    
-    
 
     /*
     // MARK: - Navigation
