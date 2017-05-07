@@ -13,11 +13,12 @@ import Timepiece
 import Social
 
 
-class FootballTableViewController: UITableViewController, UITextFieldDelegate {
+class FootballTableViewController: UITableViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var editField: UITextField!
     @IBOutlet weak var editorLabel: UILabel!
     @IBOutlet var editorView: UIView!
+    @IBOutlet weak var picker: UIPickerView!
     
     var blurEffect: UIBlurEffect!
     var blurEffectView: UIVisualEffectView!
@@ -32,6 +33,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var editorOpen:Bool!
+    
+    var pickerComponents = [Dictionary<String,String>]()
     
     
  //   var games: [[Dictionary<String,String>]]?
@@ -60,6 +63,9 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate {
         
         editorOpen = false
         
+        fillPicker()
+        
+        picker.reloadComponent(0)
         
         
         if self.revealViewController() != nil {
@@ -90,6 +96,16 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate {
             print("removed _refHandle")
             
         }
+    }
+    
+    func fillPicker(){
+        
+        pickerComponents.append(["Title":"Home Team", "Value":"homeTeam"])
+        pickerComponents.append(["Title":"Away Team", "Value":"awayTeam"])
+        pickerComponents.append(["Title":"Home Score", "Value":"homeScore"])
+        pickerComponents.append(["Title":"Away Score", "Value":"awayScore"])
+        pickerComponents.append(["Title":"Date", "Value":"date"])
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -141,7 +157,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate {
         
         if editorOpen == true {
             
-            self.editorView.transform = CGAffineTransform( translationX: 0.0, y: keyboardHeight)
+            self.editorView.transform = CGAffineTransform( translationX: 0.0, y: 0.0)
             
             editorOpen = false
         }
@@ -157,13 +173,13 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate {
         //blurView.
         
         
-        editorView.frame = CGRect(x: self.view.bounds.width/2 , y: self.view.bounds.height/2+60, width: self.view.bounds.width-10, height: self.view.bounds.height-60)
+        editorView.frame = CGRect(x: self.view.bounds.width/2 , y: self.view.bounds.height/2+60, width: self.view.bounds.width-30, height: self.view.bounds.height-300)
         
         self.view.addSubview(editorView)
         editorView.center = self.view.center
         
         
-        editorView.transform = CGAffineTransform.init(scaleX: 0.5, y:0.5)
+        editorView.transform = CGAffineTransform.init(scaleX: 0.6, y:0.6)
         
        // NSLayoutConstraint(item: editorView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .topMargin, multiplier: 1.0, constant: 20.0).isActive = true
         
@@ -196,9 +212,13 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate {
     }
     func animateOut(){
         
+        
+        
+        
         UIView.animate(withDuration: 0.2, animations: {
             
             self.editorView.transform = CGAffineTransform.init(scaleX: 1.3, y:1.3)
+            
             self.editorView.alpha = 0
             
             self.blurEffectView.effect = nil
@@ -212,8 +232,17 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate {
             self.editorView.removeFromSuperview()
             self.blurEffectView.removeFromSuperview()
 
-            
+            self.editorView.transform = CGAffineTransform.init(scaleX: 1, y:1)
+
         }
+        
+        
+        
+         
+        
+        
+        
+        
         
         
     }
@@ -439,19 +468,20 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate {
             
             let homeTeam = snapshot.childSnapshot(forPath: "homeTeam").value as! String
             
-            let awayTeam = snapshot.childSnapshot(forPath: "awayTeam").value as? String
+            let awayTeam = snapshot.childSnapshot(forPath: "awayTeam").value as! String
             
-            let homeScore = snapshot.childSnapshot(forPath: "homeScore").value as? String
+            let homeScore = snapshot.childSnapshot(forPath: "homeScore").value as! Int
             
-            let awayScore = snapshot.childSnapshot(forPath: "awayScore").value as? String
+            let awayScore = snapshot.childSnapshot(forPath: "awayScore").value as! Int
             
             
             (cell?.contentView.viewWithTag(3) as! UILabel).text = homeTeam
             
             (cell?.contentView.viewWithTag(4) as! UILabel).text = awayTeam
             
-            (cell?.contentView.viewWithTag(1) as! UILabel).text = homeScore
-            (cell?.contentView.viewWithTag(2) as! UILabel).text = awayScore
+            (cell?.contentView.viewWithTag(1) as! UILabel).text = String(homeScore)
+            (cell?.contentView.viewWithTag(2) as! UILabel).text = String(awayScore)
+            
             
             
             
@@ -677,6 +707,40 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate {
             
             
         }
+        
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        return 1
+        
+    }
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        
+        return pickerComponents.count
+    }
+    
+    // Delegate
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        var title = ""
+        
+        if pickerComponents.count != 0 {
+            
+            
+                
+            title = pickerComponents[row]["Title"]!
+                
+            
+            
+            
+        }
+        
+        return title
+    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
     }
     

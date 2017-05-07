@@ -578,6 +578,7 @@ to apply, email john@nbps
                         <outlet property="editorLabel" destination="DCS-KW-ko2" id="1EN-Gb-Di8"/>
                         <outlet property="editorView" destination="izN-xe-qPu" id="Yo9-aB-S8x"/>
                         <outlet property="menuButton" destination="oaq-vL-wrs" id="ftk-jz-g2X"/>
+                        <outlet property="picker" destination="T7Y-in-a3S" id="Rrv-nx-Txb"/>
                         <outlet property="spinner" destination="dhN-Ml-xG8" id="IQI-WG-nsB"/>
                     </connections>
                 </tableViewController>
@@ -630,12 +631,25 @@ to apply, email john@nbps
                                 <outlet property="delegate" destination="kub-1r-Cjn" id="mtK-eb-fGe"/>
                             </connections>
                         </textField>
+                        <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T7Y-in-a3S">
+                            <rect key="frame" x="43" y="26" width="215" height="150"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="215" id="2G0-1r-R8q"/>
+                                <constraint firstAttribute="height" constant="150" id="jb9-Av-zIw"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="dataSource" destination="kub-1r-Cjn" id="aac-xO-2UH"/>
+                                <outlet property="delegate" destination="kub-1r-Cjn" id="A7O-op-9Un"/>
+                            </connections>
+                        </pickerView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="0.9019505033557047" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="D1Z-mL-kmI" firstAttribute="top" secondItem="aVJ-0I-SYy" secondAttribute="bottom" constant="8" id="CMB-Wu-7df"/>
+                        <constraint firstItem="T7Y-in-a3S" firstAttribute="centerX" secondItem="izN-xe-qPu" secondAttribute="centerX" id="DkH-b7-Lw3"/>
                         <constraint firstItem="wvU-jt-hgc" firstAttribute="top" secondItem="D1Z-mL-kmI" secondAttribute="bottom" constant="8" id="EBX-AZ-OqS"/>
                         <constraint firstItem="wvU-jt-hgc" firstAttribute="centerX" secondItem="izN-xe-qPu" secondAttribute="centerX" id="GOV-9q-Ntq"/>
+                        <constraint firstItem="aVJ-0I-SYy" firstAttribute="top" secondItem="T7Y-in-a3S" secondAttribute="bottom" constant="8" id="K61-DM-PZM"/>
                         <constraint firstAttribute="bottom" secondItem="wvU-jt-hgc" secondAttribute="bottom" constant="10" id="M8N-6t-f7u"/>
                         <constraint firstItem="DCS-KW-ko2" firstAttribute="top" secondItem="izN-xe-qPu" secondAttribute="top" id="UDD-2S-UNx"/>
                         <constraint firstItem="D1Z-mL-kmI" firstAttribute="centerX" secondItem="izN-xe-qPu" secondAttribute="centerX" id="bad-7P-X7m"/>
