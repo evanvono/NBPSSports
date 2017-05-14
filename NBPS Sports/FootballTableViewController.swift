@@ -20,6 +20,18 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     @IBOutlet var editorView: UIView!
     @IBOutlet weak var picker: UIPickerView!
     
+    @IBOutlet weak var homeLabel: UILabel!
+    @IBOutlet weak var awayLabel: UILabel!
+    @IBOutlet weak var homeScoreLabel: UILabel!
+    @IBOutlet weak var awayScoreLabel: UILabel!
+    
+    @IBOutlet weak var homeScoreStepper: UIStepper!
+    @IBOutlet weak var awayScoreStepper: UIStepper!
+    
+    
+    var homeScoreVal: Int!
+    var awayScoreVal: Int!
+    
     var blurEffect: UIBlurEffect!
     var blurEffectView: UIVisualEffectView!
     
@@ -35,6 +47,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     var editorOpen:Bool!
     
     var pickerComponents = [Dictionary<String,String>]()
+    
+    var pickerSelection = 0
     
     
  //   var games: [[Dictionary<String,String>]]?
@@ -76,6 +90,13 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
             
         }
+        
+        homeScoreStepper.minimumValue = 0
+        awayScoreStepper.minimumValue = 0
+        homeScoreStepper.maximumValue = 200
+        awayScoreStepper.maximumValue = 200
+        
+        
         
         getNewData()
         
@@ -141,13 +162,9 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
         }
         
-        
-        
-        // Do something here
     }
     
     func keyboardWillHide(_ notification: NSNotification){
-        // Do something here
         
         let userInfo:NSDictionary = notification.userInfo! as NSDictionary
         let keyboardFrame:NSValue = userInfo.value(forKey: UIKeyboardFrameEndUserInfoKey) as! NSValue
@@ -470,24 +487,17 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
             let awayTeam = snapshot.childSnapshot(forPath: "awayTeam").value as! String
             
-            let homeScore = snapshot.childSnapshot(forPath: "homeScore").value as! Int
+            let homeScore = snapshot.childSnapshot(forPath: "homeScore").value as! String
             
-            let awayScore = snapshot.childSnapshot(forPath: "awayScore").value as! Int
+            let awayScore = snapshot.childSnapshot(forPath: "awayScore").value as! String
             
             
             (cell?.contentView.viewWithTag(3) as! UILabel).text = homeTeam
             
             (cell?.contentView.viewWithTag(4) as! UILabel).text = awayTeam
             
-            (cell?.contentView.viewWithTag(1) as! UILabel).text = String(homeScore)
-            (cell?.contentView.viewWithTag(2) as! UILabel).text = String(awayScore)
-            
-            
-            
-            
-            
-            
-            
+            (cell?.contentView.viewWithTag(1) as! UILabel).text = homeScore
+            (cell?.contentView.viewWithTag(2) as! UILabel).text = homeScore
             
             
         })
@@ -652,6 +662,36 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         currentGame = game
         
+        homeScoreVal = Int((snapshot?.childSnapshot(forPath: "homeScore").value as? String)!)
+        
+        awayScoreVal = Int((snapshot?.childSnapshot(forPath: "awayScore").value as? String)!)
+
+            
+        let homeTeamStr = snapshot?.childSnapshot(forPath: "homeTeam").value as! String
+        
+        homeLabel.text = "Away"
+            
+        let awayTeamStr = snapshot?.childSnapshot(forPath: "awayTeam").value as! String
+        
+        awayLabel.text = "Away"
+        
+        let homeVal = snapshot?.childSnapshot(forPath: "homeScore").value as? String
+        
+        let awayVal = snapshot?.childSnapshot(forPath: "awayScore").value as? String
+        
+        homeScoreLabel.text = homeVal
+        awayScoreLabel.text = awayVal
+        
+        
+
+        homeScoreStepper.value = Double(Int(homeVal!)!)
+        
+        
+        
+        awayScoreStepper.value = Double(Int(awayVal!)!)
+        
+        editorLabel.text = "\(homeTeamStr) vs \(awayTeamStr)"
+        
         animateIn()
         
         tableView.deselectRow(at: indexPath, animated: false)
@@ -667,11 +707,14 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         if editField.text != ""{
             
+            let path = pickerComponents[pickerSelection]["Value"]
+            
+            
             ref = FIRDatabase.database().reference()
             let gameDirec = ref.child("Sports").child("Football").child(currentGame)
-            gameDirec.child("homeTeam").setValue(editField.text)
+            gameDirec.child(path!).setValue(editField.text)
             
-            gameDirec.child("homeTeam").setValue(editField.text, withCompletionBlock: { (error, ref) in
+            gameDirec.child(path!).setValue(editField.text, withCompletionBlock: { (error, ref) in
                 
                 if error != nil {
                     
@@ -683,30 +726,75 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                 
             })
             
+            var homeTeam = ""
+            var awayTeam = ""
+            
             
             _refHandle = self.ref.child("Sports").child("Football").child(currentGame).observe(FIRDataEventType.value, with: { (snapshot) in
                 
-                let newVal = snapshot.childSnapshot(forPath: "homeTeam").value as! String
+                let newVal = snapshot.childSnapshot(forPath: path!).value as! String
                 
                 print("Edited the value to \(newVal)")
                 
+                homeTeam = snapshot.childSnapshot(forPath: "homeTeam").value as! String
+                awayTeam = snapshot.childSnapshot(forPath: "awayTeam").value as! String
+                
+                self.editorLabel.text = "\(homeTeam) vs \(awayTeam)"
+                
+                
+                
+                let homeScore = Double(snapshot.childSnapshot(forPath: "homeScore").value as! String)
+                let awayScore = Double(snapshot.childSnapshot(forPath: "awayScore").value as! String)
+                
+                if self.homeScoreStepper.value != homeScore {
+                    
+                    let gameDirec = self.ref.child("Sports").child("Football").child(self.currentGame)
+                    gameDirec.child("homeScore").setValue(String(self.homeScoreStepper.value))
+                    
+                    self.homeScoreVal = Int(self.homeScoreStepper.value)
+                    
+                    
+                }
+                if self.awayScoreStepper.value != awayScore{
+                    
+                    let gameDirec = self.ref.child("Sports").child("Football").child(self.currentGame)
+                    gameDirec.child("awayScore").setValue(String(self.homeScoreStepper.value))
+                    
+                    self.awayScoreVal = Int(self.awayScoreStepper.value)
+                    
+                    
+                }
+                
+                
             })
             
-        
+            
         
             editField.text = ""
-                
-                
-            
-            //let newVal = gameDirec.childSnapshot("homeTeam").value as! String
-            
-            
-            
-            
-            //setValue(editField.text)
             
             
         }
+        if Double(homeScoreVal) != homeScoreStepper.value {
+            
+            ref = FIRDatabase.database().reference()
+            let gameDirec = ref.child("Sports").child("Football").child(currentGame)
+            gameDirec.child("homeScore").setValue(String(Int(homeScoreStepper.value)))
+            
+            homeScoreVal = Int(homeScoreStepper.value)
+            
+        }
+        if Double(awayScoreVal) != awayScoreStepper.value {
+            
+            ref = FIRDatabase.database().reference()
+            let gameDirec = ref.child("Sports").child("Football").child(currentGame)
+            gameDirec.child("awayScore").setValue(String(Int(awayScoreStepper.value)))
+            
+            awayScoreVal = Int(awayScoreStepper.value)
+            
+        }
+
+        
+        
         
     }
     
@@ -742,9 +830,29 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
+        pickerSelection = row
+        
     }
     
+    @IBAction func awayStepperChanged(_ sender: UIStepper) {
+        awayScoreLabel.text = Int(sender.value).description
+        
+        
+    }
     
+    @IBAction func homeStepperChanged(_ sender: UIStepper) {
+        homeScoreLabel.text = Int(sender.value).description
+        
+        
+        
+    }
+    
+    func greenText(label: UILabel){
+        
+        label.textColor = UIColor.green
+        
+        
+    }
     /*open func headerView(forSection section: Int) -> UITableViewHeaderFooterView? {
         
         let header = tableView.dequeueReusableCell(withIdentifier: "header") as! UITableViewHeaderFooterView
