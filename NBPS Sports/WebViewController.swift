@@ -10,6 +10,8 @@ import UIKit
 
 class WebViewController: UIViewController, UIWebViewDelegate {
 
+    @IBOutlet weak var backButton: UIBarButtonItem!
+    @IBOutlet weak var forwardButton: UIBarButtonItem!
     @IBOutlet weak var progressHolder: UIView!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var progressBar: UIProgressView!
@@ -29,6 +31,10 @@ class WebViewController: UIViewController, UIWebViewDelegate {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
+        backButton.tintColor = self.view.tintColor.withAlphaComponent(0.5)
+        forwardButton.tintColor = self.view.tintColor.withAlphaComponent(0.5)
+        
+        //backButton.tintColor = UIColor() 007AFF , AEEBFF (dark, light)
         
 
         
@@ -54,6 +60,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         //progressBar.isHidden = true
     }
     
+    
     func timerCallback(){
         
         if progressBar.progress < 0.4 {
@@ -69,6 +76,24 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         loadedBool = false
         myTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(WebViewController.timerCallback), userInfo: nil, repeats: true)
         
+        
+        if mainView.canGoBack{
+            
+            backButton.tintColor = self.view.tintColor.withAlphaComponent(1)
+            
+        } else {
+            
+            backButton.tintColor = self.view.tintColor.withAlphaComponent(0.5)
+        }
+        if mainView.canGoForward{
+            
+            forwardButton.tintColor = self.view.tintColor.withAlphaComponent(1)
+        } else {
+            forwardButton.tintColor = self.view.tintColor.withAlphaComponent(0.5)
+            
+        }
+
+        
     }
     func webViewDidFinishLoad(_ webView: UIWebView) {
         loadedBool = true
@@ -81,7 +106,8 @@ class WebViewController: UIViewController, UIWebViewDelegate {
             
             
         }
-        //progressBar.isHidden = true
+        
+                //progressBar.isHidden = true
     }
     
     func fadeBar() {
@@ -104,7 +130,23 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         
     }
     
+    @IBAction func tappedBack(_ sender: Any) {
+        
+        if mainView.canGoBack{
+            
+            mainView.goBack()
+        }
+    }
     
+    @IBAction func tappedForward(_ sender: Any) {
+        
+        if mainView.canGoForward{
+            
+            mainView.goForward()
+        }
+        
+        
+    }
     
 
     /*

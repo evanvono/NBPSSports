@@ -28,9 +28,14 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     @IBOutlet weak var homeScoreStepper: UIStepper!
     @IBOutlet weak var awayScoreStepper: UIStepper!
     
+    @IBOutlet weak var gameDatePicker: UIDatePicker!
+    @IBOutlet weak var headerView: UIView!
     
     var homeScoreVal: Int!
     var awayScoreVal: Int!
+    var gameDateVal: Date!
+    
+    var selectedPath = [Int]()
     
     var blurEffect: UIBlurEffect!
     var blurEffectView: UIVisualEffectView!
@@ -81,6 +86,9 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         picker.reloadComponent(0)
         
+        navigationController?.hidesBarsOnSwipe = true
+        
+        
         
         if self.revealViewController() != nil {
             print("not nil")
@@ -123,9 +131,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         pickerComponents.append(["Title":"Home Team", "Value":"homeTeam"])
         pickerComponents.append(["Title":"Away Team", "Value":"awayTeam"])
-        pickerComponents.append(["Title":"Home Score", "Value":"homeScore"])
-        pickerComponents.append(["Title":"Away Score", "Value":"awayScore"])
-        pickerComponents.append(["Title":"Date", "Value":"date"])
+        
+        //pickerComponents.append(["Title":"Date", "Value":"date"])
         
     }
     
@@ -186,14 +193,18 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     
     func animateIn(){
         
+        self.navigationController?.navigationBar.isHidden = true
         
+        navigationController?.hidesBarsOnSwipe = false
         //blurView.
         
         
         editorView.frame = CGRect(x: self.view.bounds.width/2 , y: self.view.bounds.height/2+60, width: self.view.bounds.width-30, height: self.view.bounds.height-300)
         
         self.view.addSubview(editorView)
-        editorView.center = self.view.center
+        editorView.center = CGPoint(x: self.view.center.x, y: self.view.center.y - 20)
+            
+            //self.view.center
         
         
         editorView.transform = CGAffineTransform.init(scaleX: 0.6, y:0.6)
@@ -211,10 +222,11 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         self.blurEffectView = UIVisualEffectView(effect: self.blurEffect)
         self.blurEffectView.frame = self.view.bounds
         self.blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.view.insertSubview(self.blurEffectView, at: 6)
-        self.blurEffectView.isUserInteractionEnabled = true
+        self.view.insertSubview(self.blurEffectView, at: self.view.subviews.count - 2)
+        
         self.tableView.isScrollEnabled = false
 
+        self.blurEffectView.isUserInteractionEnabled = true
         UIView.animate(withDuration: 0.4) {
             
             
@@ -229,9 +241,9 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     }
     func animateOut(){
         
+        self.blurEffectView.isUserInteractionEnabled = false
         
-        
-        
+        self.navigationController?.navigationBar.isHidden = false
         UIView.animate(withDuration: 0.2, animations: {
             
             self.editorView.transform = CGAffineTransform.init(scaleX: 1.3, y:1.3)
@@ -240,7 +252,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
             self.blurEffectView.effect = nil
             
-            self.blurEffectView.isUserInteractionEnabled = true
+            
             
             self.tableView.isScrollEnabled = true
             
@@ -250,18 +262,9 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             self.blurEffectView.removeFromSuperview()
 
             self.editorView.transform = CGAffineTransform.init(scaleX: 1, y:1)
-
+        
         }
-        
-        
-        
-         
-        
-        
-        
-        
-        
-        
+        navigationController?.hidesBarsOnSwipe = true
     }
     
     
@@ -472,6 +475,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                         section = i
                         row = j
                         
+                        
+                        self.games[section][row]["snapshot"] = snapshot
                     }
 
                     
@@ -497,7 +502,9 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             (cell?.contentView.viewWithTag(4) as! UILabel).text = awayTeam
             
             (cell?.contentView.viewWithTag(1) as! UILabel).text = homeScore
-            (cell?.contentView.viewWithTag(2) as! UILabel).text = homeScore
+            (cell?.contentView.viewWithTag(2) as! UILabel).text = awayScore
+            
+            
             
             
         })
@@ -567,6 +574,26 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         (cell.contentView.viewWithTag(2) as! UILabel).text = awayScore
         
         
+        (cell.contentView.viewWithTag(7) as! UILabel).text = "Final"
+        
+        if (Int(homeScore!)! > Int(awayScore!)!){
+            
+            (cell.contentView.viewWithTag(5) as! UIImageView).image = UIImage(named: "triangleLeft")
+            
+            (cell.contentView.viewWithTag(4) as! UILabel).textColor = UIColor.lightGray
+            
+            (cell.contentView.viewWithTag(2) as! UILabel).textColor = UIColor.lightGray
+
+            
+        } else if (Int(awayScore!)! > Int(homeScore!)!){
+            
+            (cell.contentView.viewWithTag(6) as! UIImageView).image = UIImage(named: "triangleLeft")
+            (cell.contentView.viewWithTag(3) as! UILabel).textColor = UIColor.lightGray
+            
+            (cell.contentView.viewWithTag(1) as! UILabel).textColor = UIColor.lightGray
+        }
+        
+        
         print(homeTeam! + "\n" + awayTeam! + "\n")
         /*(cell.contentView.viewWithTag(3) as! UILabel).text = games?[section][row]["homeTeam"]
         
@@ -590,7 +617,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
       /*
         headerView = dequeueReusableHeaderFooterView(withIdentifier: "Hi")
      */
-        
+        /*
         let view = UIView()
         view.backgroundColor = UIColor.lightText
         
@@ -613,14 +640,14 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         label.text = text
         
         view.addSubview(label)
-        
+        */
         
         
         
         //(dateHeader.viewWithTag(1) as! UILabel).text = "Friday mar \(section)"
         
-        
-        return view
+        let headerView = self.headerView
+        return headerView
     }
     
     
@@ -654,6 +681,13 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+      /*  ref.child("Football").child(games[indexPath.section][indexPath.row]["Snapshot"]).observe(.value, with: { (snapshot) in
+            
+            
+        })*/
+        
+        selectedPath = [indexPath.section, indexPath.row]
+        
         editorLabel.text = games[indexPath.section][indexPath.row]["Date"] as? String
         
         let snapshot = games[indexPath.section][indexPath.row]["Snapshot"] as? FIRDataSnapshot
@@ -669,7 +703,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
         let homeTeamStr = snapshot?.childSnapshot(forPath: "homeTeam").value as! String
         
-        homeLabel.text = "Away"
+        homeLabel.text = "Home"
             
         let awayTeamStr = snapshot?.childSnapshot(forPath: "awayTeam").value as! String
         
@@ -691,8 +725,14 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         awayScoreStepper.value = Double(Int(awayVal!)!)
         
         editorLabel.text = "\(homeTeamStr) vs \(awayTeamStr)"
-        
-        animateIn()
+        if AppState.sharedInstance.signedIn {
+            
+            animateIn()
+
+        } else {
+            
+            animateIn()
+        }
         
         tableView.deselectRow(at: indexPath, animated: false)
         
@@ -745,7 +785,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                 
                 let homeScore = Double(snapshot.childSnapshot(forPath: "homeScore").value as! String)
                 let awayScore = Double(snapshot.childSnapshot(forPath: "awayScore").value as! String)
-                
+                /*
                 if self.homeScoreStepper.value != homeScore {
                     
                     let gameDirec = self.ref.child("Sports").child("Football").child(self.currentGame)
@@ -753,18 +793,20 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                     
                     self.homeScoreVal = Int(self.homeScoreStepper.value)
                     
+
+                    
                     
                 }
                 if self.awayScoreStepper.value != awayScore{
                     
                     let gameDirec = self.ref.child("Sports").child("Football").child(self.currentGame)
-                    gameDirec.child("awayScore").setValue(String(self.homeScoreStepper.value))
+                    gameDirec.child("awayScore").setValue(String(self.awayScoreStepper.value))
                     
                     self.awayScoreVal = Int(self.awayScoreStepper.value)
                     
                     
                 }
-                
+                */
                 
             })
             
@@ -781,6 +823,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             gameDirec.child("homeScore").setValue(String(Int(homeScoreStepper.value)))
             
             homeScoreVal = Int(homeScoreStepper.value)
+            homeScoreLabel.text = String(Int(homeScoreStepper.value))
             
         }
         if Double(awayScoreVal) != awayScoreStepper.value {
@@ -791,8 +834,16 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
             awayScoreVal = Int(awayScoreStepper.value)
             
+            awayScoreLabel.text = String(Int(awayScoreStepper.value))
         }
-
+        
+      /*  if (Date(year: year, month: month, day: day) != games[selectedPath[0]][selectedPath[1]]["Date"] as! Date) {
+            
+            print("new date")
+            
+        }
+        */
+        
         
         
         
@@ -910,6 +961,11 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func setNavigationBarHidden(_ hidden: Bool, animated: Bool) {
+        
+        print("hid nav bar")
+    }
 
 }
 

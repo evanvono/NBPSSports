@@ -16,8 +16,7 @@
  *
  */
 import UIKit
-//import FirebaseAuth
-//import FirebaseDatabase
+import Firebase
 import Social
 import Alamofire
 import AlamofireRSSParser
@@ -25,10 +24,17 @@ import AlamofireRSSParser
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIWebViewDelegate {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    
+    @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet var detailNavBar: UINavigationBar!
     @IBOutlet weak var tableContainer: UIView!
     @IBOutlet weak var mainTableView: UITableView!
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var logoutButton: UIBarButtonItem!
     
+    @IBOutlet weak var activity: UIActivityIndicatorView!
     @IBOutlet weak var detailWebView: UIWebView!
     
     @IBOutlet var detailContainer: UIView!
@@ -45,38 +51,81 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
         if self.revealViewController() != nil {
-            print("not nil")
+            //print("not nil")
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
+            
         }
         
+        activity.isHidden = false
+        activity.startAnimating()
+       
+        let name = AppState.sharedInstance.displayName
+        
+        if AppState.sharedInstance.signedIn == true {
+            
+            userLabel.text = "Welcome back, \(name)"
+            logoutButton.tintColor = self.view.tintColor
+            
+        } else {
+            
+            userLabel.text = ""
+            logoutButton.tintColor = UIColor.clear
+            
+            
+        }
         tableContainer.layer.cornerRadius = 10
         
         mainTableView.layer.cornerRadius = 10
         
-        getRSS()
+        
+        getRSS(urlStr: "http://www.nbpsathletics.org/organizations/3072/announcements")
+        
+        getRSS(urlStr: "http://www.nbpsathletics.org/organizations/3072/announcements?page=2")
+        
+        //detailWebView.loadRequest(URLRequest(url: URL(string: "www.google.com")!))
+        
     
         detailContainer.layer.cornerRadius = 10
+        
+        setUpBlurView()
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    
+    func setUpBlurView(){
+        
+        self.blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        
+        self.blurEffectView = UIVisualEffectView(effect: self.blurEffect)
+        self.blurEffectView.frame = self.view.bounds
+        self.blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        self.view.addSubview(self.blurEffectView)
+        
+        
+        self.blurEffectView.isUserInteractionEnabled = true
+        
+        self.blurEffectView.alpha = 0
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func getRSS(){
+    func getRSS(urlStr: String){
         
         
-        let url = NSURL(string: "http://www.nbpsathletics.org/organizations/3072/announcements")
-        _ = NSURL(string: "http://www.nbpsathletics.org/organizations/3072/announcements?page=2")
+        let url = NSURL(string: urlStr)
 
         let task = URLSession.shared.dataTask(with: url as! URL) { (data, response, error) in
             
             if error == nil {
-                print("\n\n\nGettting data for web\n\n\n")
+                //print("\n\n\nGettting data for web\n\n\n")
                 
                 let urlContent = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                 
@@ -113,7 +162,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         
                         self.urlArr.append( ("www.nbpsathletics.org" + i.components(separatedBy: "\">")[0]))
                         
-                        print(self.urlArr)
+                        //print(self.urlArr)
                     }
                 }
                 
@@ -130,6 +179,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         self.titles.append(str)
 
                     }
+                }
+                while self.titles.count % 5 != 0 {
+                    
+                    self.titles.append(" ")
                 }
                 
                 DispatchQueue.main.async {
@@ -149,9 +202,44 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
     }
+    /*
+     do{
+     try FIRAuth.auth()?.signOut()
+     self.performSegueWithIdentifier("logoutSegue", sender: self)
+     }catch{
+     print("Error while signing out!")
+     }
+ 
+     try! FIRAuth.auth()!.signOut()
+     if let storyboard = self.storyboard {
+     let vc = storyboard.instantiateViewControllerWithIdentifier("firstNavigationController") as! UINavigationController
+     self.presentViewController(vc, animated: false, completion: nil)
+     }
+ 
+ */
+    @IBAction func didTapLogout(_ sender: Any) {
+        
+        if AppState.sharedInstance.signedIn == true {
+            
+                        
+            
+            AppState.sharedInstance.signedIn = false
+            
+            do{
+                try! FIRAuth.auth()!.signOut()
+                
+            } catch{
+                
+                print("Error while signing out!")
+            }
+
+            
+            let vc = storyboard?.instantiateViewController(withIdentifier: "Base") as! UIViewController
+            self.present(vc, animated: true, completion: nil)
+        }
+    }
     
-    
-    func animateIn(){
+    func animateIn(url:String){
         
         
         //blurView.
@@ -172,15 +260,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         detailContainer.alpha = 0
-        
-        self.blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
-        
-        self.blurEffectView = UIVisualEffectView(effect: self.blurEffect)
-        self.blurEffectView.frame = self.view.bounds
-        self.blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.view.insertSubview(self.blurEffectView, at: self.view.subviews.count - 2)
-        self.blurEffectView.isUserInteractionEnabled = true
         self.mainTableView.isScrollEnabled = false
+        
         
         UIView.animate(withDuration: 0.4) {
             
@@ -193,11 +274,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
         }
         
+        self.blurEffectView.alpha = 1
+        
+        
+        print("URL: \(url)")
+        
+        
+        
+        //detailWebView.loadRequest(URLRequest(url: URL(string: "www.google.com")!))
     }
     func animateOut(){
         
         
-        
+        self.blurEffectView.alpha = 0
         
         UIView.animate(withDuration: 0.2, animations: {
             
@@ -205,16 +294,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             self.detailContainer.alpha = 0
             
-            self.blurEffectView.effect = nil
             
-            self.blurEffectView.isUserInteractionEnabled = true
-            
-            self.mainTableView.isScrollEnabled = true
             
         }) { (success:Bool) in
             
             self.detailContainer.removeFromSuperview()
-            self.blurEffectView.removeFromSuperview()
+            
             
             self.detailContainer.transform = CGAffineTransform.init(scaleX: 1, y:1)
             
@@ -228,38 +313,68 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         
+        
+        
       //  cell.textLabel?.text = descriptions[indexPath.row]
         (cell.contentView.viewWithTag(1) as! UITextView).text = descriptions[indexPath.row]
         (cell.contentView.viewWithTag(2) as! UILabel).text = titles[indexPath.row]
         
+        print("Titles: \(titles.count)\nDescriptions: \(descriptions.count)")
+        
+        if  descriptions.count > 9 {
+            
+            activity.stopAnimating()
+            
+        }
         return cell
     }
     
-    open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 
         return CGFloat(120)
     }
     
-    open  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return descriptions.count
     }
     
-    open func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    open func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print("selected \(indexPath.section),\(indexPath.row)")
+        animateIn(url: urlArr[indexPath.row])
         
         
-        animateIn()
         
         detailWebView.loadRequest(URLRequest(url: URL(string: urlArr[indexPath.row])!))
         
-        print(indexPath)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+ //       detailWebView.loadRequest(URLRequest(url: URL(string: urlArr[indexPath.row])!))
+        //detailWebView.loadRequest(URLRequest(url: URL(string: "www.nbpsathletics.org")!))
+     
+        //print(indexPath)
+        
+        //mainTableView.deselectRow(at: indexPath, animated: false)
+
     }
     override var prefersStatusBarHidden: Bool {
         return false
     }
+    
+    open func webViewDidStartLoad(_ webView: UIWebView) {
+        activityIndicator.startAnimating()
+        print("loading")
+    }
+    
+    open func webViewDidFinishLoad(_ webView: UIWebView) {
+        activityIndicator.stopAnimating()
+    }
+    
+    
 
     @IBAction func tappedDone(_ sender: Any) {
         
