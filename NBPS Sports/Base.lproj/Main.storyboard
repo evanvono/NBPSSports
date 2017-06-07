@@ -200,7 +200,7 @@ to apply, email john@nbps
                         <sections>
                             <tableViewSection id="DH0-i4-Zko">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="top" rowHeight="110" id="yb3-u7-WDV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="top" rowHeight="110" id="yb3-u7-WDV">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yb3-u7-WDV" id="TPC-sI-tib">
@@ -226,7 +226,7 @@ to apply, email john@nbps
                             </tableViewSection>
                             <tableViewSection id="8ar-AH-Aaq">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="6PB-aZ-sH9">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="6PB-aZ-sH9">
                                         <rect key="frame" x="0.0" y="110" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6PB-aZ-sH9" id="fpP-9V-86k">
@@ -254,7 +254,7 @@ to apply, email john@nbps
                                             <segue destination="QYz-Uq-ypw" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="V9m-hl-6bs"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="pRs-d6-ey2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="pRs-d6-ey2">
                                         <rect key="frame" x="0.0" y="154" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pRs-d6-ey2" id="FZg-R7-m78">
@@ -282,7 +282,7 @@ to apply, email john@nbps
                                             <segue destination="rbd-Od-w6C" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="G66-9y-DmG"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="mbb-4h-9pt">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="mbb-4h-9pt">
                                         <rect key="frame" x="0.0" y="198" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mbb-4h-9pt" id="qaZ-oW-A5i">
@@ -310,7 +310,7 @@ to apply, email john@nbps
                                             <segue destination="FGf-Yu-Gfw" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="vfw-ot-cm1"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="om5-41-LNE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="om5-41-LNE">
                                         <rect key="frame" x="0.0" y="242" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="om5-41-LNE" id="QWg-YJ-olv">
@@ -335,7 +335,7 @@ to apply, email john@nbps
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="kah-zh-Ryc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="kah-zh-Ryc">
                                         <rect key="frame" x="0.0" y="286" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kah-zh-Ryc" id="A0d-gU-PyY">
@@ -363,7 +363,7 @@ to apply, email john@nbps
                                             <segue destination="YqR-T6-v2m" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="4hx-oA-5OJ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="2Ev-3D-TIF">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="2Ev-3D-TIF">
                                         <rect key="frame" x="0.0" y="330" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Ev-3D-TIF" id="ZWf-h1-pam">
@@ -388,7 +388,7 @@ to apply, email john@nbps
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="lgU-gt-YMc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="lgU-gt-YMc">
                                         <rect key="frame" x="0.0" y="374" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lgU-gt-YMc" id="vJA-CZ-Zgt">
@@ -439,26 +439,6 @@ to apply, email john@nbps
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="15" minY="0.0" maxX="19" maxY="0.0"/>
                         <color key="sectionIndexColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <view key="tableFooterView" tag="2" contentMode="scaleToFill" id="uKy-ZC-T4k">
-                            <rect key="frame" x="0.0" y="89" width="375" height="28"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Thu March 27" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WCS-8l-ev8">
-                                    <rect key="frame" x="106" y="4" width="162" height="21"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="21" id="ikI-CT-5NZ"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            <constraints>
-                                <constraint firstItem="WCS-8l-ev8" firstAttribute="centerY" secondItem="uKy-ZC-T4k" secondAttribute="centerY" id="6bs-gS-Dxy"/>
-                                <constraint firstItem="WCS-8l-ev8" firstAttribute="centerX" secondItem="uKy-ZC-T4k" secondAttribute="centerX" id="gcr-eb-R84"/>
-                            </constraints>
-                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scoreCell" rowHeight="61" id="cYt-50-UCQ">
                                 <rect key="frame" x="0.0" y="28" width="375" height="61"/>
@@ -559,6 +539,31 @@ to apply, email john@nbps
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="header" rowHeight="28" id="gQb-JK-G9p">
+                                <rect key="frame" x="0.0" y="89" width="375" height="28"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gQb-JK-G9p" id="inf-QA-A1t">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="28"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thu March 27" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEt-GU-HQF">
+                                            <rect key="frame" x="106" y="3" width="162" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="8so-JW-sKt"/>
+                                                <constraint firstAttribute="width" constant="162" id="Qsg-cR-YXe"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="MEt-GU-HQF" firstAttribute="centerX" secondItem="inf-QA-A1t" secondAttribute="centerX" id="aUL-ee-X7C"/>
+                                        <constraint firstItem="MEt-GU-HQF" firstAttribute="centerY" secondItem="inf-QA-A1t" secondAttribute="centerY" id="h7W-1m-6Uc"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="kub-1r-Cjn" id="0qq-Jp-8gH"/>
@@ -603,7 +608,6 @@ to apply, email john@nbps
                         <outlet property="editorLabel" destination="DCS-KW-ko2" id="1EN-Gb-Di8"/>
                         <outlet property="editorView" destination="izN-xe-qPu" id="Yo9-aB-S8x"/>
                         <outlet property="gameDatePicker" destination="4e2-IF-5Cq" id="k4P-2n-77g"/>
-                        <outlet property="headerView" destination="uKy-ZC-T4k" id="Bup-pj-Jfr"/>
                         <outlet property="homeLabel" destination="z7B-as-JhE" id="CB4-NS-hE1"/>
                         <outlet property="homeScoreLabel" destination="4qc-xW-2f0" id="0oo-Zr-BsW"/>
                         <outlet property="homeScoreStepper" destination="WpU-x5-uA5" id="wPQ-Jn-hmx"/>
@@ -774,7 +778,7 @@ to apply, email john@nbps
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" tag="2" contentMode="scaleToFill" id="xGm-bc-v4d">
-                            <rect key="frame" x="0.0" y="117" width="375" height="28"/>
+                            <rect key="frame" x="0.0" y="89" width="375" height="28"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Thu March 27" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x71-gK-1vl">
@@ -794,33 +798,8 @@ to apply, email john@nbps
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="header" rowHeight="28" id="gQb-JK-G9p">
-                                <rect key="frame" x="0.0" y="28" width="375" height="28"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gQb-JK-G9p" id="inf-QA-A1t">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="28"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thu March 27" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEt-GU-HQF">
-                                            <rect key="frame" x="106" y="3" width="162" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="8so-JW-sKt"/>
-                                                <constraint firstAttribute="width" constant="162" id="Qsg-cR-YXe"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="MEt-GU-HQF" firstAttribute="centerX" secondItem="inf-QA-A1t" secondAttribute="centerX" id="aUL-ee-X7C"/>
-                                        <constraint firstItem="MEt-GU-HQF" firstAttribute="centerY" secondItem="inf-QA-A1t" secondAttribute="centerY" id="h7W-1m-6Uc"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="scoreCell" rowHeight="61" id="p3Q-JO-m7U">
-                                <rect key="frame" x="0.0" y="56" width="375" height="61"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p3Q-JO-m7U" id="SAL-kx-chH">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
@@ -958,7 +937,7 @@ to apply, email john@nbps
                                     </activityIndicatorView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eme-7b-5vb">
                                         <rect key="frame" x="0.0" y="0.0" width="326" height="444"/>
-                                        <color key="backgroundColor" red="0.82352941176470584" green="0.792156862745098" blue="0.11764705882352941" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.22456705860315579" green="0.2921962520758471" blue="0.57151884191176472" alpha="0.82678796139999999" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="120" id="psB-Hl-7O9">
                                                 <rect key="frame" x="0.0" y="28" width="326" height="120"/>

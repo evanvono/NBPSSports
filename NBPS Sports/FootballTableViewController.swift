@@ -608,7 +608,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+  //  override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         //let dateHeader = tableView.dequeueReusableCell(withIdentifier: "header")! as UIView
         
@@ -646,11 +646,30 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         //(dateHeader.viewWithTag(1) as! UILabel).text = "Friday mar \(section)"
         
-        let headerView = self.headerView
-        return headerView
+        //let headerView = self.headerView
+        //return headerView
+  //  }
+    
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        //let section = tableView.dequeueReusableHeaderFooterViewWithIdentifier("header")
+        
+        let header = tableView.dequeueReusableCell(withIdentifier: "header")!
+        
+        (header.contentView.viewWithTag(1) as! UILabel).text = "Mon June 2, 2017"
+            
+            //games[section][0]["Date"] as! String
+        
+        //section
+        
+        return header
     }
     
-    
+    public override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 28.0
+    }
+ 
     /*
     func dequeueReusableHeaderFooterView(withIdentifier identifier: String) -> UITableViewHeaderFooterView? {
         
@@ -725,13 +744,11 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         awayScoreStepper.value = Double(Int(awayVal!)!)
         
         editorLabel.text = "\(homeTeamStr) vs \(awayTeamStr)"
+        
         if AppState.sharedInstance.signedIn {
             
             animateIn()
 
-        } else {
-            
-            animateIn()
         }
         
         tableView.deselectRow(at: indexPath, animated: false)
