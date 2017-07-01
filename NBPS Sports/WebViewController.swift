@@ -77,6 +77,14 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         myTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(WebViewController.timerCallback), userInfo: nil, repeats: true)
         
         
+        
+
+        
+    }
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        loadedBool = true
+        progressBar.setProgress(1, animated: true)
+        myTimer.invalidate()
         if mainView.canGoBack{
             
             backButton.tintColor = self.view.tintColor.withAlphaComponent(1)
@@ -93,19 +101,13 @@ class WebViewController: UIViewController, UIWebViewDelegate {
             
         }
 
-        
-    }
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        loadedBool = true
-        progressBar.setProgress(1, animated: true)
-        myTimer.invalidate()
         let timer:Timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (Timer) in
             
             
             self.fadeBar()
             
-            
         }
+        
         
                 //progressBar.isHidden = true
     }

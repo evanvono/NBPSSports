@@ -25,10 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
        //UIBarButtonItem.appearance().tintColor = UIColor.magenta
         
-        
-        
-        
-        
+                
         FIRApp.configure()
         return true
     }

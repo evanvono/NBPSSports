@@ -18,11 +18,54 @@
 import UIKit
 import Firebase
 import Social
-import Alamofire
-import AlamofireRSSParser
+import ChameleonFramework
 
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIWebViewDelegate {
+
+/*
+ *
+ * HOOK DATE UP TO HTML FOR HEADLINES IN TABLEVIEW
+ *
+ */
+extension UIImageView {
+    func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit, finished: () -> Void) {
+        contentMode = mode
+        
+        var done = false
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+            else { return }
+            
+                //AppState.sharedInstance.articleImage = image
+                
+            
+            DispatchQueue.main.async() { () -> Void in
+                self.image = image
+                done = true
+            }
+            }.resume()
+        
+        
+        finished()
+        
+        
+    }
+    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit){
+        guard let url = URL(string: link) else { return }
+        downloadedFrom(url: url, contentMode: mode){
+            
+            return
+        }
+        
+    }
+}
+
+
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource/*, UIWebViewDelegate */{
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -33,9 +76,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var mainTableView: UITableView!
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var logoutButton: UIBarButtonItem!
+    @IBOutlet weak var popupImageView: UIImageView!
+    @IBOutlet weak var titleText: UILabel!
+   
+    @IBOutlet weak var bodyText: UITextView!
     
     @IBOutlet weak var activity: UIActivityIndicatorView!
-    @IBOutlet weak var detailWebView: UIWebView!
+   
     
     @IBOutlet var detailContainer: UIView!
     
@@ -46,9 +93,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var descriptions = [String]()
     var titles = [String]()
     var urlArr = [String]()
+    var images = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableContainer.layer.cornerRadius = 5
         
         if self.revealViewController() != nil {
             //print("not nil")
@@ -58,6 +108,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             
         }
+        
         
         activity.isHidden = false
         activity.startAnimating()
@@ -76,7 +127,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             
         }
-        tableContainer.layer.cornerRadius = 10
+        
         
         mainTableView.layer.cornerRadius = 10
         
@@ -122,7 +173,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let url = NSURL(string: urlStr)
 
-        let task = URLSession.shared.dataTask(with: url as! URL) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: url! as URL) { (data, response, error) in
             
             if error == nil {
                 //print("\n\n\nGettting data for web\n\n\n")
@@ -132,6 +183,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 //print("\n\n\n" + String(urlContent!) + "\n\n\n")
                 
                 let content = String(urlContent!)
+                
+                print("\n\n\n\n\(content)\n\n\n\n")
+                
                 
                 var arr = [String]()
                 
@@ -166,6 +220,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     }
                 }
                 
+                // "'image' class='post' src='"
+                
                 var arr2 = [String]()
                 
                 arr2 = content.components(separatedBy: "<p><strong>")
@@ -177,12 +233,35 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         
                         let str = i.components(separatedBy: "</strong></p>")[0].replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
                         self.titles.append(str)
-
+                        
                     }
                 }
+                
                 while self.titles.count % 5 != 0 {
                     
                     self.titles.append(" ")
+                }
+                
+                var arr3 = [String]()
+                
+                arr3 = content.components(separatedBy: "'image' class='post' src='")
+                
+                for i in arr3 {
+                    
+                    if i.contains("<div id='post"){
+                        
+                        
+                        let str = i.components(separatedBy: "'>")[0]
+                        self.images.append(str)
+                        print(str)
+                        
+                    }
+                    
+                }
+                
+                while self.images.count % 5 != 0 {
+                    
+                    self.images.append(" ")
                 }
                 
                 DispatchQueue.main.async {
@@ -234,16 +313,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
 
             
-            let vc = storyboard?.instantiateViewController(withIdentifier: "Base") as! UIViewController
-            self.present(vc, animated: true, completion: nil)
+            let vc = storyboard?.instantiateViewController(withIdentifier: "Base")
+            self.present(vc!, animated: true, completion: nil)
         }
     }
     
-    func animateIn(url:String){
+    func animateIn(index:Int){
         
         
+
         //blurView.
-        
+        self.blurEffectView.isUserInteractionEnabled = true
         
         detailContainer.frame = CGRect(x: self.view.bounds.width/2 , y: self.view.bounds.height/2+60, width: self.view.bounds.width-30, height: self.view.bounds.height-300)
         
@@ -277,14 +357,37 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.blurEffectView.alpha = 1
         
         
-        print("URL: \(url)")
+        
+        //print("URL: \(url)")
+ 
+        let url1 = URL(string: ("http://www.nbpsathletics.org"+images[index]))!
+        
+        print(url1)
+       // let url1 = URL(string: "http://www.nbpsathletics.org/p/announcements/1270339/900/600/image.pic")
         
         
+        
+        popupImageView.downloadedFrom(url: url1){
+            
+            self.popupImageView.contentMode = UIViewContentMode.scaleAspectFill
+            
+            let color = AverageColorFromImage(image: AppState.sharedInstance.articleImage)
+            //detailContainer.backgroundColor = color.withAlphaComponent(0.5)
+            
+        }
+        
+        
+        
+        titleText.text = titles[index]
+        bodyText.text = descriptions[index]
         
         //detailWebView.loadRequest(URLRequest(url: URL(string: "www.google.com")!))
     }
     func animateOut(){
         
+        self.mainTableView.isScrollEnabled = true
+        
+        self.blurEffectView.isUserInteractionEnabled = true
         
         self.blurEffectView.alpha = 0
         
@@ -304,6 +407,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.detailContainer.transform = CGAffineTransform.init(scaleX: 1, y:1)
             
         }
+        
+        self.popupImageView.image = nil
 
     }
 
@@ -345,11 +450,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         print("selected \(indexPath.section),\(indexPath.row)")
-        animateIn(url: urlArr[indexPath.row])
+        animateIn(index:indexPath.row)
         
         
         
-        detailWebView.loadRequest(URLRequest(url: URL(string: urlArr[indexPath.row])!))
+        //detailWebView.loadRequest(URLRequest(url: URL(string: urlArr[indexPath.row])!))
         
         
         tableView.deselectRow(at: indexPath, animated: true)
@@ -365,7 +470,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return false
     }
     
-    open func webViewDidStartLoad(_ webView: UIWebView) {
+    /*open func webViewDidStartLoad(_ webView: UIWebView) {
         activityIndicator.startAnimating()
         print("loading")
     }
@@ -373,7 +478,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     open func webViewDidFinishLoad(_ webView: UIWebView) {
         activityIndicator.stopAnimating()
     }
-    
+    */
     
 
     @IBAction func tappedDone(_ sender: Any) {

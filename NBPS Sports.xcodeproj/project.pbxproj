@@ -21,7 +21,10 @@
 		2069AE8B1EE712830032250C /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069AE8A1EE712830032250C /* AccountViewController.swift */; };
 		206EA2651EA59D8E00F73B36 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 206EA2641EA59D8E00F73B36 /* GoogleService-Info.plist */; };
 		2072828B1E745275009C87FF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2072828A1E745275009C87FF /* WebViewController.swift */; };
+		2074DF931EE8647000D91041 /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2074DF921EE8647000D91041 /* NewGameViewController.swift */; };
 		20848E9D1EE70F4B0050432D /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20848E9C1EE70F4B0050432D /* TransitionViewController.swift */; };
+		20C7F4161F071A1900C75532 /* OutlinedUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C7F4151F071A1900C75532 /* OutlinedUILabel.swift */; };
+		20C7F4181F072FAE00C75532 /* beantown.regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20C7F4171F072FAE00C75532 /* beantown.regular.ttf */; };
 		20DBD3D01E6C85F800D4D690 /* FootballTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBD3CF1E6C85F800D4D690 /* FootballTableViewController.swift */; };
 		20DBD3D21E6C868600D4D690 /* exampleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBD3D11E6C868600D4D690 /* exampleTableViewController.swift */; };
 		20EF9E441E645DE700F45DBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EF9E431E645DE700F45DBB /* AppDelegate.swift */; };
@@ -67,7 +70,10 @@
 		2069AE8A1EE712830032250C /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		206EA2641EA59D8E00F73B36 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2072828A1E745275009C87FF /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		2074DF921EE8647000D91041 /* NewGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameViewController.swift; sourceTree = "<group>"; };
 		20848E9C1EE70F4B0050432D /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
+		20C7F4151F071A1900C75532 /* OutlinedUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlinedUILabel.swift; sourceTree = "<group>"; };
+		20C7F4171F072FAE00C75532 /* beantown.regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = beantown.regular.ttf; sourceTree = "<group>"; };
 		20DBD3CF1E6C85F800D4D690 /* FootballTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FootballTableViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		20DBD3D11E6C868600D4D690 /* exampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = exampleTableViewController.swift; sourceTree = "<group>"; };
 		20EF9E401E645DE700F45DBB /* NBPS Sports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NBPS Sports.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +149,14 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		20C7F4191F072FB800C75532 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				20C7F4171F072FAE00C75532 /* beantown.regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		20EF9E371E645DE700F45DBB = {
 			isa = PBXGroup;
 			children = (
@@ -168,9 +182,11 @@
 		20EF9E421E645DE700F45DBB /* NBPS Sports */ = {
 			isa = PBXGroup;
 			children = (
+				20C7F4191F072FB800C75532 /* Fonts */,
 				20EF9E431E645DE700F45DBB /* AppDelegate.swift */,
 				20EF9E451E645DE700F45DBB /* ViewController.swift */,
 				20EF9E471E645DE700F45DBB /* Main.storyboard */,
+				2074DF921EE8647000D91041 /* NewGameViewController.swift */,
 				204ADA691ECA78AA002C4076 /* AppState.swift */,
 				204ADA671ECA7677002C4076 /* Constants.swift */,
 				203B2EE11EBBDABC009F1488 /* TwitchViewController.swift */,
@@ -181,6 +197,7 @@
 				20DBD3CF1E6C85F800D4D690 /* FootballTableViewController.swift */,
 				20848E9C1EE70F4B0050432D /* TransitionViewController.swift */,
 				2069AE8A1EE712830032250C /* AccountViewController.swift */,
+				20C7F4151F071A1900C75532 /* OutlinedUILabel.swift */,
 				2034E8A41E6C81E2004CB19A /* SlideMenu */,
 				20472BC21E69C8E80065205A /* images */,
 				20EF9E4A1E645DE700F45DBB /* Assets.xcassets */,
@@ -336,6 +353,7 @@
 				20472BBF1E69C8E30065205A /* Unknown.png in Resources */,
 				20472BC11E69C8E30065205A /* Football.jpg in Resources */,
 				20EF9E491E645DE700F45DBB /* Main.storyboard in Resources */,
+				20C7F4181F072FAE00C75532 /* beantown.regular.ttf in Resources */,
 				206EA2651EA59D8E00F73B36 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,11 +431,13 @@
 				2072828B1E745275009C87FF /* WebViewController.swift in Sources */,
 				2069AE8B1EE712830032250C /* AccountViewController.swift in Sources */,
 				20EF9E441E645DE700F45DBB /* AppDelegate.swift in Sources */,
+				20C7F4161F071A1900C75532 /* OutlinedUILabel.swift in Sources */,
 				20DBD3D21E6C868600D4D690 /* exampleTableViewController.swift in Sources */,
 				2023F0551EA1845B0041E165 /* LoginViewController.swift in Sources */,
 				204ADA681ECA7677002C4076 /* Constants.swift in Sources */,
 				204ADA6A1ECA78AA002C4076 /* AppState.swift in Sources */,
 				20848E9D1EE70F4B0050432D /* TransitionViewController.swift in Sources */,
+				2074DF931EE8647000D91041 /* NewGameViewController.swift in Sources */,
 				20DBD3D01E6C85F800D4D690 /* FootballTableViewController.swift in Sources */,
 				20472BBB1E69C6660065205A /* SWRevealViewController.m in Sources */,
 				203B2EE21EBBDABC009F1488 /* TwitchViewController.swift in Sources */,

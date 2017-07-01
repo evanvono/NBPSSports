@@ -14,5 +14,6 @@ class AppState: NSObject {
     
     var signedIn = false
     var displayName: String = "editor"
+    var articleImage:UIImage = #imageLiteral(resourceName: "NBP-Icon-Border")
     // var photoUrl: NSURL?
 }

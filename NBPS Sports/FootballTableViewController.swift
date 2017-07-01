@@ -15,21 +15,23 @@ import Social
 
 class FootballTableViewController: UITableViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    
+    //Editor View
     @IBOutlet weak var editField: UITextField!
     @IBOutlet weak var editorLabel: UILabel!
     @IBOutlet var editorView: UIView!
     @IBOutlet weak var picker: UIPickerView!
-    
     @IBOutlet weak var homeLabel: UILabel!
     @IBOutlet weak var awayLabel: UILabel!
     @IBOutlet weak var homeScoreLabel: UILabel!
     @IBOutlet weak var awayScoreLabel: UILabel!
-    
     @IBOutlet weak var homeScoreStepper: UIStepper!
     @IBOutlet weak var awayScoreStepper: UIStepper!
-    
     @IBOutlet weak var gameDatePicker: UIDatePicker!
-    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var isEditingSwitch: UISwitch!
+    
+    //Spectator View
+    @IBOutlet weak var spectatorView: UIView!
     
     var homeScoreVal: Int!
     var awayScoreVal: Int!
@@ -55,6 +57,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     
     var pickerSelection = 0
     
+    var todaySection = -1
+    
     
  //   var games: [[Dictionary<String,String>]]?
     var gamesArray = [FIRDataSnapshot]()
@@ -67,7 +71,10 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     override func viewDidLoad() {
+        
+       
         super.viewDidLoad()
+        
         
         
         self.hideKeyboardWhenTappedAround()
@@ -86,7 +93,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         picker.reloadComponent(0)
         
-        navigationController?.hidesBarsOnSwipe = true
+        //navigationController?.hidesBarsOnSwipe = true
         
         
         
@@ -213,6 +220,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         //NSLayoutConstraint(item: editorView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottomMargin, multiplier: 1.0, constant: 20.0).isActive = true
         
+        gameDatePicker.date = games[selectedPath[0]][selectedPath[1]]["Date"] as! Date!
         
         
         editorView.alpha = 0
@@ -237,6 +245,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
             
         }
+        self.navigationController?.navigationBar.isTranslucent = false
         
     }
     func animateOut(){
@@ -264,10 +273,262 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             self.editorView.transform = CGAffineTransform.init(scaleX: 1, y:1)
         
         }
-        navigationController?.hidesBarsOnSwipe = true
+       // navigationController?.hidesBarsOnSwipe = true
+        
+        self.navigationController?.navigationBar.isTranslucent = false
+
     }
+   /*
+    func getNewData(){
+        
+        ref = FIRDatabase.database().reference()
+        
+        let count = Int()
+        
+        self.ref.child("Sports").child("Football").observe(FIRDataEventType.value, with: { (snapshot) in
+            
+            let count = snapshot.childrenCount
+            print("database count: \(count)")
+            
+            _refHandle = self.ref.child("Sports").child("Football").observe(FIRDataEventType.childAdded, with: { (snapshot) in
+                
+                //let date:Int = snapshot.childSnapshot(forPath: "date").value as! Int
+                
+                
+                if self.gamesArray.count == 0 {
+                    if !self.gamesArray.contains(snapshot){
+                        self.gamesArray.append(snapshot)
+                    }
+                    
+                    
+                } else {
+                    var didInsert = false
+                    for i in stride(from: self.gamesArray.count-1, to: 0, by: -1){
+                        
+                        let temp = self.gamesArray[i].childSnapshot(forPath: "date").value as! Int
+                        
+                        if temp > snapshot.childSnapshot(forPath: "date").value as! Int {
+                            if !self.gamesArray.contains(snapshot){
+                                self.gamesArray.insert(snapshot, at: i)
+                                didInsert = true
+                            }
+                        }
+                    }
+                    if didInsert == false {
+                        if !self.gamesArray.contains(snapshot){
+                            self.gamesArray.append(snapshot)
+                        }
+                    }
+                    
+                }
+                print("Games array count \(self.gamesArray.count)")
+                
+                 if Int(count) == Int(self.gamesArray.count) {
+                
+                for j in 0...self.gamesArray.count - 1{
+                    
+                    let i = self.gamesArray[j]
+                    
+                    let date = Date(timeIntervalSince1970: TimeInterval(i.childSnapshot(forPath: "date").value as! Int))
+                    
+                    
+                    if j == 0{
+                        
+                        self.games.append([self.gameForm(gameDate: date, snapshot: i)])
+                        
+                    } else {
+                        
+                        let prevGameDate = self.games[self.games.count-1][0]["Date"] as! Date
+                        
+                        let today = Date.today()
+                        
+                        if prevGameDate.year == today.year && prevGameDate.month == today.month && prevGameDate.day == today.day {
+                            
+                            let last =  self.games[self.games.count - 1][0]["Date"] as! Date
+                            
+                            if last.day == today.day && last.month == today.month && last.year == today.year {
+                                
+                                self.games[self.games.count - 1].append(self.gameForm(gameDate: date, snapshot: i))
+                            }
+                        } else if (prevGameDate.year >= today.year && prevGameDate.month > today.month) || (prevGameDate.year >= today.year && prevGameDate.month >= today.month && prevGameDate.day > today.day) {
+                            
+                            let last =  self.games[self.games.count - 1][0]["Date"] as! Date
+                            
+                            if (last.year >= today.year && last.month > today.month) || (last.year >= today.year && last.month >= today.month && last.day > today.day) {
+                                
+                                self.games[self.games.count - 1].append(self.gameForm(gameDate: date, snapshot: i))
+                            } else {
+                                
+                                self.games.append([self.gameForm(gameDate: date, snapshot: i)])
+                            }
+                            
+                        }
+                        
+                        
+                        
+                        if prevGameDate.year == date.year && prevGameDate.day == date.day && prevGameDate.month == date.month {
+                            
+                            self.games[self.games.count - 1].append(self.gameForm(gameDate: date, snapshot: i))
+                        } else {
+                            
+                            self.games.append([self.gameForm(gameDate: date, snapshot: i)])
+                        }
+                        
+                    }
+                    
+                    
+                }
+                self.tableView.reloadData()
+                   }
+                
+                
+            })
+            
+        })
+        
+
+        
+        
+        
+        
+    }
+    */
+    func getNewData(){
+        
+        ref = FIRDatabase.database().reference()
+        
+        let count = Int()
+        
+       // self.ref.child("Sports").child("Football").observe(FIRDataEventType.value, with: { (snapshot) in
+        
+        self.ref.child("Sports").child("Football").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            
+            let count = snapshot.childrenCount
+            print("database count: \(count)")
+            /*
+            ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+                // Get user value
+                let value = snapshot.value as? NSDictionary
+                let username = value?["username"] as? String ?? ""
+                let user = User.init(username: username)
+                
+                // ...
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+ */
+            
+            self._refHandle = self.ref.child("Sports").child("Football").observe(FIRDataEventType.childAdded, with: { (snapshot) in
+                
+                //let date:Int = snapshot.childSnapshot(forPath: "date").value as! Int
+                
+                
+                if self.gamesArray.count == 0 {
+                    if !self.gamesArray.contains(snapshot){
+                        self.gamesArray.append(snapshot)
+                    }
+                    
+                    
+                } else {
+                    var didInsert = false
+                    for i in stride(from: self.gamesArray.count-1, to: 0, by: -1){
+                        
+                        let temp = self.gamesArray[i].childSnapshot(forPath: "date").value as! Int
+                        
+                        if temp > snapshot.childSnapshot(forPath: "date").value as! Int {
+                            if !self.gamesArray.contains(snapshot){
+                                self.gamesArray.insert(snapshot, at: i)
+                                didInsert = true
+                            }
+                        }
+                    }
+                    if didInsert == false {
+                        if !self.gamesArray.contains(snapshot){
+                            self.gamesArray.append(snapshot)
+                        }
+                    }
+                    
+                }
+                print("Games array count \(self.gamesArray.count)")
+                
+                if Int(count) == Int(self.gamesArray.count) {
+                    
+                    
+                    for j in 0...self.gamesArray.count - 1{
+                        
+                        let i = self.gamesArray[j]
+                        
+                        let date = Date(timeIntervalSince1970: TimeInterval(i.childSnapshot(forPath: "date").value as! Int))
+                        
+                        
+                        if j == 0{
+                            
+                            self.games.append([self.gameForm(gameDate: date, snapshot: i)])
+                            
+                        } else {
+                            
+                            let prevGameDate = self.games[self.games.count-1][0]["Date"] as! Date
+                            
+                            let today = Date.today()
+                            
+                            if prevGameDate.year == today.year && prevGameDate.month == today.month && prevGameDate.day == today.day {
+                                
+                                let last =  self.games[self.games.count - 1][0]["Date"] as! Date
+                                
+                                if last.day == today.day && last.month == today.month && last.year == today.year {
+                                    
+                                    self.games[self.games.count - 1].append(self.gameForm(gameDate: date, snapshot: i))
+                                }
+                            } else if (prevGameDate.year >= today.year && prevGameDate.month > today.month) || (prevGameDate.year >= today.year && prevGameDate.month >= today.month && prevGameDate.day > today.day) {
+                                
+                                let last =  self.games[self.games.count - 1][0]["Date"] as! Date
+                                
+                                if (last.year >= today.year && last.month > today.month) || (last.year >= today.year && last.month >= today.month && last.day > today.day) {
+                                    
+                                    self.games[self.games.count - 1].append(self.gameForm(gameDate: date, snapshot: i))
+                                } else {
+                                    
+                                    self.games.append([self.gameForm(gameDate: date, snapshot: i)])
+                                }
+                                
+                            }
+                            
+                            
+                            
+                            if prevGameDate.year == date.year && prevGameDate.day == date.day && prevGameDate.month == date.month {
+                                
+                                self.games[self.games.count - 1].append(self.gameForm(gameDate: date, snapshot: i))
+                            } else {
+                                
+                                self.games.append([self.gameForm(gameDate: date, snapshot: i)])
+                            }
+                            
+                        }
+                        
+                        
+                    }
+                    self.tableView.reloadData()
+                    self.spinner.stopAnimating()
+                    
+                   
+                    //self.tableView.scrollToRow(at: IndexPath(row: 0, section: self.todaySection), at: UITableViewScrollPosition.top, animated: true)
+                }
+                
+                
+            })
+            
+        })
+        
+        
+        
+        
+        
+        
+    }
+
     
-    
+    /*
     
     func getNewData(){
         
@@ -298,15 +559,13 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             let dateInt = snapshot.childSnapshot(forPath: "date").value as! Int
             
             
-            let year = 2000 + Int(dateInt/10000)
             
-            let month = Int((dateInt/100)%100)
             
-            let day = Int(dateInt%100)
+            //print("Game on \(month)/\(day)/\(year)")
             
-            print("Game on \(month)/\(day)/\(year)")
+            let gameDate = Date(timeIntervalSince1970: TimeInterval(dateInt))
             
-            let gameDate = Date(year: year, month: month, day: day)
+            print(gameDate)
             
             
             
@@ -438,7 +697,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
         })
         
-    }
+    }*/
     
     func dateComparison(dat: Date, secDate: Date) -> String {
         
@@ -532,78 +791,133 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         print("games in section: \(games[section].count)")
         
-        return games[section].count
+        var count = games[section].count
+        
+        if section == games.count - 1{
+            
+            if AppState.sharedInstance.signedIn {
+                
+                count += 1
+            }
+        }
+        return count
             
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        let height:CGFloat = 61
+        var height:CGFloat = 60
+        
+        
+        if indexPath.section == games.count - 1 && indexPath.row == games[games.count - 1].count {
+            
+            height = CGFloat(28)
+            
+        }
+        
         
         return height
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "scoreCell", for: indexPath)
         
+        var cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: nil)
+      
+        if indexPath.row <= games[indexPath.section].count - 1 {
         
-        
-        let section = indexPath.section
-        let row = indexPath.row
-        
-        let snapshot = games[section][row]["Snapshot"] as! FIRDataSnapshot
+            cell = tableView.dequeueReusableCell(withIdentifier: "ScoreCell", for: indexPath)
         
         
         
         
-        let homeTeam = snapshot.childSnapshot(forPath: "homeTeam").value as? String
-        
-        let awayTeam = snapshot.childSnapshot(forPath: "awayTeam").value as? String
-        
-        let homeScore = snapshot.childSnapshot(forPath: "homeScore").value as? String
-        
-        let awayScore = snapshot.childSnapshot(forPath: "awayScore").value as? String
-        
-        
-        (cell.contentView.viewWithTag(3) as! UILabel).text = homeTeam
-        
-        (cell.contentView.viewWithTag(4) as! UILabel).text = awayTeam
-        
-        (cell.contentView.viewWithTag(1) as! UILabel).text = homeScore
-        (cell.contentView.viewWithTag(2) as! UILabel).text = awayScore
-        
-        
-        (cell.contentView.viewWithTag(7) as! UILabel).text = "Final"
-        
-        if (Int(homeScore!)! > Int(awayScore!)!){
+            let section = indexPath.section
             
-            (cell.contentView.viewWithTag(5) as! UIImageView).image = UIImage(named: "triangleLeft")
+            let row = indexPath.row
+        
+            let snapshot = games[section][row]["Snapshot"] as! FIRDataSnapshot
+        
+            let date = games[section][row]["Date"] as! Date
             
-            (cell.contentView.viewWithTag(4) as! UILabel).textColor = UIColor.lightGray
             
-            (cell.contentView.viewWithTag(2) as! UILabel).textColor = UIColor.lightGray
-
             
-        } else if (Int(awayScore!)! > Int(homeScore!)!){
+        
+        
+            let homeTeam = snapshot.childSnapshot(forPath: "homeTeam").value as? String
+        
+            let awayTeam = snapshot.childSnapshot(forPath: "awayTeam").value as? String
+        
+            let homeScore = snapshot.childSnapshot(forPath: "homeScore").value as? String
+        
+            let awayScore = snapshot.childSnapshot(forPath: "awayScore").value as? String
+        
+        
+            (cell.contentView.viewWithTag(3) as! UILabel).text = homeTeam
+        
+            (cell.contentView.viewWithTag(4) as! UILabel).text = awayTeam
+        
+            (cell.contentView.viewWithTag(1) as! UILabel).text = homeScore
+            (cell.contentView.viewWithTag(2) as! UILabel).text = awayScore
+        
+            let today = Date.today()
+            if date.year < today.year {
+                
+                (cell.contentView.viewWithTag(7) as! UILabel).text = "Final"
+                
+                if (Int(homeScore!)! > Int(awayScore!)!){
+                    
+                    (cell.contentView.viewWithTag(5) as! UIImageView).image = UIImage(named: "triangleLeft")
+                    
+                    (cell.contentView.viewWithTag(4) as! UILabel).textColor = UIColor.lightGray
+                    
+                    (cell.contentView.viewWithTag(2) as! UILabel).textColor = UIColor.lightGray
+                    
+                    
+                } else if (Int(awayScore!)! > Int(homeScore!)!){
+                    
+                    (cell.contentView.viewWithTag(6) as! UIImageView).image = UIImage(named: "triangleLeft")
+                    (cell.contentView.viewWithTag(3) as! UILabel).textColor = UIColor.lightGray
+                    
+                    (cell.contentView.viewWithTag(1) as! UILabel).textColor = UIColor.lightGray
+                }
+                
+            } else if date.year == today.year {
+                
+                if date.month < today.month {
+                    
+                    
+                } else if date.month == today.month {
+                    if date.day < today.day {
+                        
+                        
+                        
+                    } else if today.day == date.day {
+                        
+                        if today.hour < date.hour {
+                            
+                            
+                            
+                        }
+                    }
+                    
+                }
+                
+            } else if date.year > today.year {
+                
+                
+            }
+        
             
-            (cell.contentView.viewWithTag(6) as! UIImageView).image = UIImage(named: "triangleLeft")
-            (cell.contentView.viewWithTag(3) as! UILabel).textColor = UIColor.lightGray
+        
+        
+            print(homeTeam! + "\n" + awayTeam! + "\n")
+        
+        
+        
+        } else if indexPath.row >= games[indexPath.section].count {
             
-            (cell.contentView.viewWithTag(1) as! UILabel).textColor = UIColor.lightGray
+            cell = tableView.dequeueReusableCell(withIdentifier: "AddGame", for: indexPath)
         }
-        
-        
-        print(homeTeam! + "\n" + awayTeam! + "\n")
-        /*(cell.contentView.viewWithTag(3) as! UILabel).text = games?[section][row]["homeTeam"]
-        
-        (cell.contentView.viewWithTag(4) as! UILabel).text = games?[section][row]["awayTeam"]*/
-        /*
-        print(games?[section][row]["homeTeam"])
-        print(games?[section][row]["awayTeam"])
-        
-        
-        */
 
         return cell
     }
@@ -657,7 +971,63 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         let header = tableView.dequeueReusableCell(withIdentifier: "header")!
         
-        (header.contentView.viewWithTag(1) as! UILabel).text = "Mon June 2, 2017"
+        let datee = games[section][0]["Date"] as! Date!
+        
+        let newFormatter = DateFormatter()
+        let oldFormatter = DateFormatter()
+        
+        newFormatter.dateFormat = "EEEE, MMMM d"
+        oldFormatter.dateFormat = "EEEE MMMM d, yyyy"
+        
+        if (datee?.year)! < Date.today().year {
+            
+            (header.contentView.viewWithTag(1) as! UILabel).text = oldFormatter.string(from: (datee)!)
+        } else if (datee?.year)! == Date.today().year {
+            
+            if (datee?.month)! < Date.today().month {
+                
+                (header.contentView.viewWithTag(1) as! UILabel).text = newFormatter.string(from: (datee)!)
+                
+            } else if (datee?.month)! == Date.today().month {
+                
+                if (datee?.day)! < Date.today().day {
+                    
+                    (header.contentView.viewWithTag(1) as! UILabel).text = newFormatter.string(from: (datee)!)
+                    
+                } else if (datee?.day)! == Date.today().day {
+                    
+                    (header.contentView.viewWithTag(1) as! UILabel).text = "Today"
+                    
+                    todaySection = section
+                    
+                } else {
+                    
+                    (header.contentView.viewWithTag(1) as! UILabel).text = "Upcoming"
+                    
+                    if todaySection == -1 {
+                        
+                        todaySection = section
+                    }
+                }
+            } else if (datee?.month)! > Date.today().month {
+                
+                (header.contentView.viewWithTag(1) as! UILabel).text = "Upcoming"
+                if todaySection == -1 {
+                    
+                    todaySection = section
+                }
+            }
+            
+        } else if (datee?.year)! > Date.today().year {
+            
+            (header.contentView.viewWithTag(1) as! UILabel).text = "Upcoming"
+            if todaySection == -1 {
+                
+                todaySection = section
+            }
+         
+        }
+        
             
             //games[section][0]["Date"] as! String
         
@@ -667,7 +1037,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     }
     
     public override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 28.0
+        return 35.0
     }
  
     /*
@@ -697,13 +1067,22 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         }
 
     }
-    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        
+        return 0.0
+    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
       /*  ref.child("Football").child(games[indexPath.section][indexPath.row]["Snapshot"]).observe(.value, with: { (snapshot) in
             
             
         })*/
+        
+        if indexPath.row < games[indexPath.section].count {
+            
+            
+        
         
         selectedPath = [indexPath.section, indexPath.row]
         
@@ -740,7 +1119,6 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         homeScoreStepper.value = Double(Int(homeVal!)!)
         
         
-        
         awayScoreStepper.value = Double(Int(awayVal!)!)
         
         editorLabel.text = "\(homeTeamStr) vs \(awayTeamStr)"
@@ -749,6 +1127,12 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
             animateIn()
 
+        }
+            
+        } else if AppState.sharedInstance.signedIn {
+            
+            self.performSegue(withIdentifier: "FBShowGameCreator", sender: self)
+            
         }
         
         tableView.deselectRow(at: indexPath, animated: false)
@@ -862,7 +1246,14 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         */
         
         
+        ref = FIRDatabase.database().reference()
+        let gameDirec = ref.child("Sports").child("Football").child(currentGame)
         
+        let newDate = Int(gameDatePicker.date.timeIntervalSince1970)
+        gameDirec.child("date").setValue(newDate)
+        
+        
+        tableView.reloadData()
         
     }
     

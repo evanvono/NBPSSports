@@ -13,6 +13,8 @@ use_frameworks!
     pod 'Timepiece'
     pod 'Alamofire', '~> 4.0'
     pod "AlamofireRSSParser"
+    pod 'ChameleonFramework/Swift'
+    
 
 end
 
