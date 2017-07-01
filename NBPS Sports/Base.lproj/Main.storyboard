@@ -10,6 +10,11 @@
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="beantown.regular.ttf">
+            <string>Beantown</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Reveal View Controller-->
         <scene sceneID="kMZ-Er-cNb">
@@ -455,11 +460,12 @@ to apply, email john@nbps
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thu March 27" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEt-GU-HQF">
                                             <rect key="frame" x="0.0" y="17" width="375" height="18"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="18" id="GQl-h7-nd4"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ShadowDown" translatesAutoresizingMaskIntoConstraints="NO" id="uet-S0-mfz">
@@ -498,13 +504,13 @@ to apply, email john@nbps
                                                 <constraint firstAttribute="height" constant="20" id="kYO-2l-TvF"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.85071324349999999" green="0.79150025830000004" blue="0.44942228090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="North Broward Prep" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHh-Wj-KyS">
-                                            <rect key="frame" x="47" y="32" width="180" height="19.5"/>
+                                            <rect key="frame" x="47" y="32" width="180" height="20"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.58597046139999998" green="0.53613680600000002" blue="0.30758413670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBQ-TK-MD0">
@@ -514,7 +520,7 @@ to apply, email john@nbps
                                                 <constraint firstAttribute="width" constant="40" id="fnJ-l5-wEw"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.58597046139999998" green="0.53613680600000002" blue="0.30758413670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dividerLineThinnest.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="x8S-mY-4GL">
@@ -553,32 +559,32 @@ to apply, email john@nbps
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="North Broward Prep" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWh-EA-zUM">
-                                            <rect key="frame" x="47" y="8" width="180" height="19.5"/>
+                                            <rect key="frame" x="47" y="8" width="180" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="180" id="H2v-d3-qEO"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="0.85071324349999999" green="0.79150025830000004" blue="0.44942228090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rZ1-Jp-x5R">
-                                            <rect key="frame" x="8" y="0.0" width="359" height="0.5"/>
-                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <rect key="frame" x="8" y="0.0" width="359" height="1"/>
+                                            <color key="backgroundColor" red="0.25567267922794112" green="0.25567267922794112" blue="0.25567267922794112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="0.5" id="6hT-Au-gKL"/>
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="itc-1w-C8b">
-                                            <rect key="frame" x="324" y="15" width="26.5" height="29"/>
+                                            <rect key="frame" x="324" y="15" width="27" height="29"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="15" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUG-t1-nUT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="26.5" height="14.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="15" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="8:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUG-t1-nUT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="27" height="14"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="16" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9/21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2o-dX-QW2">
-                                                    <rect key="frame" x="0.0" y="14.5" width="26.5" height="14.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="16" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="9/21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2o-dX-QW2">
+                                                    <rect key="frame" x="0.0" y="14" width="27" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -614,7 +620,7 @@ to apply, email john@nbps
                                         <constraint firstItem="IWh-EA-zUM" firstAttribute="trailing" secondItem="NHh-Wj-KyS" secondAttribute="trailing" id="vCt-sp-6jM"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddGame" rowHeight="28" id="UGZ-SN-T3L">
                                 <rect key="frame" x="0.0" y="123" width="375" height="28"/>
@@ -633,6 +639,7 @@ to apply, email john@nbps
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="vLc-Jj-0zG" secondAttribute="bottom" constant="-0.5" id="6We-B9-IGB"/>
                                         <constraint firstItem="vLc-Jj-0zG" firstAttribute="centerX" secondItem="xpW-ea-YGo" secondAttribute="centerX" id="9bN-mW-byb"/>
@@ -883,7 +890,7 @@ to apply, email john@nbps
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="2Sn-zv-wL1"/>
                                     <barButtonItem style="plain" id="3ZI-q5-F7H">
                                         <view key="customView" contentMode="scaleToFill" id="L3t-el-Wcf">
-                                            <rect key="frame" x="93" y="5.5" width="188" height="33"/>
+                                            <rect key="frame" x="93" y="6" width="188" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select the sport above" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="gPh-Nk-JlG">
@@ -911,23 +918,23 @@ to apply, email john@nbps
                                 </items>
                             </toolbar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dhQ-35-1be">
-                                <rect key="frame" x="16" y="72" width="343" height="537"/>
+                                <rect key="frame" x="16" y="72" width="344" height="537"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Sf-m0-mf2">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="189.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="344" height="190"/>
                                         <connections>
                                             <outlet property="dataSource" destination="hg0-33-3AS" id="5lU-j8-xxX"/>
                                             <outlet property="delegate" destination="hg0-33-3AS" id="gS9-9Q-vXe"/>
                                         </connections>
                                     </pickerView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fut-iT-cMt">
-                                        <rect key="frame" x="0.0" y="189.5" width="343" height="79"/>
+                                        <rect key="frame" x="0.0" y="190" width="344" height="79"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajg-N1-dGK">
-                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="79"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="172" height="79"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Team" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joo-Vu-IhH">
-                                                        <rect key="frame" x="33" y="0.0" width="106" height="20.5"/>
+                                                        <rect key="frame" x="33" y="0.0" width="106" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20.5" id="aJw-X3-NTU"/>
                                                             <constraint firstAttribute="width" constant="106" id="ajD-mx-IdY"/>
@@ -937,7 +944,7 @@ to apply, email john@nbps
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QBk-JM-TnA">
-                                                        <rect key="frame" x="8" y="28.5" width="155.5" height="30"/>
+                                                        <rect key="frame" x="8" y="28" width="156" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
@@ -955,10 +962,10 @@ to apply, email john@nbps
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Fn-p5-FPh">
-                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="79"/>
+                                                <rect key="frame" x="172" y="0.0" width="172" height="79"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Away Team" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyg-xV-cuw">
-                                                        <rect key="frame" x="33" y="0.0" width="106" height="20.5"/>
+                                                        <rect key="frame" x="33" y="0.0" width="106" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="106" id="9pe-el-sGC"/>
                                                             <constraint firstAttribute="height" constant="20.5" id="xZM-Nl-CUY"/>
@@ -968,7 +975,7 @@ to apply, email john@nbps
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2iq-fy-31J">
-                                                        <rect key="frame" x="8" y="28.5" width="155.5" height="30"/>
+                                                        <rect key="frame" x="8" y="28" width="156" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
@@ -992,10 +999,10 @@ to apply, email john@nbps
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGE-cX-Ezs">
-                                        <rect key="frame" x="0.0" y="268.5" width="343" height="79"/>
+                                        <rect key="frame" x="0.0" y="269" width="344" height="79"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9q-be-f4G">
-                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="79"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="172" height="79"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ilm-Kj-2hu">
                                                         <rect key="frame" x="33" y="0.0" width="106" height="21"/>
@@ -1008,7 +1015,7 @@ to apply, email john@nbps
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zq7-Mr-00G">
-                                                        <rect key="frame" x="55" y="28.5" width="62" height="30"/>
+                                                        <rect key="frame" x="55" y="29" width="62" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="62" id="j3a-Il-E3f"/>
                                                         </constraints>
@@ -1028,10 +1035,10 @@ to apply, email john@nbps
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gYC-Jm-PrC">
-                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="79"/>
+                                                <rect key="frame" x="172" y="0.0" width="172" height="79"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Away Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvk-If-efp">
-                                                        <rect key="frame" x="32.5" y="0.0" width="106" height="24"/>
+                                                        <rect key="frame" x="32" y="0.0" width="106" height="24"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="106" id="9ex-Kz-UvA"/>
                                                         </constraints>
@@ -1040,7 +1047,7 @@ to apply, email john@nbps
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SSc-KD-JX7">
-                                                        <rect key="frame" x="55" y="31.5" width="62" height="30"/>
+                                                        <rect key="frame" x="55" y="32" width="62" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="62" id="Esg-RR-eqN"/>
                                                         </constraints>
@@ -1066,7 +1073,7 @@ to apply, email john@nbps
                                         </constraints>
                                     </stackView>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZeT-lc-kJf">
-                                        <rect key="frame" x="0.0" y="347.5" width="343" height="189.5"/>
+                                        <rect key="frame" x="0.0" y="348" width="344" height="189"/>
                                         <date key="date" timeIntervalSinceReferenceDate="518547697.09898102">
                                             <!--2017-06-07 17:01:37 +0000-->
                                         </date>
@@ -1118,7 +1125,7 @@ to apply, email john@nbps
                                 <rect key="frame" x="0.0" y="28" width="375" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p3Q-JO-m7U" id="SAL-kx-chH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="334" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIq-2P-Emr">
@@ -1217,7 +1224,7 @@ to apply, email john@nbps
                                 <rect key="frame" x="0.0" y="89" width="375" height="28"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lPQ-oz-gtK" id="yAA-N8-fUH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="27.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="27"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thu March 27" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yK1-Qa-zUt">
@@ -1275,33 +1282,25 @@ to apply, email john@nbps
                                 <rect key="frame" x="24" y="158" width="326" height="444"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Nvy-TI-aKa">
-                                        <rect key="frame" x="145" y="157.5" width="37" height="37"/>
+                                        <rect key="frame" x="145" y="157" width="37" height="37"/>
                                     </activityIndicatorView>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eme-7b-5vb">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eme-7b-5vb">
                                         <rect key="frame" x="0.0" y="0.0" width="326" height="444"/>
-                                        <color key="backgroundColor" red="0.85071324349999999" green="0.79150025830000004" blue="0.44942228090000003" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.46303423713235292" green="0.4599556797145849" blue="0.44170426773276011" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="120" id="psB-Hl-7O9">
                                                 <rect key="frame" x="0.0" y="28" width="326" height="120"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="psB-Hl-7O9" id="PdL-iZ-cGV">
-                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="119.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="120"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <textView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" editable="NO" text="Body" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiy-SE-XtM">
-                                                            <rect key="frame" x="8" y="42" width="310" height="78"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <textView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" text="Body" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiy-SE-XtM">
+                                                            <rect key="frame" x="8" y="49" width="310" height="71"/>
+                                                            <color key="textColor" red="0.85071324349999999" green="0.79150025830000004" blue="0.44942228090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mEd-TP-KQH">
-                                                            <rect key="frame" x="8" y="13" width="310" height="21"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3/05/17" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILw-ZX-aeF">
                                                             <rect key="frame" x="244" y="0.0" width="74" height="12"/>
                                                             <constraints>
@@ -1312,10 +1311,26 @@ to apply, email john@nbps
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mEd-TP-KQH">
+                                                            <rect key="frame" x="8" y="7" width="310" height="34"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="34" id="CiS-1W-Ryp"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" name="Beantown" family="Untitled" pointSize="17"/>
+                                                            <color key="textColor" red="0.85071324349999999" green="0.79150025830000004" blue="0.44942228090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="tiy-SE-XtM" secondAttribute="trailing" constant="8" id="HP9-ev-AD7"/>
+                                                        <constraint firstItem="tiy-SE-XtM" firstAttribute="leading" secondItem="PdL-iZ-cGV" secondAttribute="leading" constant="8" id="SBf-Xh-s39"/>
+                                                        <constraint firstItem="tiy-SE-XtM" firstAttribute="top" secondItem="mEd-TP-KQH" secondAttribute="bottom" constant="8" id="Z0y-wY-yFa"/>
+                                                        <constraint firstAttribute="trailing" secondItem="mEd-TP-KQH" secondAttribute="trailing" constant="8" id="h1r-T1-qDv"/>
+                                                        <constraint firstItem="mEd-TP-KQH" firstAttribute="top" secondItem="PdL-iZ-cGV" secondAttribute="top" constant="7" id="je1-Kv-rLh"/>
                                                         <constraint firstItem="ILw-ZX-aeF" firstAttribute="top" secondItem="PdL-iZ-cGV" secondAttribute="top" id="oE7-3K-uN6"/>
+                                                        <constraint firstItem="mEd-TP-KQH" firstAttribute="leading" secondItem="PdL-iZ-cGV" secondAttribute="leading" constant="8" id="q3G-Gm-PiN"/>
                                                         <constraint firstAttribute="trailing" secondItem="ILw-ZX-aeF" secondAttribute="trailing" constant="8" id="rPl-Ik-DAW"/>
+                                                        <constraint firstAttribute="bottom" secondItem="tiy-SE-XtM" secondAttribute="bottom" id="x6V-U5-3wj"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.82523437499999996" green="0.79130792746141432" blue="0.11890395071175573" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1346,13 +1361,14 @@ to apply, email john@nbps
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Ch-Gi-qfX" customClass="CSAnimationView">
                                 <rect key="frame" x="67" y="82" width="240" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NBPS Sports" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clP-R5-wZ3">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nbps sports" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clP-R5-wZ3">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="60"/>
-                                        <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="33"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Beantown" family="Untitled" pointSize="31"/>
+                                        <color key="textColor" red="0.89771943929999998" green="0.83575958480000001" blue="0.47510030050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="0.75" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="clP-R5-wZ3" secondAttribute="trailing" id="BaC-M2-cBQ"/>
                                     <constraint firstAttribute="width" constant="240" id="Jka-Ya-OZD"/>
@@ -1362,17 +1378,17 @@ to apply, email john@nbps
                                     <constraint firstItem="clP-R5-wZ3" firstAttribute="top" secondItem="0Ch-Gi-qfX" secondAttribute="top" id="yPC-gL-hdw"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="type" value="fadeIn"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="type" value="slideDown"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="duration">
                                         <integer key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                        <integer key="value" value="1"/>
+                                        <integer key="value" value="0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back, User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5m9-Sa-pUc">
-                                <rect key="frame" x="16" y="72" width="343" height="21"/>
+                                <rect key="frame" x="16" y="80" width="343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="775-ch-EWX"/>
                                 </constraints>
@@ -1391,7 +1407,7 @@ to apply, email john@nbps
                             <constraint firstAttribute="bottom" secondItem="v6S-WP-p5v" secondAttribute="bottom" id="Rjs-ux-DYC"/>
                             <constraint firstItem="5m9-Sa-pUc" firstAttribute="trailing" secondItem="p41-fp-xsY" secondAttribute="trailingMargin" id="Z5s-DY-rbf"/>
                             <constraint firstItem="0Ch-Gi-qfX" firstAttribute="top" secondItem="oPI-Jg-Djb" secondAttribute="bottom" constant="18" id="a8z-Bi-2pz"/>
-                            <constraint firstItem="5m9-Sa-pUc" firstAttribute="top" secondItem="oPI-Jg-Djb" secondAttribute="bottom" constant="8" id="fxG-W1-ED0"/>
+                            <constraint firstItem="5m9-Sa-pUc" firstAttribute="top" secondItem="oPI-Jg-Djb" secondAttribute="bottom" constant="16" id="fxG-W1-ED0"/>
                             <constraint firstItem="Nvy-TI-aKa" firstAttribute="centerX" secondItem="p41-fp-xsY" secondAttribute="centerX" id="m8j-Yr-lcB"/>
                             <constraint firstItem="YqW-KM-LrQ" firstAttribute="top" secondItem="y9S-zW-qd0" secondAttribute="bottom" constant="16" id="ndT-te-EcM"/>
                             <constraint firstItem="v6S-WP-p5v" firstAttribute="top" secondItem="p41-fp-xsY" secondAttribute="top" id="ni7-Xp-d1Y"/>
@@ -1421,6 +1437,7 @@ to apply, email john@nbps
                         <outlet property="popupImageView" destination="Dlu-yS-VOw" id="9xk-oq-Yyj"/>
                         <outlet property="tableContainer" destination="y9S-zW-qd0" id="c2I-DI-wch"/>
                         <outlet property="titleText" destination="ESv-Hu-fkj" id="vnV-R1-RWp"/>
+                        <outlet property="titleView" destination="0Ch-Gi-qfX" id="4Ij-hg-bQl"/>
                         <outlet property="userLabel" destination="5m9-Sa-pUc" id="jtM-47-T42"/>
                     </connections>
                 </viewController>
@@ -1429,7 +1446,7 @@ to apply, email john@nbps
                     <rect key="frame" x="0.0" y="0.0" width="240" height="335"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NBP-Icon-Border" translatesAutoresizingMaskIntoConstraints="NO" id="DJG-SG-zuu">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="NBP-Icon-Border" translatesAutoresizingMaskIntoConstraints="NO" id="DJG-SG-zuu">
                             <rect key="frame" x="0.0" y="43" width="240" height="128"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="128" id="bzV-i7-dnE"/>
@@ -1447,7 +1464,7 @@ to apply, email john@nbps
                                             <rect key="frame" x="16" y="5" width="53" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="YuM-tw-BnL">
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="YuM-tw-BnL">
                                                     <rect key="frame" x="0.0" y="6" width="20" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="43q-K8-KAU"/>
@@ -1470,15 +1487,6 @@ to apply, email john@nbps
                                 </navigationItem>
                             </items>
                         </navigationBar>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zt5-Gg-7GU">
-                            <rect key="frame" x="42" y="10" width="156" height="24"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="24" id="AiI-2v-281"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c6T-Sv-03A">
                             <rect key="frame" x="0.0" y="44" width="240" height="290"/>
                             <subviews>
@@ -1493,15 +1501,15 @@ to apply, email john@nbps
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="42" id="Eqi-hG-Han"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                            <color key="textColor" red="0.85071324349999999" green="0.79150025830000004" blue="0.44942228090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" name="Beantown" family="Untitled" pointSize="16"/>
+                                            <color key="textColor" red="0.89771943929999998" green="0.83575958480000001" blue="0.47510030050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="outlineWidth">
-                                                    <integer key="value" value="4"/>
+                                                    <integer key="value" value="3"/>
                                                 </userDefinedRuntimeAttribute>
                                                 <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
-                                                    <color key="value" red="0.15868747234344482" green="0.21822044253349304" blue="0.30320093035697937" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="value" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </label>
@@ -1517,9 +1525,10 @@ to apply, email john@nbps
                                         <constraint firstItem="ESv-Hu-fkj" firstAttribute="leading" secondItem="F0E-pS-wlr" secondAttribute="leading" constant="8" id="vPs-f1-ndY"/>
                                     </constraints>
                                 </view>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YuW-WP-Fag">
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Text test 1234 new stuff North Broward . ! ? Teeestt." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YuW-WP-Fag">
                                     <rect key="frame" x="0.0" y="130" width="240" height="160"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.85071324349999999" green="0.79150025830000004" blue="0.44942228090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="15"/>
                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                                     <dataDetectorType key="dataDetectorTypes" link="YES" address="YES" calendarEvent="YES"/>
                                 </textView>
@@ -1533,17 +1542,22 @@ to apply, email john@nbps
                                 <constraint firstItem="F0E-pS-wlr" firstAttribute="top" secondItem="c6T-Sv-03A" secondAttribute="top" id="m0o-Xn-QrI"/>
                             </constraints>
                         </stackView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NBP-Icon-Border" translatesAutoresizingMaskIntoConstraints="NO" id="KhK-wS-Cmz">
+                            <rect key="frame" x="70" y="0.0" width="100" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="6ue-KB-SxK"/>
+                                <constraint firstAttribute="height" constant="44" id="BFT-h4-pf6"/>
+                            </constraints>
+                        </imageView>
                     </subviews>
-                    <color key="backgroundColor" red="0.58597046139999998" green="0.53613680600000002" blue="0.30758413670000001" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="c6T-Sv-03A" secondAttribute="bottom" constant="1" id="26V-80-NyB"/>
                         <constraint firstItem="c6T-Sv-03A" firstAttribute="top" secondItem="R7H-f8-Dz3" secondAttribute="bottom" id="2ZU-KN-BD7"/>
-                        <constraint firstItem="DJG-SG-zuu" firstAttribute="top" secondItem="Zt5-Gg-7GU" secondAttribute="bottom" constant="9" id="KCT-C3-NUz"/>
+                        <constraint firstItem="KhK-wS-Cmz" firstAttribute="top" secondItem="Sy8-wr-MnM" secondAttribute="top" id="7S8-yz-coB"/>
+                        <constraint firstItem="KhK-wS-Cmz" firstAttribute="centerX" secondItem="Sy8-wr-MnM" secondAttribute="centerX" id="BKf-AA-hHM"/>
                         <constraint firstAttribute="trailing" secondItem="c6T-Sv-03A" secondAttribute="trailing" id="LyT-I8-o1J"/>
                         <constraint firstAttribute="trailing" secondItem="R7H-f8-Dz3" secondAttribute="trailing" id="Nry-Ms-D61"/>
-                        <constraint firstAttribute="trailing" secondItem="Zt5-Gg-7GU" secondAttribute="trailing" constant="42" id="OE0-L9-1WR"/>
-                        <constraint firstItem="Zt5-Gg-7GU" firstAttribute="leading" secondItem="Sy8-wr-MnM" secondAttribute="leading" constant="42" id="Poe-Uf-x0U"/>
-                        <constraint firstItem="Zt5-Gg-7GU" firstAttribute="top" secondItem="Sy8-wr-MnM" secondAttribute="top" constant="10" id="SEe-G6-9mo"/>
                         <constraint firstItem="c6T-Sv-03A" firstAttribute="leading" secondItem="Sy8-wr-MnM" secondAttribute="leading" id="T4I-Ub-Pnf"/>
                         <constraint firstItem="R7H-f8-Dz3" firstAttribute="leading" secondItem="Sy8-wr-MnM" secondAttribute="leading" id="Zts-iO-cU2"/>
                         <constraint firstAttribute="trailing" secondItem="DJG-SG-zuu" secondAttribute="trailing" id="ZuH-PO-ppK"/>

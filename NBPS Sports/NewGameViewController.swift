@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class NewGameViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -24,7 +25,14 @@ class NewGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var homeScoreField: UITextField!
     @IBOutlet weak var awayScoreField: UITextField!
     
+    var selection:String!
+    
+    var ref: FIRDatabaseReference!
+    fileprivate var _refHandle: FIRDatabaseHandle?
+
+    
     var sports = [String]()
+    var sportsTitles = Dictionary<String,String>()
     
     
     override func viewDidLoad() {
@@ -39,11 +47,13 @@ class NewGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         fillSports()
         
+        
     }
 
     func fillSports(){
         
         sports = ["Football","Boys Soccer", "Girls Soccer", "Boys Basketball", "Girls Basketball"]
+        sportsTitles = ["Football":"Football","Boys Soccer":"SoccerBoys", "Girls Soccer":"SoccerGirls", "Boys Basketball":"BasketballBoys", "Girls Basketball":"BasketballGirls"]
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -122,6 +132,25 @@ class NewGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let homeScore = homeScoreField.text
         let awayScore = awayScoreField.text
         
+        
+        let newGameRef = self.ref!
+            .child("Sports").child(sportsTitles[selection]!)
+            .childByAutoId()
+        
+        let newGameID = newGameRef.key
+        let newGameData = [
+            "game": newGameID,
+            "homeTeam": homeTeam! as NSString,
+            "homeScore": homeScore! as NSString,
+            "awayTeam": awayTeam! as NSString,
+            "awayScore": awayScore! as NSString,
+            "date": date,
+            "editing": false
+            
+        ] as [String : Any]
+        
+        newGameRef.setValue(newGameData)
+        
         self.navigationController?.popToRootViewController(animated: true)
         
     }
@@ -135,6 +164,9 @@ class NewGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         self.navigationController?.popToRootViewController(animated: true)
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selection = sports[row]
+    }
     func clear(){
         
         homeNameField.text = ""
@@ -156,4 +188,23 @@ class NewGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
     */
 
+    deinit {
+        
+        
+        /*
+        
+        if let refHandle = _refHandle {
+            
+            
+            self.ref.child("Sports").removeObserver(withHandle: refHandle)
+            
+            print("removed _refHandle")
+            
+        }
+        self.ref.child("Sports").removeAllObservers()
+        self.ref.child("Sports").child("Football").removeAllObservers()
+         */
+    }
 }
+
+

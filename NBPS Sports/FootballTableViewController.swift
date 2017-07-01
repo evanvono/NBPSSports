@@ -124,6 +124,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     deinit {
         
         
+        
+
         if let refHandle = _refHandle {
             
             
@@ -132,6 +134,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             print("removed _refHandle")
             
         }
+        self.ref.child("Sports").removeAllObservers()
+        self.ref.child("Sports").child("Football").removeAllObservers()
     }
     
     func fillPicker(){
@@ -863,9 +867,9 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             if date.year < today.year {
                 
                 (cell.contentView.viewWithTag(7) as! UILabel).text = "Final"
-                
+             /*
                 if (Int(homeScore!)! > Int(awayScore!)!){
-                    
+                 
                     (cell.contentView.viewWithTag(5) as! UIImageView).image = UIImage(named: "triangleLeft")
                     
                     (cell.contentView.viewWithTag(4) as! UILabel).textColor = UIColor.lightGray
@@ -879,7 +883,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                     (cell.contentView.viewWithTag(3) as! UILabel).textColor = UIColor.lightGray
                     
                     (cell.contentView.viewWithTag(1) as! UILabel).textColor = UIColor.lightGray
-                }
+                }*/
                 
             } else if date.year == today.year {
                 

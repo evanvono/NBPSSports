@@ -28,10 +28,18 @@ import ChameleonFramework
  *
  */
 extension UIImageView {
-    func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit, finished: () -> Void) {
+    
+    
+    
+    func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit, activity: UIActivityIndicatorView, finished: () -> Void) {
         contentMode = mode
         
-        var done = false
+        let group = AppState.sharedInstance.myGroup
+        group.enter()
+        activity.startAnimating()
+        activity.isHidden = false
+        
+        
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard
                 let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
@@ -45,19 +53,26 @@ extension UIImageView {
             
             DispatchQueue.main.async() { () -> Void in
                 self.image = image
-                done = true
+                activity.stopAnimating()
+                activity.isHidden = true
+                group.leave()
+                
+
             }
             }.resume()
         
+        activity.stopAnimating()
+        activity.isHidden = true
         
         finished()
         
         
     }
-    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit){
+    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit, activity1: UIActivityIndicatorView){
         guard let url = URL(string: link) else { return }
-        downloadedFrom(url: url, contentMode: mode){
+        downloadedFrom(url: url, contentMode: mode, activity: activity1){
             
+        activity1.stopAnimating()
             return
         }
         
@@ -85,6 +100,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
    
     
     @IBOutlet var detailContainer: UIView!
+    @IBOutlet weak var titleView: UIView!
+    
+    var ref: FIRDatabaseReference!
+    fileprivate var _refHandle: FIRDatabaseHandle?
     
     
     var blurEffect: UIBlurEffect!
@@ -107,9 +126,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             
             
+            ref = FIRDatabase.database().reference()
+
         }
         
-        
+        titleView.layer.cornerRadius = 10.0
         activity.isHidden = false
         activity.startAnimating()
        
@@ -321,7 +342,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func animateIn(index:Int){
         
         
-
+        titleText.text = titleText.text?.lowercased()
         //blurView.
         self.blurEffectView.isUserInteractionEnabled = true
         
@@ -367,18 +388,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         
-        popupImageView.downloadedFrom(url: url1){
+        popupImageView.downloadedFrom(url: url1, activity: activity){
             
             self.popupImageView.contentMode = UIViewContentMode.scaleAspectFill
             
             let color = AverageColorFromImage(image: AppState.sharedInstance.articleImage)
             //detailContainer.backgroundColor = color.withAlphaComponent(0.5)
             
+            AppState.sharedInstance.myGroup.notify(queue: .main) {
+                
+                if self.popupImageView.image != nil {
+                    self.popupImageView.image = self.imageWithGradient(img: self.popupImageView.image)
+                }
+            }
+            
+            
         }
         
         
         
-        titleText.text = titles[index]
+        titleText.text = titles[index].lowercased()
         bodyText.text = descriptions[index]
         
         //detailWebView.loadRequest(URLRequest(url: URL(string: "www.google.com")!))
@@ -411,6 +440,37 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.popupImageView.image = nil
 
     }
+    func imageWithGradient(img:UIImage!) -> UIImage {
+        
+        UIGraphicsBeginImageContext(img.size)
+        let context = UIGraphicsGetCurrentContext()
+        
+        img.draw(at: CGPoint(x: 0, y: 0))
+        
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        
+        let locations:[CGFloat] = [0.0, 1.0]
+        
+        //let bottom = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
+        
+        let bottom = UIColor.flatGrayColorDark().cgColor
+        let top = UIColor(red: 10, green: 10, blue: 10, alpha: 0).cgColor
+        
+        let colors = [top, bottom] as CFArray
+        
+        let gradient = CGGradient(colorsSpace: colorSpace, colors: colors, locations: locations)
+        
+        let startPoint = CGPoint(x: img.size.width / 2, y: img.size.height * (2/3))
+        let endPoint = CGPoint(x: img.size.width / 2, y: img.size.height + 10)
+        
+        context!.drawLinearGradient(gradient!, start: startPoint, end: endPoint, options: CGGradientDrawingOptions(rawValue: UInt32(0)))
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        return image!
+    }
 
     
     
@@ -422,7 +482,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
       //  cell.textLabel?.text = descriptions[indexPath.row]
         (cell.contentView.viewWithTag(1) as! UITextView).text = descriptions[indexPath.row]
-        (cell.contentView.viewWithTag(2) as! UILabel).text = titles[indexPath.row]
+        (cell.contentView.viewWithTag(2) as! UILabel).text = titles[indexPath.row].lowercased()
         
         print("Titles: \(titles.count)\nDescriptions: \(descriptions.count)")
         
