@@ -768,7 +768,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             (cell?.contentView.viewWithTag(2) as! UILabel).text = awayScore
             
             
-            
+            cell?.reloadInputViews()
             
         })
         
@@ -864,12 +864,67 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             (cell.contentView.viewWithTag(2) as! UILabel).text = awayScore
         
             let today = Date.today()
+            
+            var state = "Default"
+            //Past
+            
+            
+            
             if date.year < today.year {
+                //past
+                 state = "Past"
+                
+            } else if date.year == today.year {
+                
+                if date.month < today.month {
+                    //past
+                    state = "Past"
+                    
+                } else if date.month == today.month {
+                    if date.day < today.day {
+                        //past
+                        state = "Past"
+                        
+                        
+                    } else if today.day == date.day {
+                        
+                        if today.hour < date.hour {
+                            //later today
+                            state = "Today"
+                        
+                        }
+                    } else if today.day < date.day {
+                        //future
+                        state = "Future"
+                        
+                    }
+                    
+                } else if date.month > today.month {
+                    //future
+                    state = "Future"
+                    
+                }
+                
+            } else if date.year > today.year {
+                //future
+                state = "Future"
+                
+            }
+        
+            
+            
+            
+            if state == "Past"{
                 
                 (cell.contentView.viewWithTag(7) as! UILabel).text = "Final"
-             /*
+                (cell.contentView.viewWithTag(7) as! UILabel).alpha = 1.0
+                
+                (cell.contentView.viewWithTag(15) as! UILabel).alpha = 0.0
+                
+                (cell.contentView.viewWithTag(16) as! UILabel).alpha = 0.0
+                
                 if (Int(homeScore!)! > Int(awayScore!)!){
-                 
+                    
                     (cell.contentView.viewWithTag(5) as! UIImageView).image = UIImage(named: "triangleLeft")
                     
                     (cell.contentView.viewWithTag(4) as! UILabel).textColor = UIColor.lightGray
@@ -883,35 +938,54 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                     (cell.contentView.viewWithTag(3) as! UILabel).textColor = UIColor.lightGray
                     
                     (cell.contentView.viewWithTag(1) as! UILabel).textColor = UIColor.lightGray
-                }*/
-                
-            } else if date.year == today.year {
-                
-                if date.month < today.month {
-                    
-                    
-                } else if date.month == today.month {
-                    if date.day < today.day {
-                        
-                        
-                        
-                    } else if today.day == date.day {
-                        
-                        if today.hour < date.hour {
-                            
-                            
-                            
-                        }
-                    }
-                    
                 }
                 
-            } else if date.year > today.year {
                 
+                
+            } else if state == "Today" {
+                
+                (cell.contentView.viewWithTag(7) as! UILabel).alpha = 0.0
+                
+                (cell.contentView.viewWithTag(15) as! UILabel).alpha = 1.0
+                
+                (cell.contentView.viewWithTag(16) as! UILabel).alpha = 1.0
+                
+                var hour = date.hour
+                var post = "am"
+                
+                if hour > 12 {
+                    
+                    hour -= 12
+                    post = "pm"
+                }
+                
+                (cell.contentView.viewWithTag(15) as! UILabel).text = "\(hour):\(date.minute) \(post)"
+                
+                (cell.contentView.viewWithTag(16) as! UILabel).text = "Tonight"
+                
+                
+            } else if state == "Future" {
+                
+                (cell.contentView.viewWithTag(7) as! UILabel).alpha = 0.0
+                
+                (cell.contentView.viewWithTag(15) as! UILabel).alpha = 1.0
+                
+                (cell.contentView.viewWithTag(16) as! UILabel).alpha = 1.0
+                
+                var hour = date.hour
+                var post = "am"
+                
+                if hour > 12 {
+                    
+                    hour -= 12
+                    post = "pm"
+                }
+                
+                (cell.contentView.viewWithTag(15) as! UILabel).text = "\(hour):\(date.minute) \(post)"
+                
+                (cell.contentView.viewWithTag(16) as! UILabel).text = "\(date.month)/\(date.day)"
                 
             }
-        
-            
         
         
             print(homeTeam! + "\n" + awayTeam! + "\n")

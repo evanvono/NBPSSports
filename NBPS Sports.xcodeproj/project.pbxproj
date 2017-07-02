@@ -182,7 +182,6 @@
 		20EF9E421E645DE700F45DBB /* NBPS Sports */ = {
 			isa = PBXGroup;
 			children = (
-				20C7F4191F072FB800C75532 /* Fonts */,
 				20EF9E431E645DE700F45DBB /* AppDelegate.swift */,
 				20EF9E451E645DE700F45DBB /* ViewController.swift */,
 				20EF9E471E645DE700F45DBB /* Main.storyboard */,
@@ -200,6 +199,7 @@
 				20C7F4151F071A1900C75532 /* OutlinedUILabel.swift */,
 				2034E8A41E6C81E2004CB19A /* SlideMenu */,
 				20472BC21E69C8E80065205A /* images */,
+				20C7F4191F072FB800C75532 /* Fonts */,
 				20EF9E4A1E645DE700F45DBB /* Assets.xcassets */,
 				20EF9E4C1E645DE700F45DBB /* LaunchScreen.storyboard */,
 				20EF9E4F1E645DE700F45DBB /* Info.plist */,
