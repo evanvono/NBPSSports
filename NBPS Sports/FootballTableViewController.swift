@@ -11,6 +11,7 @@ import UIKit
 import Firebase
 import Timepiece
 import Social
+import TwitterKit
 
 
 class FootballTableViewController: UITableViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
@@ -105,6 +106,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
             
         }
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
         
         homeScoreStepper.minimumValue = 0
         awayScoreStepper.minimumValue = 0
@@ -202,11 +205,12 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     }
 
     
+    
     func animateIn(){
         
-        self.navigationController?.navigationBar.isHidden = true
+        //self.navigationController?.navigationBar.isHidden = true
         
-        navigationController?.hidesBarsOnSwipe = false
+        //navigationController?.hidesBarsOnSwipe = false
         //blurView.
         
         
@@ -235,6 +239,9 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         self.blurEffectView.frame = self.view.bounds
         self.blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.view.insertSubview(self.blurEffectView, at: self.view.subviews.count - 2)
+        self.blurEffectView.removeFromSuperview()
+        self.view.insertSubview(self.blurEffectView, at: self.view.subviews.count - 2)
+        
         
         self.tableView.isScrollEnabled = false
 
@@ -256,7 +263,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         self.blurEffectView.isUserInteractionEnabled = false
         
-        self.navigationController?.navigationBar.isHidden = false
+        //self.navigationController?.navigationBar.isHidden = false
         UIView.animate(withDuration: 0.2, animations: {
             
             self.editorView.transform = CGAffineTransform.init(scaleX: 1.3, y:1.3)
@@ -279,8 +286,23 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         }
        // navigationController?.hidesBarsOnSwipe = true
         
-        self.navigationController?.navigationBar.isTranslucent = false
+        //self.navigationController?.navigationBar.isTranslucent = false
 
+    }
+    @IBAction func didChangeSwitch(_ sender: Any) {
+        
+        var gameDict = games[selectedPath[0]][selectedPath[1]]
+        let pastSnapshot = gameDict["Snapshot"] as! FIRDataSnapshot
+        
+        ref = FIRDatabase.database().reference()
+        let gameDirec = ref.child("Sports").child("Football").child(currentGame)
+        
+        
+        gameDirec.child("editing").setValue(isEditingSwitch.isOn)
+        
+        pastSnapshot.setValue(isEditingSwitch.isOn, forKey: "editing")
+        //bookmark
+        
     }
    /*
     func getNewData(){
@@ -755,17 +777,19 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
             let awayTeam = snapshot.childSnapshot(forPath: "awayTeam").value as! String
             
-            let homeScore = snapshot.childSnapshot(forPath: "homeScore").value as! String
+            let homeScore = String(snapshot.childSnapshot(forPath: "homeScore").value as! Int)
             
-            let awayScore = snapshot.childSnapshot(forPath: "awayScore").value as! String
+            let awayScore = String(snapshot.childSnapshot(forPath: "awayScore").value as! Int)
             
             
             (cell?.contentView.viewWithTag(3) as! UILabel).text = homeTeam
             
             (cell?.contentView.viewWithTag(4) as! UILabel).text = awayTeam
             
-            (cell?.contentView.viewWithTag(1) as! UILabel).text = homeScore
-            (cell?.contentView.viewWithTag(2) as! UILabel).text = awayScore
+            (cell?.contentView.viewWithTag(1) as! UILabel).text = "\(homeScore)"
+            (cell?.contentView.viewWithTag(2) as! UILabel).text = "\(awayScore)"
+            
+            
             
             
             cell?.reloadInputViews()
@@ -847,21 +871,21 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
         
         
-            let homeTeam = snapshot.childSnapshot(forPath: "homeTeam").value as? String
+            let homeTeam = snapshot.childSnapshot(forPath: "homeTeam").value as! String
         
-            let awayTeam = snapshot.childSnapshot(forPath: "awayTeam").value as? String
+            let awayTeam = snapshot.childSnapshot(forPath: "awayTeam").value as! String
         
-            let homeScore = snapshot.childSnapshot(forPath: "homeScore").value as? String
+            let homeScore = (snapshot.childSnapshot(forPath: "homeScore").value as! Int)
         
-            let awayScore = snapshot.childSnapshot(forPath: "awayScore").value as? String
+            let awayScore = (snapshot.childSnapshot(forPath: "awayScore").value as! Int)
         
         
             (cell.contentView.viewWithTag(3) as! UILabel).text = homeTeam
         
             (cell.contentView.viewWithTag(4) as! UILabel).text = awayTeam
         
-            (cell.contentView.viewWithTag(1) as! UILabel).text = homeScore
-            (cell.contentView.viewWithTag(2) as! UILabel).text = awayScore
+            (cell.contentView.viewWithTag(1) as! UILabel).text = "\(homeScore)"
+            (cell.contentView.viewWithTag(2) as! UILabel).text = "\(awayScore)"
         
             let today = Date.today()
             
@@ -923,7 +947,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                 
                 (cell.contentView.viewWithTag(16) as! UILabel).alpha = 0.0
                 
-                if (Int(homeScore!)! > Int(awayScore!)!){
+                if (homeScore > awayScore){
                     
                     (cell.contentView.viewWithTag(5) as! UIImageView).image = UIImage(named: "triangleLeft")
                     
@@ -932,7 +956,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                     (cell.contentView.viewWithTag(2) as! UILabel).textColor = UIColor.lightGray
                     
                     
-                } else if (Int(awayScore!)! > Int(homeScore!)!){
+                } else if (awayScore > homeScore){
                     
                     (cell.contentView.viewWithTag(6) as! UIImageView).image = UIImage(named: "triangleLeft")
                     (cell.contentView.viewWithTag(3) as! UILabel).textColor = UIColor.lightGray
@@ -988,7 +1012,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             }
         
         
-            print(homeTeam! + "\n" + awayTeam! + "\n")
+            print(homeTeam + "\n" + awayTeam + "\n")
         
         
         
@@ -1128,7 +1152,12 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         return headerView
     }*/
     
+    
+    
     @IBAction func tweetTapped(_ sender: UIBarButtonItem) {
+        
+        
+        
         if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
             
             let tweetComposer = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
@@ -1139,11 +1168,41 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             self.present(tweetComposer!, animated: true, completion: nil)
         } else {
             
-            let alertMessage = UIAlertController(title: "Twitter not available", message: "There is no twitter account set up on this phone", preferredStyle: .alert)
+            let alertMessage = UIAlertController(title: "Twitter not available", message: "You may associate this phone with a Twitter account in settings>Twitter or through the Twitter app.", preferredStyle: .alert)
             alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alertMessage, animated: true, completion: nil)
         }
 
+        /*
+        
+        
+        if (Twitter.sharedInstance().sessionStore.hasLoggedInUsers()) {
+            // App must have at least one logged-in user to compose a Tweet
+            let composer = TWTRComposerViewController.emptyComposer()
+            present(composer, animated: true, completion: nil)
+        } else {
+            // Log in, and then check again
+            Twitter.sharedInstance().logIn { session, error in
+                if session != nil { // Log in succeeded
+                    let composer = TWTRComposer()
+                    
+                    composer.setText("@NBPSAthletics #NBPSportsApp")
+                    composer.setImage(#imageLiteral(resourceName: "Twitter-Icon"))
+                    composer.show(from: self.navigationController!, completion: { (result) in
+                        if (result == .done) {
+                            print("Successfully composed Tweet")
+                        } else {
+                            print("Cancelled composing")
+                        }
+                    })
+                    
+                    //self.present(composer, animated: true, completion: nil)
+                } else {
+                    let alert = UIAlertController(title: "No Twitter Accounts Available", message: "You must log in before presenting a composer.", preferredStyle: .alert)
+                    self.present(alert, animated: false, completion: nil)
+                }
+            }
+        }*/
     }
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
@@ -1172,9 +1231,9 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         currentGame = game
         
-        homeScoreVal = Int((snapshot?.childSnapshot(forPath: "homeScore").value as? String)!)
+        homeScoreVal = snapshot?.childSnapshot(forPath: "homeScore").value as! Int
         
-        awayScoreVal = Int((snapshot?.childSnapshot(forPath: "awayScore").value as? String)!)
+        awayScoreVal = snapshot?.childSnapshot(forPath: "awayScore").value as! Int
 
             
         let homeTeamStr = snapshot?.childSnapshot(forPath: "homeTeam").value as! String
@@ -1185,19 +1244,19 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         awayLabel.text = "Away"
         
-        let homeVal = snapshot?.childSnapshot(forPath: "homeScore").value as? String
+        let homeVal = snapshot?.childSnapshot(forPath: "homeScore").value as! Int
         
-        let awayVal = snapshot?.childSnapshot(forPath: "awayScore").value as? String
+        let awayVal = snapshot?.childSnapshot(forPath: "awayScore").value as! Int
         
-        homeScoreLabel.text = homeVal
-        awayScoreLabel.text = awayVal
+        homeScoreLabel.text = "\(homeVal)"
+        awayScoreLabel.text = "\(awayVal)"
         
         
 
-        homeScoreStepper.value = Double(Int(homeVal!)!)
+        homeScoreStepper.value = Double(homeVal)
         
         
-        awayScoreStepper.value = Double(Int(awayVal!)!)
+        awayScoreStepper.value = Double(awayVal)
         
         editorLabel.text = "\(homeTeamStr) vs \(awayTeamStr)"
         
@@ -1210,6 +1269,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         } else if AppState.sharedInstance.signedIn {
             
             self.performSegue(withIdentifier: "FBShowGameCreator", sender: self)
+            
+            
             
         }
         
@@ -1224,6 +1285,49 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     
     @IBAction func changeTapped(_ sender: Any) {
         
+        var gameDict = games[selectedPath[0]][selectedPath[1]]
+        let pastSnapshot = gameDict["Snapshot"] as! FIRDataSnapshot
+        
+        ref = FIRDatabase.database().reference()
+        let gameDirec = ref.child("Sports").child("Football").child(currentGame)
+        
+        
+        
+        if Int(homeScoreStepper.value) != (pastSnapshot.childSnapshot(forPath: "homeScore").value as! Int){
+            
+            gameDirec.child("homeScore").setValue(Int(self.homeScoreStepper.value))
+            homeScoreVal = Int(homeScoreStepper.value)
+            
+        }
+        
+        let awayStepperVal = Int(awayScoreStepper.value)
+        if awayStepperVal != (pastSnapshot.childSnapshot(forPath: "awayScore").value as! Int){
+            
+            gameDirec.child("awayScore").setValue(Int(awayStepperVal))
+            awayScoreVal = Int(awayScoreStepper.value)
+            
+        }
+        
+        if Int(gameDatePicker.date.timeIntervalSince1970) != (pastSnapshot.childSnapshot(forPath: "date").value as! Int) {
+            
+            gameDirec.child("date").setValue(Int(gameDatePicker.date.timeIntervalSince1970))
+            games[selectedPath[0]][selectedPath[0]]["Date"] = gameDatePicker.date
+            
+            
+        }
+        
+        
+        
+        _refHandle = self.ref.child("Sports").child("Football").child(currentGame).observe(FIRDataEventType.value, with: { (snapshot) in
+          
+            gameDict["Snapshot"] = snapshot
+            print("completed snapshot update")
+            
+            
+        })
+        
+        
+        /*
         if editField.text != ""{
             
             let path = pickerComponents[pickerSelection]["Value"]
@@ -1286,6 +1390,21 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                     
                 }
                 */
+                if Int(self.gameDatePicker.date.timeIntervalSince1970) != (snapshot.childSnapshot(forPath: "date").value as! Int){
+                    
+                    let gameDirec = self.ref.child("Sports").child("Football").child(self.currentGame)
+                    
+                    gameDirec.child("date").setValue(Int(self.gameDatePicker.date.timeIntervalSince1970), withCompletionBlock: { (error, ref) in
+                        
+                        self.homeScoreVal = Int(self.homeScoreStepper.value)
+                        self.homeScoreLabel.text = String(Int(self.homeScoreStepper.value))
+                        
+                        
+                    })
+
+                    
+                }
+                
                 
             })
             
@@ -1299,21 +1418,31 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
             ref = FIRDatabase.database().reference()
             let gameDirec = ref.child("Sports").child("Football").child(currentGame)
-            gameDirec.child("homeScore").setValue(String(Int(homeScoreStepper.value)))
             
-            homeScoreVal = Int(homeScoreStepper.value)
-            homeScoreLabel.text = String(Int(homeScoreStepper.value))
+            gameDirec.child("homeScore").setValue(String(Int(homeScoreStepper.value)), withCompletionBlock: { (error, ref) in
+                
+                self.homeScoreVal = Int(self.homeScoreStepper.value)
+                self.homeScoreLabel.text = String(Int(self.homeScoreStepper.value))
+                
+                
+            })
             
         }
         if Double(awayScoreVal) != awayScoreStepper.value {
             
             ref = FIRDatabase.database().reference()
             let gameDirec = ref.child("Sports").child("Football").child(currentGame)
-            gameDirec.child("awayScore").setValue(String(Int(awayScoreStepper.value)))
             
-            awayScoreVal = Int(awayScoreStepper.value)
             
-            awayScoreLabel.text = String(Int(awayScoreStepper.value))
+            gameDirec.child("awayScore").setValue(String(Int(awayScoreStepper.value)), withCompletionBlock: { (error, ref) in
+                
+                self.awayScoreVal = Int(self.awayScoreStepper.value)
+                self.awayScoreLabel.text = String(Int(self.awayScoreStepper.value))
+                
+                
+            })
+            
+            
         }
         
       /*  if (Date(year: year, month: month, day: day) != games[selectedPath[0]][selectedPath[1]]["Date"] as! Date) {
@@ -1323,6 +1452,23 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         }
         */
         
+        if Double(awayScoreVal) != awayScoreStepper.value {
+            
+            ref = FIRDatabase.database().reference()
+            let gameDirec = ref.child("Sports").child("Football").child(currentGame)
+            
+            
+            gameDirec.child("awayScore").setValue(String(Int(awayScoreStepper.value)), withCompletionBlock: { (error, ref) in
+                
+                self.awayScoreVal = Int(self.awayScoreStepper.value)
+                self.awayScoreLabel.text = String(Int(self.awayScoreStepper.value))
+                
+                
+            })
+            
+            
+        }
+        
         
         ref = FIRDatabase.database().reference()
         let gameDirec = ref.child("Sports").child("Football").child(currentGame)
@@ -1330,9 +1476,9 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         let newDate = Int(gameDatePicker.date.timeIntervalSince1970)
         gameDirec.child("date").setValue(newDate)
         
-        
+ 
         tableView.reloadData()
-        
+        */
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

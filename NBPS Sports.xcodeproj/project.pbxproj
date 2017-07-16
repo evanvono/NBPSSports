@@ -11,6 +11,11 @@
 		2023F0531EA17EB40041E165 /* BaseballTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023F0521EA17EB40041E165 /* BaseballTableViewController.swift */; };
 		2023F0551EA1845B0041E165 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023F0541EA1845B0041E165 /* LoginViewController.swift */; };
 		203B2EE21EBBDABC009F1488 /* TwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203B2EE11EBBDABC009F1488 /* TwitchViewController.swift */; };
+		204414B51F093F0900F866C4 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204414B11F093F0900F866C4 /* TwitterCore.framework */; };
+		204414B61F093F0900F866C4 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204414B21F093F0900F866C4 /* TwitterKit.framework */; };
+		204414B71F093F0900F866C4 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 204414B31F093F0900F866C4 /* TwitterKitResources.bundle */; };
+		204414B81F093F0900F866C4 /* TwitterShareExtensionUIResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 204414B41F093F0900F866C4 /* TwitterShareExtensionUIResources.bundle */; };
+		204414BD1F09484900F866C4 /* NBPSTwitterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204414BC1F09484900F866C4 /* NBPSTwitterTableViewController.swift */; };
 		20472BB71E69C6320065205A /* SwiftSpinner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20472BB61E69C6320065205A /* SwiftSpinner.framework */; };
 		20472BBB1E69C6660065205A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20472BBA1E69C6660065205A /* SWRevealViewController.m */; };
 		20472BBF1E69C8E30065205A /* Unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 20472BBC1E69C8E30065205A /* Unknown.png */; };
@@ -23,6 +28,8 @@
 		2072828B1E745275009C87FF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2072828A1E745275009C87FF /* WebViewController.swift */; };
 		2074DF931EE8647000D91041 /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2074DF921EE8647000D91041 /* NewGameViewController.swift */; };
 		20848E9D1EE70F4B0050432D /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20848E9C1EE70F4B0050432D /* TransitionViewController.swift */; };
+		20C6663E1F0F38C400B192AC /* Twitter.blank.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20C6663C1F0F38C400B192AC /* Twitter.blank.plist */; };
+		20C6663F1F0F38C400B192AC /* Twitter.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20C6663D1F0F38C400B192AC /* Twitter.plist */; };
 		20C7F4161F071A1900C75532 /* OutlinedUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C7F4151F071A1900C75532 /* OutlinedUILabel.swift */; };
 		20C7F4181F072FAE00C75532 /* beantown.regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 20C7F4171F072FAE00C75532 /* beantown.regular.ttf */; };
 		20DBD3D01E6C85F800D4D690 /* FootballTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DBD3CF1E6C85F800D4D690 /* FootballTableViewController.swift */; };
@@ -34,6 +41,8 @@
 		20EF9E4E1E645DE700F45DBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20EF9E4C1E645DE700F45DBB /* LaunchScreen.storyboard */; };
 		20EF9E591E645DE700F45DBB /* NBPS_SportsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EF9E581E645DE700F45DBB /* NBPS_SportsTests.swift */; };
 		20EF9E641E645DE700F45DBB /* NBPS_SportsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EF9E631E645DE700F45DBB /* NBPS_SportsUITests.swift */; };
+		20F4EE291F0986A0004CBF45 /* StackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F4EE271F0986A0004CBF45 /* StackViewCell.swift */; };
+		20F4EE2A1F0986A0004CBF45 /* StackViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20F4EE281F0986A0004CBF45 /* StackViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +67,12 @@
 		2023F0521EA17EB40041E165 /* BaseballTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseballTableViewController.swift; sourceTree = "<group>"; };
 		2023F0541EA1845B0041E165 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		203B2EE11EBBDABC009F1488 /* TwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitchViewController.swift; sourceTree = "<group>"; };
+		204414B11F093F0900F866C4 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
+		204414B21F093F0900F866C4 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		204414B31F093F0900F866C4 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterKitResources.bundle; sourceTree = "<group>"; };
+		204414B41F093F0900F866C4 /* TwitterShareExtensionUIResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TwitterShareExtensionUIResources.bundle; sourceTree = "<group>"; };
+		204414B91F09409D00F866C4 /* TwitterKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TwitterKit-Bridging-Header.h"; sourceTree = "<group>"; };
+		204414BC1F09484900F866C4 /* NBPSTwitterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBPSTwitterTableViewController.swift; sourceTree = "<group>"; };
 		20472BB61E69C6320065205A /* SwiftSpinner.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SwiftSpinner.framework; sourceTree = "<group>"; };
 		20472BB81E69C65D0065205A /* SWRevealViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		20472BB91E69C6660065205A /* NBPS Sports-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NBPS Sports-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -67,11 +82,14 @@
 		20472BBE1E69C8E30065205A /* Football.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Football.jpg; sourceTree = "<group>"; };
 		204ADA671ECA7677002C4076 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		204ADA691ECA78AA002C4076 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		205730CB1F0DD6BF00559965 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = Base.lproj/MenuTableViewController.swift; sourceTree = "<group>"; };
 		2069AE8A1EE712830032250C /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		206EA2641EA59D8E00F73B36 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2072828A1E745275009C87FF /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		2074DF921EE8647000D91041 /* NewGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameViewController.swift; sourceTree = "<group>"; };
 		20848E9C1EE70F4B0050432D /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
+		20C6663C1F0F38C400B192AC /* Twitter.blank.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Twitter.blank.plist; sourceTree = "<group>"; };
+		20C6663D1F0F38C400B192AC /* Twitter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Twitter.plist; sourceTree = "<group>"; };
 		20C7F4151F071A1900C75532 /* OutlinedUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlinedUILabel.swift; sourceTree = "<group>"; };
 		20C7F4171F072FAE00C75532 /* beantown.regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = beantown.regular.ttf; sourceTree = "<group>"; };
 		20DBD3CF1E6C85F800D4D690 /* FootballTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FootballTableViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -89,6 +107,8 @@
 		20EF9E5F1E645DE700F45DBB /* NBPS SportsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NBPS SportsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20EF9E631E645DE700F45DBB /* NBPS_SportsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBPS_SportsUITests.swift; sourceTree = "<group>"; };
 		20EF9E651E645DE700F45DBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20F4EE271F0986A0004CBF45 /* StackViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackViewCell.swift; sourceTree = "<group>"; };
+		20F4EE281F0986A0004CBF45 /* StackViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StackViewCell.xib; sourceTree = "<group>"; };
 		23D1215639B6DF0E16272AD3 /* Pods-NBPS Sports.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NBPS Sports.release.xcconfig"; path = "Pods/Target Support Files/Pods-NBPS Sports/Pods-NBPS Sports.release.xcconfig"; sourceTree = "<group>"; };
 		9A0A055936AB3D9741529DD3 /* Pods-NBPS Sports.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NBPS Sports.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NBPS Sports/Pods-NBPS Sports.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,7 +119,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				20472BB71E69C6320065205A /* SwiftSpinner.framework in Frameworks */,
+				204414B51F093F0900F866C4 /* TwitterCore.framework in Frameworks */,
 				07EEC84E1F73EE9F8743E871 /* Pods_NBPS_Sports.framework in Frameworks */,
+				204414B61F093F0900F866C4 /* TwitterKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +171,16 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		20C666401F0F38DB00B192AC /* TwitterKit */ = {
+			isa = PBXGroup;
+			children = (
+				204414B91F09409D00F866C4 /* TwitterKit-Bridging-Header.h */,
+				20C6663C1F0F38C400B192AC /* Twitter.blank.plist */,
+				20C6663D1F0F38C400B192AC /* Twitter.plist */,
+			);
+			name = TwitterKit;
+			sourceTree = "<group>";
+		};
 		20C7F4191F072FB800C75532 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +217,7 @@
 				20EF9E431E645DE700F45DBB /* AppDelegate.swift */,
 				20EF9E451E645DE700F45DBB /* ViewController.swift */,
 				20EF9E471E645DE700F45DBB /* Main.storyboard */,
+				205730CA1F0DD6BF00559965 /* MenuTableViewController.swift */,
 				2074DF921EE8647000D91041 /* NewGameViewController.swift */,
 				204ADA691ECA78AA002C4076 /* AppState.swift */,
 				204ADA671ECA7677002C4076 /* Constants.swift */,
@@ -197,10 +230,14 @@
 				20848E9C1EE70F4B0050432D /* TransitionViewController.swift */,
 				2069AE8A1EE712830032250C /* AccountViewController.swift */,
 				20C7F4151F071A1900C75532 /* OutlinedUILabel.swift */,
+				204414BC1F09484900F866C4 /* NBPSTwitterTableViewController.swift */,
+				20F4EE271F0986A0004CBF45 /* StackViewCell.swift */,
+				20F4EE281F0986A0004CBF45 /* StackViewCell.xib */,
 				2034E8A41E6C81E2004CB19A /* SlideMenu */,
 				20472BC21E69C8E80065205A /* images */,
 				20C7F4191F072FB800C75532 /* Fonts */,
 				20EF9E4A1E645DE700F45DBB /* Assets.xcassets */,
+				20C666401F0F38DB00B192AC /* TwitterKit */,
 				20EF9E4C1E645DE700F45DBB /* LaunchScreen.storyboard */,
 				20EF9E4F1E645DE700F45DBB /* Info.plist */,
 				206EA2641EA59D8E00F73B36 /* GoogleService-Info.plist */,
@@ -229,6 +266,10 @@
 		860531FB41CFCFC1198083E0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				204414B11F093F0900F866C4 /* TwitterCore.framework */,
+				204414B21F093F0900F866C4 /* TwitterKit.framework */,
+				204414B31F093F0900F866C4 /* TwitterKitResources.bundle */,
+				204414B41F093F0900F866C4 /* TwitterShareExtensionUIResources.bundle */,
 				20472BB61E69C6320065205A /* SwiftSpinner.framework */,
 				11F3D03C5B1A6C017B50CD28 /* Pods_NBPS_Sports.framework */,
 			);
@@ -349,12 +390,17 @@
 			files = (
 				20EF9E4E1E645DE700F45DBB /* LaunchScreen.storyboard in Resources */,
 				20EF9E4B1E645DE700F45DBB /* Assets.xcassets in Resources */,
+				20C6663F1F0F38C400B192AC /* Twitter.plist in Resources */,
+				20C6663E1F0F38C400B192AC /* Twitter.blank.plist in Resources */,
 				20472BC01E69C8E30065205A /* Screen-Shot-2015-09-30-at-8.05.56-AM.png in Resources */,
+				20F4EE2A1F0986A0004CBF45 /* StackViewCell.xib in Resources */,
 				20472BBF1E69C8E30065205A /* Unknown.png in Resources */,
 				20472BC11E69C8E30065205A /* Football.jpg in Resources */,
 				20EF9E491E645DE700F45DBB /* Main.storyboard in Resources */,
 				20C7F4181F072FAE00C75532 /* beantown.regular.ttf in Resources */,
+				204414B71F093F0900F866C4 /* TwitterKitResources.bundle in Resources */,
 				206EA2651EA59D8E00F73B36 /* GoogleService-Info.plist in Resources */,
+				204414B81F093F0900F866C4 /* TwitterShareExtensionUIResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,8 +483,10 @@
 				204ADA681ECA7677002C4076 /* Constants.swift in Sources */,
 				204ADA6A1ECA78AA002C4076 /* AppState.swift in Sources */,
 				20848E9D1EE70F4B0050432D /* TransitionViewController.swift in Sources */,
+				20F4EE291F0986A0004CBF45 /* StackViewCell.swift in Sources */,
 				2074DF931EE8647000D91041 /* NewGameViewController.swift in Sources */,
 				20DBD3D01E6C85F800D4D690 /* FootballTableViewController.swift in Sources */,
+				204414BD1F09484900F866C4 /* NBPSTwitterTableViewController.swift in Sources */,
 				20472BBB1E69C6660065205A /* SWRevealViewController.m in Sources */,
 				203B2EE21EBBDABC009F1488 /* TwitchViewController.swift in Sources */,
 				2023F0531EA17EB40041E165 /* BaseballTableViewController.swift in Sources */,
@@ -477,6 +525,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		205730CA1F0DD6BF00559965 /* MenuTableViewController.swift */ = {
+			isa = PBXVariantGroup;
+			children = (
+				205730CB1F0DD6BF00559965 /* Base */,
+			);
+			name = MenuTableViewController.swift;
+			sourceTree = "<group>";
+		};
 		20EF9E471E645DE700F45DBB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -47,6 +47,9 @@ class NewGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         fillSports()
         
+        self.hideKeyboardWhenTappedAround()
+
+        
         
     }
 
@@ -126,24 +129,25 @@ class NewGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     
     @IBAction func didTouchCreate(_ sender: Any) {
         
+        ref = FIRDatabase.database().reference()
+        
         let date = Int(datePicker.date.timeIntervalSince1970)
         let homeTeam = homeNameField.text
         let awayTeam = awayNameField.text
-        let homeScore = homeScoreField.text
-        let awayScore = awayScoreField.text
+        let homeScore = Int(homeScoreField.text!)
+        let awayScore = Int(awayScoreField.text!)
         
+        let title = sports[sportPicker.selectedRow(inComponent: 0)]
         
-        let newGameRef = self.ref!
-            .child("Sports").child(sportsTitles[selection]!)
-            .childByAutoId()
+        let newGameRef = self.ref.child("Sports").child(sportsTitles[title]!).childByAutoId()
         
         let newGameID = newGameRef.key
         let newGameData = [
             "game": newGameID,
             "homeTeam": homeTeam! as NSString,
-            "homeScore": homeScore! as NSString,
+            "homeScore": homeScore! as Int,
             "awayTeam": awayTeam! as NSString,
-            "awayScore": awayScore! as NSString,
+            "awayScore": awayScore! as Int,
             "date": date,
             "editing": false
             

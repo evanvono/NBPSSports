@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import TwitterKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -24,9 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
        //UIBarButtonItem.appearance().tintColor = UIColor.magenta
-        
-                
+        Twitter.sharedInstance().start(withConsumerKey:"dz8yHoOCpahQCjahpekuz3Pyi", consumerSecret:"8KBexq2nx4ItpO48qfXvRSlcCS7vHJJoTX0a4JLX7hN98ktpd2")
+            
         FIRApp.configure()
+        
+        UINavigationBar.appearance().barTintColor = UIColor.darkGray
+        UITabBar.appearance().barTintColor = UIColor.darkGray
+        
         return true
     }
 

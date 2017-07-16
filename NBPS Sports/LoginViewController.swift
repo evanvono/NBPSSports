@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             
-            
+            self.hideKeyboardWhenTappedAround()
         }
         
         if let user = FIRAuth.auth()?.currentUser {

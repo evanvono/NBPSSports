@@ -15,6 +15,8 @@ class AppState: NSObject {
     var signedIn = false
     var displayName: String = "editor"
     var articleImage:UIImage = #imageLiteral(resourceName: "NBP-Icon-Border")
+    var sportTitle = "Football"
+    
     
     let myGroup = DispatchGroup()
     // var photoUrl: NSURL?

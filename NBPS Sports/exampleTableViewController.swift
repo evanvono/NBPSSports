@@ -13,7 +13,8 @@ class MenuTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        menuItems = ["Football","Soccer","Baseball","Basketball","Track"]
+        
+        menuItems = ["Menu","Football","Basketball","Soccer","Editors","Volleyball","Twitch"]
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -33,21 +34,22 @@ class MenuTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 2
     }
-
+/*
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         var cellNum = 0
         if section == 0 {
             
             cellNum = 1
+            
         } else if section == 1 {
             
             cellNum = menuItems.count
         }
         return cellNum
-    }
+    }*/
 
-    
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         var cell = tableView.dequeueReusableCell(withIdentifier: "top")
@@ -60,7 +62,7 @@ class MenuTableViewController: UITableViewController {
             
             
         } else if indexPath.section == 1{
-            cell = tableView.dequeueReusableCell(withIdentifier: "button", for: indexPath)
+            cell = tableView.dequeueReusableCell(withIdentifier: "mainButton", for: indexPath)
             let text:String = menuItems[indexPath.row]
             
             (cell?.contentView.viewWithTag(2) as! UILabel).text = text
@@ -68,7 +70,7 @@ class MenuTableViewController: UITableViewController {
         
 
         return cell!
-    }
+    }*/
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
@@ -91,10 +93,22 @@ class MenuTableViewController: UITableViewController {
      (cell.contentView.viewWithTag(3) as! UILabel).textColor = UIColor.black
  
  */
-    
+   /*
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let revealViewController:SWRevealViewController = self.revealViewController()
+        
+        
+        
+        if indexPath.section > 0 {
+            
+           
+                
+            self.performSegue(withIdentifier: menuItems[indexPath.row], sender: self)
+          
+            
+        }
+        
         
         let cell:UITableViewCell = tableView.cellForRow(at: indexPath)!
         
@@ -109,13 +123,17 @@ class MenuTableViewController: UITableViewController {
                 /*let desController = mainStoryboard.instantiateViewController(withIdentifier: "Football-main") as! UITableViewController
                 let newFrontViewController = UINavigationController.init(rootViewController:desController)
                 //revealViewController.pushFrontViewController(newFrontViewController, animated: true)*/
-                self.performSegue(withIdentifier: "tappedFootball", sender: self)
+                
+                let cell = tableView.cellForRow(at: indexPath)
+                self.performSegue(withIdentifier: "tappedFootball", sender: cell)
             }
         }
     }
+    */
+    /*
     override var prefersStatusBarHidden: Bool {
         return true
-    }
+    }*/
 
     /*
     // Override to support conditional editing of the table view.

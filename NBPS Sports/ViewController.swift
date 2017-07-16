@@ -79,13 +79,21 @@ extension UIImageView {
     }
 }
 
+struct  Sport {
+    
+    var sportTitle:String!
+    var boysTitle:String!
+    var girlsTitle:String!
+    var color:UIColor!
+    
+}
+
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource/*, UIWebViewDelegate */{
 
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     
-    @IBOutlet weak var userLabel: UILabel!
     @IBOutlet var detailNavBar: UINavigationBar!
     @IBOutlet weak var tableContainer: UIView!
     @IBOutlet weak var mainTableView: UITableView!
@@ -113,23 +121,45 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var titles = [String]()
     var urlArr = [String]()
     var images = [String]()
+    var times = [String]()
     
+    
+    var amt:Int = 0
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        bodyText.setContentOffset(CGPoint.zero, animated: false)
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableContainer.layer.cornerRadius = 5
         
-        if self.revealViewController() != nil {
-            //print("not nil")
+        checkForNew()
+        
+        /*            //print("not nil")
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             
+            */
             
-            ref = FIRDatabase.database().reference()
-
-        }
         
+        
+        ref = FIRDatabase.database().reference()
+
         titleView.layer.cornerRadius = 10.0
         activity.isHidden = false
         activity.startAnimating()
@@ -138,14 +168,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if AppState.sharedInstance.signedIn == true {
             
-            userLabel.text = "Welcome back, \(name)"
-            logoutButton.tintColor = self.view.tintColor
+            self.title = "\(name)"
             
+            
+           // userLabel.text = "Welcome back, \(name)"
+            logoutButton.tintColor = self.view.tintColor
+            logoutButton.isEnabled = true
+
         } else {
             
-            userLabel.text = ""
+            //userLabel.text = ""
+            logoutButton.isEnabled = false
             logoutButton.tintColor = UIColor.clear
-            
             
         }
         
@@ -166,6 +200,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func checkForNew(){
+        
+        ref = FIRDatabase.database().reference()
+        
+        _refHandle = ref.child("Sports").observe(FIRDataEventType.value, with: { (snapshot) in
+            
+            self.amt = snapshot.childSnapshot(forPath: "liveGames").value as! Int
+            
+            if self.amt > 0 {
+                self.mainTableView.reloadData()
+            }
+        
+        })
     }
 
     func setUpBlurView(){
@@ -242,7 +291,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 }
                 
                 // "'image' class='post' src='"
-                
+                /*
                 var arr2 = [String]()
                 
                 arr2 = content.components(separatedBy: "<p><strong>")
@@ -257,6 +306,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         
                     }
                 }
+                */
+                
+                var arr2 = [String]()
+                
+                arr2 = content.components(separatedBy: "title=\"")
+                
+                for i in arr2 {
+                    
+                    if i.contains("\"></tp"){
+                        
+                        
+                        let str = i.components(separatedBy: "\"></tp")[0].replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+                        self.titles.append(str)
+                        
+                    }
+                }
+                
                 
                 while self.titles.count % 5 != 0 {
                     
@@ -284,6 +350,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     
                     self.images.append(" ")
                 }
+                
+                var arr4 = [String]()
+                
+                arr4 = content.components(separatedBy: "Athletics</a> at ")
+                
+                for i in arr4 {
+                    
+                    if i.contains("<span class='edit_mode_text'"){
+                        
+                        
+                        let str = i.components(separatedBy: " P")[0]
+                        self.times.append(str)
+                        print(str)
+                        
+                    }
+                    
+                }
+                
+                while self.times.count % 5 != 0 {
+                    
+                    self.times.append(" ")
+                }
+                
                 
                 DispatchQueue.main.async {
                     self.mainTableView.reloadData()
@@ -478,19 +567,52 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         
-        
-        
-      //  cell.textLabel?.text = descriptions[indexPath.row]
-        (cell.contentView.viewWithTag(1) as! UITextView).text = descriptions[indexPath.row]
-        (cell.contentView.viewWithTag(2) as! UILabel).text = titles[indexPath.row].lowercased()
-        
-        print("Titles: \(titles.count)\nDescriptions: \(descriptions.count)")
-        
-        if  descriptions.count > 9 {
+        if amt > 0 {
             
-            activity.stopAnimating()
+            if indexPath.section == 0 {
+                
+                
+                (cell.contentView.viewWithTag(1) as! UITextView).text = "North Broward faces Gibbons in this away game"
+                (cell.contentView.viewWithTag(2) as! UILabel).text = "Boys Soccer: North Broward vs Gibbons"
+                
+                (cell.contentView.viewWithTag(3) as! UILabel).text = "Home"
+                
+                    
+            } else if indexPath.section == 1 {
+                
+                (cell.contentView.viewWithTag(1) as! UITextView).text = descriptions[indexPath.row]
+                (cell.contentView.viewWithTag(2) as! UILabel).text = titles[indexPath.row].lowercased()
+                
+                (cell.contentView.viewWithTag(3) as! UILabel).text = times[indexPath.row]
+                
+                print("Titles: \(titles.count)\nDescriptions: \(descriptions.count)")
+                
+                if  descriptions.count > 9 {
+                    
+                    activity.stopAnimating()
+                    
+                }
+            }
+            
+        } else {
+            
+            (cell.contentView.viewWithTag(1) as! UITextView).text = descriptions[indexPath.row]
+            (cell.contentView.viewWithTag(2) as! UILabel).text = titles[indexPath.row].lowercased()
+            
+            (cell.contentView.viewWithTag(3) as! UILabel).text = times[indexPath.row]
+            
+            print("Titles: \(titles.count)\nDescriptions: \(descriptions.count)")
+            
+            if  descriptions.count > 9 {
+                
+                activity.stopAnimating()
+                
+            }
             
         }
+        
+      //  cell.textLabel?.text = description[indexPath.row]
+        
         return cell
     }
     
@@ -500,17 +622,64 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return descriptions.count
+        var rows = descriptions.count
+        
+        if amt > 0 {
+            
+            if section == 0 {
+                
+                rows = amt
+                
+            } else if section == 1 {
+                
+                rows = descriptions.count
+            }
+            
+        }
+        return rows
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        
+        var sections = 1
+        
+        if amt > 0 {
+            sections = 2
+        }
+        
+        return sections
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if amt > 0 {
+            
+            if section == 0 {
+                return "Live Now"
+            } else {
+                
+                return "NBPS Athletics News"
+            }
+        } else {
+            
+            return "NBPS Athletics News"
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print("selected \(indexPath.section),\(indexPath.row)")
-        animateIn(index:indexPath.row)
+        if amt > 0 {
+            
+            if indexPath.section == 1 {
+                print("selected \(indexPath.section),\(indexPath.row)")
+                animateIn(index:indexPath.row)
+            }
+            
+        } else {
+            
+            print("selected \(indexPath.section),\(indexPath.row)")
+            animateIn(index:indexPath.row)
+
+        }
         
         
         
