@@ -19,7 +19,7 @@ import UIKit
 import Firebase
 import Social
 import ChameleonFramework
-
+import SwiftSpinner
 
 
 /*

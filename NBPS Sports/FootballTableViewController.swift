@@ -12,7 +12,7 @@ import Firebase
 import Timepiece
 import Social
 import TwitterKit
-
+import SwiftSpinner
 
 class FootballTableViewController: UITableViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -60,6 +60,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     
     var todaySection = -1
     
+    var hidden = false
     
  //   var games: [[Dictionary<String,String>]]?
     var gamesArray = [FIRDataSnapshot]()
@@ -76,6 +77,10 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
        
         super.viewDidLoad()
         
+        
+        self.title = "Football"
+        
+        SwiftSpinner.show("Loading Football Games...")
         
         
         self.hideKeyboardWhenTappedAround()
@@ -95,7 +100,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         picker.reloadComponent(0)
         
         //navigationController?.hidesBarsOnSwipe = true
-        
+        _ = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.checkConnection), userInfo: nil, repeats: true)
         
         
         if self.revealViewController() != nil {
@@ -106,6 +111,13 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
             
         }
+        /*
+        let when = DispatchTime.now() + 5 // change 2 to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when) {
+            self.checkConnection()
+        }*/
+        
+        //timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
         
         self.navigationController?.navigationBar.barTintColor = UIColor.white
         
@@ -139,6 +151,55 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         }
         self.ref.child("Sports").removeAllObservers()
         self.ref.child("Sports").child("Football").removeAllObservers()
+    }
+    
+    func checkConnection(){
+        
+        
+        
+        let connectedRef = FIRDatabase.database().reference(withPath: ".info/connected")
+        connectedRef.observe(.value, with: { snapshot in
+            if let connected = snapshot.value as? Bool, connected {
+                
+                //SwiftSpinner.appearance().tintColor = UIColor.green
+                
+                if self.hidden {
+                    
+                    print("hidden")
+                    
+                } else {
+                    SwiftSpinner.show("Downloading Data...")
+                }
+                self.title = "Football"
+                self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
+            } else {
+                self.title = "No Connection"
+                    
+                    
+                self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.red]
+                    
+                if self.hidden {
+                        
+                        print("hidden")
+                        
+                } else {
+                        
+                    
+                    SwiftSpinner.appearance().tintColor = UIColor.red
+                    SwiftSpinner.show("Failed to connect, tap to dismiss.", animated: false).addTapHandler({
+                    
+                        
+                        SwiftSpinner.hide()
+                    
+                        self.hidden = true
+                    
+                    
+                    }, subtitle: "Please check your connection; your content will load automatically.")
+                }
+                    
+            }
+        })
+        
     }
     
     func fillPicker(){
@@ -536,7 +597,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                     }
                     self.tableView.reloadData()
                     self.spinner.stopAnimating()
-                    
+                    SwiftSpinner.hide()
+                    self.hidden = true
                    
                     //self.tableView.scrollToRow(at: IndexPath(row: 0, section: self.todaySection), at: UITableViewScrollPosition.top, animated: true)
                 }
