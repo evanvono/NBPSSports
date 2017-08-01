@@ -36,7 +36,8 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         
         //backButton.tintColor = UIColor() 007AFF , AEEBFF (dark, light)
         
-
+        loadWebView(request: URLRequest(url: AppState.sharedInstance.ArticleURL))
+        print(AppState.sharedInstance.ArticleURL)
         
         
         // Do any additional setup after loading the view.
@@ -44,7 +45,6 @@ class WebViewController: UIViewController, UIWebViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
         
         
-        loadWebView(request: URLRequest(url: URL(string: "http://www.twitter.com/nbpsathletics")!))
         
         
     }
@@ -85,19 +85,21 @@ class WebViewController: UIViewController, UIWebViewDelegate {
         loadedBool = true
         progressBar.setProgress(1, animated: true)
         myTimer.invalidate()
+        
+        
         if mainView.canGoBack{
             
             backButton.tintColor = self.view.tintColor.withAlphaComponent(1)
             
         } else {
             
-            backButton.tintColor = self.view.tintColor.withAlphaComponent(0.5)
+            backButton.tintColor = self.view.tintColor.withAlphaComponent(0.2)
         }
         if mainView.canGoForward{
             
             forwardButton.tintColor = self.view.tintColor.withAlphaComponent(1)
         } else {
-            forwardButton.tintColor = self.view.tintColor.withAlphaComponent(0.5)
+            forwardButton.tintColor = self.view.tintColor.withAlphaComponent(0.2)
             
         }
 
@@ -129,6 +131,12 @@ class WebViewController: UIViewController, UIWebViewDelegate {
             barTimer.invalidate()
         }
         
+        
+    }
+    
+    @IBAction func tappedDone(_ sender: Any) {
+     
+        self.navigationController?.popToRootViewController(animated: true)
         
     }
     

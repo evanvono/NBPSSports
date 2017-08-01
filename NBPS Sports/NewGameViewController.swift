@@ -141,19 +141,27 @@ class NewGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         let newGameRef = self.ref.child("Sports").child(sportsTitles[title]!).childByAutoId()
         
+        
+        let timeStamp = Int(NSDate.timeIntervalSinceReferenceDate*1000) //Will give you a unique id every second or even millisecond if you want..
+        
+        
+        
         let newGameID = newGameRef.key
         let newGameData = [
-            "game": newGameID,
+            "game": timeStamp,
             "homeTeam": homeTeam! as NSString,
             "homeScore": homeScore! as Int,
             "awayTeam": awayTeam! as NSString,
             "awayScore": awayScore! as Int,
             "date": date,
-            "editing": false
+            "editing": false,
+            "time": "0:00"
             
         ] as [String : Any]
         
-        newGameRef.setValue(newGameData)
+        
+        
+        self.ref.child("Sports").child(sportsTitles[title]!).child(String(timeStamp)).setValue(newGameData)
         
         self.navigationController?.popToRootViewController(animated: true)
         

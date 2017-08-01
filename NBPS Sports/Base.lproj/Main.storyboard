@@ -537,13 +537,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                 <constraint firstAttribute="width" constant="40" id="k0t-8f-Khi"/>
                                                 <constraint firstAttribute="height" constant="20" id="kYO-2l-TvF"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="North Broward Prep" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHh-Wj-KyS">
-                                            <rect key="frame" x="47" y="32.5" width="180" height="19.5"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -553,7 +547,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                 <constraint firstAttribute="height" constant="20" id="dsR-5y-7ba"/>
                                                 <constraint firstAttribute="width" constant="40" id="fnJ-l5-wEw"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -582,15 +576,6 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                 <constraint firstAttribute="height" constant="20" id="nYh-w8-cel"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="North Broward Prep" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWh-EA-zUM">
-                                            <rect key="frame" x="47" y="8" width="180" height="19.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="180" id="H2v-d3-qEO"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rZ1-Jp-x5R">
                                             <rect key="frame" x="8" y="0.0" width="359" height="1"/>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -618,30 +603,67 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                 <constraint firstAttribute="height" constant="29" id="mJ3-Jd-Lqy"/>
                                             </constraints>
                                         </stackView>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="North Broward Prep" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NHh-Wj-KyS">
+                                            <rect key="frame" x="27" y="32" width="225" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Jqr-JE-GXV"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="North Broward Prep" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWh-EA-zUM">
+                                            <rect key="frame" x="27" y="8" width="225" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="gt1-Dh-yJs"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" tag="21" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yar-5U-s2V">
+                                            <rect key="frame" x="8" y="12" width="19" height="12"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="12" id="poA-vg-c93"/>
+                                                <constraint firstAttribute="width" constant="19" id="rqr-aU-wMn"/>
+                                            </constraints>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" tag="22" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MSS-q7-hte">
+                                            <rect key="frame" x="8" y="36" width="19" height="12"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="19" id="chC-bz-XyU"/>
+                                                <constraint firstAttribute="height" constant="12" id="vm2-Z0-Vcd"/>
+                                            </constraints>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="VAB-B9-Iab" firstAttribute="leading" secondItem="x8S-mY-4GL" secondAttribute="trailing" constant="6" id="0OH-uz-FqP"/>
                                         <constraint firstItem="x8S-mY-4GL" firstAttribute="top" secondItem="wvK-lH-OsT" secondAttribute="topMargin" id="0gB-zS-Taq"/>
+                                        <constraint firstItem="MSS-q7-hte" firstAttribute="centerY" secondItem="NHh-Wj-KyS" secondAttribute="centerY" id="1Bg-Gd-Rqs"/>
                                         <constraint firstItem="aBQ-TK-MD0" firstAttribute="top" secondItem="QoB-Jk-Zv0" secondAttribute="bottom" constant="4" id="1dG-7v-izI"/>
                                         <constraint firstItem="itc-1w-C8b" firstAttribute="leading" secondItem="x8S-mY-4GL" secondAttribute="trailing" constant="8" id="4tI-11-bfT"/>
+                                        <constraint firstItem="IWh-EA-zUM" firstAttribute="leading" secondItem="yar-5U-s2V" secondAttribute="trailing" id="5HX-ml-a7q"/>
                                         <constraint firstAttribute="trailing" secondItem="rZ1-Jp-x5R" secondAttribute="trailing" constant="8" id="5ZR-ax-oSu"/>
                                         <constraint firstItem="itc-1w-C8b" firstAttribute="centerY" secondItem="wvK-lH-OsT" secondAttribute="centerY" id="7W8-vQ-Sba"/>
+                                        <constraint firstItem="IWh-EA-zUM" firstAttribute="leading" secondItem="wvK-lH-OsT" secondAttribute="leadingMargin" constant="19" id="7n4-En-cTx"/>
                                         <constraint firstItem="QoB-Jk-Zv0" firstAttribute="top" secondItem="wvK-lH-OsT" secondAttribute="topMargin" id="8E9-3O-db2"/>
                                         <constraint firstItem="rZ1-Jp-x5R" firstAttribute="leading" secondItem="wvK-lH-OsT" secondAttribute="leading" constant="8" id="9Bm-7t-ek0"/>
+                                        <constraint firstItem="NHh-Wj-KyS" firstAttribute="top" secondItem="IWh-EA-zUM" secondAttribute="bottom" constant="4" id="9UH-5K-TdM"/>
                                         <constraint firstItem="VAB-B9-Iab" firstAttribute="top" secondItem="wvK-lH-OsT" secondAttribute="topMargin" constant="11" id="CQT-D2-xze"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="aBQ-TK-MD0" secondAttribute="trailing" constant="73" id="CwX-Sv-WmM"/>
+                                        <constraint firstItem="aBQ-TK-MD0" firstAttribute="leading" secondItem="NHh-Wj-KyS" secondAttribute="trailing" constant="2" id="FEU-xe-reS"/>
                                         <constraint firstItem="rZ1-Jp-x5R" firstAttribute="top" secondItem="wvK-lH-OsT" secondAttribute="top" id="HOr-zf-Nqe"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="QoB-Jk-Zv0" secondAttribute="trailing" constant="73" id="HdX-fp-0aJ"/>
-                                        <constraint firstItem="IWh-EA-zUM" firstAttribute="leading" secondItem="NHh-Wj-KyS" secondAttribute="leading" id="Ppa-Y4-UAB"/>
+                                        <constraint firstItem="NHh-Wj-KyS" firstAttribute="leading" secondItem="wvK-lH-OsT" secondAttribute="leadingMargin" constant="19" id="IHP-TD-qzG"/>
+                                        <constraint firstItem="yar-5U-s2V" firstAttribute="centerY" secondItem="IWh-EA-zUM" secondAttribute="centerY" id="IgN-gF-dQk"/>
                                         <constraint firstItem="qL7-xL-PA2" firstAttribute="top" secondItem="E2a-YL-zq8" secondAttribute="bottom" constant="4" id="RNJ-NT-6nd"/>
-                                        <constraint firstItem="IWh-EA-zUM" firstAttribute="leading" secondItem="wvK-lH-OsT" secondAttribute="leadingMargin" constant="39" id="T7h-re-M9Y"/>
                                         <constraint firstItem="E2a-YL-zq8" firstAttribute="top" secondItem="wvK-lH-OsT" secondAttribute="topMargin" id="XRG-8g-cgG"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="qL7-xL-PA2" secondAttribute="trailing" constant="53" id="Yku-lp-gQb"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="VAB-B9-Iab" secondAttribute="trailing" constant="3" id="e9f-N8-eLZ"/>
+                                        <constraint firstItem="QoB-Jk-Zv0" firstAttribute="leading" secondItem="IWh-EA-zUM" secondAttribute="trailing" constant="2" id="hxY-CB-E3a"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="E2a-YL-zq8" secondAttribute="trailing" constant="53" id="m3T-Ub-cUD"/>
-                                        <constraint firstItem="NHh-Wj-KyS" firstAttribute="bottom" secondItem="wvK-lH-OsT" secondAttribute="bottomMargin" id="sb9-NO-kHZ"/>
-                                        <constraint firstItem="IWh-EA-zUM" firstAttribute="top" secondItem="wvK-lH-OsT" secondAttribute="topMargin" id="trl-Ok-LZv"/>
-                                        <constraint firstItem="IWh-EA-zUM" firstAttribute="trailing" secondItem="NHh-Wj-KyS" secondAttribute="trailing" id="vCt-sp-6jM"/>
+                                        <constraint firstItem="IWh-EA-zUM" firstAttribute="top" secondItem="rZ1-Jp-x5R" secondAttribute="bottom" constant="7" id="oDh-dx-L4v"/>
+                                        <constraint firstItem="NHh-Wj-KyS" firstAttribute="leading" secondItem="MSS-q7-hte" secondAttribute="trailing" id="tUI-lu-HfM"/>
                                     </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1040,7 +1062,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zq7-Mr-00G">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zq7-Mr-00G">
                                                         <rect key="frame" x="55" y="29" width="62" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="62" id="j3a-Il-E3f"/>
@@ -1160,13 +1182,13 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                 <constraint firstAttribute="width" constant="40" id="LsA-6d-Byc"/>
                                                 <constraint firstAttribute="height" constant="20" id="Vs2-Ap-1SF"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="North Broward Prep" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y19-yj-2So">
                                             <rect key="frame" x="47" y="32" width="180" height="20"/>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -1176,7 +1198,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                 <constraint firstAttribute="height" constant="20" id="GCy-jK-27F"/>
                                                 <constraint firstAttribute="width" constant="40" id="LJh-pF-ZUb"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -1220,7 +1242,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="180" id="ACo-nx-bTj"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -1451,7 +1473,6 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                     </navigationItem>
                     <connections>
                         <outlet property="activity" destination="Nvy-TI-aKa" id="tWH-De-dJO"/>
-                        <outlet property="activityIndicator" destination="YuM-tw-BnL" id="aYT-7C-0rb"/>
                         <outlet property="bodyText" destination="YuW-WP-Fag" id="e47-Sn-0SG"/>
                         <outlet property="detailContainer" destination="Sy8-wr-MnM" id="LLs-EN-ras"/>
                         <outlet property="detailNavBar" destination="R7H-f8-Dz3" id="e8u-VQ-UZa"/>
@@ -1462,6 +1483,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                         <outlet property="tableContainer" destination="y9S-zW-qd0" id="c2I-DI-wch"/>
                         <outlet property="titleText" destination="ESv-Hu-fkj" id="vnV-R1-RWp"/>
                         <outlet property="titleView" destination="0Ch-Gi-qfX" id="4Ij-hg-bQl"/>
+                        <segue destination="fQs-Om-pF6" kind="show" identifier="ToWebView" id="coB-Ge-A2E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98B-us-4eJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1482,25 +1504,10 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                             </constraints>
                             <items>
                                 <navigationItem id="Ldi-fU-rZM">
-                                    <barButtonItem key="leftBarButtonItem" style="plain" id="eZf-7R-8Jk">
-                                        <view key="customView" contentMode="scaleToFill" id="Lcj-TQ-BGF">
-                                            <rect key="frame" x="16" y="5" width="53" height="33"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <subviews>
-                                                <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="YuM-tw-BnL">
-                                                    <rect key="frame" x="0.0" y="6" width="20" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="43q-K8-KAU"/>
-                                                        <constraint firstAttribute="height" constant="20" id="pRP-yr-c7g"/>
-                                                    </constraints>
-                                                    <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </activityIndicatorView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="YuM-tw-BnL" firstAttribute="leading" secondItem="Lcj-TQ-BGF" secondAttribute="leading" id="cqt-2Q-P8G"/>
-                                                <constraint firstItem="YuM-tw-BnL" firstAttribute="centerY" secondItem="Lcj-TQ-BGF" secondAttribute="centerY" id="qYy-L8-f8R"/>
-                                            </constraints>
-                                        </view>
+                                    <barButtonItem key="leftBarButtonItem" image="Safari-Button-Icon" id="QYf-QY-Tbz">
+                                        <connections>
+                                            <action selector="tappedSafari:" destination="fs3-FW-RvJ" id="DKY-Nq-3gt"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem key="rightBarButtonItem" style="plain" systemItem="stop" id="QU2-i0-O15">
                                         <connections>
@@ -1612,7 +1619,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                 </connections>
                             </webView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VX9-ib-ZgJ">
-                                <rect key="frame" x="0.0" y="20" width="375" height="115"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="2"/>
                                 <subviews>
                                     <progressView clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="EaY-dQ-wdN">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="2"/>
@@ -1627,8 +1634,13 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                 </constraints>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TQh-O5-mza">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="574" width="375" height="44"/>
                                 <items>
+                                    <barButtonItem systemItem="done" id="wd3-2E-g42">
+                                        <connections>
+                                            <action selector="tappedDone:" destination="fQs-Om-pF6" id="qRP-Fl-o6Y"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="g88-eA-tVj"/>
                                     <barButtonItem image="backButton" id="txc-OL-aOP">
                                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1651,7 +1663,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                             <constraint firstAttribute="bottom" secondItem="8KU-U6-Bfp" secondAttribute="bottom" id="9GE-ZM-6wG"/>
                             <constraint firstAttribute="trailing" secondItem="TQh-O5-mza" secondAttribute="trailing" id="AoJ-Qb-8PS"/>
                             <constraint firstItem="VX9-ib-ZgJ" firstAttribute="leading" secondItem="8KU-U6-Bfp" secondAttribute="leading" id="Ole-NT-A8Q"/>
-                            <constraint firstItem="bFl-b7-8XW" firstAttribute="top" secondItem="VX9-ib-ZgJ" secondAttribute="bottom" constant="532" id="Xat-J4-RRw"/>
+                            <constraint firstItem="bFl-b7-8XW" firstAttribute="top" secondItem="VX9-ib-ZgJ" secondAttribute="bottom" constant="552" id="Xat-J4-RRw"/>
                             <constraint firstItem="VX9-ib-ZgJ" firstAttribute="trailing" secondItem="8KU-U6-Bfp" secondAttribute="trailing" id="Z5E-Z1-Bly"/>
                             <constraint firstItem="VX9-ib-ZgJ" firstAttribute="top" secondItem="Dga-Ip-Cw8" secondAttribute="bottom" id="bw6-cd-rr8"/>
                             <constraint firstItem="8KU-U6-Bfp" firstAttribute="top" secondItem="Gtr-yk-wkP" secondAttribute="top" id="dyy-M7-8Tk"/>
@@ -1674,7 +1686,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jMi-KW-laA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3492" y="564"/>
+            <point key="canvasLocation" x="3316" y="563.56821589205401"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yof-sf-FVG">
@@ -1940,6 +1952,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
         <image name="Home" width="30" height="30"/>
         <image name="Menu-Icon" width="25" height="25"/>
         <image name="NBP-Icon-Border" width="110" height="110"/>
+        <image name="Safari-Button-Icon" width="25" height="25"/>
         <image name="Screen-Shot-2015-09-30-at-8.05.56-AM.png" width="559" height="373"/>
         <image name="ShadowDown" width="307" height="23"/>
         <image name="ShadowUp" width="307" height="23"/>

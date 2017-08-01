@@ -96,7 +96,7 @@
 		20DBD3D11E6C868600D4D690 /* exampleTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = exampleTableViewController.swift; sourceTree = "<group>"; };
 		20EF9E401E645DE700F45DBB /* NBPS Sports.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NBPS Sports.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20EF9E431E645DE700F45DBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		20EF9E451E645DE700F45DBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		20EF9E451E645DE700F45DBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ViewController.swift; sourceTree = "<group>"; usesTabs = 0; wrapsLines = 1; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		20EF9E481E645DE700F45DBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20EF9E4A1E645DE700F45DBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20EF9E4D1E645DE700F45DBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -215,21 +215,20 @@
 			isa = PBXGroup;
 			children = (
 				20EF9E431E645DE700F45DBB /* AppDelegate.swift */,
-				20EF9E451E645DE700F45DBB /* ViewController.swift */,
+				204ADA691ECA78AA002C4076 /* AppState.swift */,
 				20EF9E471E645DE700F45DBB /* Main.storyboard */,
+				20EF9E451E645DE700F45DBB /* ViewController.swift */,
+				20DBD3CF1E6C85F800D4D690 /* FootballTableViewController.swift */,
 				205730CA1F0DD6BF00559965 /* MenuTableViewController.swift */,
 				2074DF921EE8647000D91041 /* NewGameViewController.swift */,
-				204ADA691ECA78AA002C4076 /* AppState.swift */,
 				204ADA671ECA7677002C4076 /* Constants.swift */,
 				203B2EE11EBBDABC009F1488 /* TwitchViewController.swift */,
 				2023F0541EA1845B0041E165 /* LoginViewController.swift */,
 				2023F0521EA17EB40041E165 /* BaseballTableViewController.swift */,
 				2072828A1E745275009C87FF /* WebViewController.swift */,
 				20DBD3D11E6C868600D4D690 /* exampleTableViewController.swift */,
-				20DBD3CF1E6C85F800D4D690 /* FootballTableViewController.swift */,
 				20848E9C1EE70F4B0050432D /* TransitionViewController.swift */,
 				2069AE8A1EE712830032250C /* AccountViewController.swift */,
-				20C7F4151F071A1900C75532 /* OutlinedUILabel.swift */,
 				204414BC1F09484900F866C4 /* NBPSTwitterTableViewController.swift */,
 				20F4EE271F0986A0004CBF45 /* StackViewCell.swift */,
 				20F4EE281F0986A0004CBF45 /* StackViewCell.xib */,
@@ -241,6 +240,7 @@
 				20EF9E4C1E645DE700F45DBB /* LaunchScreen.storyboard */,
 				20EF9E4F1E645DE700F45DBB /* Info.plist */,
 				206EA2641EA59D8E00F73B36 /* GoogleService-Info.plist */,
+				20C7F4151F071A1900C75532 /* OutlinedUILabel.swift */,
 			);
 			path = "NBPS Sports";
 			sourceTree = "<group>";

@@ -123,6 +123,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var images = [String]()
     var times = [String]()
     
+    var selectedRow = 0
     
     var amt:Int = 0
     
@@ -148,6 +149,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableContainer.layer.cornerRadius = 5
         
         checkForNew()
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: self.view.tintColor]
         
         /*            //print("not nil")
             menuButton.target = self.revealViewController()
@@ -208,12 +211,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         _refHandle = ref.child("Sports").observe(FIRDataEventType.value, with: { (snapshot) in
             
-            self.amt = snapshot.childSnapshot(forPath: "liveGames").value as! Int
+            self.amt = Int(snapshot.childSnapshot(forPath: "liveGames").childrenCount)
             
             if self.amt > 0 {
                 self.mainTableView.reloadData()
             }
-        
+    
         })
     }
 
@@ -254,7 +257,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
                 let content = String(urlContent!)
                 
-                print("\n\n\n\n\(content)\n\n\n\n")
+               // print("\n\n\n\n\(content)\n\n\n\n")
                 
                 
                 var arr = [String]()
@@ -340,7 +343,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         
                         let str = i.components(separatedBy: "'>")[0]
                         self.images.append(str)
-                        print(str)
+                        //print(str)
                         
                     }
                     
@@ -362,7 +365,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         
                         let str = i.components(separatedBy: " P")[0]
                         self.times.append(str)
-                        print(str)
+                       // print(str)
                         
                     }
                     
@@ -472,7 +475,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
  
         let url1 = URL(string: ("http://www.nbpsathletics.org"+images[index]))!
         
-        print(url1)
+        //print(url1)
        // let url1 = URL(string: "http://www.nbpsathletics.org/p/announcements/1270339/900/600/image.pic")
         
         
@@ -585,7 +588,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
                 (cell.contentView.viewWithTag(3) as! UILabel).text = times[indexPath.row]
                 
-                print("Titles: \(titles.count)\nDescriptions: \(descriptions.count)")
+                //print("Titles: \(titles.count)\nDescriptions: \(descriptions.count)")
                 
                 if  descriptions.count > 9 {
                     
@@ -601,7 +604,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             (cell.contentView.viewWithTag(3) as! UILabel).text = times[indexPath.row]
             
-            print("Titles: \(titles.count)\nDescriptions: \(descriptions.count)")
+       //     print("Titles: \(titles.count)\nDescriptions: \(descriptions.count)")
             
             if  descriptions.count > 9 {
                 
@@ -667,6 +670,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        selectedRow = indexPath.row
+        
         if amt > 0 {
             
             if indexPath.section == 1 {
@@ -709,6 +714,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     */
     
+    
+    
+        
+    @IBAction func tappedSafari(_ sender: Any) {
+    
+        
+        print("Tapped Safari")
+        
+        //animateOut(url: URL(string: urlArr[selectedRow])!)
+        AppState.sharedInstance.ArticleURL = URL(string: "http://"+urlArr[selectedRow])!
+        self.performSegue(withIdentifier: "ToWebView", sender: nil)
+        
+        
+        /*if let url = NSURL(string: "http://"+urlArr[selectedRow]){
+            print(url)
+            UIApplication.shared.open(url as URL, options: [:], completionHandler: nil)
+        }*/
+    }
+
 
     @IBAction func tappedDone(_ sender: Any) {
         

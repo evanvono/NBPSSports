@@ -16,6 +16,7 @@ class AppState: NSObject {
     var displayName: String = "editor"
     var articleImage:UIImage = #imageLiteral(resourceName: "NBP-Icon-Border")
     var sportTitle = "Football"
+    var ArticleURL:URL = URL(string: "www.nbpsathletics.org")!
     
     
     let myGroup = DispatchGroup()

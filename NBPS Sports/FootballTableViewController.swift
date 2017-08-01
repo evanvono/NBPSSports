@@ -80,7 +80,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         self.title = "Football"
         
-        SwiftSpinner.show("Loading Football Games...")
+     //   SwiftSpinner.show("Loading Football Games...")
         
         
         self.hideKeyboardWhenTappedAround()
@@ -165,22 +165,30 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                 
                 if self.hidden {
                     
-                    print("hidden")
+                    //print("hidden")
                     
                 } else {
-                    SwiftSpinner.show("Downloading Data...")
+          /*          SwiftSpinner.show("Downloading Data...").addTapHandler({
+                        
+                        
+                        SwiftSpinner.hide()
+                        self.hidden = true
+                        
+                        
+                        
+                    }, subtitle: "Tap anywhere to cancel.")*/
                 }
                 self.title = "Football"
                 self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
             } else {
-                self.title = "No Connection"
+                self.title = "Football"
                     
                     
                 self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.red]
                     
                 if self.hidden {
                         
-                        print("hidden")
+                       // print("hidden")
                         
                 } else {
                         
@@ -364,6 +372,12 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         pastSnapshot.setValue(isEditingSwitch.isOn, forKey: "editing")
         //bookmark
         
+        
+        if isEditingSwitch.isOn {
+            
+            
+            
+        }
     }
    /*
     func getNewData(){
@@ -480,6 +494,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
     }
     */
+    /*
     func getNewData(){
         
         ref = FIRDatabase.database().reference()
@@ -539,6 +554,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                 }
                 print("Games array count \(self.gamesArray.count)")
                 
+                print(self.gamesArray)
                 if Int(count) == Int(self.gamesArray.count) {
                     
                     
@@ -595,6 +611,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                         
                         
                     }
+                    print("\n\n\n \(self.games)")
                     self.tableView.reloadData()
                     self.spinner.stopAnimating()
                     SwiftSpinner.hide()
@@ -615,9 +632,87 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
     }
 
-    
+    */
     /*
-    
+    func getNewData(){
+        
+        ref = FIRDatabase.database().reference()
+        
+        let count = Int()
+        
+        // self.ref.child("Sports").child("Football").observe(FIRDataEventType.value, with: { (snapshot) in
+        
+        self.ref.child("Sports").child("Football").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            
+            let count = snapshot.childrenCount
+            print("database count: \(count)")
+            /*
+             ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+             // Get user value
+             let value = snapshot.value as? NSDictionary
+             let username = value?["username"] as? String ?? ""
+             let user = User.init(username: username)
+             
+             // ...
+             }) { (error) in
+             print(error.localizedDescription)
+             }
+             */
+            
+            self._refHandle = self.ref.child("Sports").child("Football").observe(FIRDataEventType.childAdded, with: { (snapshot) in
+                
+                //let date:Int = snapshot.childSnapshot(forPath: "date").value as! Int
+                
+                
+                if self.gamesArray.count == 0 {
+                    if !self.gamesArray.contains(snapshot){
+                        self.gamesArray.append(snapshot)
+                    }
+                    
+                    
+                } else {
+                    var didInsert = false
+                    for i in stride(from: self.gamesArray.count-1, to: 0, by: -1){
+                        
+                        let temp = self.gamesArray[i].childSnapshot(forPath: "date").value as! Int
+                        
+                        if temp > snapshot.childSnapshot(forPath: "date").value as! Int {
+                            if !self.gamesArray.contains(snapshot){
+                                self.gamesArray.insert(snapshot, at: i)
+                                didInsert = true
+                            }
+                        }
+                    }
+                    if didInsert == false {
+                        if !self.gamesArray.contains(snapshot){
+                            self.gamesArray.append(snapshot)
+                        }
+                    }
+                    
+                }
+                print("Games array count \(self.gamesArray.count)")
+                
+                print(self.gamesArray)
+                if Int(count) == Int(self.gamesArray.count) {
+          
+                    let date = snapshot.childSnapshot(forPath: "date").value as! Int
+                    let gameDate = Date(timeIntervalSince1970: TimeInterval(date))
+
+                    if self.games.count == 0 {
+                        
+                        self.games.append([self.gameForm(gameDate: gameDate, snapshot: snapshot)])
+                    }
+                    
+                    
+                    
+                }
+            })
+        })
+    }
+
+    */
+    /*
     func getNewData(){
         
         ref = FIRDatabase.database().reference()
@@ -642,7 +737,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             //getting date of new snapshot we added, and adding a dictionary for the game into the array, in the correct place
             
             let gameIdentifier = snapshot.childSnapshot(forPath: "game").value as! String
-            
+            print(gameIdentifier)
             
             let dateInt = snapshot.childSnapshot(forPath: "date").value as! Int
             
@@ -654,6 +749,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             let gameDate = Date(timeIntervalSince1970: TimeInterval(dateInt))
             
             print(gameDate)
+            
             
             
             
@@ -771,12 +867,14 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                 
                 
                inserted = false
+               
             }
             
             //print(self.games)
            
             self.tableView.reloadData()
             self.spinner.stopAnimating()
+            
             
             //print("Home Team " + homeName + "\nAwayTeam " + awayName + "\nHome Score " + homeScore + "\nAway Score "
             //+ awayScore)
@@ -785,7 +883,416 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
         })
         
+    } */
+    /*
+ 
+ 
+ NEWEST NEWEST
+    func getNewData(){
+        
+        ref = FIRDatabase.database().reference()
+        
+        
+        
+        self.ref.child("Sports").child("Football").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            let count = snapshot.childrenCount
+            print("database count: \(count)")
+            
+        
+        
+            self._refHandle = self.ref.child("Sports").child("Football").observe(FIRDataEventType.childAdded, with: { (snapshot) in
+            
+                self.spinner.startAnimating()
+            
+                print("there's another game")
+            /*
+             
+             let homeName = snapshot.childSnapshot(forPath: "homeTeam").value as! String
+             let awayName = snapshot.childSnapshot(forPath: "awayTeam").value as! String
+             let homeScore = snapshot.childSnapshot(forPath: "homeScore").value as! String
+             let awayScore = snapshot.childSnapshot(forPath: "awayScore").value as! String
+             
+             */
+            
+            //self.games.append([["homeTeam":homeName,"awayTeam":awayName,"homeScore":homeScore,"awayScore":awayScore]])
+            
+            
+            //getting date of new snapshot we added, and adding a dictionary for the game into the array, in the correct place
+                if self.gamesArray.count == 0 {
+                    if !self.gamesArray.contains(snapshot){
+                        self.gamesArray.append(snapshot)
+                    }
+                    
+                    
+                } else {
+                    var didInsert = false
+                    for i in stride(from: self.gamesArray.count-1, to: 0, by: -1){
+                        
+                        let temp = self.gamesArray[i].childSnapshot(forPath: "date").value as! Int
+                        
+                        if temp > snapshot.childSnapshot(forPath: "date").value as! Int {
+                            if !self.gamesArray.contains(snapshot){
+                                self.gamesArray.insert(snapshot, at: i)
+                                didInsert = true
+                            }
+                        }
+                    }
+                    if didInsert == false {
+                        if !self.gamesArray.contains(snapshot){
+                            self.gamesArray.append(snapshot)
+                        }
+                    }
+                    
+                }
+                print("Games array count \(self.gamesArray.count)")
+                
+                print(self.gamesArray)
+                
+                if Int(count) == Int(self.gamesArray.count) {
+                    
+                    
+                    
+                    for i:FIRDataSnapshot in self.gamesArray{
+                        
+                    
+                        let rawDate =  i.childSnapshot(forPath: "date").value as! Int
+                        
+                        
+                        let gameDate = Date.init(timeIntervalSince1970: TimeInterval(rawDate))
+                        
+                        
+                        if self.games.count == 0 {
+                            
+                            self.games.append([self.gameForm(gameDate: gameDate, snapshot: i)])
+                            print("added \(gameDate)")
+                            
+                        } else {
+                            
+                            var prevSection = self.games[self.games.count-1]
+                            let prevGame = prevSection[prevSection.count-1]
+                            let prevGameDate:Date = prevGame["Date"] as! Date
+                            
+                            let today = Date.today()
+                            
+                            if (prevGameDate.year > today.year || prevGameDate.year == today.year && (prevGameDate.month > today.month || (prevGameDate.month == today.month && prevGameDate.day > today.day))){
+                                
+                                prevSection.append(self.gameForm(gameDate: gameDate, snapshot: i))
+                                print("added \(gameDate)")
+                                
+                            } else {
+                                
+                                if prevGameDate.year == gameDate.year && prevGameDate.day == gameDate.day && prevGameDate.month == gameDate.month {
+                                    
+                                    self.games[self.games.count-1].append(self.gameForm(gameDate: gameDate, snapshot: i))
+                                    print("added \(gameDate)")
+                                    
+                                } else {
+                                    
+                                    self.games.append([self.gameForm(gameDate: gameDate, snapshot: i)])
+                                    print("added \(gameDate)")
+                                }
+                                
+                            }
+
+                        }
+      
+                    }
+          
+                }
+
+                print("\n\nGames:\n\(self.games)\n\n\n")
+                self.tableView.reloadData()
+           //     self.spinner.stopAnimating()
+
+            })
+            
+        })
+        
     }*/
+    
+    func getNewData(){
+        
+        ref = FIRDatabase.database().reference()
+        // self.ref.child("Sports").child("Football").observe(FIRDataEventType.value, with: { (snapshot) in
+        
+        ref.child("Sports").child("Football").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            
+            let count = snapshot.childrenCount
+            print("database count: \(count)")
+            /*
+             ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+             // Get user value
+             let value = snapshot.value as? NSDictionary
+             let username = value?["username"] as? String ?? ""
+             let user = User.init(username: username)
+             
+             // ...
+             }) { (error) in
+             print(error.localizedDescription)
+             }
+             */
+            
+            self._refHandle = self.ref.child("Sports").child("Football").observe(FIRDataEventType.childAdded, with: { (snapshot) in
+                
+                //let date:Int = snapshot.childSnapshot(forPath: "date").value as! Int
+                
+                
+                if self.gamesArray.count == 0 {
+                    if !self.gamesArray.contains(snapshot){
+                        self.gamesArray.append(snapshot)
+                    }
+                    
+                    
+                } else {
+                    var didInsert = false
+                    for i in stride(from: self.gamesArray.count-1, to: 0, by: -1){
+                        
+                        let temp = self.gamesArray[i].childSnapshot(forPath: "date").value as! Int
+                        let newDate = snapshot.childSnapshot(forPath: "date").value as! Int
+                        if temp > newDate {
+                            if !self.gamesArray.contains(snapshot){
+                                self.gamesArray.insert(snapshot, at: i)
+                                didInsert = true
+                            }
+                        }
+                    }
+                    if didInsert == false {
+                        if !self.gamesArray.contains(snapshot){
+                            self.gamesArray.append(snapshot)
+                        }
+                    }
+                    
+                }
+                print("Games array count \(self.gamesArray.count)")
+                
+                if Int(count) == Int(self.gamesArray.count) {
+                    
+                    print("\n\n\ngamesArray\n\n\(self.gamesArray)\n\n\n")
+                    
+                    
+                    for j in 0..<self.gamesArray.count {
+                        
+                        var isInserted = false
+                        
+                        let i = self.gamesArray[j]
+                        
+                        let date = Date(timeIntervalSince1970: TimeInterval(i.childSnapshot(forPath: "date").value as! Int))
+                        
+                        if j > 0 {
+                            
+                            let tempDate = Date(timeIntervalSince1970: TimeInterval(self.gamesArray[j-1].childSnapshot(forPath: "date").value as! Int))
+                            
+                            if date.day == tempDate.day && date.month == tempDate.month && date.year == tempDate.year {
+                                
+                                
+                                for y in 0..<self.games.count {
+                                    
+                                    var gam = self.games[y]
+                                    for u in 0..<gam.count {
+                                        
+                                        
+                                        var w = gam[u]
+                                        
+                                        let wDate = w["Date"] as! Date
+                                        
+                                        
+                                        if wDate.day == date.day && wDate.month == date.month && wDate.year == date.year {
+                                            
+                                            if u == gam.count - 1 {
+                                                
+                                                if wDate > date {
+                                                    
+                                                    if !isInserted {
+                                                        isInserted = true
+                                                    
+                                                        self.games[y].insert(self.gameForm(gameDate: date, snapshot: i), at: u)
+                                                    }
+                                                } else {
+                                                    if !isInserted {
+                                                        isInserted = true
+                                                        self.games[y].append(self.gameForm(gameDate: date, snapshot: i))
+                                                    }
+                                                }
+                                            } else {
+                                                if wDate > date {
+                                                    if !isInserted {
+                                                        isInserted = true
+                                                        self.games[y].insert(self.gameForm(gameDate: date, snapshot: i), at: u)
+                                                    }
+                                                }
+                                                
+                                            }
+                                            
+                                        }
+                                        
+                                        
+                                        
+                                    }
+                                    
+                                }
+                                
+                                
+                            }
+                        }
+                        
+                        
+                        
+                        
+                        
+                        
+                        if j == 0{
+                            if self.games.count == 0{
+                                if !isInserted {
+                                    isInserted = true
+                                    
+                                    print("Inserted \(i) at point")
+                                    self.games.append([self.gameForm(gameDate: date, snapshot: i)])
+                                }
+                            }
+                            
+                            
+                        } else {
+                            
+                           // let prevGameDate = self.games[self.games.count-1][0]["Date"] as! Date
+                            
+                            let today = Date.today()
+                            
+                            if date.year == today.year && date.month == today.month && date.day == today.day {
+                                
+                                let last = self.games[self.games.count - 1][0]["Date"] as! Date
+                                
+                                if last.day == today.day && last.month == today.month && last.year == today.year {
+                                    if !isInserted {
+                                        isInserted = true
+                                        self.games[self.games.count - 1].append(self.gameForm(gameDate: date, snapshot: i))
+                                    }
+                                } else if (last.year == today.year && (last.month > today.month || (last.month == today.month && last.day > today.day)) || last.year > today.year){
+                                    
+                                    if self.games.count > 1 {
+                                        
+                                        let prev = self.games[self.games.count - 2][0]["Date"] as! Date
+                                        
+                                        if prev.day == today.day && prev.month == today.month && prev.year == today.year {
+                                            if !isInserted {
+                                                isInserted = true
+                                                self.games[self.games.count - 2].append(self.gameForm(gameDate: date, snapshot: i))
+                                            }
+                                        } else {
+                                            if !isInserted {
+                                                isInserted = true
+                                                self.games.insert([self.gameForm(gameDate: date, snapshot: i)], at: self.games.count-1)
+                                            }
+                                        }
+
+                                    } else {
+                                        if !isInserted {
+                                            isInserted = true
+                                            self.games.insert([self.gameForm(gameDate: date, snapshot: i)], at: self.games.count-1)
+                                        }
+                                    }
+                                } else {
+                                    if !isInserted {
+                                        isInserted = true
+                                        self.games.append([self.gameForm(gameDate: date, snapshot: i)])
+                                    }
+                                }
+                                
+                                
+                            } else if (date.year == today.year && (date.month > today.month || (date.month == today.month && date.day > today.day)) || date.year > today.year) {
+                                
+                                let last =  self.games[self.games.count - 1][0]["Date"] as! Date
+                                
+                                if (last.year >= today.year && last.month > today.month) || (last.year >= today.year && last.month >= today.month && last.day > today.day) {
+                                    
+                                    let tempCount = self.games[self.games.count-1].count
+                                    for p in 0..<tempCount {
+                                        
+                                        let tempGame = self.games[self.games.count-1][p]
+                                        
+                                        if (tempGame["Date"] as! Date) > date {
+                                            if !isInserted {
+                                                isInserted = true
+                                                self.games[self.games.count-1].insert(self.gameForm(gameDate: date, snapshot: i), at: p)
+                                            }
+                                            break
+                                        }
+                                        if !isInserted {
+                                            isInserted = true
+                                            self.games[self.games.count - 1].append(self.gameForm(gameDate: date, snapshot: i))
+                                        }
+                                    }
+                                    
+                                } else {
+                                    if !isInserted {
+                                        isInserted = true
+                                        self.games.append([self.gameForm(gameDate: date, snapshot: i)])
+                                    }
+                                }
+                                
+                            } else if (date.year < today.year || date.year == today.year && (date.month < today.month || (date.month == today.month && date.day < today.day))) {
+                                
+                                for k in 0..<self.games.count {
+                                    
+                                    let tempDate = self.games[k][0]["Date"] as! Date
+                                    
+                                    if tempDate.year > date.year || tempDate.year == date.year && (tempDate.month > date.month || (tempDate.month == date.month && tempDate.day > date.day)){
+                                        if !isInserted {
+                                            isInserted = true
+                                            self.games.insert([self.gameForm(gameDate: date, snapshot: i)], at: k)
+                                        }
+                                        break
+                                        
+                                    } else if k == self.games.count - 1 {
+                                        if !isInserted {
+                                            isInserted = true
+                                            self.games.append([self.gameForm(gameDate: date, snapshot: i)])
+                                        }
+                                        break
+                                    }
+                                    
+                                }
+                                
+                                
+                            }
+                            
+                            
+                            /*
+                            if prevGameDate.year == date.year && prevGameDate.day == date.day && prevGameDate.month == date.month {
+                                
+                                self.games[self.games.count - 1].append(self.gameForm(gameDate: date, snapshot: i))
+                            } else {
+                                
+                                self.games.append([self.gameForm(gameDate: date, snapshot: i)])
+                            }*/
+                            
+                        }
+                        
+                        
+                    }
+                    
+                    print("\n\n\nGames\n\n\(self.games)\n\n\n")
+                    self.tableView.reloadData()
+                    self.spinner.stopAnimating()
+                    SwiftSpinner.hide()
+                    self.hidden = true
+                    
+                    //self.tableView.scrollToRow(at: IndexPath(row: 0, section: self.todaySection), at: UITableViewScrollPosition.top, animated: true)
+                }
+                
+                
+            })
+            
+        })
+        
+        
+        
+        
+        
+        
+    }
+
     
     func dateComparison(dat: Date, secDate: Date) -> String {
         
@@ -813,9 +1320,9 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             var row: Int!
             
             
-            for i in 0...self.games.count-1 {
+            for i in 0..<self.games.count {
                 
-                for j in 0...self.games[i].count-1 {
+                for j in 0..<self.games[i].count {
                     
                     if (self.games[i][j]["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "game").value as! String == snapshot.childSnapshot(forPath: "game").value as! String {
                         
@@ -824,6 +1331,34 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                         
                         
                         self.games[section][row]["snapshot"] = snapshot
+                        
+                        
+                        let cell = self.tableView.cellForRow(at: IndexPath(row: row, section: section))
+                        
+                        let homeTeam = snapshot.childSnapshot(forPath: "homeTeam").value as! String
+                        
+                        let awayTeam = snapshot.childSnapshot(forPath: "awayTeam").value as! String
+                        
+                        let homeScore = String(snapshot.childSnapshot(forPath: "homeScore").value as! Int)
+                        
+                        let awayScore = String(snapshot.childSnapshot(forPath: "awayScore").value as! Int)
+                        
+                        
+                        (cell?.contentView.viewWithTag(3) as! UILabel).text = homeTeam
+                        
+                        (cell?.contentView.viewWithTag(4) as! UILabel).text = awayTeam
+                        
+                        (cell?.contentView.viewWithTag(1) as! UILabel).text = "\(homeScore)"
+                        (cell?.contentView.viewWithTag(2) as! UILabel).text = "\(awayScore)"
+                        
+                        
+                        
+                        
+                        cell?.reloadInputViews()
+
+                        
+                        
+                        break
                     }
 
                     
@@ -833,28 +1368,6 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             }
         
         
-            let cell = self.tableView.cellForRow(at: IndexPath(row: row, section: section))
-            
-            let homeTeam = snapshot.childSnapshot(forPath: "homeTeam").value as! String
-            
-            let awayTeam = snapshot.childSnapshot(forPath: "awayTeam").value as! String
-            
-            let homeScore = String(snapshot.childSnapshot(forPath: "homeScore").value as! Int)
-            
-            let awayScore = String(snapshot.childSnapshot(forPath: "awayScore").value as! Int)
-            
-            
-            (cell?.contentView.viewWithTag(3) as! UILabel).text = homeTeam
-            
-            (cell?.contentView.viewWithTag(4) as! UILabel).text = awayTeam
-            
-            (cell?.contentView.viewWithTag(1) as! UILabel).text = "\(homeScore)"
-            (cell?.contentView.viewWithTag(2) as! UILabel).text = "\(awayScore)"
-            
-            
-            
-            
-            cell?.reloadInputViews()
             
         })
         
@@ -941,6 +1454,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
             let awayScore = (snapshot.childSnapshot(forPath: "awayScore").value as! Int)
         
+            let time = (snapshot.childSnapshot(forPath: "time").value as! String)
         
             (cell.contentView.viewWithTag(3) as! UILabel).text = homeTeam
         
@@ -1045,14 +1559,27 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                     post = "pm"
                 }
                 
-                (cell.contentView.viewWithTag(15) as! UILabel).text = "\(hour):\(date.minute) \(post)"
+                (cell.contentView.viewWithTag(15) as! UILabel).text = "\(hour):"+String(format: "%02d", date.minute)+" \(post)"
                 
                 (cell.contentView.viewWithTag(16) as! UILabel).text = "Tonight"
+                
+                if date.hour < today.hour || (date.hour == today.hour && date.minute <= today.minute) {
+                    
+                    (cell.contentView.viewWithTag(7) as! UILabel).text = time
+                    
+                    (cell.contentView.viewWithTag(7) as! UILabel).alpha = 1.0
+                    (cell.contentView.viewWithTag(15) as! UILabel).alpha = 0.0
+                    (cell.contentView.viewWithTag(16) as! UILabel).alpha = 0.0
+                }
                 
                 
             } else if state == "Future" {
                 
                 (cell.contentView.viewWithTag(7) as! UILabel).alpha = 0.0
+                
+                (cell.contentView.viewWithTag(1) as! UILabel).text = ""
+                (cell.contentView.viewWithTag(2) as! UILabel).text = ""
+                
                 
                 (cell.contentView.viewWithTag(15) as! UILabel).alpha = 1.0
                 
@@ -1067,9 +1594,9 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                     post = "pm"
                 }
                 
-                (cell.contentView.viewWithTag(15) as! UILabel).text = "\(hour):\(date.minute) \(post)"
+                (cell.contentView.viewWithTag(15) as! UILabel).text = "\(hour):"+String(format: "%02d", date.minute)+" \(post)"
                 
-                (cell.contentView.viewWithTag(16) as! UILabel).text = "\(date.month)/\(date.day)"
+                (cell.contentView.viewWithTag(16) as! UILabel).text = "\(date.month)/"+String(format: "%02d", date.day)
                 
             }
         
@@ -1373,7 +1900,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         if Int(gameDatePicker.date.timeIntervalSince1970) != (pastSnapshot.childSnapshot(forPath: "date").value as! Int) {
             
             gameDirec.child("date").setValue(Int(gameDatePicker.date.timeIntervalSince1970))
-            games[selectedPath[0]][selectedPath[0]]["Date"] = gameDatePicker.date
+            games[selectedPath[0]][selectedPath[1]]["Date"] = gameDatePicker.date
             
             
         }
