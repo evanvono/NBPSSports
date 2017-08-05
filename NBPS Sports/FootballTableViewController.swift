@@ -30,9 +30,17 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     @IBOutlet weak var awayScoreStepper: UIStepper!
     @IBOutlet weak var gameDatePicker: UIDatePicker!
     @IBOutlet weak var isEditingSwitch: UISwitch!
+    @IBOutlet weak var editorNavigationBar: UINavigationBar!
+    @IBOutlet weak var editorProgress: UIActivityIndicatorView!
+    
+    
     
     //Spectator View
     @IBOutlet weak var spectatorView: UIView!
+    
+    
+    
+    
     
     var homeScoreVal: Int!
     var awayScoreVal: Int!
@@ -296,8 +304,17 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
        // NSLayoutConstraint(item: editorView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .topMargin, multiplier: 1.0, constant: 20.0).isActive = true
         
         //NSLayoutConstraint(item: editorView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottomMargin, multiplier: 1.0, constant: 20.0).isActive = true
+        let currGame = games[selectedPath[0]][selectedPath[1]]
+        gameDatePicker.date = currGame["Date"] as! Date!
         
-        gameDatePicker.date = games[selectedPath[0]][selectedPath[1]]["Date"] as! Date!
+        let boolState = (currGame["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "editing").value as! Bool
+        //bookmark
+        
+        isEditingSwitch.setOn(boolState, animated: true)
+        
+        
+        
+        
         
         
         editorView.alpha = 0
@@ -1048,8 +1065,12 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                 } else {
                     var didInsert = false
                     for i in stride(from: self.gamesArray.count-1, to: 0, by: -1){
-                        
+                        print("Stride \(i)")
+                        print(self.gamesArray[i])
+                        print("\n\n\n")
                         let temp = self.gamesArray[i].childSnapshot(forPath: "date").value as! Int
+                        
+                       // print("Next to new date: \(snapshot.childSnapshot(forPath: "date").value)")
                         let newDate = snapshot.childSnapshot(forPath: "date").value as! Int
                         if temp > newDate {
                             if !self.gamesArray.contains(snapshot){
@@ -1324,7 +1345,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                 
                 for j in 0..<self.games[i].count {
                     
-                    if (self.games[i][j]["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "game").value as! String == snapshot.childSnapshot(forPath: "game").value as! String {
+                    if (self.games[i][j]["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "game").value as! Int == snapshot.childSnapshot(forPath: "game").value as! Int {
                         
                         section = i
                         row = j
@@ -1803,6 +1824,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
       /*  ref.child("Football").child(games[indexPath.section][indexPath.row]["Snapshot"]).observe(.value, with: { (snapshot) in
             
             
+         
+         
         })*/
         
         if indexPath.row < games[indexPath.section].count {
@@ -1816,7 +1839,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         let snapshot = games[indexPath.section][indexPath.row]["Snapshot"] as? FIRDataSnapshot
         
-        let game = snapshot?.childSnapshot(forPath: "game").value as? String
+        let game = String(snapshot?.childSnapshot(forPath: "game").value as! Int)
         
         currentGame = game
         
@@ -1872,19 +1895,37 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
     }
     
+    func changePopup(){
+        
+        let currGame = games[selectedPath[0]][selectedPath[1]]
+        gameDatePicker.date = currGame["Date"] as! Date!
+        
+        let boolState = (currGame["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "editing").value as! Bool
+
+        isEditingSwitch.setOn(boolState, animated: true)
+        
+        
+    }
+    
     @IBAction func changeTapped(_ sender: Any) {
+        
+        ref = FIRDatabase.database().reference()
         
         var gameDict = games[selectedPath[0]][selectedPath[1]]
         let pastSnapshot = gameDict["Snapshot"] as! FIRDataSnapshot
+        currentGame = String(pastSnapshot.childSnapshot(forPath: "game").value as! Int)
         
-        ref = FIRDatabase.database().reference()
-        let gameDirec = ref.child("Sports").child("Football").child(currentGame)
+        editorProgress.startAnimating()
+        
+      //  let gameDirec = ref.child("Sports").child("Football").child(currentGame)
         
         
-        
-        if Int(homeScoreStepper.value) != (pastSnapshot.childSnapshot(forPath: "homeScore").value as! Int){
+        /*
+        if Int(homeScoreStepper.value) != (origHomeScore){
             
             gameDirec.child("homeScore").setValue(Int(self.homeScoreStepper.value))
+            
+            
             homeScoreVal = Int(homeScoreStepper.value)
             
         }
@@ -1904,16 +1945,86 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
             
         }
+        */
         
         
+        let date = gameDatePicker.date
+        let dateInt = Int(date.timeIntervalSince1970)
         
-        _refHandle = self.ref.child("Sports").child("Football").child(currentGame).observe(FIRDataEventType.value, with: { (snapshot) in
-          
-            gameDict["Snapshot"] = snapshot
-            print("completed snapshot update")
+        let homeScore = Int(homeScoreStepper.value)
+        let awayScore = Int(awayScoreStepper.value)
+        
+        var homeTeam = pastSnapshot.childSnapshot(forPath: "homeTeam").value as! String
+        var awayTeam = pastSnapshot.childSnapshot(forPath: "awayTeam").value as! String
+        
+        let game = pastSnapshot.childSnapshot(forPath: "game").value as! Int
+        
+        let isEditing = isEditingSwitch.isOn
+        
+        
+        if editField.text != "" {
             
+            if picker.selectedRow(inComponent: 0).description == "Home Team" {
+                
+                homeTeam = editField.text!
+                
+            } else {
+                
+                awayTeam = editField.text!
+                
+            }
+        }
+        
+        
+        
+        
+        let updatedData = [
+            "game": game,
+            "homeTeam": homeTeam as String,
+            "homeScore": homeScore as Int,
+            "awayTeam": awayTeam as String,
+            "awayScore": awayScore as Int,
+            "date": dateInt as Int,
+            "editing": isEditing as Bool,
+            "time": "0:00" as String
             
-        })
+            ] as [String : Any]
+        
+        
+        
+        self.ref.child("Sports").child("Football").child(currentGame).setValue(updatedData) { (error, ref) in
+            
+            if error == nil{
+                
+                print("completed change, trying to edit app data...")
+                
+                self._refHandle = self.ref.child("Sports").child("Football").child(self.currentGame).observe(FIRDataEventType.value, with: { (snapshot) in
+                    
+                    
+                    self.games[self.selectedPath[0]][self.selectedPath[1]
+                        ] = self.gameForm(gameDate: date, snapshot: snapshot)
+                    
+                    self.tableView.reloadData()
+                        
+                    
+                    print("completed supposed tableView update")
+                    
+                    self.editorProgress.stopAnimating()
+                })
+                
+            } else {
+                
+                print("error")
+                
+            }
+            
+        }
+        
+        
+        
+        
+        
+        
         
         
         /*

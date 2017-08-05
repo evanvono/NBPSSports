@@ -584,16 +584,16 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="itc-1w-C8b">
-                                            <rect key="frame" x="324" y="15" width="26.5" height="29"/>
+                                            <rect key="frame" x="324" y="15" width="27" height="29"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="15" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUG-t1-nUT">
-                                                    <rect key="frame" x="0.0" y="0.0" width="26.5" height="14.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="15" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="8:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUG-t1-nUT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="27" height="14"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="16" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9/21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2o-dX-QW2">
-                                                    <rect key="frame" x="0.0" y="14.5" width="26.5" height="14.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="16" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="9/21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G2o-dX-QW2">
+                                                    <rect key="frame" x="0.0" y="14" width="27" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -735,6 +735,8 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                         <outlet property="awayScoreStepper" destination="gkq-yj-dLk" id="XWW-3p-hDc"/>
                         <outlet property="editField" destination="aVJ-0I-SYy" id="7de-NC-082"/>
                         <outlet property="editorLabel" destination="DCS-KW-ko2" id="1EN-Gb-Di8"/>
+                        <outlet property="editorNavigationBar" destination="2cp-NW-uzU" id="lDY-cV-FRd"/>
+                        <outlet property="editorProgress" destination="JVg-4f-tSu" id="tSj-vS-dXi"/>
                         <outlet property="editorView" destination="izN-xe-qPu" id="Yo9-aB-S8x"/>
                         <outlet property="gameDatePicker" destination="4e2-IF-5Cq" id="k4P-2n-77g"/>
                         <outlet property="homeLabel" destination="z7B-as-JhE" id="CB4-NS-hE1"/>
@@ -750,11 +752,11 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qnt-8R-HVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="izN-xe-qPu">
-                    <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                    <rect key="frame" x="0.0" y="0.0" width="300" height="377"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvU-jt-hgc">
-                            <rect key="frame" x="132" y="260" width="37" height="30"/>
+                            <rect key="frame" x="132" y="337" width="37" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="37" id="A6G-Tr-iW2"/>
                                 <constraint firstAttribute="height" constant="30" id="lny-hd-Lko"/>
@@ -764,17 +766,8 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                 <action selector="doneTapped:" destination="kub-1r-Cjn" eventType="touchUpInside" id="IKG-UX-0LL"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCS-KW-ko2">
-                            <rect key="frame" x="134" y="0.0" width="33" height="21"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="21" id="qCm-a6-zwk"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1Z-mL-kmI">
-                            <rect key="frame" x="124" y="222" width="53" height="30"/>
+                            <rect key="frame" x="124" y="299" width="53" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="53" id="JT3-KX-WWB"/>
                                 <constraint firstAttribute="height" constant="30" id="iqr-1k-Dt1"/>
@@ -785,7 +778,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                             </connections>
                         </button>
                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T7Y-in-a3S">
-                            <rect key="frame" x="0.0" y="20" width="150" height="67"/>
+                            <rect key="frame" x="8" y="56" width="150" height="67"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="150" id="eM6-OM-Y7c"/>
                                 <constraint firstAttribute="height" constant="67" id="uJr-k0-z40"/>
@@ -796,7 +789,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                             </connections>
                         </pickerView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qc-xW-2f0">
-                            <rect key="frame" x="24" y="227" width="42" height="21"/>
+                            <rect key="frame" x="24" y="304" width="42" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="17e-3d-Zsa"/>
                                 <constraint firstAttribute="width" constant="42" id="59p-Fs-75K"/>
@@ -806,7 +799,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Away" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSX-GG-3tq">
-                            <rect key="frame" x="226" y="198" width="58" height="21"/>
+                            <rect key="frame" x="226" y="275" width="58" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="58" id="9jk-T7-HE4"/>
                                 <constraint firstAttribute="height" constant="21" id="RYx-fn-FMT"/>
@@ -816,7 +809,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z7B-as-JhE">
-                            <rect key="frame" x="16" y="198" width="59" height="21"/>
+                            <rect key="frame" x="16" y="275" width="59" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="2d5-cB-pq9"/>
                                 <constraint firstAttribute="width" constant="59" id="Rq2-Fn-dd8"/>
@@ -826,19 +819,19 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                             <nil key="highlightedColor"/>
                         </label>
                         <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="gkq-yj-dLk">
-                            <rect key="frame" x="190" y="261" width="94" height="29"/>
+                            <rect key="frame" x="190" y="338" width="94" height="29"/>
                             <connections>
                                 <action selector="awayStepperChanged:" destination="kub-1r-Cjn" eventType="valueChanged" id="p7v-ZU-iFo"/>
                             </connections>
                         </stepper>
                         <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="WpU-x5-uA5">
-                            <rect key="frame" x="16" y="261" width="94" height="29"/>
+                            <rect key="frame" x="16" y="338" width="94" height="29"/>
                             <connections>
                                 <action selector="homeStepperChanged:" destination="kub-1r-Cjn" eventType="valueChanged" id="KEX-G4-AOe"/>
                             </connections>
                         </stepper>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAn-6z-tr7">
-                            <rect key="frame" x="234" y="227" width="42" height="21"/>
+                            <rect key="frame" x="234" y="304" width="42" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="bW9-Hg-bwK"/>
                                 <constraint firstAttribute="width" constant="42" id="y8o-cG-Wkl"/>
@@ -848,7 +841,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                             <nil key="highlightedColor"/>
                         </label>
                         <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4e2-IF-5Cq">
-                            <rect key="frame" x="24" y="133" width="252" height="62"/>
+                            <rect key="frame" x="24" y="210" width="252" height="62"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="62" id="ayL-6V-773"/>
                                 <constraint firstAttribute="width" constant="252" id="da2-dh-Etm"/>
@@ -857,14 +850,8 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                 <!--2017-05-15 15:18:58 +0000-->
                             </date>
                         </datePicker>
-                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bbg-MD-78O">
-                            <rect key="frame" x="235" y="20" width="51" height="31"/>
-                            <connections>
-                                <action selector="didChangeSwitch:" destination="kub-1r-Cjn" eventType="valueChanged" id="4vI-RV-2hj"/>
-                            </connections>
-                        </switch>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aVJ-0I-SYy">
-                            <rect key="frame" x="8" y="83" width="135" height="30"/>
+                            <rect key="frame" x="16" y="140" width="135" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="135" id="tCd-zm-Rqs"/>
                             </constraints>
@@ -875,12 +862,50 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                 <outlet property="delegate" destination="kub-1r-Cjn" id="mtK-eb-fGe"/>
                             </connections>
                         </textField>
+                        <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2cp-NW-uzU">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="44"/>
+                            <items>
+                                <navigationItem id="ifH-s6-EHM">
+                                    <barButtonItem key="rightBarButtonItem" style="plain" id="DBu-0E-KRO">
+                                        <view key="customView" contentMode="scaleToFill" id="qor-d3-Wdu">
+                                            <rect key="frame" x="218" y="5" width="66" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="JVg-4f-tSu">
+                                                    <rect key="frame" x="46" y="6" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JVg-4f-tSu" firstAttribute="centerY" secondItem="qor-d3-Wdu" secondAttribute="centerY" id="2hg-cz-uFi"/>
+                                                <constraint firstAttribute="trailing" secondItem="JVg-4f-tSu" secondAttribute="trailing" id="4wp-Qr-5Nu"/>
+                                            </constraints>
+                                        </view>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="DCS-KW-ko2">
+                            <rect key="frame" x="40" y="12" width="220" height="21"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="21" id="vgO-yz-JOy"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bbg-MD-78O">
+                            <rect key="frame" x="235" y="56" width="51" height="31"/>
+                            <connections>
+                                <action selector="didChangeSwitch:" destination="kub-1r-Cjn" eventType="valueChanged" id="4vI-RV-2hj"/>
+                            </connections>
+                        </switch>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="0.95469810520361986" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="aVJ-0I-SYy" firstAttribute="top" secondItem="DCS-KW-ko2" secondAttribute="bottom" constant="62" id="0r2-Nf-xPm"/>
                         <constraint firstItem="gkq-yj-dLk" firstAttribute="top" secondItem="kAn-6z-tr7" secondAttribute="bottom" constant="13" id="1ip-lG-hkR"/>
                         <constraint firstAttribute="trailing" secondItem="kAn-6z-tr7" secondAttribute="trailing" constant="24" id="45A-ug-ldG"/>
+                        <constraint firstAttribute="trailing" secondItem="DCS-KW-ko2" secondAttribute="trailing" constant="40" id="5gx-Ub-Wif"/>
+                        <constraint firstItem="aVJ-0I-SYy" firstAttribute="top" secondItem="T7Y-in-a3S" secondAttribute="bottom" constant="17" id="E4W-9r-GAw"/>
                         <constraint firstItem="wvU-jt-hgc" firstAttribute="top" secondItem="D1Z-mL-kmI" secondAttribute="bottom" constant="8" id="EBX-AZ-OqS"/>
                         <constraint firstItem="wvU-jt-hgc" firstAttribute="centerX" secondItem="izN-xe-qPu" secondAttribute="centerX" id="GOV-9q-Ntq"/>
                         <constraint firstAttribute="trailing" secondItem="bbg-MD-78O" secondAttribute="trailing" constant="16" id="HJI-sv-qXs"/>
@@ -888,22 +913,25 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                         <constraint firstItem="z7B-as-JhE" firstAttribute="top" secondItem="4e2-IF-5Cq" secondAttribute="bottom" constant="3" id="L6O-Wh-r0f"/>
                         <constraint firstAttribute="bottom" secondItem="wvU-jt-hgc" secondAttribute="bottom" constant="10" id="M8N-6t-f7u"/>
                         <constraint firstItem="kAn-6z-tr7" firstAttribute="top" secondItem="aSX-GG-3tq" secondAttribute="bottom" constant="8" id="Pal-rw-vXv"/>
-                        <constraint firstItem="T7Y-in-a3S" firstAttribute="top" secondItem="izN-xe-qPu" secondAttribute="top" constant="20" id="R03-Rz-4PC"/>
-                        <constraint firstItem="DCS-KW-ko2" firstAttribute="top" secondItem="izN-xe-qPu" secondAttribute="top" id="UDD-2S-UNx"/>
+                        <constraint firstItem="T7Y-in-a3S" firstAttribute="top" secondItem="izN-xe-qPu" secondAttribute="top" constant="56" id="R03-Rz-4PC"/>
+                        <constraint firstItem="2cp-NW-uzU" firstAttribute="top" secondItem="izN-xe-qPu" secondAttribute="top" id="SQi-uT-hqe"/>
                         <constraint firstItem="4qc-xW-2f0" firstAttribute="leading" secondItem="izN-xe-qPu" secondAttribute="leading" constant="24" id="VHt-MD-8Os"/>
-                        <constraint firstItem="bbg-MD-78O" firstAttribute="top" secondItem="izN-xe-qPu" secondAttribute="top" constant="20" id="ZK2-i8-MMU"/>
+                        <constraint firstItem="bbg-MD-78O" firstAttribute="top" secondItem="izN-xe-qPu" secondAttribute="top" constant="56" id="ZK2-i8-MMU"/>
+                        <constraint firstItem="DCS-KW-ko2" firstAttribute="leading" secondItem="izN-xe-qPu" secondAttribute="leading" constant="40" id="ZP2-3F-NvN"/>
                         <constraint firstItem="4qc-xW-2f0" firstAttribute="top" secondItem="z7B-as-JhE" secondAttribute="bottom" constant="8" id="bO6-mG-tkC"/>
                         <constraint firstItem="D1Z-mL-kmI" firstAttribute="centerX" secondItem="izN-xe-qPu" secondAttribute="centerX" id="bad-7P-X7m"/>
-                        <constraint firstItem="DCS-KW-ko2" firstAttribute="centerX" secondItem="izN-xe-qPu" secondAttribute="centerX" id="bh7-su-YGy"/>
                         <constraint firstItem="WpU-x5-uA5" firstAttribute="leading" secondItem="izN-xe-qPu" secondAttribute="leading" constant="16" id="cy3-8F-ORn"/>
-                        <constraint firstItem="aVJ-0I-SYy" firstAttribute="leading" secondItem="izN-xe-qPu" secondAttribute="leading" constant="8" id="dPg-rG-dO7"/>
+                        <constraint firstItem="aVJ-0I-SYy" firstAttribute="leading" secondItem="izN-xe-qPu" secondAttribute="leading" constant="16" id="dPg-rG-dO7"/>
+                        <constraint firstAttribute="trailing" secondItem="2cp-NW-uzU" secondAttribute="trailing" id="hDR-N4-hPK"/>
                         <constraint firstAttribute="trailing" secondItem="aSX-GG-3tq" secondAttribute="trailing" constant="16" id="kvy-QC-HHT"/>
                         <constraint firstItem="z7B-as-JhE" firstAttribute="leading" secondItem="izN-xe-qPu" secondAttribute="leading" constant="16" id="lD0-JW-ALq"/>
                         <constraint firstItem="4e2-IF-5Cq" firstAttribute="centerX" secondItem="izN-xe-qPu" secondAttribute="centerX" id="lH5-zq-yGR"/>
                         <constraint firstAttribute="trailing" secondItem="gkq-yj-dLk" secondAttribute="trailing" constant="16" id="ndw-Mi-FPh"/>
-                        <constraint firstItem="T7Y-in-a3S" firstAttribute="leading" secondItem="izN-xe-qPu" secondAttribute="leading" id="ngc-YM-gXD"/>
+                        <constraint firstItem="T7Y-in-a3S" firstAttribute="leading" secondItem="izN-xe-qPu" secondAttribute="leading" constant="8" id="ngc-YM-gXD"/>
                         <constraint firstAttribute="bottom" secondItem="WpU-x5-uA5" secondAttribute="bottom" constant="10" id="oiZ-EU-dic"/>
+                        <constraint firstItem="DCS-KW-ko2" firstAttribute="top" secondItem="izN-xe-qPu" secondAttribute="top" constant="12" id="tcA-de-NCg"/>
                         <constraint firstItem="WpU-x5-uA5" firstAttribute="top" secondItem="4qc-xW-2f0" secondAttribute="bottom" constant="13" id="uTE-3n-XzC"/>
+                        <constraint firstItem="2cp-NW-uzU" firstAttribute="leading" secondItem="izN-xe-qPu" secondAttribute="leading" id="vLP-gb-Q3D"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" id="w6Q-1X-3SH">
@@ -938,7 +966,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="2Sn-zv-wL1"/>
                                     <barButtonItem style="plain" id="3ZI-q5-F7H">
                                         <view key="customView" contentMode="scaleToFill" id="L3t-el-Wcf">
-                                            <rect key="frame" x="93" y="5.5" width="188" height="33"/>
+                                            <rect key="frame" x="93" y="6" width="188" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select the sport above" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="gPh-Nk-JlG">
@@ -969,14 +997,14 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                 <rect key="frame" x="16" y="72" width="344" height="537"/>
                                 <subviews>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Sf-m0-mf2">
-                                        <rect key="frame" x="0.0" y="0.0" width="344" height="189.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="344" height="190"/>
                                         <connections>
                                             <outlet property="dataSource" destination="hg0-33-3AS" id="5lU-j8-xxX"/>
                                             <outlet property="delegate" destination="hg0-33-3AS" id="gS9-9Q-vXe"/>
                                         </connections>
                                     </pickerView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fut-iT-cMt">
-                                        <rect key="frame" x="0.0" y="189.5" width="344" height="79"/>
+                                        <rect key="frame" x="0.0" y="190" width="344" height="79"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajg-N1-dGK">
                                                 <rect key="frame" x="0.0" y="0.0" width="172" height="79"/>
@@ -1047,7 +1075,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGE-cX-Ezs">
-                                        <rect key="frame" x="0.0" y="268.5" width="344" height="79"/>
+                                        <rect key="frame" x="0.0" y="269" width="344" height="79"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9q-be-f4G">
                                                 <rect key="frame" x="0.0" y="0.0" width="172" height="79"/>
@@ -1121,7 +1149,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                         </constraints>
                                     </stackView>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZeT-lc-kJf">
-                                        <rect key="frame" x="0.0" y="347.5" width="344" height="189.5"/>
+                                        <rect key="frame" x="0.0" y="348" width="344" height="189"/>
                                         <date key="date" timeIntervalSinceReferenceDate="518547697.09898102">
                                             <!--2017-06-07 17:01:37 +0000-->
                                         </date>
@@ -1173,7 +1201,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                 <rect key="frame" x="0.0" y="28" width="375" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p3Q-JO-m7U" id="SAL-kx-chH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="334" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIq-2P-Emr">
@@ -1272,7 +1300,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                 <rect key="frame" x="0.0" y="89" width="375" height="28"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lPQ-oz-gtK" id="yAA-N8-fUH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="27.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="27"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thu March 27" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yK1-Qa-zUt">
@@ -1342,7 +1370,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                 <rect key="frame" x="0.0" y="28" width="326" height="120"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="psB-Hl-7O9" id="PdL-iZ-cGV">
-                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="119.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="119"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <textView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" text="Body" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiy-SE-XtM">
@@ -1794,7 +1822,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CnZ-MM-XBH" id="eBe-sd-JTg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
