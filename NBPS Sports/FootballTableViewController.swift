@@ -32,6 +32,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     @IBOutlet weak var isEditingSwitch: UISwitch!
     @IBOutlet weak var editorNavigationBar: UINavigationBar!
     @IBOutlet weak var editorProgress: UIActivityIndicatorView!
+    @IBOutlet weak var timePicker: UIPickerView!
     
     
     
@@ -52,17 +53,21 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     var blurEffectView: UIVisualEffectView!
     
     var currentGame: String!
+    var checkTimer:Timer!
     
     var ref: FIRDatabaseReference!
     fileprivate var _refHandle: FIRDatabaseHandle?
     
-    var pastGame = true
+
+    var  pastGame = true
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var editorOpen:Bool!
     
     var pickerComponents = [Dictionary<String,String>]()
+    
+    var timePickerComponents = [Dictionary<String,String>]()
     
     var pickerSelection = 0
     
@@ -86,9 +91,11 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         super.viewDidLoad()
         
         
+        
+        
         self.title = "Football"
         
-     //   SwiftSpinner.show("Loading Football Games...")
+        SwiftSpinner.show("Loading Football Games...")
         
         
         self.hideKeyboardWhenTappedAround()
@@ -108,7 +115,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         picker.reloadComponent(0)
         
         //navigationController?.hidesBarsOnSwipe = true
-        _ = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.checkConnection), userInfo: nil, repeats: true)
+        checkTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(self.checkConnection), userInfo: nil, repeats: true)
         
         
         if self.revealViewController() != nil {
@@ -154,29 +161,54 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
             self.ref.child("Sports").removeObserver(withHandle: refHandle)
             
-            print("removed _refHandle")
+            FIRDatabase.database().reference(withPath: ".info/connected").removeAllObservers()
+            
             
         }
+        
+        
+        
         self.ref.child("Sports").removeAllObservers()
         self.ref.child("Sports").child("Football").removeAllObservers()
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        if let refHandle = _refHandle {
+            
+            
+            self.ref.child("Sports").removeObserver(withHandle: refHandle)
+            
+            FIRDatabase.database().reference(withPath: ".info/connected").removeAllObservers()
+            
+            
+        }
+        
+        checkTimer.invalidate()
+        
+        
+        self.ref.child("Sports").removeAllObservers()
+        self.ref.child("Sports").child("Football").removeAllObservers()
+    }
+    
     
     func checkConnection(){
         
         
         
         let connectedRef = FIRDatabase.database().reference(withPath: ".info/connected")
-        connectedRef.observe(.value, with: { snapshot in
+        _refHandle = connectedRef.observe(.value, with: { snapshot in
+            
+            
             if let connected = snapshot.value as? Bool, connected {
                 
                 //SwiftSpinner.appearance().tintColor = UIColor.green
                 
                 if self.hidden {
                     
-                    //print("hidden")
+                    print("hidden")
                     
                 } else {
-          /*          SwiftSpinner.show("Downloading Data...").addTapHandler({
+                    SwiftSpinner.show("Downloading Data...").addTapHandler({
                         
                         
                         SwiftSpinner.hide()
@@ -184,7 +216,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                         
                         
                         
-                    }, subtitle: "Tap anywhere to cancel.")*/
+                    }, subtitle: "Tap anywhere to cancel.")
                 }
                 self.title = "Football"
                 self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
@@ -223,9 +255,18 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         pickerComponents.append(["Title":"Home Team", "Value":"homeTeam"])
         pickerComponents.append(["Title":"Away Team", "Value":"awayTeam"])
         
+        let times = ["Upcoming","Pregame","Q1","Q2","Half","Q3","Q4","Final"]
+        
+        for i in times {
+            
+            timePickerComponents.append(["Title":i,"Value":i])
+        }
+        
         //pickerComponents.append(["Title":"Date", "Value":"date"])
         
     }
+    
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -291,10 +332,14 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         //blurView.
         
         
-        editorView.frame = CGRect(x: self.view.bounds.width/2 , y: self.view.bounds.height/2+60, width: self.view.bounds.width-30, height: self.view.bounds.height-300)
+        //editorView.frame = CGRect(x: self.view.bounds.width/2 , y: self.view.bounds.height/2+60, width: self.view.bounds.width-30, height: self.view.bounds.height-300)
+        
+        editField.text = ""
+        
+        editorView.frame = CGRect(x: self.view.bounds.width/2 , y: self.view.bounds.height/2-40, width: self.view.bounds.width-30, height: 380)
         
         self.view.addSubview(editorView)
-        editorView.center = CGPoint(x: self.view.center.x, y: self.view.center.y - 20)
+        editorView.center = CGPoint(x: self.view.center.x, y: self.view.center.y - 40)
             
             //self.view.center
         
@@ -306,6 +351,23 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         //NSLayoutConstraint(item: editorView, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottomMargin, multiplier: 1.0, constant: 20.0).isActive = true
         let currGame = games[selectedPath[0]][selectedPath[1]]
         gameDatePicker.date = currGame["Date"] as! Date!
+        let time = (currGame["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "time").value as! String
+        
+        var index = timePickerComponents.count - 1
+        for i in 0..<timePickerComponents.count {
+            
+            let temp = timePickerComponents[i]["Title"]
+            
+            if temp == time {
+                
+                index = i
+                timePicker.selectRow(i, inComponent: 0, animated: true)
+                
+                break
+            }
+            
+        }
+        
         
         let boolState = (currGame["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "editing").value as! Bool
         //bookmark
@@ -319,14 +381,13 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         editorView.alpha = 0
         
-        self.blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        self.blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
         
         self.blurEffectView = UIVisualEffectView(effect: self.blurEffect)
         self.blurEffectView.frame = self.view.bounds
         self.blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.view.insertSubview(self.blurEffectView, at: self.view.subviews.count - 2)
-        self.blurEffectView.removeFromSuperview()
-        self.view.insertSubview(self.blurEffectView, at: self.view.subviews.count - 2)
+       // self.blurEffectView.alpha = 0.0
         
         
         self.tableView.isScrollEnabled = false
@@ -1475,6 +1536,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
             let awayScore = (snapshot.childSnapshot(forPath: "awayScore").value as! Int)
         
+            let gameTime = (snapshot.childSnapshot(forPath: "time").value as! String)
+            
             let time = (snapshot.childSnapshot(forPath: "time").value as! String)
         
             (cell.contentView.viewWithTag(3) as! UILabel).text = homeTeam
@@ -1565,11 +1628,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                 
             } else if state == "Today" {
                 
-                (cell.contentView.viewWithTag(7) as! UILabel).alpha = 0.0
                 
-                (cell.contentView.viewWithTag(15) as! UILabel).alpha = 1.0
                 
-                (cell.contentView.viewWithTag(16) as! UILabel).alpha = 1.0
                 
                 var hour = date.hour
                 var post = "am"
@@ -1580,17 +1640,27 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                     post = "pm"
                 }
                 
-                (cell.contentView.viewWithTag(15) as! UILabel).text = "\(hour):"+String(format: "%02d", date.minute)+" \(post)"
                 
-                (cell.contentView.viewWithTag(16) as! UILabel).text = "Tonight"
                 
                 if date.hour < today.hour || (date.hour == today.hour && date.minute <= today.minute) {
                     
-                    (cell.contentView.viewWithTag(7) as! UILabel).text = time
                     
                     (cell.contentView.viewWithTag(7) as! UILabel).alpha = 1.0
                     (cell.contentView.viewWithTag(15) as! UILabel).alpha = 0.0
                     (cell.contentView.viewWithTag(16) as! UILabel).alpha = 0.0
+                    
+                    (cell.contentView.viewWithTag(7) as! UILabel).text = gameTime
+                    
+                    
+                } else {
+                    
+                    (cell.contentView.viewWithTag(7) as! UILabel).alpha = 0.0
+                    (cell.contentView.viewWithTag(15) as! UILabel).alpha = 1.0
+                    (cell.contentView.viewWithTag(16) as! UILabel).alpha = 1.0
+                    
+                    (cell.contentView.viewWithTag(15) as! UILabel).text = "\(hour):"+String(format: "%02d", date.minute)+" \(post)"
+                    
+                    (cell.contentView.viewWithTag(16) as! UILabel).text = "Tonight"
                 }
                 
                 
@@ -1975,6 +2045,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             }
         }
         
+        let time = timePickerComponents[timePicker.selectedRow(inComponent: 0)]["Title"] as! String
         
         
         
@@ -1986,7 +2057,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             "awayScore": awayScore as Int,
             "date": dateInt as Int,
             "editing": isEditing as Bool,
-            "time": "0:00" as String
+            "time": time as String
             
             ] as [String : Any]
         
@@ -2188,8 +2259,17 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
-        
-        return pickerComponents.count
+        var cnt = 0
+        if pickerView.tag == 1{
+            
+            cnt = pickerComponents.count
+            
+        } else if pickerView.tag == 2 {
+            
+            cnt = timePickerComponents.count
+            
+        }
+        return cnt
     }
     
     // Delegate
@@ -2198,16 +2278,25 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         var title = ""
         
-        if pickerComponents.count != 0 {
+        if pickerView.tag == 1 {
             
-            
+            if pickerComponents.count != 0 {
                 
-            title = pickerComponents[row]["Title"]!
+                title = pickerComponents[row]["Title"]!
                 
+            }
             
+        } else if pickerView.tag == 2 {
+            
+            if timePickerComponents.count != 0 {
+                
+                title = timePickerComponents[row]["Title"]!
+                
+            }
             
             
         }
+        
         
         return title
     }

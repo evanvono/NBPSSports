@@ -39,7 +39,7 @@ class TwitchViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         
         
-        loadWebView(request: URLRequest(url: URL(string: "https://m.twitch.tv/brainwashsports")!))
+        loadWebView(request: URLRequest(url: URL(string: "http://twitch.tv/brainwashsports")!))
         
         
     }
