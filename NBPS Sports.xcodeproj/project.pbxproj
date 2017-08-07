@@ -31,6 +31,7 @@
 		2072828B1E745275009C87FF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2072828A1E745275009C87FF /* WebViewController.swift */; };
 		2074DF931EE8647000D91041 /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2074DF921EE8647000D91041 /* NewGameViewController.swift */; };
 		20848E9D1EE70F4B0050432D /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20848E9C1EE70F4B0050432D /* TransitionViewController.swift */; };
+		20A2B18B1F3815BC008D93D1 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A2B18A1F3815BC008D93D1 /* Section.swift */; };
 		20C6663E1F0F38C400B192AC /* Twitter.blank.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20C6663C1F0F38C400B192AC /* Twitter.blank.plist */; };
 		20C6663F1F0F38C400B192AC /* Twitter.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20C6663D1F0F38C400B192AC /* Twitter.plist */; };
 		20C7F4161F071A1900C75532 /* OutlinedUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C7F4151F071A1900C75532 /* OutlinedUILabel.swift */; };
@@ -94,6 +95,7 @@
 		2072828A1E745275009C87FF /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		2074DF921EE8647000D91041 /* NewGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameViewController.swift; sourceTree = "<group>"; };
 		20848E9C1EE70F4B0050432D /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
+		20A2B18A1F3815BC008D93D1 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		20C6663C1F0F38C400B192AC /* Twitter.blank.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Twitter.blank.plist; sourceTree = "<group>"; };
 		20C6663D1F0F38C400B192AC /* Twitter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Twitter.plist; sourceTree = "<group>"; };
 		20C7F4151F071A1900C75532 /* OutlinedUILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutlinedUILabel.swift; sourceTree = "<group>"; };
@@ -180,6 +182,14 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		20A2B1891F38159E008D93D1 /* ExpandableHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				20A2B18A1F3815BC008D93D1 /* Section.swift */,
+			);
+			name = ExpandableHeaderView;
+			sourceTree = "<group>";
+		};
 		20C666401F0F38DB00B192AC /* TwitterKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +233,7 @@
 		20EF9E421E645DE700F45DBB /* NBPS Sports */ = {
 			isa = PBXGroup;
 			children = (
+				20A2B1891F38159E008D93D1 /* ExpandableHeaderView */,
 				20EF9E431E645DE700F45DBB /* AppDelegate.swift */,
 				204ADA691ECA78AA002C4076 /* AppState.swift */,
 				20EF9E471E645DE700F45DBB /* Main.storyboard */,
@@ -494,6 +505,7 @@
 				2023F0551EA1845B0041E165 /* LoginViewController.swift in Sources */,
 				204ADA681ECA7677002C4076 /* Constants.swift in Sources */,
 				204ADA6A1ECA78AA002C4076 /* AppState.swift in Sources */,
+				20A2B18B1F3815BC008D93D1 /* Section.swift in Sources */,
 				20848E9D1EE70F4B0050432D /* TransitionViewController.swift in Sources */,
 				20F4EE291F0986A0004CBF45 /* StackViewCell.swift in Sources */,
 				2074DF931EE8647000D91041 /* NewGameViewController.swift in Sources */,

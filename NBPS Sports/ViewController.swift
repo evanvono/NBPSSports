@@ -190,9 +190,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         mainTableView.layer.cornerRadius = 10
         
         
+        getRSS(urlStr: "http://www.nbpsathletics.org/organizations/3072/announcements?page=2")
         getRSS(urlStr: "http://www.nbpsathletics.org/organizations/3072/announcements")
         
-        getRSS(urlStr: "http://www.nbpsathletics.org/organizations/3072/announcements?page=2")
+        
         
         //detailWebView.loadRequest(URLRequest(url: URL(string: "www.google.com")!))
         

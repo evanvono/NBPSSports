@@ -282,8 +282,90 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                             <segue destination="QYz-Uq-ypw" kind="custom" identifier="Menu" customClass="SWRevealViewControllerSeguePushController" id="V9m-hl-6bs"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="pRs-d6-ey2">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="mbb-4h-9pt">
                                         <rect key="frame" x="0.0" y="154" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mbb-4h-9pt" id="qaZ-oW-A5i">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baseball" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hn-Oi-upG">
+                                                    <rect key="frame" x="17" y="11" width="175" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="175" id="2g2-ax-XVN"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Beantown" family="Untitled" pointSize="17"/>
+                                                    <color key="textColor" red="0.85071324349999999" green="0.79150025830000004" blue="0.44942228090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="7Hn-Oi-upG" firstAttribute="top" secondItem="qaZ-oW-A5i" secondAttribute="topMargin" constant="3" id="D7c-Wm-68w"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="7Hn-Oi-upG" secondAttribute="bottom" constant="3" id="WqS-sA-RfP"/>
+                                                <constraint firstItem="7Hn-Oi-upG" firstAttribute="leading" secondItem="qaZ-oW-A5i" secondAttribute="leadingMargin" constant="9" id="dlH-8I-IYf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="FGf-Yu-Gfw" kind="custom" identifier="BooysBasketball" customClass="SWRevealViewControllerSeguePushController" id="vfw-ot-cm1"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="80" id="NDu-zG-o3r">
+                                        <rect key="frame" x="0.0" y="198" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NDu-zG-o3r" id="nav-18-ry3">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basketball" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6T-Ux-8FA">
+                                                    <rect key="frame" x="17" y="8" width="175" height="27"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="27" id="HhH-Hm-G7Y"/>
+                                                        <constraint firstAttribute="width" constant="175" id="mtF-YD-WWs"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Beantown" family="Untitled" pointSize="17"/>
+                                                    <color key="textColor" red="0.85071324349999999" green="0.79150025830000004" blue="0.44942228090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FA5-sW-Irs">
+                                                    <rect key="frame" x="24" y="43" width="109" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="109" id="6Cu-Na-qRd"/>
+                                                        <constraint firstAttribute="height" constant="19" id="L8R-N7-Rat"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Beantown" family="Untitled" pointSize="12"/>
+                                                    <state key="normal" title="Boys' Varsity">
+                                                        <color key="titleColor" red="0.89771943929999998" green="0.83575958480000001" blue="0.47510030050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="didTapBoysVarsitySoccer:" destination="FSj-Gq-oLe" eventType="touchUpInside" id="JbD-1L-1yj"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PG-HX-ReQ">
+                                                    <rect key="frame" x="24" y="60" width="109" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19" id="4Ub-qK-qDv"/>
+                                                        <constraint firstAttribute="width" constant="109" id="qnt-sF-ZQd"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Beantown" family="Untitled" pointSize="12"/>
+                                                    <state key="normal" title="Girls' Varsity">
+                                                        <color key="titleColor" red="0.89771943929999998" green="0.83575958480000001" blue="0.47510030050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="E6T-Ux-8FA" firstAttribute="top" secondItem="nav-18-ry3" secondAttribute="topMargin" id="1rN-9Q-r55"/>
+                                                <constraint firstItem="E6T-Ux-8FA" firstAttribute="leading" secondItem="nav-18-ry3" secondAttribute="leadingMargin" constant="9" id="Oii-QO-lxu"/>
+                                                <constraint firstItem="3PG-HX-ReQ" firstAttribute="leading" secondItem="nav-18-ry3" secondAttribute="leading" constant="24" id="QuH-3R-pME"/>
+                                                <constraint firstItem="FA5-sW-Irs" firstAttribute="leading" secondItem="nav-18-ry3" secondAttribute="leadingMargin" constant="16" id="Sns-Qg-kjP"/>
+                                                <constraint firstItem="FA5-sW-Irs" firstAttribute="top" secondItem="E6T-Ux-8FA" secondAttribute="bottom" constant="8" id="drZ-wo-f27"/>
+                                                <constraint firstItem="3PG-HX-ReQ" firstAttribute="top" secondItem="E6T-Ux-8FA" secondAttribute="bottom" constant="25" id="fGm-05-wBi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="menuItem" rowHeight="44" id="pRs-d6-ey2">
+                                        <rect key="frame" x="0.0" y="278" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pRs-d6-ey2" id="FZg-R7-m78">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -311,61 +393,62 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                             <segue destination="rbd-Od-w6C" kind="custom" identifier="Football" customClass="SWRevealViewControllerSeguePushController" id="G66-9y-DmG"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="mbb-4h-9pt">
-                                        <rect key="frame" x="0.0" y="198" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mbb-4h-9pt" id="qaZ-oW-A5i">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basketball" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hn-Oi-upG">
-                                                    <rect key="frame" x="17" y="11" width="175" height="22"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="175" id="2g2-ax-XVN"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Beantown" family="Untitled" pointSize="17"/>
-                                                    <color key="textColor" red="0.85071324349999999" green="0.79150025830000004" blue="0.44942228090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="7Hn-Oi-upG" firstAttribute="top" secondItem="qaZ-oW-A5i" secondAttribute="topMargin" constant="3" id="D7c-Wm-68w"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="7Hn-Oi-upG" secondAttribute="bottom" constant="3" id="WqS-sA-RfP"/>
-                                                <constraint firstItem="7Hn-Oi-upG" firstAttribute="leading" secondItem="qaZ-oW-A5i" secondAttribute="leadingMargin" constant="9" id="dlH-8I-IYf"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <segue destination="FGf-Yu-Gfw" kind="custom" identifier="BooysBasketball" customClass="SWRevealViewControllerSeguePushController" id="vfw-ot-cm1"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="om5-41-LNE">
-                                        <rect key="frame" x="0.0" y="242" width="375" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="80" id="om5-41-LNE">
+                                        <rect key="frame" x="0.0" y="322" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="om5-41-LNE" id="QWg-YJ-olv">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soccer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cK-fw-hop">
-                                                    <rect key="frame" x="17" y="11" width="175" height="22"/>
+                                                    <rect key="frame" x="17" y="8" width="175" height="27"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="175" id="et0-Mh-Gpa"/>
+                                                        <constraint firstAttribute="width" constant="175" id="5PZ-LM-74r"/>
+                                                        <constraint firstAttribute="height" constant="27" id="CBJ-QP-MBb"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Beantown" family="Untitled" pointSize="17"/>
                                                     <color key="textColor" red="0.85071324349999999" green="0.79150025830000004" blue="0.44942228090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPk-Yh-kFk">
+                                                    <rect key="frame" x="24" y="43" width="109" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="109" id="cVm-8c-Q9K"/>
+                                                        <constraint firstAttribute="height" constant="19" id="ynj-z0-Z1l"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Beantown" family="Untitled" pointSize="12"/>
+                                                    <state key="normal" title="Boys' Varsity">
+                                                        <color key="titleColor" red="0.89771943929999998" green="0.83575958480000001" blue="0.47510030050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="didTapBoysVarsitySoccer:" destination="FSj-Gq-oLe" eventType="touchUpInside" id="f92-wy-vHg"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVn-pK-Usb">
+                                                    <rect key="frame" x="24" y="60" width="109" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="109" id="Iyv-57-Jw0"/>
+                                                        <constraint firstAttribute="height" constant="19" id="kb8-75-Vns"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Beantown" family="Untitled" pointSize="12"/>
+                                                    <state key="normal" title="Girls' Varsity">
+                                                        <color key="titleColor" red="0.89771943929999998" green="0.83575958480000001" blue="0.47510030050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="2cK-fw-hop" firstAttribute="top" secondItem="QWg-YJ-olv" secondAttribute="topMargin" constant="3" id="DtH-8B-WI5"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="2cK-fw-hop" secondAttribute="bottom" constant="3" id="Lnp-un-mxK"/>
-                                                <constraint firstItem="2cK-fw-hop" firstAttribute="leading" secondItem="QWg-YJ-olv" secondAttribute="leadingMargin" constant="9" id="iAi-28-yYt"/>
+                                                <constraint firstItem="wVn-pK-Usb" firstAttribute="leading" secondItem="QWg-YJ-olv" secondAttribute="leading" constant="24" id="49S-sD-Dq0"/>
+                                                <constraint firstItem="gPk-Yh-kFk" firstAttribute="top" secondItem="2cK-fw-hop" secondAttribute="bottom" constant="8" id="4Hf-SV-vcE"/>
+                                                <constraint firstItem="2cK-fw-hop" firstAttribute="top" secondItem="QWg-YJ-olv" secondAttribute="topMargin" id="97K-ve-dOM"/>
+                                                <constraint firstItem="wVn-pK-Usb" firstAttribute="top" secondItem="2cK-fw-hop" secondAttribute="bottom" constant="25" id="TLu-yV-6Fe"/>
+                                                <constraint firstItem="2cK-fw-hop" firstAttribute="leading" secondItem="QWg-YJ-olv" secondAttribute="leadingMargin" constant="9" id="XVD-1S-Q7o"/>
+                                                <constraint firstItem="gPk-Yh-kFk" firstAttribute="leading" secondItem="QWg-YJ-olv" secondAttribute="leadingMargin" constant="16" id="n7J-Fg-iGg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="kah-zh-Ryc">
-                                        <rect key="frame" x="0.0" y="286" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="402" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kah-zh-Ryc" id="A0d-gU-PyY">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -392,33 +475,8 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                             <segue destination="YqR-T6-v2m" kind="custom" identifier="Editors" customClass="SWRevealViewControllerSeguePushController" id="4hx-oA-5OJ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="2Ev-3D-TIF">
-                                        <rect key="frame" x="0.0" y="330" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Ev-3D-TIF" id="ZWf-h1-pam">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volleyball" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mr1-Y2-cs1">
-                                                    <rect key="frame" x="17" y="11" width="175" height="22"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="175" id="efx-vW-KEO"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Beantown" family="Untitled" pointSize="17"/>
-                                                    <color key="textColor" red="0.85071324349999999" green="0.79150025830000004" blue="0.44942228090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Mr1-Y2-cs1" secondAttribute="bottom" constant="3" id="OhE-KZ-QGA"/>
-                                                <constraint firstItem="Mr1-Y2-cs1" firstAttribute="top" secondItem="ZWf-h1-pam" secondAttribute="topMargin" constant="3" id="YN4-7z-YAs"/>
-                                                <constraint firstItem="Mr1-Y2-cs1" firstAttribute="leading" secondItem="ZWf-h1-pam" secondAttribute="leadingMargin" constant="9" id="zeu-Op-vFZ"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="lgU-gt-YMc">
-                                        <rect key="frame" x="0.0" y="374" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="446" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lgU-gt-YMc" id="vJA-CZ-Zgt">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1217,7 +1275,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                 <rect key="frame" x="0.0" y="28" width="375" height="61"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="p3Q-JO-m7U" id="SAL-kx-chH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="60.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="334" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIq-2P-Emr">
@@ -1316,7 +1374,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                 <rect key="frame" x="0.0" y="89" width="375" height="28"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lPQ-oz-gtK" id="yAA-N8-fUH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="28"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="27.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thu March 27" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yK1-Qa-zUt">
@@ -1386,7 +1444,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                 <rect key="frame" x="0.0" y="28" width="326" height="120"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="psB-Hl-7O9" id="PdL-iZ-cGV">
-                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="120"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="326" height="119.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <textView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" text="Body" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiy-SE-XtM">
@@ -1737,7 +1795,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rbd-Od-w6C" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Jm-10-h6w">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="1Jm-10-h6w">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1787,7 +1845,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mn6-DY-wdm">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Mn6-DY-wdm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1812,7 +1870,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PKb-d4-kuZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="PKb-d4-kuZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1838,7 +1896,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CnZ-MM-XBH" id="eBe-sd-JTg">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1864,7 +1922,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FGf-Yu-Gfw" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="c0h-tl-a7p">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="c0h-tl-a7p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1900,7 +1958,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
             <objects>
                 <navigationController storyboardIdentifier="LoginNC" automaticallyAdjustsScrollViewInsets="NO" id="YqR-T6-v2m" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="i4b-rH-WPa">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="i4b-rH-WPa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1978,7 +2036,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q8z-hp-e9x" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ka4-RF-ie2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ka4-RF-ie2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

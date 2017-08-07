@@ -10,6 +10,11 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
     var menuItems: [String]!
+    
+    
+    var selectedIndex = 100
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,6 +54,65 @@ class MenuTableViewController: UITableViewController {
         return cellNum
     }*/
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        print(indexPath)
+        if indexPath.section == 1{
+            
+            
+            
+            let sport = (self.tableView.cellForRow(at: indexPath)?.contentView.viewWithTag(2) as! UILabel).text
+            
+            if sport == "Soccer" || sport == "soccer" {
+                
+                print("tappedSoccer")
+                
+                if selectedIndex == indexPath.row {
+                    
+                    self.tableView.beginUpdates()
+                    selectedIndex = 100
+                    self.tableView.endUpdates()
+                    
+                } else {
+                    
+                    self.tableView.beginUpdates()
+                    selectedIndex = indexPath.row
+                    self.tableView.endUpdates()
+                }
+                
+                
+            }
+            if sport == "Basketball" || sport == "basketball" {
+                
+                print("tappedSoccer")
+                
+                if selectedIndex == indexPath.row {
+                    
+                    self.tableView.beginUpdates()
+                    selectedIndex = 100
+                    self.tableView.endUpdates()
+                    
+                } else {
+                    
+                    self.tableView.beginUpdates()
+                    selectedIndex = indexPath.row
+                    self.tableView.endUpdates()
+                }
+                
+                
+            }
+            
+        }
+        
+        
+    }
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "menuItem")
+        
+        return cell!
+    }*/
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -80,7 +144,16 @@ class MenuTableViewController: UITableViewController {
             
             height = 110
         } else {
-            height = 44
+            
+            if selectedIndex == indexPath.row {
+                
+                height = 80
+                
+            } else {
+                
+                height = 44
+            }
+            
         }
         return CGFloat(height)
     }
@@ -179,5 +252,15 @@ class MenuTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func didTapBoysVarsitySoccer(_ sender: Any) {
+        
+        self.performSegue(withIdentifier: "Football", sender: self.tableView.cellForRow(at: IndexPath(row: 1, section: 1)))
+        
+        self.tableView.beginUpdates()
+        selectedIndex = 100
+        self.tableView.endUpdates()
+        
+    }
 
 }
