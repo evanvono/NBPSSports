@@ -27,6 +27,7 @@
 		204ADA681ECA7677002C4076 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204ADA671ECA7677002C4076 /* Constants.swift */; };
 		204ADA6A1ECA78AA002C4076 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204ADA691ECA78AA002C4076 /* AppState.swift */; };
 		2069AE8B1EE712830032250C /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2069AE8A1EE712830032250C /* AccountViewController.swift */; };
+		206AC6021F391C3F00303CB1 /* BBasketballTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206AC6011F391C3F00303CB1 /* BBasketballTableViewController.swift */; };
 		206EA2651EA59D8E00F73B36 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 206EA2641EA59D8E00F73B36 /* GoogleService-Info.plist */; };
 		2072828B1E745275009C87FF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2072828A1E745275009C87FF /* WebViewController.swift */; };
 		2074DF931EE8647000D91041 /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2074DF921EE8647000D91041 /* NewGameViewController.swift */; };
@@ -91,6 +92,7 @@
 		204ADA691ECA78AA002C4076 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		205730CB1F0DD6BF00559965 /* Base */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Base; path = Base.lproj/MenuTableViewController.swift; sourceTree = "<group>"; };
 		2069AE8A1EE712830032250C /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		206AC6011F391C3F00303CB1 /* BBasketballTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBasketballTableViewController.swift; sourceTree = "<group>"; };
 		206EA2641EA59D8E00F73B36 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2072828A1E745275009C87FF /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		2074DF921EE8647000D91041 /* NewGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				20EF9E471E645DE700F45DBB /* Main.storyboard */,
 				20EF9E451E645DE700F45DBB /* ViewController.swift */,
 				20DBD3CF1E6C85F800D4D690 /* FootballTableViewController.swift */,
+				206AC6011F391C3F00303CB1 /* BBasketballTableViewController.swift */,
 				205730CA1F0DD6BF00559965 /* MenuTableViewController.swift */,
 				2074DF921EE8647000D91041 /* NewGameViewController.swift */,
 				204ADA671ECA7677002C4076 /* Constants.swift */,
@@ -506,6 +509,7 @@
 				204ADA681ECA7677002C4076 /* Constants.swift in Sources */,
 				204ADA6A1ECA78AA002C4076 /* AppState.swift in Sources */,
 				20A2B18B1F3815BC008D93D1 /* Section.swift in Sources */,
+				206AC6021F391C3F00303CB1 /* BBasketballTableViewController.swift in Sources */,
 				20848E9D1EE70F4B0050432D /* TransitionViewController.swift in Sources */,
 				20F4EE291F0986A0004CBF45 /* StackViewCell.swift in Sources */,
 				2074DF931EE8647000D91041 /* NewGameViewController.swift in Sources */,

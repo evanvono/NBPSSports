@@ -217,6 +217,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                         
                         
                     }, subtitle: "Tap anywhere to cancel.")
+                    
+                    self.tableView.reloadData()
                 }
                 self.title = "Football"
                 self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
@@ -404,6 +406,9 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
         }
         self.navigationController?.navigationBar.isTranslucent = false
+        
+        editorView.layer.borderWidth = 1
+        editorView.layer.borderColor = UIColor.black.cgColor
         
     }
     func animateOut(){
@@ -2390,14 +2395,4 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
 
 }
 
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
+

@@ -84,7 +84,7 @@ class MenuTableViewController: UITableViewController {
             }
             if sport == "Basketball" || sport == "basketball" {
                 
-                print("tappedSoccer")
+                print("tappedBasketball")
                 
                 if selectedIndex == indexPath.row {
                     
@@ -255,12 +255,20 @@ class MenuTableViewController: UITableViewController {
     
     @IBAction func didTapBoysVarsitySoccer(_ sender: Any) {
         
+        self.tableView.beginUpdates()
+        selectedIndex = 100
+        self.tableView.endUpdates()
         self.performSegue(withIdentifier: "Football", sender: self.tableView.cellForRow(at: IndexPath(row: 1, section: 1)))
+        
+        
+        
+    }
+    @IBAction func didTapBoysVarsityBasketball(_ sender: Any) {
         
         self.tableView.beginUpdates()
         selectedIndex = 100
         self.tableView.endUpdates()
-        
+        self.performSegue(withIdentifier: "BBasketball", sender: self.tableView.cellForRow(at: IndexPath(row: 2, section: 1)))
     }
 
 }

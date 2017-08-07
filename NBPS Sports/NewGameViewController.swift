@@ -56,7 +56,7 @@ class NewGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     func fillSports(){
         
         sports = ["Football","Boys Soccer", "Girls Soccer", "Boys Basketball", "Girls Basketball"]
-        sportsTitles = ["Football":"Football","Boys Soccer":"SoccerBoys", "Girls Soccer":"SoccerGirls", "Boys Basketball":"BasketballBoys", "Girls Basketball":"BasketballGirls"]
+        sportsTitles = ["Football":"Football","Boys Soccer":"BSoccer", "Girls Soccer":"GSoccer", "Boys Basketball":"BBasketball", "Girls Basketball":"GBasketball"]
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
