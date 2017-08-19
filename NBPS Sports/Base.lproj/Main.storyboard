@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ey5-HP-SVS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13178.6" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ey5-HP-SVS">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13156.2"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-Regular</string>
+        </array>
+        <array key="AvenirNextCondensed.ttc">
+            <string>AvenirNextCondensed-Regular</string>
+        </array>
+        <array key="Helvetica.ttc">
+            <string>Helvetica-BoldOblique</string>
+        </array>
+        <array key="Kohinoor.ttc">
+            <string>KohinoorDevanagari-Regular</string>
+        </array>
+        <array key="OriyaSangamMN.ttc">
+            <string>OriyaSangamMN</string>
+        </array>
         <array key="beantown.regular.ttf">
             <string>Beantown</string>
         </array>
@@ -208,21 +223,21 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                         <sections>
                             <tableViewSection id="DH0-i4-Zko">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="top" rowHeight="110" id="yb3-u7-WDV">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="top" rowHeight="128" id="yb3-u7-WDV">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yb3-u7-WDV" id="TPC-sI-tib">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NBP-Icon-Border" translatesAutoresizingMaskIntoConstraints="NO" id="EpU-H1-jQA">
-                                                    <rect key="frame" x="8" y="8" width="93" height="102"/>
+                                                    <rect key="frame" x="8" y="8" width="93" height="120"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="93" id="Haz-lG-R9S"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sports" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhK-aV-hxe" customClass="UIOutlinedLabel" customModule="NBPS_Sports" customModuleProvider="target">
-                                                    <rect key="frame" x="83" y="77" width="75" height="21"/>
+                                                    <rect key="frame" x="83" y="97" width="75" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Bdo-3X-u2u"/>
                                                         <constraint firstAttribute="width" constant="75" id="DYD-S8-NdG"/>
@@ -255,14 +270,14 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                             <tableViewSection id="8ar-AH-Aaq">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="mainButton" rowHeight="44" id="6PB-aZ-sH9">
-                                        <rect key="frame" x="0.0" y="110" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="128" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6PB-aZ-sH9" id="fpP-9V-86k">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G90-Qr-eag">
-                                                    <rect key="frame" x="17" y="11" width="175" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Menu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G90-Qr-eag">
+                                                    <rect key="frame" x="17" y="9" width="175" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="175" id="eW5-Me-rtI"/>
                                                     </constraints>
@@ -283,14 +298,14 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="mbb-4h-9pt">
-                                        <rect key="frame" x="0.0" y="154" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="172" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mbb-4h-9pt" id="qaZ-oW-A5i">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baseball" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hn-Oi-upG">
-                                                    <rect key="frame" x="17" y="11" width="175" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Baseball" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hn-Oi-upG">
+                                                    <rect key="frame" x="17" y="9" width="175" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="175" id="2g2-ax-XVN"/>
                                                     </constraints>
@@ -306,19 +321,16 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <segue destination="FGf-Yu-Gfw" kind="custom" identifier="BBasketball" customClass="SWRevealViewControllerSeguePushController" id="vfw-ot-cm1"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="80" id="NDu-zG-o3r">
-                                        <rect key="frame" x="0.0" y="198" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="216" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NDu-zG-o3r" id="nav-18-ry3">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Basketball" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6T-Ux-8FA">
-                                                    <rect key="frame" x="17" y="8" width="175" height="27"/>
+                                                    <rect key="frame" x="17" y="7208" width="175" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="27" id="HhH-Hm-G7Y"/>
                                                         <constraint firstAttribute="width" constant="175" id="mtF-YD-WWs"/>
@@ -328,10 +340,10 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FA5-sW-Irs">
-                                                    <rect key="frame" x="24" y="43" width="109" height="19"/>
+                                                    <rect key="frame" x="24" y="7243" width="109" height="19"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="109" id="6Cu-Na-qRd"/>
-                                                        <constraint firstAttribute="height" constant="19" id="L8R-N7-Rat"/>
+                                                        <constraint firstAttribute="height" constant="19" id="TRD-6h-yF0"/>
+                                                        <constraint firstAttribute="width" constant="109" id="iPH-8g-pZ6"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Beantown" family="Untitled" pointSize="12"/>
                                                     <state key="normal" title="Boys' Varsity">
@@ -342,30 +354,33 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3PG-HX-ReQ">
-                                                    <rect key="frame" x="24" y="60" width="109" height="19"/>
+                                                    <rect key="frame" x="24" y="7260" width="109" height="19"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="19" id="4Ub-qK-qDv"/>
-                                                        <constraint firstAttribute="width" constant="109" id="qnt-sF-ZQd"/>
+                                                        <constraint firstAttribute="width" constant="109" id="6UC-Qw-8tK"/>
+                                                        <constraint firstAttribute="height" constant="19" id="b1w-Q8-VF3"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Beantown" family="Untitled" pointSize="12"/>
                                                     <state key="normal" title="Girls' Varsity">
                                                         <color key="titleColor" red="0.89771943929999998" green="0.83575958480000001" blue="0.47510030050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="didTapGirlsVarsityBasketball:" destination="FSj-Gq-oLe" eventType="touchUpInside" id="Wmw-Qr-vPr"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="E6T-Ux-8FA" firstAttribute="top" secondItem="nav-18-ry3" secondAttribute="topMargin" id="1rN-9Q-r55"/>
+                                                <constraint firstItem="3PG-HX-ReQ" firstAttribute="leading" secondItem="nav-18-ry3" secondAttribute="leadingMargin" constant="16" id="2fE-Bg-2mU"/>
                                                 <constraint firstItem="E6T-Ux-8FA" firstAttribute="leading" secondItem="nav-18-ry3" secondAttribute="leadingMargin" constant="9" id="Oii-QO-lxu"/>
-                                                <constraint firstItem="3PG-HX-ReQ" firstAttribute="leading" secondItem="nav-18-ry3" secondAttribute="leading" constant="24" id="QuH-3R-pME"/>
-                                                <constraint firstItem="FA5-sW-Irs" firstAttribute="leading" secondItem="nav-18-ry3" secondAttribute="leadingMargin" constant="16" id="Sns-Qg-kjP"/>
-                                                <constraint firstItem="FA5-sW-Irs" firstAttribute="top" secondItem="E6T-Ux-8FA" secondAttribute="bottom" constant="8" id="drZ-wo-f27"/>
-                                                <constraint firstItem="3PG-HX-ReQ" firstAttribute="top" secondItem="E6T-Ux-8FA" secondAttribute="bottom" constant="25" id="fGm-05-wBi"/>
+                                                <constraint firstItem="3PG-HX-ReQ" firstAttribute="top" secondItem="E6T-Ux-8FA" secondAttribute="bottom" constant="25" id="oRq-hQ-Xk1"/>
+                                                <constraint firstItem="FA5-sW-Irs" firstAttribute="top" secondItem="E6T-Ux-8FA" secondAttribute="bottom" constant="8" id="qCr-07-1tA"/>
+                                                <constraint firstItem="FA5-sW-Irs" firstAttribute="leading" secondItem="nav-18-ry3" secondAttribute="leadingMargin" constant="16" id="z4s-cn-V6n"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="menuItem" rowHeight="44" id="pRs-d6-ey2">
-                                        <rect key="frame" x="0.0" y="278" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="296" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pRs-d6-ey2" id="FZg-R7-m78">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -394,14 +409,14 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="80" id="om5-41-LNE">
-                                        <rect key="frame" x="0.0" y="322" width="375" height="80"/>
+                                        <rect key="frame" x="0.0" y="340" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="om5-41-LNE" id="QWg-YJ-olv">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soccer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cK-fw-hop">
-                                                    <rect key="frame" x="17" y="8" width="175" height="27"/>
+                                                    <rect key="frame" x="17" y="7208" width="175" height="27"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="175" id="5PZ-LM-74r"/>
                                                         <constraint firstAttribute="height" constant="27" id="CBJ-QP-MBb"/>
@@ -410,11 +425,25 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                     <color key="textColor" red="0.85071324349999999" green="0.79150025830000004" blue="0.44942228090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPk-Yh-kFk">
-                                                    <rect key="frame" x="24" y="43" width="109" height="19"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVn-pK-Usb">
+                                                    <rect key="frame" x="24" y="7260" width="109" height="19"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="109" id="cVm-8c-Q9K"/>
-                                                        <constraint firstAttribute="height" constant="19" id="ynj-z0-Z1l"/>
+                                                        <constraint firstAttribute="height" constant="19" id="LHv-02-a6B"/>
+                                                        <constraint firstAttribute="width" constant="109" id="mKV-mV-eac"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Beantown" family="Untitled" pointSize="12"/>
+                                                    <state key="normal" title="Girls' Varsity">
+                                                        <color key="titleColor" red="0.89771943929999998" green="0.83575958480000001" blue="0.47510030050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="didTapGirlsVarsitySoccer:" destination="FSj-Gq-oLe" eventType="touchUpInside" id="hs6-P1-PYH"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPk-Yh-kFk">
+                                                    <rect key="frame" x="24" y="7243" width="109" height="19"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="109" id="Bhf-Gn-mU6"/>
+                                                        <constraint firstAttribute="height" constant="19" id="jOQ-aR-yFj"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Beantown" family="Untitled" pointSize="12"/>
                                                     <state key="normal" title="Boys' Varsity">
@@ -424,38 +453,27 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                         <action selector="didTapBoysVarsitySoccer:" destination="FSj-Gq-oLe" eventType="touchUpInside" id="f92-wy-vHg"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wVn-pK-Usb">
-                                                    <rect key="frame" x="24" y="60" width="109" height="19"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="109" id="Iyv-57-Jw0"/>
-                                                        <constraint firstAttribute="height" constant="19" id="kb8-75-Vns"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Beantown" family="Untitled" pointSize="12"/>
-                                                    <state key="normal" title="Girls' Varsity">
-                                                        <color key="titleColor" red="0.89771943929999998" green="0.83575958480000001" blue="0.47510030050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    </state>
-                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="wVn-pK-Usb" firstAttribute="leading" secondItem="QWg-YJ-olv" secondAttribute="leading" constant="24" id="49S-sD-Dq0"/>
-                                                <constraint firstItem="gPk-Yh-kFk" firstAttribute="top" secondItem="2cK-fw-hop" secondAttribute="bottom" constant="8" id="4Hf-SV-vcE"/>
                                                 <constraint firstItem="2cK-fw-hop" firstAttribute="top" secondItem="QWg-YJ-olv" secondAttribute="topMargin" id="97K-ve-dOM"/>
-                                                <constraint firstItem="wVn-pK-Usb" firstAttribute="top" secondItem="2cK-fw-hop" secondAttribute="bottom" constant="25" id="TLu-yV-6Fe"/>
+                                                <constraint firstItem="wVn-pK-Usb" firstAttribute="top" secondItem="2cK-fw-hop" secondAttribute="bottom" constant="25" id="Cta-gK-LIy"/>
+                                                <constraint firstItem="wVn-pK-Usb" firstAttribute="leading" secondItem="QWg-YJ-olv" secondAttribute="leadingMargin" constant="16" id="Hl9-2W-F0o"/>
                                                 <constraint firstItem="2cK-fw-hop" firstAttribute="leading" secondItem="QWg-YJ-olv" secondAttribute="leadingMargin" constant="9" id="XVD-1S-Q7o"/>
-                                                <constraint firstItem="gPk-Yh-kFk" firstAttribute="leading" secondItem="QWg-YJ-olv" secondAttribute="leadingMargin" constant="16" id="n7J-Fg-iGg"/>
+                                                <constraint firstItem="gPk-Yh-kFk" firstAttribute="leading" secondItem="QWg-YJ-olv" secondAttribute="leadingMargin" constant="16" id="kSH-Pe-Ieo"/>
+                                                <constraint firstItem="gPk-Yh-kFk" firstAttribute="top" secondItem="2cK-fw-hop" secondAttribute="bottom" constant="8" id="wDZ-Dy-ri1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="kah-zh-Ryc">
-                                        <rect key="frame" x="0.0" y="402" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="420" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kah-zh-Ryc" id="A0d-gU-PyY">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Editors" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAl-Pb-uSX">
-                                                    <rect key="frame" x="17" y="11" width="175" height="22"/>
+                                                    <rect key="frame" x="17" y="7211" width="175" height="0.0"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="175" id="4lc-cN-gyA"/>
                                                     </constraints>
@@ -476,18 +494,18 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="lgU-gt-YMc">
-                                        <rect key="frame" x="0.0" y="446" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="464" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lgU-gt-YMc" id="vJA-CZ-Zgt">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fe-Vo-Y1r">
-                                                    <rect key="frame" x="17" y="11" width="175" height="22"/>
+                                                    <rect key="frame" x="17" y="7211" width="175" height="0.0"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="175" id="33e-eh-i7j"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="Beantown" family="Untitled" pointSize="17"/>
                                                     <color key="textColor" red="0.85071324349999999" green="0.79150025830000004" blue="0.44942228090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -501,6 +519,30 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <segue destination="q8z-hp-e9x" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="IL2-Sf-X5Z"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="gCe-Ta-8G2">
+                                        <rect key="frame" x="0.0" y="508" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gCe-Ta-8G2" id="nXj-jm-xPO">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="c6G-5K-Huc" kind="custom" identifier="ComingSoon" customClass="SWRevealViewControllerSeguePushController" id="DRT-oX-0kY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="ZiR-Ej-oUb">
+                                        <rect key="frame" x="0.0" y="552" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZiR-Ej-oUb" id="XnE-dv-4hu">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="FGf-Yu-Gfw" kind="custom" identifier="BBasketball" customClass="SWRevealViewControllerSeguePushController" id="57h-mA-3ib"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -534,7 +576,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="35"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ShadowUp" translatesAutoresizingMaskIntoConstraints="NO" id="M10-yz-DRw">
+                                        <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ShadowUp" translatesAutoresizingMaskIntoConstraints="NO" id="M10-yz-DRw">
                                             <rect key="frame" x="-200" y="13" width="775" height="4"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="4" id="KB2-n6-Jbn"/>
@@ -542,7 +584,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thu March 27" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEt-GU-HQF">
                                             <rect key="frame" x="0.0" y="17" width="375" height="18"/>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="18" id="GQl-h7-nd4"/>
                                             </constraints>
@@ -550,14 +592,14 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ShadowDown" translatesAutoresizingMaskIntoConstraints="NO" id="uet-S0-mfz">
+                                        <imageView userInteractionEnabled="NO" alpha="0.55000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ShadowDown" translatesAutoresizingMaskIntoConstraints="NO" id="uet-S0-mfz">
                                             <rect key="frame" x="-200" y="0.0" width="775" height="4"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="4" id="ZVk-8w-Uat"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="MEt-GU-HQF" secondAttribute="bottom" id="1Wv-a6-Ay6"/>
                                         <constraint firstAttribute="trailing" secondItem="M10-yz-DRw" secondAttribute="trailing" constant="-200" id="A26-1p-kOe"/>
@@ -570,7 +612,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                         <constraint firstItem="uet-S0-mfz" firstAttribute="top" secondItem="inf-QA-A1t" secondAttribute="top" id="xh9-L7-geY"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ScoreCell" rowHeight="60" id="cYt-50-UCQ">
                                 <rect key="frame" x="0.0" y="63" width="375" height="60"/>
@@ -595,7 +637,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                 <constraint firstAttribute="width" constant="40" id="k0t-8f-Khi"/>
                                                 <constraint firstAttribute="height" constant="20" id="kYO-2l-TvF"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -605,7 +647,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                 <constraint firstAttribute="height" constant="20" id="dsR-5y-7ba"/>
                                                 <constraint firstAttribute="width" constant="40" id="fnJ-l5-wEw"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -666,7 +708,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="Jqr-JE-GXV"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -675,7 +717,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="gt1-Dh-yJs"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -724,6 +766,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                         <constraint firstItem="NHh-Wj-KyS" firstAttribute="leading" secondItem="MSS-q7-hte" secondAttribute="trailing" id="tUI-lu-HfM"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddGame" rowHeight="28" id="UGZ-SN-T3L">
                                 <rect key="frame" x="0.0" y="123" width="375" height="28"/>
@@ -767,7 +810,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                             </barButtonItem>
                             <barButtonItem width="8" style="plain" id="muX-D2-0eS">
                                 <view key="customView" contentMode="scaleToFill" id="eje-G1-MDi">
-                                    <rect key="frame" x="227" y="5" width="42" height="33"/>
+                                    <rect key="frame" x="268" y="5.5" width="42" height="33"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="dhN-Ml-xG8">
@@ -927,11 +970,11 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                 <navigationItem id="ifH-s6-EHM">
                                     <barButtonItem key="rightBarButtonItem" style="plain" id="DBu-0E-KRO">
                                         <view key="customView" contentMode="scaleToFill" id="qor-d3-Wdu">
-                                            <rect key="frame" x="218" y="5" width="66" height="33"/>
+                                            <rect key="frame" x="284" y="22" width="0.0" height="0.0"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="JVg-4f-tSu">
-                                                    <rect key="frame" x="46" y="6" width="20" height="20"/>
+                                                    <rect key="frame" x="-20" y="-10" width="20" height="20"/>
                                                     <color key="color" red="0.89771943929999998" green="0.83575958480000001" blue="0.47510030050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </activityIndicatorView>
                                             </subviews>
@@ -953,7 +996,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                             <color key="textColor" red="0.89771943929999998" green="0.83575958480000001" blue="0.47510030050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bbg-MD-78O">
+                        <switch hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bbg-MD-78O">
                             <rect key="frame" x="235" y="56" width="51" height="31"/>
                             <connections>
                                 <action selector="didChangeSwitch:" destination="kub-1r-Cjn" eventType="valueChanged" id="4vI-RV-2hj"/>
@@ -1014,7 +1057,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2095" y="-825"/>
+            <point key="canvasLocation" x="2294" y="-838"/>
         </scene>
         <!--New Game View Controller-->
         <scene sceneID="vVB-67-cXe">
@@ -1040,11 +1083,10 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="2Sn-zv-wL1"/>
                                     <barButtonItem style="plain" id="3ZI-q5-F7H">
                                         <view key="customView" contentMode="scaleToFill" id="L3t-el-Wcf">
-                                            <rect key="frame" x="93" y="5.5" width="188" height="33"/>
+                                            <rect key="frame" x="187.5" y="22" width="0.0" height="0.0"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select the sport above" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="gPh-Nk-JlG">
-                                                    <rect key="frame" x="0.0" y="0.0" width="188" height="33"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -1639,13 +1681,78 @@ For further questions or quieries reguarding elegibility of becoming or responsi
             </objects>
             <point key="canvasLocation" x="3316" y="563.56821589205401"/>
         </scene>
+        <!--Coming Soon View Controller-->
+        <scene sceneID="XDa-Yw-85D">
+            <objects>
+                <viewController id="a0g-mN-YLp" customClass="ComingSoonViewController" customModule="NBPS_Sports" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jkW-iR-no9"/>
+                        <viewControllerLayoutGuide type="bottom" id="HN7-Fc-aev"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4AO-in-fP6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Navy-Gradient" translatesAutoresizingMaskIntoConstraints="NO" id="b9j-J7-H0j">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NBP-Icon-Border" translatesAutoresizingMaskIntoConstraints="NO" id="731-y9-DDn">
+                                <rect key="frame" x="76" y="189" width="223" height="164"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="223" id="Dvn-jE-zNi"/>
+                                    <constraint firstAttribute="height" constant="164" id="XFE-sE-TIn"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="coming soon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKc-sf-pZB" customClass="UIOutlinedLabel" customModule="NBPS_Sports" customModuleProvider="target">
+                                <rect key="frame" x="58" y="422" width="258" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="258" id="Orb-4Z-nCF"/>
+                                    <constraint firstAttribute="height" constant="50" id="YJe-Wm-pgK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Beantown" family="Untitled" pointSize="28"/>
+                                <color key="textColor" red="0.58597046139999998" green="0.53613680600000002" blue="0.30758413670000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="outlineWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="outlineColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="731-y9-DDn" firstAttribute="top" secondItem="jkW-iR-no9" secondAttribute="bottom" constant="125" id="XOM-BL-vmu"/>
+                            <constraint firstItem="HN7-Fc-aev" firstAttribute="top" secondItem="b9j-J7-H0j" secondAttribute="bottom" id="ct2-GA-gnb"/>
+                            <constraint firstItem="b9j-J7-H0j" firstAttribute="leading" secondItem="4AO-in-fP6" secondAttribute="leading" id="eZU-Kr-u3N"/>
+                            <constraint firstItem="b9j-J7-H0j" firstAttribute="top" secondItem="jkW-iR-no9" secondAttribute="bottom" id="pxN-xv-rYb"/>
+                            <constraint firstItem="731-y9-DDn" firstAttribute="centerX" secondItem="4AO-in-fP6" secondAttribute="centerX" id="r6p-7I-m8T"/>
+                            <constraint firstAttribute="trailing" secondItem="b9j-J7-H0j" secondAttribute="trailing" id="u3Z-4P-68A"/>
+                            <constraint firstItem="cKc-sf-pZB" firstAttribute="centerX" secondItem="4AO-in-fP6" secondAttribute="centerX" id="wZQ-Y5-3HN"/>
+                            <constraint firstItem="cKc-sf-pZB" firstAttribute="top" secondItem="731-y9-DDn" secondAttribute="bottom" constant="69" id="zS1-be-3J8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="e9d-Br-lAL">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="Menu-Icon" id="3FW-kK-M8P"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backgroundImage" destination="b9j-J7-H0j" id="Rax-GT-PCx"/>
+                        <outlet property="menuButton" destination="3FW-kK-M8P" id="fT7-6w-WXP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p5i-xP-ux3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1604" y="-1563.8680659670167"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yof-sf-FVG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rbd-Od-w6C" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="1Jm-10-h6w">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1695,7 +1802,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Mn6-DY-wdm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1720,7 +1827,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="PKb-d4-kuZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1757,6 +1864,11 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                     </tableView>
                     <navigationItem key="navigationItem" id="hxD-AR-an7">
                         <barButtonItem key="leftBarButtonItem" image="Menu-Icon" id="2WI-4e-QMy"/>
+                        <barButtonItem key="rightBarButtonItem" image="Twitter-Icon" id="wMj-Vv-NTz">
+                            <connections>
+                                <action selector="didTapTwitter:" destination="f0I-zr-thd" id="3ms-Hg-veE"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="2WI-4e-QMy" id="mWh-mW-4bG"/>
@@ -1772,7 +1884,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FGf-Yu-Gfw" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="c0h-tl-a7p">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1782,25 +1894,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDK-ha-NQb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1343" y="-90"/>
-        </scene>
-        <!--Transition View Controller-->
-        <scene sceneID="EUL-iR-LcC">
-            <objects>
-                <viewController id="foR-3n-ZLT" customClass="TransitionViewController" customModule="NBPS_Sports" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="4BH-rS-4ox"/>
-                        <viewControllerLayoutGuide type="bottom" id="vT9-N1-3jj"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qUQ-zD-w0S">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rdv-Gl-k52" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-463" y="-1119"/>
+            <point key="canvasLocation" x="1252" y="-90"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nJ7-1o-dbm">
@@ -1808,7 +1902,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                 <navigationController storyboardIdentifier="LoginNC" automaticallyAdjustsScrollViewInsets="NO" id="YqR-T6-v2m" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="i4b-rH-WPa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1878,7 +1972,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A4F-s8-qPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2596" y="2597.4512743628188"/>
+            <point key="canvasLocation" x="2513" y="2598"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Yaf-Hz-7q5">
@@ -1886,7 +1980,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="q8z-hp-e9x" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ka4-RF-ie2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1977,7 +2071,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                 <constraint firstAttribute="width" constant="40" id="C3S-JQ-pmI"/>
                                                 <constraint firstAttribute="height" constant="20" id="LiL-GJ-nxj"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -1987,7 +2081,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                 <constraint firstAttribute="height" constant="20" id="aMu-2T-Olc"/>
                                                 <constraint firstAttribute="width" constant="40" id="vZN-Ca-Lx5"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -2048,7 +2142,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="OMh-Ai-DLb"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -2057,7 +2151,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="dO2-ua-rHO"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -2149,7 +2243,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                             </barButtonItem>
                             <barButtonItem width="8" style="plain" id="elz-pc-mng">
                                 <view key="customView" contentMode="scaleToFill" id="9bG-Tv-Ulp">
-                                    <rect key="frame" x="268" y="5" width="42" height="33"/>
+                                    <rect key="frame" x="268" y="5.5" width="42" height="33"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="xk4-jc-0Ed">
@@ -2308,11 +2402,11 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                 <navigationItem id="4lB-jY-ojz">
                                     <barButtonItem key="rightBarButtonItem" style="plain" id="0Hv-XX-kkj">
                                         <view key="customView" contentMode="scaleToFill" id="Ovt-X0-Z7C">
-                                            <rect key="frame" x="218" y="5" width="66" height="33"/>
+                                            <rect key="frame" x="284" y="22" width="0.0" height="0.0"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ckj-fJ-y6C">
-                                                    <rect key="frame" x="46" y="6" width="20" height="20"/>
+                                                    <rect key="frame" x="-20" y="-10" width="20" height="20"/>
                                                     <color key="color" red="0.89771943929999998" green="0.83575958480000001" blue="0.47510030050000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </activityIndicatorView>
                                             </subviews>
@@ -2395,13 +2489,32 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2194" y="-90"/>
+            <point key="canvasLocation" x="2294" y="-101"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zjj-8g-Kxe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c6G-5K-Huc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="46p-uW-A3O">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="a0g-mN-YLp" kind="relationship" relationship="rootViewController" id="vCC-et-VOo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uqe-Af-Nqa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="870" y="-1564"/>
         </scene>
     </scenes>
     <resources>
         <image name="Home" width="30" height="30"/>
         <image name="Menu-Icon" width="25" height="25"/>
         <image name="NBP-Icon-Border" width="110" height="110"/>
+        <image name="Navy-Gradient" width="960" height="540"/>
         <image name="Safari-Button-Icon" width="25" height="25"/>
         <image name="ShadowDown" width="307" height="23"/>
         <image name="ShadowUp" width="307" height="23"/>

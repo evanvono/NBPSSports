@@ -62,8 +62,15 @@ class MenuTableViewController: UITableViewController {
             
             
             let sport = (self.tableView.cellForRow(at: indexPath)?.contentView.viewWithTag(2) as! UILabel).text
-            
-            if sport == "Soccer" || sport == "soccer" {
+            if sport == "Baseball" || sport == "baseball" {
+                
+                self.performSegue(withIdentifier: "ComingSoon", sender: self.tableView.cellForRow(at: IndexPath(row: 7, section: 1)))
+                
+                AppState.sharedInstance.comingSoonImage = #imageLiteral(resourceName: "Baseball-Blurred")
+
+                
+                
+            } else if sport == "Soccer" || sport == "soccer" {
                 
                 print("tappedSoccer")
                 
@@ -81,8 +88,7 @@ class MenuTableViewController: UITableViewController {
                 }
                 
                 
-            }
-            if sport == "Basketball" || sport == "basketball" {
+            } else if sport == "Basketball" || sport == "basketball" {
                 
                 print("tappedBasketball")
                 
@@ -100,6 +106,11 @@ class MenuTableViewController: UITableViewController {
                 }
                 
                 
+            } else {
+                
+                self.tableView.beginUpdates()
+                selectedIndex = 100
+                self.tableView.endUpdates()
             }
             
         }
@@ -254,21 +265,57 @@ class MenuTableViewController: UITableViewController {
     */
     
     @IBAction func didTapBoysVarsitySoccer(_ sender: Any) {
+        /*
+        self.tableView.beginUpdates()
+        selectedIndex = 100
+        self.tableView.endUpdates()
+        self.performSegue(withIdentifier: "Football", sender: self.tableView.cellForRow(at: IndexPath(row: 8, section: 1)))
+        */
         
         self.tableView.beginUpdates()
         selectedIndex = 100
         self.tableView.endUpdates()
-        self.performSegue(withIdentifier: "Football", sender: self.tableView.cellForRow(at: IndexPath(row: 1, section: 1)))
+        self.performSegue(withIdentifier: "ComingSoon", sender: self.tableView.cellForRow(at: IndexPath(row: 7, section: 1)))
         
-        
+        AppState.sharedInstance.comingSoonImage = #imageLiteral(resourceName: "Soccer-Blurred")
+
         
     }
     @IBAction func didTapBoysVarsityBasketball(_ sender: Any) {
+        /*
+        self.tableView.beginUpdates()
+        selectedIndex = 100
+        self.tableView.endUpdates()
+        self.performSegue(withIdentifier: "BBasketball", sender: self.tableView.cellForRow(at: IndexPath(row: 7, section: 1)))
+ */
         
         self.tableView.beginUpdates()
         selectedIndex = 100
         self.tableView.endUpdates()
-        self.performSegue(withIdentifier: "BBasketball", sender: self.tableView.cellForRow(at: IndexPath(row: 2, section: 1)))
+        self.performSegue(withIdentifier: "ComingSoon", sender: self.tableView.cellForRow(at: IndexPath(row: 7, section: 1)))
+        AppState.sharedInstance.comingSoonImage = #imageLiteral(resourceName: "Gym-Blurred.jpg")
+        
     }
+    @IBAction func didTapGirlsVarsitySoccer(_ sender: Any) {
+        
+        self.tableView.beginUpdates()
+        selectedIndex = 100
+        self.tableView.endUpdates()
+        self.performSegue(withIdentifier: "ComingSoon", sender: self.tableView.cellForRow(at: IndexPath(row: 7, section: 1)))
+        
+        AppState.sharedInstance.comingSoonImage = #imageLiteral(resourceName: "Girls-Soccer-Blurred.jpg")
 
+    }
+    @IBAction func didTapGirlsVarsityBasketball(_ sender: Any) {
+        
+        self.tableView.beginUpdates()
+        selectedIndex = 100
+        self.tableView.endUpdates()
+        self.performSegue(withIdentifier: "ComingSoon", sender: self.tableView.cellForRow(at: IndexPath(row: 7, section: 1)))
+        AppState.sharedInstance.comingSoonImage = #imageLiteral(resourceName: "Gym-Blurred.jpg")
+
+    }
+    
+    
+    
 }

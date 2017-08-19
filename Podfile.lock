@@ -1,7 +1,4 @@
 PODS:
-  - Alamofire (4.4.0)
-  - AlamofireRSSParser (2.0.0):
-    - Alamofire
   - Canvas (0.1.2)
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
@@ -45,8 +42,6 @@ PODS:
   - Timepiece (1.1.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.0)
-  - AlamofireRSSParser
   - Canvas (~> 0.1)
   - ChameleonFramework/Swift
   - Firebase
@@ -56,8 +51,6 @@ DEPENDENCIES:
   - Timepiece
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  AlamofireRSSParser: bbad0689d597704025c4f101a1a31698fa2c1920
   Canvas: eb861e3b555d032648146c8ffda1a5dea40059ca
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Firebase: 85a581fb04e44f63ae9f4fbc8d6dabf4a4c18653
@@ -71,6 +64,6 @@ SPEC CHECKSUMS:
   SwiftSpinner: c03815614599b91eea46594bd52ba742849d0414
   Timepiece: 4190a7bc5ae1c05c87531fd75b14e17d2a017902
 
-PODFILE CHECKSUM: cd3bb582a5240c41ccfaeadd34700187b666bc54
+PODFILE CHECKSUM: aefd12b2dc144d79bf404a193a8ae5aeff21f95b
 
 COCOAPODS: 1.2.0

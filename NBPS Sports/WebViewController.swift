@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Social
+
 
 class WebViewController: UIViewController, UIWebViewDelegate {
 
@@ -81,6 +83,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
 
         
     }
+    
     func webViewDidFinishLoad(_ webView: UIWebView) {
         loadedBool = true
         progressBar.setProgress(1, animated: true)

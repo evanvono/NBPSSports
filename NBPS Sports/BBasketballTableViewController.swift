@@ -407,6 +407,11 @@ class BBasketballTableViewController: UITableViewController, UITextFieldDelegate
         }
         self.navigationController?.navigationBar.isTranslucent = false
         
+        
+        editorView.layer.borderWidth = 1
+        editorView.layer.borderColor = UIColor.black.cgColor
+        
+        
     }
     func animateOut(){
         

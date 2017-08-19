@@ -22,7 +22,7 @@
 		20472BB71E69C6320065205A /* SwiftSpinner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20472BB61E69C6320065205A /* SwiftSpinner.framework */; };
 		20472BBB1E69C6660065205A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20472BBA1E69C6660065205A /* SWRevealViewController.m */; };
 		20472BBF1E69C8E30065205A /* Unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 20472BBC1E69C8E30065205A /* Unknown.png */; };
-		20472BC01E69C8E30065205A /* Screen-Shot-2015-09-30-at-8.05.56-AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 20472BBD1E69C8E30065205A /* Screen-Shot-2015-09-30-at-8.05.56-AM.png */; };
+		20472BC01E69C8E30065205A /* Football-Lineup.png in Resources */ = {isa = PBXBuildFile; fileRef = 20472BBD1E69C8E30065205A /* Football-Lineup.png */; };
 		20472BC11E69C8E30065205A /* Football.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20472BBE1E69C8E30065205A /* Football.jpg */; };
 		204ADA681ECA7677002C4076 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204ADA671ECA7677002C4076 /* Constants.swift */; };
 		204ADA6A1ECA78AA002C4076 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204ADA691ECA78AA002C4076 /* AppState.swift */; };
@@ -32,6 +32,7 @@
 		2072828B1E745275009C87FF /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2072828A1E745275009C87FF /* WebViewController.swift */; };
 		2074DF931EE8647000D91041 /* NewGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2074DF921EE8647000D91041 /* NewGameViewController.swift */; };
 		20848E9D1EE70F4B0050432D /* TransitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20848E9C1EE70F4B0050432D /* TransitionViewController.swift */; };
+		2095C7EF1F469B9B00D7AAC5 /* ComingSoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2095C7EE1F469B9B00D7AAC5 /* ComingSoonViewController.swift */; };
 		20A2B18B1F3815BC008D93D1 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A2B18A1F3815BC008D93D1 /* Section.swift */; };
 		20C6663E1F0F38C400B192AC /* Twitter.blank.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20C6663C1F0F38C400B192AC /* Twitter.blank.plist */; };
 		20C6663F1F0F38C400B192AC /* Twitter.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20C6663D1F0F38C400B192AC /* Twitter.plist */; };
@@ -86,7 +87,7 @@
 		20472BB91E69C6660065205A /* NBPS Sports-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NBPS Sports-Bridging-Header.h"; sourceTree = "<group>"; };
 		20472BBA1E69C6660065205A /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		20472BBC1E69C8E30065205A /* Unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unknown.png; sourceTree = "<group>"; };
-		20472BBD1E69C8E30065205A /* Screen-Shot-2015-09-30-at-8.05.56-AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen-Shot-2015-09-30-at-8.05.56-AM.png"; sourceTree = "<group>"; };
+		20472BBD1E69C8E30065205A /* Football-Lineup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Football-Lineup.png"; sourceTree = "<group>"; };
 		20472BBE1E69C8E30065205A /* Football.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Football.jpg; sourceTree = "<group>"; };
 		204ADA671ECA7677002C4076 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		204ADA691ECA78AA002C4076 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		2072828A1E745275009C87FF /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		2074DF921EE8647000D91041 /* NewGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameViewController.swift; sourceTree = "<group>"; };
 		20848E9C1EE70F4B0050432D /* TransitionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
+		2095C7EE1F469B9B00D7AAC5 /* ComingSoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingSoonViewController.swift; sourceTree = "<group>"; };
 		20A2B18A1F3815BC008D93D1 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		20C6663C1F0F38C400B192AC /* Twitter.blank.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Twitter.blank.plist; sourceTree = "<group>"; };
 		20C6663D1F0F38C400B192AC /* Twitter.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Twitter.plist; sourceTree = "<group>"; };
@@ -178,7 +180,7 @@
 				200DC0A11F36B03A00E66BBE /* Splash-Edited.png */,
 				2006AEAF1F36876B00E642A3 /* nvcyospg.png */,
 				20472BBC1E69C8E30065205A /* Unknown.png */,
-				20472BBD1E69C8E30065205A /* Screen-Shot-2015-09-30-at-8.05.56-AM.png */,
+				20472BBD1E69C8E30065205A /* Football-Lineup.png */,
 				20472BBE1E69C8E30065205A /* Football.jpg */,
 			);
 			name = images;
@@ -236,9 +238,13 @@
 			isa = PBXGroup;
 			children = (
 				20A2B1891F38159E008D93D1 /* ExpandableHeaderView */,
+				2034E8A41E6C81E2004CB19A /* SlideMenu */,
+				20C7F4191F072FB800C75532 /* Fonts */,
+				20472BC21E69C8E80065205A /* images */,
+				20EF9E471E645DE700F45DBB /* Main.storyboard */,
+				20EF9E4C1E645DE700F45DBB /* LaunchScreen.storyboard */,
 				20EF9E431E645DE700F45DBB /* AppDelegate.swift */,
 				204ADA691ECA78AA002C4076 /* AppState.swift */,
-				20EF9E471E645DE700F45DBB /* Main.storyboard */,
 				20EF9E451E645DE700F45DBB /* ViewController.swift */,
 				20DBD3CF1E6C85F800D4D690 /* FootballTableViewController.swift */,
 				206AC6011F391C3F00303CB1 /* BBasketballTableViewController.swift */,
@@ -253,14 +259,11 @@
 				20848E9C1EE70F4B0050432D /* TransitionViewController.swift */,
 				2069AE8A1EE712830032250C /* AccountViewController.swift */,
 				204414BC1F09484900F866C4 /* NBPSTwitterTableViewController.swift */,
+				2095C7EE1F469B9B00D7AAC5 /* ComingSoonViewController.swift */,
 				20F4EE271F0986A0004CBF45 /* StackViewCell.swift */,
 				20F4EE281F0986A0004CBF45 /* StackViewCell.xib */,
-				2034E8A41E6C81E2004CB19A /* SlideMenu */,
-				20472BC21E69C8E80065205A /* images */,
-				20C7F4191F072FB800C75532 /* Fonts */,
 				20EF9E4A1E645DE700F45DBB /* Assets.xcassets */,
 				20C666401F0F38DB00B192AC /* TwitterKit */,
-				20EF9E4C1E645DE700F45DBB /* LaunchScreen.storyboard */,
 				20EF9E4F1E645DE700F45DBB /* Info.plist */,
 				206EA2641EA59D8E00F73B36 /* GoogleService-Info.plist */,
 				20C7F4151F071A1900C75532 /* OutlinedUILabel.swift */,
@@ -415,7 +418,7 @@
 				20EF9E4B1E645DE700F45DBB /* Assets.xcassets in Resources */,
 				20C6663F1F0F38C400B192AC /* Twitter.plist in Resources */,
 				20C6663E1F0F38C400B192AC /* Twitter.blank.plist in Resources */,
-				20472BC01E69C8E30065205A /* Screen-Shot-2015-09-30-at-8.05.56-AM.png in Resources */,
+				20472BC01E69C8E30065205A /* Football-Lineup.png in Resources */,
 				20F4EE2A1F0986A0004CBF45 /* StackViewCell.xib in Resources */,
 				20472BBF1E69C8E30065205A /* Unknown.png in Resources */,
 				20472BC11E69C8E30065205A /* Football.jpg in Resources */,
@@ -507,6 +510,7 @@
 				20DBD3D21E6C868600D4D690 /* exampleTableViewController.swift in Sources */,
 				2023F0551EA1845B0041E165 /* LoginViewController.swift in Sources */,
 				204ADA681ECA7677002C4076 /* Constants.swift in Sources */,
+				2095C7EF1F469B9B00D7AAC5 /* ComingSoonViewController.swift in Sources */,
 				204ADA6A1ECA78AA002C4076 /* AppState.swift in Sources */,
 				20A2B18B1F3815BC008D93D1 /* Section.swift in Sources */,
 				206AC6021F391C3F00303CB1 /* BBasketballTableViewController.swift in Sources */,

@@ -17,16 +17,9 @@
  */
 import UIKit
 import Firebase
-import Social
 import ChameleonFramework
 import SwiftSpinner
 
-
-/*
- *
- * HOOK DATE UP TO HTML FOR HEADLINES IN TABLEVIEW
- *
- */
 extension UIImageView {
     
     
@@ -189,9 +182,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         mainTableView.layer.cornerRadius = 10
         
-        
-        getRSS(urlStr: "http://www.nbpsathletics.org/organizations/3072/announcements?page=2")
         getRSS(urlStr: "http://www.nbpsathletics.org/organizations/3072/announcements")
+        getRSS(urlStr: "http://www.nbpsathletics.org/organizations/3072/announcements?page=2")
+
+        
         
         
         
@@ -210,7 +204,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         ref = FIRDatabase.database().reference()
         
-        _refHandle = ref.child("Sports").observe(FIRDataEventType.value, with: { (snapshot) in
+        /*_refHandle = ref.child("Sports").observe(FIRDataEventType.value, with: { (snapshot) in
             
             self.amt = Int(snapshot.childSnapshot(forPath: "liveGames").childrenCount)
             
@@ -218,12 +212,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 self.mainTableView.reloadData()
             }
     
-        })
+        })*/
     }
 
     func setUpBlurView(){
         
-        self.blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        self.blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
         
         self.blurEffectView = UIVisualEffectView(effect: self.blurEffect)
         self.blurEffectView.frame = self.view.bounds

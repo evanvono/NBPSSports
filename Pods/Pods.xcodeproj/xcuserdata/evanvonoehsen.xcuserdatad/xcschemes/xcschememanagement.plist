@@ -4,16 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>AlamofireRSSParser.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Canvas.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,7 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>00B227DED18BA79C430A2A280823E9B4</key>
+		<key>0F62CFC6CB8EA6E197A89F8E843B36CA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>1D4522D2F4B6B9585EE616F6D133B509</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,7 +62,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<key>BCE0E67AC721687329B0AD7C56D9B7AD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,22 +72,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C552B2A2E1A67AA156CCE61D51A2DD5E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>F6497E6E7D485D7D0D7E0CD8E84BFCD4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F995D214D4D0D20CA42ED4D41100825D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FEC57C1AD0BB3A3274DF31831EB799E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

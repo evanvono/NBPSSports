@@ -91,6 +91,11 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         super.viewDidLoad()
         
         
+        self.automaticallyAdjustsScrollViewInsets = false
+        
+        let imageView = UIImageView(image: #imageLiteral(resourceName: "Football-Blurred"))
+        imageView.contentMode = UIViewContentMode.scaleAspectFill
+        tableView.backgroundView = imageView
         
         
         self.title = "Football"
@@ -328,6 +333,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     
     func animateIn(){
         
+        
+       // self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
         //self.navigationController?.navigationBar.isHidden = true
         
         //navigationController?.hidesBarsOnSwipe = false
@@ -355,14 +362,14 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         gameDatePicker.date = currGame["Date"] as! Date!
         let time = (currGame["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "time").value as! String
         
-        var index = timePickerComponents.count - 1
+        
         for i in 0..<timePickerComponents.count {
             
             let temp = timePickerComponents[i]["Title"]
             
             if temp == time {
                 
-                index = i
+                
                 timePicker.selectRow(i, inComponent: 0, animated: true)
                 
                 break
@@ -386,7 +393,9 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         self.blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
         
         self.blurEffectView = UIVisualEffectView(effect: self.blurEffect)
-        self.blurEffectView.frame = self.view.bounds
+        self.blurEffectView.frame = CGRect(x: 0 , y: 0, width: self.view.bounds.width, height: self.view.bounds.height + 200)
+        
+        
         self.blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.view.insertSubview(self.blurEffectView, at: self.view.subviews.count - 2)
        // self.blurEffectView.alpha = 0.0
@@ -1577,11 +1586,9 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                         
                     } else if today.day == date.day {
                         
-                        if today.hour < date.hour {
-                            //later today
-                            state = "Today"
+                        state = "Today"
                         
-                        }
+                        
                     } else if today.day < date.day {
                         //future
                         state = "Future"
@@ -1605,6 +1612,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
             if state == "Past"{
                 
+                print("\n\n\(homeTeam) vs \(awayTeam)\n\(date)\nPast\n\n")
+                
                 (cell.contentView.viewWithTag(7) as! UILabel).text = "Final"
                 (cell.contentView.viewWithTag(7) as! UILabel).alpha = 1.0
                 
@@ -1620,6 +1629,11 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                     
                     (cell.contentView.viewWithTag(2) as! UILabel).textColor = UIColor.lightGray
                     
+                    (cell.contentView.viewWithTag(3) as! UILabel).textColor = UIColor.black
+                    
+                    (cell.contentView.viewWithTag(1) as! UILabel).textColor = UIColor.black
+                    
+                    print("\(homeTeam) is beating \(awayTeam) \(homeScore) to \(awayScore)")
                     
                 } else if (awayScore > homeScore){
                     
@@ -1627,13 +1641,21 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                     (cell.contentView.viewWithTag(3) as! UILabel).textColor = UIColor.lightGray
                     
                     (cell.contentView.viewWithTag(1) as! UILabel).textColor = UIColor.lightGray
+                    
+                    (cell.contentView.viewWithTag(4) as! UILabel).textColor = UIColor.black
+                    
+                    (cell.contentView.viewWithTag(2) as! UILabel).textColor = UIColor.black
+                    
+                    print("\(awayTeam) is beating \(homeTeam) \(awayScore) to \(homeScore)")
+                    
                 }
                 
                 
                 
             } else if state == "Today" {
                 
-                
+                print("\n\n\(homeTeam) vs \(awayTeam)\n\(date)\nToday\n\n")
+
                 
                 
                 var hour = date.hour
@@ -1644,6 +1666,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                     hour -= 12
                     post = "pm"
                 }
+                
+                
                 
                 
                 
@@ -1671,6 +1695,9 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                 
             } else if state == "Future" {
                 
+                print("\n\n\(homeTeam) vs \(awayTeam)\n\(date)\nFuture\n\n")
+
+                
                 (cell.contentView.viewWithTag(7) as! UILabel).alpha = 0.0
                 
                 (cell.contentView.viewWithTag(1) as! UILabel).text = ""
@@ -1693,6 +1720,17 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                 (cell.contentView.viewWithTag(15) as! UILabel).text = "\(hour):"+String(format: "%02d", date.minute)+" \(post)"
                 
                 (cell.contentView.viewWithTag(16) as! UILabel).text = "\(date.month)/"+String(format: "%02d", date.day)
+                
+                
+                (cell.contentView.viewWithTag(5) as! UIImageView).image = UIImage(named: "")
+                (cell.contentView.viewWithTag(6) as! UIImageView).image = UIImage(named: "")
+                (cell.contentView.viewWithTag(3) as! UILabel).textColor = UIColor.black
+                
+                (cell.contentView.viewWithTag(1) as! UILabel).textColor = UIColor.black
+                
+                (cell.contentView.viewWithTag(4) as! UILabel).textColor = UIColor.black
+                
+                (cell.contentView.viewWithTag(2) as! UILabel).textColor = UIColor.black
                 
             }
         
@@ -2023,6 +2061,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         */
         
         
+        
         let date = gameDatePicker.date
         let dateInt = Int(date.timeIntervalSince1970)
         
@@ -2039,7 +2078,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         if editField.text != "" {
             
-            if picker.selectedRow(inComponent: 0).description == "Home Team" {
+            if picker.selectedRow(inComponent: 0) == 0 {
                 
                 homeTeam = editField.text!
                 
@@ -2081,8 +2120,11 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                         ] = self.gameForm(gameDate: date, snapshot: snapshot)
                     
                     self.tableView.reloadData()
-                        
                     
+                    
+                    self.blurEffectView.removeFromSuperview()
+                    
+                    self.view.insertSubview(self.blurEffectView, at: self.view.subviews.count-2)
                     print("completed supposed tableView update")
                     
                     self.editorProgress.stopAnimating()
