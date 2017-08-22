@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SwiftSpinner
 
 
 class LoginViewController: UIViewController {
@@ -91,11 +92,15 @@ class LoginViewController: UIViewController {
             
             if passwordField.text != ""{
                 
+                SwiftSpinner.show("Logging in...", animated: true)
+                
                 let email = emailField.text
                 let password = passwordField.text
                 
                 FIRAuth.auth()?.signIn(withEmail: email!, password: password!, completion: { (user, error) in
                     if let error = error {
+                        
+                       
                         
                         let alertController = UIAlertController(title: "Error", message: "Login failed. Please make sure that you have entered your email and password correctly", preferredStyle: UIAlertControllerStyle.alert)
                         
@@ -123,16 +128,23 @@ class LoginViewController: UIViewController {
                                 
                             }))
                         
-                        self.present(alertController, animated: true, completion: nil)
+                        SwiftSpinner.hide({
+                            self.present(alertController, animated: true, completion: nil)
+                        })
+                        
+                        
                         
                         return
                     }
+                    
+                    SwiftSpinner.hide()
                     
                     self.signedIn(user!)
                     
                 })
                 
             } else {
+                
                 let alertController = UIAlertController(title: "Error", message: "Please enter a password", preferredStyle: UIAlertControllerStyle.alert)
                 
                 alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
@@ -181,19 +193,52 @@ class LoginViewController: UIViewController {
                 
                 
                 
+                
+                
                 let text:String = textField1!.text!
                 
                 print("entered: \(text)")
                 
                 self.ref = FIRDatabase.database().reference()
                 
-               // let loc = self.ref.child("pendingEditors")
-                
-               // loc.setValue(text, forKey: "newEmail")
+                let loc = self.ref.child("Editors")
                 
                 
                 
-                self.pressedApply()
+                
+                let newGameRef = loc.childByAutoId()
+                
+                let newGameID = newGameRef.key
+                
+                
+                loc.child(String(newGameID)).setValue(text, withCompletionBlock: { (error, ref) in
+                    
+                    
+                    if error == nil {
+                        
+                        self.pressedApply()
+
+                        
+                    } else {
+                        
+                        
+                        let errorContr = UIAlertController(title: "Error", message: "", preferredStyle: UIAlertControllerStyle.alert)
+                        
+                        let applyMessage1:String = "There was an error submitting your email."
+                        
+                        errorContr.message = applyMessage1
+                        
+                        
+                        let cancell = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel, handler: nil)
+                        
+                        errorContr.addAction(cancell)
+                        
+                        self.present(errorContr, animated: true, completion: nil)
+                    }
+                    
+                })
+                
+                
             }
         
         }

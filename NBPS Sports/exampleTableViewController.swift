@@ -68,7 +68,8 @@ class MenuTableViewController: UITableViewController {
                 
                 AppState.sharedInstance.comingSoonImage = #imageLiteral(resourceName: "Baseball-Blurred")
 
-                
+                AppState.sharedInstance.sportDescription = "Returning This Spring"
+
                 
             } else if sport == "Soccer" || sport == "soccer" {
                 
@@ -278,6 +279,8 @@ class MenuTableViewController: UITableViewController {
         self.performSegue(withIdentifier: "ComingSoon", sender: self.tableView.cellForRow(at: IndexPath(row: 7, section: 1)))
         
         AppState.sharedInstance.comingSoonImage = #imageLiteral(resourceName: "Soccer-Blurred")
+        AppState.sharedInstance.sportDescription = "Returning This Winter"
+
 
         
     }
@@ -294,6 +297,8 @@ class MenuTableViewController: UITableViewController {
         self.tableView.endUpdates()
         self.performSegue(withIdentifier: "ComingSoon", sender: self.tableView.cellForRow(at: IndexPath(row: 7, section: 1)))
         AppState.sharedInstance.comingSoonImage = #imageLiteral(resourceName: "Gym-Blurred.jpg")
+        AppState.sharedInstance.sportDescription = "Returning This Winter"
+
         
     }
     @IBAction func didTapGirlsVarsitySoccer(_ sender: Any) {
@@ -302,7 +307,7 @@ class MenuTableViewController: UITableViewController {
         selectedIndex = 100
         self.tableView.endUpdates()
         self.performSegue(withIdentifier: "ComingSoon", sender: self.tableView.cellForRow(at: IndexPath(row: 7, section: 1)))
-        
+        AppState.sharedInstance.sportDescription = "Returning This Winter"
         AppState.sharedInstance.comingSoonImage = #imageLiteral(resourceName: "Girls-Soccer-Blurred.jpg")
 
     }
@@ -313,6 +318,8 @@ class MenuTableViewController: UITableViewController {
         self.tableView.endUpdates()
         self.performSegue(withIdentifier: "ComingSoon", sender: self.tableView.cellForRow(at: IndexPath(row: 7, section: 1)))
         AppState.sharedInstance.comingSoonImage = #imageLiteral(resourceName: "Gym-Blurred.jpg")
+        AppState.sharedInstance.sportDescription = "Returning This Winter"
+
 
     }
     

@@ -85,10 +85,18 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
+    
+    @IBOutlet weak var homeFootball: UIButton!
+    @IBOutlet weak var awayFootball: UIButton!
+    
     override func viewDidLoad() {
         
        
+        
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.isTranslucent = false
+
         
         
         self.automaticallyAdjustsScrollViewInsets = false
@@ -107,6 +115,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
 
         
         ref = FIRDatabase.database().reference()
+        
+        
         
         
         
@@ -140,6 +150,10 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         //timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateCounting), userInfo: nil, repeats: true)
         
         self.navigationController?.navigationBar.barTintColor = UIColor.white
+        self.navigationController?.navigationBar.isHidden = true
+        self.navigationController?.navigationBar.isHidden = false
+
+        
         
         homeScoreStepper.minimumValue = 0
         awayScoreStepper.minimumValue = 0
@@ -262,7 +276,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         pickerComponents.append(["Title":"Home Team", "Value":"homeTeam"])
         pickerComponents.append(["Title":"Away Team", "Value":"awayTeam"])
         
-        let times = ["Upcoming","Pregame","Q1","Q2","Half","Q3","Q4","Final"]
+        let times = ["Upcoming","Pregame","Delayed","Q1","Q2","Half","Q3","Q4","Final"]
         
         for i in times {
             
@@ -334,7 +348,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     func animateIn(){
         
         
-       // self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: true)
+        self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: false)
         //self.navigationController?.navigationBar.isHidden = true
         
         //navigationController?.hidesBarsOnSwipe = false
@@ -361,6 +375,31 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         let currGame = games[selectedPath[0]][selectedPath[1]]
         gameDatePicker.date = currGame["Date"] as! Date!
         let time = (currGame["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "time").value as! String
+        
+        let possession = (currGame["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "possession").value as! String
+        
+        if possession == "Home" {
+            
+            homeFootball.tintColor = UIColor.green
+            
+            awayFootball.tintColor = UIColor.black
+            
+            
+            
+        } else if possession == "Away" {
+            
+            awayFootball.tintColor = UIColor.green
+            
+            homeFootball.tintColor = UIColor.black
+            
+        } else {
+            
+            
+            homeFootball.tintColor = UIColor.black
+            
+            awayFootball.tintColor = UIColor.black
+            
+        }
         
         
         for i in 0..<timePickerComponents.count {
@@ -414,13 +453,15 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
             
         }
-        self.navigationController?.navigationBar.isTranslucent = false
         
         editorView.layer.borderWidth = 1
         editorView.layer.borderColor = UIColor.black.cgColor
         
     }
     func animateOut(){
+        
+        self.tableView.scrollToRow(at: IndexPath(row: selectedPath[1], section: selectedPath[0]), at: UITableViewScrollPosition.top, animated: false)
+
         
         self.blurEffectView.isUserInteractionEnabled = false
         
@@ -471,637 +512,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
         }
     }
-   /*
-    func getNewData(){
-        
-        ref = FIRDatabase.database().reference()
-        
-        let count = Int()
-        
-        self.ref.child("Sports").child("Football").observe(FIRDataEventType.value, with: { (snapshot) in
-            
-            let count = snapshot.childrenCount
-            print("database count: \(count)")
-            
-            _refHandle = self.ref.child("Sports").child("Football").observe(FIRDataEventType.childAdded, with: { (snapshot) in
-                
-                //let date:Int = snapshot.childSnapshot(forPath: "date").value as! Int
-                
-                
-                if self.gamesArray.count == 0 {
-                    if !self.gamesArray.contains(snapshot){
-                        self.gamesArray.append(snapshot)
-                    }
-                    
-                    
-                } else {
-                    var didInsert = false
-                    for i in stride(from: self.gamesArray.count-1, to: 0, by: -1){
-                        
-                        let temp = self.gamesArray[i].childSnapshot(forPath: "date").value as! Int
-                        
-                        if temp > snapshot.childSnapshot(forPath: "date").value as! Int {
-                            if !self.gamesArray.contains(snapshot){
-                                self.gamesArray.insert(snapshot, at: i)
-                                didInsert = true
-                            }
-                        }
-                    }
-                    if didInsert == false {
-                        if !self.gamesArray.contains(snapshot){
-                            self.gamesArray.append(snapshot)
-                        }
-                    }
-                    
-                }
-                print("Games array count \(self.gamesArray.count)")
-                
-                 if Int(count) == Int(self.gamesArray.count) {
-                
-                for j in 0...self.gamesArray.count - 1{
-                    
-                    let i = self.gamesArray[j]
-                    
-                    let date = Date(timeIntervalSince1970: TimeInterval(i.childSnapshot(forPath: "date").value as! Int))
-                    
-                    
-                    if j == 0{
-                        
-                        self.games.append([self.gameForm(gameDate: date, snapshot: i)])
-                        
-                    } else {
-                        
-                        let prevGameDate = self.games[self.games.count-1][0]["Date"] as! Date
-                        
-                        let today = Date.today()
-                        
-                        if prevGameDate.year == today.year && prevGameDate.month == today.month && prevGameDate.day == today.day {
-                            
-                            let last =  self.games[self.games.count - 1][0]["Date"] as! Date
-                            
-                            if last.day == today.day && last.month == today.month && last.year == today.year {
-                                
-                                self.games[self.games.count - 1].append(self.gameForm(gameDate: date, snapshot: i))
-                            }
-                        } else if (prevGameDate.year >= today.year && prevGameDate.month > today.month) || (prevGameDate.year >= today.year && prevGameDate.month >= today.month && prevGameDate.day > today.day) {
-                            
-                            let last =  self.games[self.games.count - 1][0]["Date"] as! Date
-                            
-                            if (last.year >= today.year && last.month > today.month) || (last.year >= today.year && last.month >= today.month && last.day > today.day) {
-                                
-                                self.games[self.games.count - 1].append(self.gameForm(gameDate: date, snapshot: i))
-                            } else {
-                                
-                                self.games.append([self.gameForm(gameDate: date, snapshot: i)])
-                            }
-                            
-                        }
-                        
-                        
-                        
-                        if prevGameDate.year == date.year && prevGameDate.day == date.day && prevGameDate.month == date.month {
-                            
-                            self.games[self.games.count - 1].append(self.gameForm(gameDate: date, snapshot: i))
-                        } else {
-                            
-                            self.games.append([self.gameForm(gameDate: date, snapshot: i)])
-                        }
-                        
-                    }
-                    
-                    
-                }
-                self.tableView.reloadData()
-                   }
-                
-                
-            })
-            
-        })
-        
 
-        
-        
-        
-        
-    }
-    */
-    /*
-    func getNewData(){
-        
-        ref = FIRDatabase.database().reference()
-        
-        let count = Int()
-        
-       // self.ref.child("Sports").child("Football").observe(FIRDataEventType.value, with: { (snapshot) in
-        
-        self.ref.child("Sports").child("Football").observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            
-            let count = snapshot.childrenCount
-            print("database count: \(count)")
-            /*
-            ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-                // Get user value
-                let value = snapshot.value as? NSDictionary
-                let username = value?["username"] as? String ?? ""
-                let user = User.init(username: username)
-                
-                // ...
-            }) { (error) in
-                print(error.localizedDescription)
-            }
- */
-            
-            self._refHandle = self.ref.child("Sports").child("Football").observe(FIRDataEventType.childAdded, with: { (snapshot) in
-                
-                //let date:Int = snapshot.childSnapshot(forPath: "date").value as! Int
-                
-                
-                if self.gamesArray.count == 0 {
-                    if !self.gamesArray.contains(snapshot){
-                        self.gamesArray.append(snapshot)
-                    }
-                    
-                    
-                } else {
-                    var didInsert = false
-                    for i in stride(from: self.gamesArray.count-1, to: 0, by: -1){
-                        
-                        let temp = self.gamesArray[i].childSnapshot(forPath: "date").value as! Int
-                        
-                        if temp > snapshot.childSnapshot(forPath: "date").value as! Int {
-                            if !self.gamesArray.contains(snapshot){
-                                self.gamesArray.insert(snapshot, at: i)
-                                didInsert = true
-                            }
-                        }
-                    }
-                    if didInsert == false {
-                        if !self.gamesArray.contains(snapshot){
-                            self.gamesArray.append(snapshot)
-                        }
-                    }
-                    
-                }
-                print("Games array count \(self.gamesArray.count)")
-                
-                print(self.gamesArray)
-                if Int(count) == Int(self.gamesArray.count) {
-                    
-                    
-                    for j in 0...self.gamesArray.count - 1{
-                        
-                        let i = self.gamesArray[j]
-                        
-                        let date = Date(timeIntervalSince1970: TimeInterval(i.childSnapshot(forPath: "date").value as! Int))
-                        
-                        
-                        if j == 0{
-                            
-                            self.games.append([self.gameForm(gameDate: date, snapshot: i)])
-                            
-                        } else {
-                            
-                            let prevGameDate = self.games[self.games.count-1][0]["Date"] as! Date
-                            
-                            let today = Date.today()
-                            
-                            if prevGameDate.year == today.year && prevGameDate.month == today.month && prevGameDate.day == today.day {
-                                
-                                let last =  self.games[self.games.count - 1][0]["Date"] as! Date
-                                
-                                if last.day == today.day && last.month == today.month && last.year == today.year {
-                                    
-                                    self.games[self.games.count - 1].append(self.gameForm(gameDate: date, snapshot: i))
-                                }
-                            } else if (prevGameDate.year >= today.year && prevGameDate.month > today.month) || (prevGameDate.year >= today.year && prevGameDate.month >= today.month && prevGameDate.day > today.day) {
-                                
-                                let last =  self.games[self.games.count - 1][0]["Date"] as! Date
-                                
-                                if (last.year >= today.year && last.month > today.month) || (last.year >= today.year && last.month >= today.month && last.day > today.day) {
-                                    
-                                    self.games[self.games.count - 1].append(self.gameForm(gameDate: date, snapshot: i))
-                                } else {
-                                    
-                                    self.games.append([self.gameForm(gameDate: date, snapshot: i)])
-                                }
-                                
-                            }
-                            
-                            
-                            
-                            if prevGameDate.year == date.year && prevGameDate.day == date.day && prevGameDate.month == date.month {
-                                
-                                self.games[self.games.count - 1].append(self.gameForm(gameDate: date, snapshot: i))
-                            } else {
-                                
-                                self.games.append([self.gameForm(gameDate: date, snapshot: i)])
-                            }
-                            
-                        }
-                        
-                        
-                    }
-                    print("\n\n\n \(self.games)")
-                    self.tableView.reloadData()
-                    self.spinner.stopAnimating()
-                    SwiftSpinner.hide()
-                    self.hidden = true
-                   
-                    //self.tableView.scrollToRow(at: IndexPath(row: 0, section: self.todaySection), at: UITableViewScrollPosition.top, animated: true)
-                }
-                
-                
-            })
-            
-        })
-        
-        
-        
-        
-        
-        
-    }
-
-    */
-    /*
-    func getNewData(){
-        
-        ref = FIRDatabase.database().reference()
-        
-        let count = Int()
-        
-        // self.ref.child("Sports").child("Football").observe(FIRDataEventType.value, with: { (snapshot) in
-        
-        self.ref.child("Sports").child("Football").observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            
-            let count = snapshot.childrenCount
-            print("database count: \(count)")
-            /*
-             ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-             // Get user value
-             let value = snapshot.value as? NSDictionary
-             let username = value?["username"] as? String ?? ""
-             let user = User.init(username: username)
-             
-             // ...
-             }) { (error) in
-             print(error.localizedDescription)
-             }
-             */
-            
-            self._refHandle = self.ref.child("Sports").child("Football").observe(FIRDataEventType.childAdded, with: { (snapshot) in
-                
-                //let date:Int = snapshot.childSnapshot(forPath: "date").value as! Int
-                
-                
-                if self.gamesArray.count == 0 {
-                    if !self.gamesArray.contains(snapshot){
-                        self.gamesArray.append(snapshot)
-                    }
-                    
-                    
-                } else {
-                    var didInsert = false
-                    for i in stride(from: self.gamesArray.count-1, to: 0, by: -1){
-                        
-                        let temp = self.gamesArray[i].childSnapshot(forPath: "date").value as! Int
-                        
-                        if temp > snapshot.childSnapshot(forPath: "date").value as! Int {
-                            if !self.gamesArray.contains(snapshot){
-                                self.gamesArray.insert(snapshot, at: i)
-                                didInsert = true
-                            }
-                        }
-                    }
-                    if didInsert == false {
-                        if !self.gamesArray.contains(snapshot){
-                            self.gamesArray.append(snapshot)
-                        }
-                    }
-                    
-                }
-                print("Games array count \(self.gamesArray.count)")
-                
-                print(self.gamesArray)
-                if Int(count) == Int(self.gamesArray.count) {
-          
-                    let date = snapshot.childSnapshot(forPath: "date").value as! Int
-                    let gameDate = Date(timeIntervalSince1970: TimeInterval(date))
-
-                    if self.games.count == 0 {
-                        
-                        self.games.append([self.gameForm(gameDate: gameDate, snapshot: snapshot)])
-                    }
-                    
-                    
-                    
-                }
-            })
-        })
-    }
-
-    */
-    /*
-    func getNewData(){
-        
-        ref = FIRDatabase.database().reference()
-        
-        _refHandle = self.ref.child("Sports").child("Football").observe(FIRDataEventType.childAdded, with: { (snapshot) in
-            
-            self.spinner.startAnimating()
-            
-            print("there's another game")
-            /*
-            
-            let homeName = snapshot.childSnapshot(forPath: "homeTeam").value as! String
-            let awayName = snapshot.childSnapshot(forPath: "awayTeam").value as! String
-            let homeScore = snapshot.childSnapshot(forPath: "homeScore").value as! String
-            let awayScore = snapshot.childSnapshot(forPath: "awayScore").value as! String
-            
-            */
-            
-            //self.games.append([["homeTeam":homeName,"awayTeam":awayName,"homeScore":homeScore,"awayScore":awayScore]])
-            
-            
-            //getting date of new snapshot we added, and adding a dictionary for the game into the array, in the correct place
-            
-            let gameIdentifier = snapshot.childSnapshot(forPath: "game").value as! String
-            print(gameIdentifier)
-            
-            let dateInt = snapshot.childSnapshot(forPath: "date").value as! Int
-            
-            
-            
-            
-            //print("Game on \(month)/\(day)/\(year)")
-            
-            let gameDate = Date(timeIntervalSince1970: TimeInterval(dateInt))
-            
-            print(gameDate)
-            
-            
-            
-            
-            var inserted = false
-            
-            
-            if (self.games.count == 0){
-                inserted = true
-                self.games.append([self.gameForm(gameDate: gameDate, snapshot: snapshot)])
-             
-            } else {
-                
-                
-                
-                if gameDate > Date.today() {
-                    
-                    //section with latest dated games
-                    var lastSec = self.games[self.games.count-1]
-                    
-                    let lastGameDate = lastSec[lastSec.count-1]["Date"] as! Date
-                    
-                    if lastGameDate >= Date.today(){
-                        
-                        var last = true
-                        
-                        for i in (0...lastSec.count-1){
-                            
-                            if lastSec[i]["Date"] as! Date > gameDate {
-                                
-                                if inserted == false {
-                                    
-                                    lastSec.insert(self.gameForm(gameDate: gameDate, snapshot: snapshot), at: i)
-                                    inserted = true
-                                    last = false
-                                    print("inserting \(gameIdentifier) at point A")
-                                    
-                                }
-                                
-                                
-                            }
-                        }
-                        
-                        if inserted == false && last == true {
-                            lastSec.append(self.gameForm(gameDate: gameDate, snapshot: snapshot))
-                            inserted = true
-                            print("inserting \(gameIdentifier) at point B")
-                        }
-                        
-                    } else if lastGameDate < Date.today() {
-                        
-                        
-                        if inserted == false {
-                            
-                            self.games.append([self.gameForm(gameDate: gameDate, snapshot: snapshot)])
-                            inserted = true
-                            print("inserting \(gameIdentifier) at point C")
-                            
-                        }
-                    }
-                } else if gameDate == Date.today() {
-                    
-                    
-                    var lastSec = self.games[self.games.count-1]
-                    
-                    let lastGameDate = lastSec[lastSec.count-1]["Date"] as! Date
-                    
-                    if lastGameDate >= Date.today(){
-                        
-                        if inserted == false {
-                            
-                            lastSec.insert(self.gameForm(gameDate: gameDate, snapshot: snapshot), at: 0)
-                            inserted = true
-                            print("inserting \(gameIdentifier) at point D")
-                        }
-                        
-                    }
-                    
-                    
-                } else if gameDate < Date.today() {
-                    
-                    
-                    for i in (0...self.games.count-1){
-                        
-                        let date = self.games[i][0]["Date"] as! Date
-                        
-                        if gameDate < date {
-                            
-                            if inserted == false {
-                                
-                                self.games.insert([self.gameForm(gameDate: gameDate, snapshot: snapshot)], at: i)
-                                inserted = true
-                                print("inserting \(gameIdentifier) at point E")
-
-                            }
-                            
-                            
-                        } else if gameDate == date {
-                            if inserted == false{
-                                
-                                self.games[i].append(self.gameForm(gameDate: gameDate, snapshot: snapshot))
-                                inserted = true
-                                print("inserting \(gameIdentifier) at point F")
-                                
-                            }
-                            
-                            
-                        }
-                        
-                        
-                        
-                    }
-                    
-                    
-                }
-                
-                
-               inserted = false
-               
-            }
-            
-            //print(self.games)
-           
-            self.tableView.reloadData()
-            self.spinner.stopAnimating()
-            
-            
-            //print("Home Team " + homeName + "\nAwayTeam " + awayName + "\nHome Score " + homeScore + "\nAway Score "
-            //+ awayScore)
-            
-            
-            
-        })
-        
-    } */
-    /*
- 
- 
- NEWEST NEWEST
-    func getNewData(){
-        
-        ref = FIRDatabase.database().reference()
-        
-        
-        
-        self.ref.child("Sports").child("Football").observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            let count = snapshot.childrenCount
-            print("database count: \(count)")
-            
-        
-        
-            self._refHandle = self.ref.child("Sports").child("Football").observe(FIRDataEventType.childAdded, with: { (snapshot) in
-            
-                self.spinner.startAnimating()
-            
-                print("there's another game")
-            /*
-             
-             let homeName = snapshot.childSnapshot(forPath: "homeTeam").value as! String
-             let awayName = snapshot.childSnapshot(forPath: "awayTeam").value as! String
-             let homeScore = snapshot.childSnapshot(forPath: "homeScore").value as! String
-             let awayScore = snapshot.childSnapshot(forPath: "awayScore").value as! String
-             
-             */
-            
-            //self.games.append([["homeTeam":homeName,"awayTeam":awayName,"homeScore":homeScore,"awayScore":awayScore]])
-            
-            
-            //getting date of new snapshot we added, and adding a dictionary for the game into the array, in the correct place
-                if self.gamesArray.count == 0 {
-                    if !self.gamesArray.contains(snapshot){
-                        self.gamesArray.append(snapshot)
-                    }
-                    
-                    
-                } else {
-                    var didInsert = false
-                    for i in stride(from: self.gamesArray.count-1, to: 0, by: -1){
-                        
-                        let temp = self.gamesArray[i].childSnapshot(forPath: "date").value as! Int
-                        
-                        if temp > snapshot.childSnapshot(forPath: "date").value as! Int {
-                            if !self.gamesArray.contains(snapshot){
-                                self.gamesArray.insert(snapshot, at: i)
-                                didInsert = true
-                            }
-                        }
-                    }
-                    if didInsert == false {
-                        if !self.gamesArray.contains(snapshot){
-                            self.gamesArray.append(snapshot)
-                        }
-                    }
-                    
-                }
-                print("Games array count \(self.gamesArray.count)")
-                
-                print(self.gamesArray)
-                
-                if Int(count) == Int(self.gamesArray.count) {
-                    
-                    
-                    
-                    for i:FIRDataSnapshot in self.gamesArray{
-                        
-                    
-                        let rawDate =  i.childSnapshot(forPath: "date").value as! Int
-                        
-                        
-                        let gameDate = Date.init(timeIntervalSince1970: TimeInterval(rawDate))
-                        
-                        
-                        if self.games.count == 0 {
-                            
-                            self.games.append([self.gameForm(gameDate: gameDate, snapshot: i)])
-                            print("added \(gameDate)")
-                            
-                        } else {
-                            
-                            var prevSection = self.games[self.games.count-1]
-                            let prevGame = prevSection[prevSection.count-1]
-                            let prevGameDate:Date = prevGame["Date"] as! Date
-                            
-                            let today = Date.today()
-                            
-                            if (prevGameDate.year > today.year || prevGameDate.year == today.year && (prevGameDate.month > today.month || (prevGameDate.month == today.month && prevGameDate.day > today.day))){
-                                
-                                prevSection.append(self.gameForm(gameDate: gameDate, snapshot: i))
-                                print("added \(gameDate)")
-                                
-                            } else {
-                                
-                                if prevGameDate.year == gameDate.year && prevGameDate.day == gameDate.day && prevGameDate.month == gameDate.month {
-                                    
-                                    self.games[self.games.count-1].append(self.gameForm(gameDate: gameDate, snapshot: i))
-                                    print("added \(gameDate)")
-                                    
-                                } else {
-                                    
-                                    self.games.append([self.gameForm(gameDate: gameDate, snapshot: i)])
-                                    print("added \(gameDate)")
-                                }
-                                
-                            }
-
-                        }
-      
-                    }
-          
-                }
-
-                print("\n\nGames:\n\(self.games)\n\n\n")
-                self.tableView.reloadData()
-           //     self.spinner.stopAnimating()
-
-            })
-            
-        })
-        
-    }*/
     
     func getNewData(){
         
@@ -1439,6 +850,26 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                         
                         let awayScore = String(snapshot.childSnapshot(forPath: "awayScore").value as! Int)
                         
+                        let possession = String(snapshot.childSnapshot(forPath: "possession").value as! String)
+                        
+                        
+                        if possession == "Home" {
+                            
+                            (cell?.contentView.viewWithTag(21) as! UIImageView).image = #imageLiteral(resourceName: "small-Football")
+                            (cell?.contentView.viewWithTag(22) as! UIImageView).image = UIImage(named: "")
+
+                        } else if possession == "Away" {
+                            
+                            (cell?.contentView.viewWithTag(22) as! UIImageView).image = #imageLiteral(resourceName: "small-Football")
+                            (cell?.contentView.viewWithTag(21) as! UIImageView).image = UIImage(named: "")
+
+                            
+                        } else {
+                            
+                            (cell?.contentView.viewWithTag(21) as! UIImageView).image = UIImage(named: "")
+                            (cell?.contentView.viewWithTag(22) as! UIImageView).image = UIImage(named: "")
+
+                        }
                         
                         (cell?.contentView.viewWithTag(3) as! UILabel).text = homeTeam
                         
@@ -1552,7 +983,12 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
             let gameTime = (snapshot.childSnapshot(forPath: "time").value as! String)
             
-            let time = (snapshot.childSnapshot(forPath: "time").value as! String)
+            
+            let ballState = (snapshot.childSnapshot(forPath: "possession").value as! String)
+            
+            let game = String(snapshot.childSnapshot(forPath: "game").value as! Int)
+            
+            
         
             (cell.contentView.viewWithTag(3) as! UILabel).text = homeTeam
         
@@ -1562,6 +998,15 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             (cell.contentView.viewWithTag(2) as! UILabel).text = "\(awayScore)"
         
             let today = Date.today()
+            
+            
+            let someDate = NSDate()
+            let calender = NSCalendar.current
+            let todayHour = calender.component(Calendar.Component.hour, from: someDate as Date)
+            let todayMinute = calender.component(Calendar.Component.minute, from: someDate as Date)
+
+            
+            
             
             var state = "Default"
             //Past
@@ -1612,6 +1057,11 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
             if state == "Past"{
                 
+                ref = FIRDatabase.database().reference()
+                ref.child("Sports").child("Football").child(game).child("possession").setValue("None")
+                
+                ref.child("Sports").child("Football").child(game).child("time").setValue("Final")
+                
                 print("\n\n\(homeTeam) vs \(awayTeam)\n\(date)\nPast\n\n")
                 
                 (cell.contentView.viewWithTag(7) as! UILabel).text = "Final"
@@ -1620,6 +1070,13 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                 (cell.contentView.viewWithTag(15) as! UILabel).alpha = 0.0
                 
                 (cell.contentView.viewWithTag(16) as! UILabel).alpha = 0.0
+                
+                (cell.contentView.viewWithTag(21) as! UIImageView).image = UIImage(named: "")
+                
+                (cell.contentView.viewWithTag(22) as! UIImageView).image = UIImage(named: "")
+                
+                
+
                 
                 if (homeScore > awayScore){
                     
@@ -1668,11 +1125,33 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                 }
                 
                 
+                print("\n\n\nToday")
+                print("\n\n happens at \(date.hour):\(date.minute) and today is \(todayHour):\(todayMinute)\n\n\n")
                 
                 
-                
-                if date.hour < today.hour || (date.hour == today.hour && date.minute <= today.minute) {
+                if date.hour < todayHour || (date.hour == todayHour && date.minute <= todayMinute) {
                     
+                    print("game has started")
+                    
+                    if ballState == "Home" {
+                        
+                        (cell.contentView.viewWithTag(21) as! UIImageView).image = #imageLiteral(resourceName: "small-Football")
+                        
+                        (cell.contentView.viewWithTag(22) as! UIImageView).image  = UIImage(named: "")
+                        
+                    } else if ballState == "Away" {
+                        
+                        (cell.contentView.viewWithTag(22) as! UIImageView).image = #imageLiteral(resourceName: "small-Football")
+                        
+                        (cell.contentView.viewWithTag(21) as! UIImageView).image  = UIImage(named: "")
+                        
+                    } else {
+                        
+                        (cell.contentView.viewWithTag(22) as! UIImageView).image = UIImage(named: "")
+                        
+                        (cell.contentView.viewWithTag(21) as! UIImageView).image  = UIImage(named: "")
+                        
+                    }
                     
                     (cell.contentView.viewWithTag(7) as! UILabel).alpha = 1.0
                     (cell.contentView.viewWithTag(15) as! UILabel).alpha = 0.0
@@ -1687,6 +1166,9 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                     (cell.contentView.viewWithTag(15) as! UILabel).alpha = 1.0
                     (cell.contentView.viewWithTag(16) as! UILabel).alpha = 1.0
                     
+                    (cell.contentView.viewWithTag(1) as! UILabel).text = ""
+                    (cell.contentView.viewWithTag(2) as! UILabel).text = ""
+                    
                     (cell.contentView.viewWithTag(15) as! UILabel).text = "\(hour):"+String(format: "%02d", date.minute)+" \(post)"
                     
                     (cell.contentView.viewWithTag(16) as! UILabel).text = "Tonight"
@@ -1694,6 +1176,10 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                 
                 
             } else if state == "Future" {
+                
+                ref.child("Sports").child("Football").child(game).child("possession").setValue("None")
+                
+                ref.child("Sports").child("Football").child(game).child("time").setValue("0:00")
                 
                 print("\n\n\(homeTeam) vs \(awayTeam)\n\(date)\nFuture\n\n")
 
@@ -1881,51 +1367,46 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         
         
-        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
-            
-            let tweetComposer = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-            tweetComposer?.setInitialText("@NBPSAthletics #NBPSportsApp")
-            
-            //tweetComposer.addImage(UIImage(named:""))
-            
-            self.present(tweetComposer!, animated: true, completion: nil)
-        } else {
-            
-            let alertMessage = UIAlertController(title: "Twitter not available", message: "You may associate this phone with a Twitter account in settings>Twitter or through the Twitter app.", preferredStyle: .alert)
-            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alertMessage, animated: true, completion: nil)
-        }
-
-        /*
-        
-        
         if (Twitter.sharedInstance().sessionStore.hasLoggedInUsers()) {
+            
+            
             // App must have at least one logged-in user to compose a Tweet
-            let composer = TWTRComposerViewController.emptyComposer()
-            present(composer, animated: true, completion: nil)
+            
+            
+            let composer = TWTRComposer()
+            
+            composer.setText("@NBPSAthletics #NBPSportsApp ")
+            
+            // Called from a UIViewController
+            
+            composer.show(from: self, completion: { result in
+                print(result)
+                if (result == TWTRComposerResult.cancelled) {
+                    print("Tweet composition cancelled")
+                }
+                else {
+                    print("Sending tweet!")
+                }
+                
+            })
+            
         } else {
             // Log in, and then check again
             Twitter.sharedInstance().logIn { session, error in
                 if session != nil { // Log in succeeded
-                    let composer = TWTRComposer()
                     
-                    composer.setText("@NBPSAthletics #NBPSportsApp")
-                    composer.setImage(#imageLiteral(resourceName: "Twitter-Icon"))
-                    composer.show(from: self.navigationController!, completion: { (result) in
-                        if (result == .done) {
-                            print("Successfully composed Tweet")
-                        } else {
-                            print("Cancelled composing")
-                        }
-                    })
+                    let composer = TWTRComposerViewController.emptyComposer()
+                    self.present(composer, animated: true, completion: nil)
                     
-                    //self.present(composer, animated: true, completion: nil)
                 } else {
-                    let alert = UIAlertController(title: "No Twitter Accounts Available", message: "You must log in before presenting a composer.", preferredStyle: .alert)
+                    
+                    let alert = UIAlertController(title: "No Twitter Accounts Available", message: "You must log in using the Twitter app to use this functionality.", preferredStyle: .alert)
                     self.present(alert, animated: false, completion: nil)
+                    
                 }
             }
-        }*/
+        }
+        
     }
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
@@ -1934,12 +1415,11 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-      /*  ref.child("Football").child(games[indexPath.section][indexPath.row]["Snapshot"]).observe(.value, with: { (snapshot) in
+     
             
             
          
-         
-        })*/
+        
         
         if indexPath.row < games[indexPath.section].count {
             
@@ -2070,6 +1550,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         var homeTeam = pastSnapshot.childSnapshot(forPath: "homeTeam").value as! String
         var awayTeam = pastSnapshot.childSnapshot(forPath: "awayTeam").value as! String
+        var possession = pastSnapshot.childSnapshot(forPath: "possession").value as! String
         
         let game = pastSnapshot.childSnapshot(forPath: "game").value as! Int
         
@@ -2089,7 +1570,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             }
         }
         
-        let time = timePickerComponents[timePicker.selectedRow(inComponent: 0)]["Title"] as! String
+        let time = timePickerComponents[timePicker.selectedRow(inComponent: 0)]["Title"]!
         
         
         
@@ -2101,7 +1582,9 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             "awayScore": awayScore as Int,
             "date": dateInt as Int,
             "editing": isEditing as Bool,
-            "time": time as String
+            "time": time as String,
+            "possession": possession as String
+            
             
             ] as [String : Any]
         
@@ -2430,10 +1913,181 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     }
     */
     
-    func setNavigationBarHidden(_ hidden: Bool, animated: Bool) {
+    func error() {
         
-        print("hid nav bar")
+        let alert = UIAlertController(title: "Error", message: "There was an error processing your request", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let cancel = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel, handler: nil)
+        
+        alert.addAction(cancel)
+        
+        self.present(alert, animated: true, completion: nil)
+
     }
+    
+    @IBAction func didTapAwayFootball(_ sender: Any) {
+        
+        ref = FIRDatabase.database().reference()
+        let currentGameSnap = games[selectedPath[1]][selectedPath[0]]["Snapshot"] as! FIRDataSnapshot
+        let currentGame = String(currentGameSnap.childSnapshot(forPath: "game").value as! Int)
+        
+        if self.awayFootball.imageView?.tintColor != UIColor.green {
+        
+            ref.child("Sports").child("Football").child(currentGame).child("possession").setValue("Away") { (error, reff) in
+                
+                if error != nil {
+                    
+                    self.error()
+                    print("Error setting away to possession")
+                    
+                } else {
+                    
+                    self.awayFootball.imageView?.tintColor = UIColor.green
+                    
+                    self.homeFootball.imageView?.tintColor = UIColor.black
+                    
+                    
+                    let cell = self.tableView.cellForRow(at: IndexPath(row: self.selectedPath[1], section: self.selectedPath[0]))
+                    (cell?.contentView.viewWithTag(22) as! UIImageView).image = #imageLiteral(resourceName: "small-Football")
+                    
+                    (cell?.contentView.viewWithTag(21) as! UIImageView).image  = UIImage(named: "")
+                    
+                    self.ref.child("Sports").child("Football").child(currentGame).observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
+                        
+                        self.tableView.beginUpdates()
+                        self.games[self.selectedPath[1]][self.selectedPath[0]]["Snapshot"] = snapshot
+                        self.tableView.endUpdates()
+                        
+                    })
+                    
+
+
+                    
+                }
+                
+                
+                
+            }
+            
+        
+        } else {
+            
+            ref.child("Sports").child("Football").child(currentGame).child("possession").setValue("None") { (error, ref) in
+                
+                if error != nil {
+                    
+                    
+                } else {
+                    
+                    self.awayFootball.imageView?.tintColor = UIColor.black
+                    
+                    self.homeFootball.imageView?.tintColor = UIColor.black
+                    
+                    let cell = self.tableView.cellForRow(at: IndexPath(row: self.selectedPath[1], section: self.selectedPath[0]))
+                    
+                    (cell?.contentView.viewWithTag(21) as! UIImageView).image  = UIImage(named: "")
+                    
+                    (cell?.contentView.viewWithTag(22) as! UIImageView).image  = UIImage(named: "")
+                    
+                    
+                    self.ref.child("Sports").child("Football").child(currentGame).observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
+                        
+                        self.tableView.beginUpdates()
+                        self.games[self.selectedPath[1]][self.selectedPath[0]]["Snapshot"] = snapshot
+                        self.tableView.endUpdates()
+                        
+                    })
+                    
+                    
+                }
+                
+            }
+            
+        }
+    }
+    
+    @IBAction func didTapHomeFootball(_ sender: Any) {
+        
+        ref = FIRDatabase.database().reference()
+        let currentGameSnap = games[selectedPath[1]][selectedPath[0]]["Snapshot"] as! FIRDataSnapshot
+        let currentGame = String(currentGameSnap.childSnapshot(forPath: "game").value as! Int)
+        
+        if self.homeFootball.imageView?.tintColor != UIColor.green {
+            
+            ref.child("Sports").child("Football").child(currentGame).child("possession").setValue("Home") { (error, reff) in
+                
+                if error != nil {
+                    
+                    self.error()
+                    print("Error setting away to possession")
+                    
+                } else {
+                    
+                    self.homeFootball.imageView?.tintColor = UIColor.green
+                    
+                    self.awayFootball.imageView?.tintColor = UIColor.black
+                    
+                    
+                    let cell = self.tableView.cellForRow(at: IndexPath(row: self.selectedPath[1], section: self.selectedPath[0]))
+                    (cell?.contentView.viewWithTag(21) as! UIImageView).image = #imageLiteral(resourceName: "small-Football")
+                    
+                    (cell?.contentView.viewWithTag(22) as! UIImageView).image  = UIImage(named: "")
+                    
+                    self.ref.child("Sports").child("Football").child(currentGame).observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
+                        
+                        self.tableView.beginUpdates()
+                        self.games[self.selectedPath[1]][self.selectedPath[0]]["Snapshot"] = snapshot
+                        self.tableView.endUpdates()
+                        
+                    })
+                    
+                    
+                    
+                    
+                }
+                
+                
+                
+            }
+            
+            
+        } else {
+            
+            ref.child("Sports").child("Football").child(currentGame).child("possession").setValue("None") { (error, ref) in
+                
+                if error != nil {
+                    
+                    
+                } else {
+                    
+                    self.awayFootball.imageView?.tintColor = UIColor.black
+                    
+                    self.homeFootball.imageView?.tintColor = UIColor.black
+                    
+                    let cell = self.tableView.cellForRow(at: IndexPath(row: self.selectedPath[1], section: self.selectedPath[0]))
+                    
+                    (cell?.contentView.viewWithTag(21) as! UIImageView).image  = UIImage(named: "")
+                    
+                    (cell?.contentView.viewWithTag(22) as! UIImageView).image  = UIImage(named: "")
+                    
+                    
+                    self.ref.child("Sports").child("Football").child(currentGame).observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
+                        
+                        self.tableView.beginUpdates()
+                        self.games[self.selectedPath[1]][self.selectedPath[0]]["Snapshot"] = snapshot
+                        self.tableView.endUpdates()
+                        
+                    })
+                    
+                    
+                }
+                
+            }
+            
+        }
+    }
+    
+   
 
 }
 

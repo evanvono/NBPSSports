@@ -40,22 +40,45 @@ class NBPSTwitterTableViewController:  TWTRTimelineViewController {
     
     @IBAction func didTapTwitter(_ sender: Any) {
         
-        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter) {
+        if (Twitter.sharedInstance().sessionStore.hasLoggedInUsers()) {
             
-            let tweetComposer = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
-            tweetComposer?.setInitialText("@NBPSAthletics #NBPSportsApp")
             
-            //tweetComposer.addImage(UIImage(named:""))
+            // App must have at least one logged-in user to compose a Tweet
             
-            self.present(tweetComposer!, animated: true, completion: nil)
+            
+            let composer = TWTRComposer()
+            
+            composer.setText("@NBPSAthletics #NBPSportsApp ")
+            
+            // Called from a UIViewController
+            
+            composer.show(from: self, completion: { result in
+                print(result)
+                if (result == TWTRComposerResult.cancelled) {
+                    print("Tweet composition cancelled")
+                }
+                else {
+                    print("Sending tweet!")
+                }
+                
+            })
+            
         } else {
-            
-            let alertMessage = UIAlertController(title: "Twitter not available", message: "You may associate this phone with a Twitter account in settings>Twitter or through the Twitter app.", preferredStyle: .alert)
-            alertMessage.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alertMessage, animated: true, completion: nil)
-            
+            // Log in, and then check again
+            Twitter.sharedInstance().logIn { session, error in
+                if session != nil { // Log in succeeded
+                    
+                    let composer = TWTRComposerViewController.emptyComposer()
+                    self.present(composer, animated: true, completion: nil)
+                    
+                } else {
+                    
+                    let alert = UIAlertController(title: "No Twitter Accounts Available", message: "You must log in using the Twitter app to use this functionality.", preferredStyle: .alert)
+                    self.present(alert, animated: false, completion: nil)
+                    
+                }
+            }
         }
-        
     }
     
 }

@@ -21,6 +21,7 @@ class AppState: NSObject {
     
     var comingSoonImage:UIImage = #imageLiteral(resourceName: "Navy-Gradient.png")
     
+    var sportDescription:String = "Coming Soon"
     
     
     let myGroup = DispatchGroup()

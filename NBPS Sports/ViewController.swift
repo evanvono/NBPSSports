@@ -120,6 +120,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var amt:Int = 0
     
+    var hasRepeated = false
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -183,7 +185,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         mainTableView.layer.cornerRadius = 10
         
         getRSS(urlStr: "http://www.nbpsathletics.org/organizations/3072/announcements")
-        getRSS(urlStr: "http://www.nbpsathletics.org/organizations/3072/announcements?page=2")
+        
 
         
         
@@ -374,6 +376,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
                 DispatchQueue.main.async {
                     self.mainTableView.reloadData()
+                    
+                    
+                    if !self.hasRepeated {
+                        
+                        self.getRSS(urlStr: "http://www.nbpsathletics.org/organizations/3072/announcements?page=2")
+                        
+                        self.hasRepeated = true
+                        
+                    }
+                    
                 }
                 
                 
@@ -386,6 +398,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         task.resume()
+        
+        
         
         
     }
@@ -405,6 +419,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
  
  */
     @IBAction func didTapLogout(_ sender: Any) {
+        
         
         if AppState.sharedInstance.signedIn == true {
             

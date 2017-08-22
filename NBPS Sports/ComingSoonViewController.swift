@@ -12,16 +12,22 @@ class ComingSoonViewController: UIViewController {
 
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var mainLabel: UIOutlinedLabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         backgroundImage.image = AppState.sharedInstance.comingSoonImage
+        
+        mainLabel.text = AppState.sharedInstance.sportDescription
         
         if self.revealViewController() != nil {
             print("not nil")
             menuButton.target = self.revealViewController()
             menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            mainLabel.layer.cornerRadius = 10
             
             
         }
