@@ -141,7 +141,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        AppState.sharedInstance.openView = self.view
+        
         tableContainer.layer.cornerRadius = 5
+        tableContainer.layer.masksToBounds = true
         
         checkForNew()
         
@@ -159,6 +162,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         ref = FIRDatabase.database().reference()
 
         titleView.layer.cornerRadius = 10.0
+        titleView.layer.masksToBounds = true
         activity.isHidden = false
         activity.startAnimating()
        
@@ -183,6 +187,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         mainTableView.layer.cornerRadius = 10
+        mainTableView.layer.masksToBounds = true
         
         getRSS(urlStr: "http://www.nbpsathletics.org/organizations/3072/announcements")
         
@@ -195,6 +200,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     
         detailContainer.layer.cornerRadius = 10
+        detailContainer.layer.masksToBounds = true
         
         setUpBlurView()
         
@@ -297,7 +303,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 arr2 = content.components(separatedBy: "<p><strong>")
                 
                 for i in arr2 {
-                    
+                 
                     if i.contains("</strong></p>"){
                         
                         
@@ -448,7 +454,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //blurView.
         self.blurEffectView.isUserInteractionEnabled = true
         
-        detailContainer.frame = CGRect(x: self.view.bounds.width/2 , y: self.view.bounds.height/2+60, width: self.view.bounds.width-30, height: self.view.bounds.height-300)
+        detailContainer.frame = CGRect(x: self.view.bounds.width/2 , y: self.view.bounds.height/2+60, width: self.view.bounds.width-30, height: 300.0)
         
         self.view.addSubview(detailContainer)
         detailContainer.center = self.view.center
@@ -509,7 +515,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         
-        titleText.text = titles[index].lowercased()
+        titleText.text = titles[index]//.lowercased()
         bodyText.text = descriptions[index]
         
         //detailWebView.loadRequest(URLRequest(url: URL(string: "www.google.com")!))
@@ -594,7 +600,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             } else if indexPath.section == 1 {
                 
                 (cell.contentView.viewWithTag(1) as! UITextView).text = descriptions[indexPath.row]
-                (cell.contentView.viewWithTag(2) as! UILabel).text = titles[indexPath.row].lowercased()
+                (cell.contentView.viewWithTag(2) as! UILabel).text = titles[indexPath.row]
+                //.lowercased()
                 
                 (cell.contentView.viewWithTag(3) as! UILabel).text = times[indexPath.row]
                 
@@ -610,7 +617,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         } else {
             
             (cell.contentView.viewWithTag(1) as! UITextView).text = descriptions[indexPath.row]
-            (cell.contentView.viewWithTag(2) as! UILabel).text = titles[indexPath.row].lowercased()
+            (cell.contentView.viewWithTag(2) as! UILabel).text = titles[indexPath.row]//.lowercased()
+            
             
             (cell.contentView.viewWithTag(3) as! UILabel).text = times[indexPath.row]
             

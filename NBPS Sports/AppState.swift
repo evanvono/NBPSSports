@@ -23,6 +23,7 @@ class AppState: NSObject {
     
     var sportDescription:String = "Coming Soon"
     
+    var openView: UIView = UIView()
     
     let myGroup = DispatchGroup()
     // var photoUrl: NSURL?

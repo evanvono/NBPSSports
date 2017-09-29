@@ -29,8 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         FIRApp.configure()
         
-        UINavigationBar.appearance().barTintColor = UIColor.darkGray
-        UITabBar.appearance().barTintColor = UIColor.darkGray
+        //UINavigationBar.appearance().barTintColor = UIColor.darkGray
+        //UITabBar.appearance().barTintColor = UIColor.darkGray
         
         return true
     }

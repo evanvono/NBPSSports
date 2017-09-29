@@ -55,8 +55,8 @@ class NewGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
 
     func fillSports(){
         
-        sports = ["Football","Boys Soccer", "Girls Soccer", "Boys Basketball", "Girls Basketball"]
-        sportsTitles = ["Football":"Football","Boys Soccer":"BSoccer", "Girls Soccer":"GSoccer", "Boys Basketball":"BBasketball", "Girls Basketball":"GBasketball"]
+        sports = ["Football","Boys Soccer", "Girls Soccer", "Boys Basketball", "Girls Basketball", "Volleyball"]
+        sportsTitles = ["Football":"Football","Boys Soccer":"BSoccer", "Girls Soccer":"GSoccer", "Boys Basketball":"BBasketball", "Girls Basketball":"GBasketball", "Volleyball":"Volleyball"]
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -134,8 +134,8 @@ class NewGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         let date = Int(datePicker.date.timeIntervalSince1970)
         let homeTeam = homeNameField.text
         let awayTeam = awayNameField.text
-        let homeScore = Int(homeScoreField.text!)
-        let awayScore = Int(awayScoreField.text!)
+        var homeScore = Int(homeScoreField.text!)
+        var awayScore = Int(awayScoreField.text!)
         
         let title = sports[sportPicker.selectedRow(inComponent: 0)]
         
@@ -144,26 +144,84 @@ class NewGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         
         let timeStamp = Int(NSDate.timeIntervalSinceReferenceDate*1000) //Will give you a unique id every second or even millisecond if you want..
         
-        
-        
-        let newGameID = newGameRef.key
-        let newGameData = [
-            "game": timeStamp,
-            "homeTeam": homeTeam! as NSString,
-            "homeScore": homeScore! as Int,
-            "awayTeam": awayTeam! as NSString,
-            "awayScore": awayScore! as Int,
-            "date": date,
-            "editing": false,
-            "time": "0:00"
+        if homeScore == nil {
             
-        ] as [String : Any]
+            homeScore = 0
+            
+        } else  if awayScore == nil {
+            
+            
+            awayScore = 0
+            
+        }
         
+        if homeTeam == "" || awayTeam == "" || homeScoreField.text == "" || awayScoreField.text == ""
+        {
+            
+            let alert = UIAlertController(title: "Some Items are Empty", message: "Please fill in every field before creating a new game", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let action = UIAlertAction(title: "Okay", style: UIAlertActionStyle.cancel, handler: nil)
+            
+            alert.addAction(action)
+            
+            self.present(alert, animated: true, completion: nil)
+            
+        } else {
+            
+            var newGameData = [
+                "game": timeStamp,
+                "homeTeam": homeTeam! as NSString,
+                "homeScore": homeScore! as Int,
+                "awayTeam": awayTeam! as NSString,
+                "awayScore": awayScore! as Int,
+                "date": date,
+                "editing": false,
+                "time": "Upcoming"
+                
+                ] as [String : Any]
+            
+            
+            if sportsTitles[title]! == "Football" {
+                
+                newGameData = [
+                    "game": timeStamp,
+                    "homeTeam": homeTeam! as NSString,
+                    "homeScore": homeScore! as Int,
+                    "awayTeam": awayTeam! as NSString,
+                    "awayScore": awayScore! as Int,
+                    "date": date,
+                    "editing": false,
+                    "time": "Upcoming",
+                    "possession": "None"
+                    
+                    ] as [String : Any]
+            }
+            
+            if sportsTitles[title]! == "Volleyball" {
+                
+                newGameData = [
+                    "game": timeStamp,
+                    "homeTeam": homeTeam! as NSString,
+                    "homeScore": [0,0,0,0,0,0],
+                    "awayTeam": awayTeam! as NSString,
+                    "awayScore": [0,0,0,0,0,0],
+                    "date": date,
+                    "editing": false,
+                    "time": "Upcoming",
+                    "possession": "None"
+                    
+                    ] as [String : Any]
+            }
+            
+            
+            
+            
+            self.ref.child("Sports").child(sportsTitles[title]!).child(String(timeStamp)).setValue(newGameData)
+            
+            self.navigationController?.popToRootViewController(animated: true)
+            
+        }
         
-        
-        self.ref.child("Sports").child(sportsTitles[title]!).child(String(timeStamp)).setValue(newGameData)
-        
-        self.navigationController?.popToRootViewController(animated: true)
         
     }
     
