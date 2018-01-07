@@ -14,7 +14,7 @@ import Social
 import TwitterKit
 import SwiftSpinner
 
-class BSoccerTableViewController: UITableViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     
     //Editor View
@@ -136,7 +136,7 @@ class BSoccerTableViewController: UITableViewController, UITextFieldDelegate, UI
             imageView.contentMode = UIViewContentMode.scaleAspectFill
             tableView.backgroundView = imageView
             
-        } else if databaseRef = "GSoccer" {
+        } else if databaseRef == "GSoccer" {
             
             let imageView = UIImageView(image: #imageLiteral(resourceName: "Girls-Soccer-Blurred"))
             imageView.contentMode = UIViewContentMode.scaleAspectFill
@@ -272,10 +272,10 @@ class BSoccerTableViewController: UITableViewController, UITextFieldDelegate, UI
                     
                     self.tableView.reloadData()
                 }
-                self.title = fullTitle
+                self.title = self.fullTitle
                 self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.black]
             } else {
-                self.title = fullTitle
+                self.title = self.fullTitle
                 
                 
                 self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.red]
@@ -413,24 +413,24 @@ class BSoccerTableViewController: UITableViewController, UITextFieldDelegate, UI
         
         if possession == "Home" {
             
-            homeBall.tintColor = UIColor.green
+           // homeBall.tintColor = UIColor.green
             
-            awayBall.tintColor = UIColor.black
+           // awayBall.tintColor = UIColor.black
             
             
             
         } else if possession == "Away" {
             
-            awayBall.tintColor = UIColor.green
+          //  awayBall.tintColor = UIColor.green
             
-            homeBall.tintColor = UIColor.black
+           // homeBall.tintColor = UIColor.black
             
         } else {
             
             
-            homeBall.tintColor = UIColor.black
+          //  homeBall.tintColor = UIColor.black
             
-            awayBall.tintColor = UIColor.black
+          //  awayBall.tintColor = UIColor.black
             
         }
         
@@ -586,7 +586,7 @@ class BSoccerTableViewController: UITableViewController, UITextFieldDelegate, UI
              }
              */
             
-            self._refHandle = self.ref.child("Sports").child(databaseRef).observe(FIRDataEventType.childAdded, with: { (snapshot) in
+            self._refHandle = self.ref.child("Sports").child(self.databaseRef).observe(FIRDataEventType.childAdded, with: { (snapshot) in
                 
                 //let date:Int = snapshot.childSnapshot(forPath: "date").value as! Int
                 
@@ -1757,7 +1757,7 @@ class BSoccerTableViewController: UITableViewController, UITextFieldDelegate, UI
                 
                 print("completed change, trying to edit app data...")
                 
-                self._refHandle = self.ref.child("Sports").child(databaseRef).child(self.currentGame).observe(FIRDataEventType.value, with: { (snapshot) in
+                self._refHandle = self.ref.child("Sports").child(self.databaseRef).child(self.currentGame).observe(FIRDataEventType.value, with: { (snapshot) in
                     
                     
                     self.games[self.selectedPath[0]][self.selectedPath[1]
@@ -2086,7 +2086,7 @@ class BSoccerTableViewController: UITableViewController, UITextFieldDelegate, UI
         
     }
     
-    @IBAction func didTapawayBall(_ sender: Any) {
+    /*@IBAction func didTapawayBall(_ sender: Any) {
         
         ref = FIRDatabase.database().reference()
         let currentGameSnap = games[selectedPath[1]][selectedPath[0]]["Snapshot"] as! FIRDataSnapshot
@@ -2103,9 +2103,9 @@ class BSoccerTableViewController: UITableViewController, UITextFieldDelegate, UI
                     
                 } else {
                     
-                    self.awayBall.imageView?.tintColor = UIColor.green
+                   // self.awayBall.imageView?.tintColor = UIColor.green
                     
-                    self.homeBall.imageView?.tintColor = UIColor.black
+                    //self.homeBall.imageView?.tintColor = UIColor.black
                     
                     
                     let cell = self.tableView.cellForRow(at: IndexPath(row: self.selectedPath[1], section: self.selectedPath[0]))
@@ -2113,7 +2113,7 @@ class BSoccerTableViewController: UITableViewController, UITextFieldDelegate, UI
                     
                     (cell?.contentView.viewWithTag(22) as! UIImageView).image  = UIImage(named: "")
                     
-                    self.ref.child("Sports").child(databaseRef).child(currentGame).observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
+                    self.ref.child("Sports").child(self.databaseRef).child(currentGame).observeSingleEvent(of: FIRDataEventType.value, with: { (snapshot) in
                         
                         self.tableView.beginUpdates()
                         self.games[self.selectedPath[1]][self.selectedPath[0]]["Snapshot"] = snapshot
@@ -2140,9 +2140,9 @@ class BSoccerTableViewController: UITableViewController, UITextFieldDelegate, UI
                     
                 } else {
                     
-                    self.awayBall.imageView?.tintColor = UIColor.black
+                   // self.awayBall.imageView?.tintColor = UIColor.black
                     
-                    self.homeBall.imageView?.tintColor = UIColor.black
+                    //self.homeBall.imageView?.tintColor = UIColor.black
                     
                     let cell = self.tableView.cellForRow(at: IndexPath(row: self.selectedPath[1], section: self.selectedPath[0]))
                     
@@ -2184,9 +2184,9 @@ class BSoccerTableViewController: UITableViewController, UITextFieldDelegate, UI
                     
                 } else {
                     
-                    self.homeBall.imageView?.tintColor = UIColor.green
+                 //   self.homeBall.imageView?.tintColor = UIColor.green
                     
-                    self.awayBall.imageView?.tintColor = UIColor.black
+                 //   self.awayBall.imageView?.tintColor = UIColor.black
                     
                     
                     let cell = self.tableView.cellForRow(at: IndexPath(row: self.selectedPath[1], section: self.selectedPath[0]))
@@ -2246,7 +2246,7 @@ class BSoccerTableViewController: UITableViewController, UITextFieldDelegate, UI
             }
             
         }
-    }
+    }*/
     
     
     

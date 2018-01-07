@@ -552,6 +552,9 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                             <state key="normal" title="Basketball">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="didTapBasketball:" destination="FSj-Gq-oLe" eventType="touchUpInside" id="cHV-OU-7NI"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.182112366" green="0.22954937819999999" blue="0.42884287240000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -576,6 +579,9 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                             <state key="normal" title="Soccer">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="didTapSoccer:" destination="FSj-Gq-oLe" eventType="touchUpInside" id="lop-Aj-EXE"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.182112366" green="0.22954937819999999" blue="0.42884287240000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -839,6 +845,18 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                             <segue destination="ouc-ot-fE2" kind="custom" identifier="Volleyball" customClass="SWRevealViewControllerSeguePushController" id="Hex-pj-d7J"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="dga-OP-6M7">
+                                        <rect key="frame" x="0.0" y="1017" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dga-OP-6M7" id="hT8-W6-dAN">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="FGf-Yu-Gfw" kind="custom" identifier="Soccer" trigger="accessoryAction" customClass="SWRevealViewControllerSeguePushController" id="26B-Ua-D44"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -869,6 +887,9 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                             <rect key="frame" x="0.0" y="32" width="120" height="47"/>
                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
                             <state key="normal" title="Boys"/>
+                            <connections>
+                                <action selector="didTapBoys:" destination="FSj-Gq-oLe" eventType="touchUpInside" id="jdT-rB-lPy"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Varsity Baseball" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXK-s6-3Me">
                             <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
@@ -895,6 +916,9 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                             <rect key="frame" x="120" y="32" width="120" height="47"/>
                             <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="18"/>
                             <state key="normal" title="Girls"/>
+                            <connections>
+                                <action selector="didTapGirls:" destination="FSj-Gq-oLe" eventType="touchUpInside" id="NLx-QG-kIf"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -4182,10 +4206,10 @@ For further questions or quieries reguarding elegibility of becoming or responsi
             </objects>
             <point key="canvasLocation" x="5268" y="-887"/>
         </scene>
-        <!--Boys' Soccer-->
+        <!--Soccer-->
         <scene sceneID="zxK-DM-LLN">
             <objects>
-                <tableViewController storyboardIdentifier="BSoccer-main" id="Zsr-YQ-gH5" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BSoccer-main" id="Zsr-YQ-gH5" customClass="SoccerTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="black" dataMode="prototypes" style="plain" separatorStyle="none" sectionIndexMinimumDisplayRowCount="14" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="XGa-wr-ekh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4424,7 +4448,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                             <outlet property="delegate" destination="Zsr-YQ-gH5" id="bDO-Ee-yYf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Boys' Soccer" id="Bi7-mW-YaX">
+                    <navigationItem key="navigationItem" title="Soccer" id="Bi7-mW-YaX">
                         <leftBarButtonItems>
                             <barButtonItem image="Menu-Icon" id="7ev-3J-Tl6"/>
                             <barButtonItem title="Roster" style="done" id="BpO-LF-bCe"/>
@@ -4457,6 +4481,24 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="awayLabel" destination="keh-I1-KXn" id="HJa-5Y-Eao"/>
+                        <outlet property="awayScoreLabel" destination="CJx-0A-wzY" id="jsN-Ab-PxU"/>
+                        <outlet property="awayScoreStepper" destination="mar-nJ-FJD" id="JGJ-QY-qRM"/>
+                        <outlet property="editField" destination="sbn-KA-XA6" id="dz5-rP-QYQ"/>
+                        <outlet property="editorLabel" destination="eDn-Cl-HXn" id="0Go-kT-w1o"/>
+                        <outlet property="editorNavigationBar" destination="H8s-lc-JmH" id="ggR-7c-T4e"/>
+                        <outlet property="editorProgress" destination="IIG-np-HMA" id="89J-B3-Tvl"/>
+                        <outlet property="editorView" destination="3tc-19-WMi" id="TqO-6p-1HT"/>
+                        <outlet property="gameDatePicker" destination="dFN-KM-u7y" id="gBF-xy-YS3"/>
+                        <outlet property="homeLabel" destination="x2N-Ev-8Y8" id="9IU-Zi-6mj"/>
+                        <outlet property="homeScoreLabel" destination="1ll-Av-z3y" id="hc2-Hc-0mt"/>
+                        <outlet property="homeScoreStepper" destination="ndn-rn-LO0" id="dKt-Nm-5YQ"/>
+                        <outlet property="isEditingSwitch" destination="RGM-L9-c7a" id="SV3-Rx-76V"/>
+                        <outlet property="picker" destination="mJf-xA-kOo" id="Gb8-h1-z6L"/>
+                        <outlet property="spectatorView" destination="A4M-ve-t6j" id="8iu-dD-D2Z"/>
+                        <outlet property="timePicker" destination="8yl-Jf-QJ1" id="hFi-52-bLA"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mn1-hM-e5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <view contentMode="scaleToFill" id="3tc-19-WMi">

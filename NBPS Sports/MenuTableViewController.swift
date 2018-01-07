@@ -614,74 +614,7 @@ class MenuTableViewController: UITableViewController {
         
         openGenderOption(sender: sender)
         
-        /*
-        if Int(swimmingView.frame.height) == 44 {
-            
-            //collapseGenders()
-            
-            if fallGenderPopped {
-            
-                
-                
-                UIView.animate(withDuration: 0.25, delay: 0, options: UIViewAnimationOptions.curveEaseInOut,animations: {
-                    
-                    /// self.myView.backgroundColor = .orange
-                    // self.swimmingView.transform = CGAffineTransform(scaleX: 1, y: (80/44))
-                    
-                    self.swimmingView.frame = CGRect(x: 0, y: Int(self.swimmingView.frame.minY)-36, width: Int(self.swimmingView.frame.width), height: 80)
-                    
-                    self.golfView.frame = CGRect(x: 0, y: Int(self.golfView.frame.minY), width: Int(self.golfView.frame.width), height: 44)
-                    
-                   // self.volleyballView.frame = CGRect(x: 0, y: Int(self.volleyballView.frame.minY)+36, width: Int(self.swimmingView.frame.width), height: 44)
-                    //self.swimmingHeight.constant = 80
-                    
-                },completion: nil)
-
-                
-            } else {
-                
-                self.tableView.beginUpdates()
-                
-                
-                
-                fallGenderPopped = true
-                // self.view.reloadInputViews()
-                self.tableView.endUpdates()
-                
-                UIView.animate(withDuration: 0.25, delay: 0, options: UIViewAnimationOptions.curveEaseInOut,animations: {
-                    
-                    /// self.myView.backgroundColor = .orange
-                    // self.swimmingView.transform = CGAffineTransform(scaleX: 1, y: (80/44))
-                    
-                    self.swimmingView.frame = CGRect(x: 0, y: Int(self.swimmingView.frame.minY), width: Int(self.swimmingView.frame.width), height: 80)
-                    
-                    self.volleyballView.frame = CGRect(x: 0, y: Int(self.volleyballView.frame.minY)+36, width: Int(self.swimmingView.frame.width), height: 44)
-                    //self.swimmingHeight.constant = 80
-                    
-                },completion: nil)
-
-                
-            }
-            
-        } else {
-            self.tableView.beginUpdates()
-            fallGenderPopped = false
-            UIView.animate(withDuration: 0.255, delay: 0,options: UIViewAnimationOptions.curveEaseInOut,animations: {
-                
-                /// self.myView.backgroundColor = .orange
-                //self.swimmingView.transform = CGAffineTransform(scaleX: 1, y: (44/80))
-                self.swimmingView.frame = CGRect(x: 0, y: Int(self.swimmingView.frame.minY), width: Int(self.swimmingView.frame.width), height: 44)
-               
-                self.volleyballView.frame = CGRect(x: 0, y: Int(self.volleyballView.frame.minY)-36, width: Int(self.swimmingView.frame.width), height: 44)
-                // self.swimmingHeight.constant = 44
-                
-            },completion: nil)
-            self.view.reloadInputViews()
-            self.tableView.endUpdates()
-            
-        }
-        
-        */
+       
         
         
         
@@ -898,6 +831,19 @@ class MenuTableViewController: UITableViewController {
         
     }
     
+    @IBAction func didTapSoccer(_ sender: UIButton) {
+        
+        openGenderOption(sender: sender)
+
+        
+    }
+    
+    @IBAction func didTapBasketball(_ sender: UIButton) {
+        
+        openGenderOption(sender: sender)
+        
+    }
+    
     func openMenu(index: Int){
         
         self.tableView.beginUpdates()
@@ -919,6 +865,29 @@ class MenuTableViewController: UITableViewController {
             selectedIndex = 100
         
         self.tableView.endUpdates()
+    }
+    
+    @IBAction func didTapBoys(_ sender: UIButton) {
+        
+        let sport = (sender.superview?.viewWithTag(1) as! UILabel).text?.components(separatedBy: "arsity ")[1]
+        
+        print("tapped boys \(sport)")
+        
+        self.performSegue(withIdentifier: "Soccer", sender: nil)
+        
+    }
+    
+    @IBAction func didTapGirls(_ sender: UIButton) {
+       
+        let sport = (sender.superview?.viewWithTag(1) as! UILabel).text?.components(separatedBy: "arsity ")[1]
+        
+        
+        print("tapped girls \(sport)")
+
+        self.performSegue(withIdentifier: "Soccer", sender: nil)
+
+
+        
     }
     
     
