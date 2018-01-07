@@ -17,6 +17,9 @@ class AppState: NSObject {
     var articleImage:UIImage = #imageLiteral(resourceName: "NBP-Icon-Border")
     var sportTitle = "Football"
     
+    var databaseRef:String = "SpTitle"
+    var fullTitle: String = "Sport Title"
+    
     var ArticleURL:URL = URL(string: "www.nbpsathletics.org")!
     
     var comingSoonImage:UIImage = #imageLiteral(resourceName: "Navy-Gradient.png")

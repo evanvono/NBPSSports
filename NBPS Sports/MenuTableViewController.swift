@@ -873,7 +873,20 @@ class MenuTableViewController: UITableViewController {
         
         print("tapped boys \(sport)")
         
+        
+        if sport == "Soccer" {
+            
+            AppState.sharedInstance.databaseRef = "BSoccer"
+            AppState.sharedInstance.fullTitle = "Boys Soccer"
+            
+            
+            
+            
+            
+        }
         self.performSegue(withIdentifier: "Soccer", sender: nil)
+        
+        
         
     }
     
@@ -885,6 +898,13 @@ class MenuTableViewController: UITableViewController {
         print("tapped girls \(sport)")
 
         self.performSegue(withIdentifier: "Soccer", sender: nil)
+        
+        if sport == "Soccer" {
+            
+            AppState.sharedInstance.databaseRef = "GSoccer"
+            AppState.sharedInstance.fullTitle = "Girls Soccer"
+            
+        }
 
 
         
