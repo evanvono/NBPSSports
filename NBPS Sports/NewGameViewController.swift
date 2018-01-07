@@ -195,9 +195,7 @@ class NewGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
                     "possession": "None"
                     
                     ] as [String : Any]
-            }
-            
-            if sportsTitles[title]! == "Volleyball" {
+            } else if sportsTitles[title]! == "Volleyball" {
                 
                 newGameData = [
                     "game": timeStamp,
@@ -211,6 +209,59 @@ class NewGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
                     "possession": "None"
                     
                     ] as [String : Any]
+            } else if sportsTitles[title]! == "BSoccer" {
+                
+                newGameData = [
+                    "game": timeStamp,
+                    "homeTeam": homeTeam! as NSString,
+                    "homeScore": homeScore! as Int,
+                    "awayTeam": awayTeam! as NSString,
+                    "awayScore": awayScore! as Int,
+                    "date": date,
+                    "editing": false,
+                    "time": "Upcoming"
+                    
+                    ] as [String : Any]
+            }  else if sportsTitles[title]! == "GSoccer" {
+                
+                newGameData = [
+                    "game": timeStamp,
+                    "homeTeam": homeTeam! as NSString,
+                    "homeScore": homeScore! as Int,
+                    "awayTeam": awayTeam! as NSString,
+                    "awayScore": awayScore! as Int,
+                    "date": date,
+                    "editing": false,
+                    "time": "Upcoming"
+                    
+                    ] as [String : Any]
+            } else if sportsTitles[title]! == "BBasketball" {
+                
+                newGameData = [
+                    "game": timeStamp,
+                    "homeTeam": homeTeam! as NSString,
+                    "homeScore": homeScore! as Int,
+                    "awayTeam": awayTeam! as NSString,
+                    "awayScore": awayScore! as Int,
+                    "date": date,
+                    "editing": false,
+                    "time": "Upcoming"
+                    
+                    ] as [String : Any]
+            } else if sportsTitles[title]! == "GBasketball" {
+                
+                newGameData = [
+                    "game": timeStamp,
+                    "homeTeam": homeTeam! as NSString,
+                    "homeScore": homeScore! as Int,
+                    "awayTeam": awayTeam! as NSString,
+                    "awayScore": awayScore! as Int,
+                    "date": date,
+                    "editing": false,
+                    "time": "Upcoming"
+                    
+                    ] as [String : Any]
+            
             }
             
             

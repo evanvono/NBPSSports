@@ -888,6 +888,11 @@ class MenuTableViewController: UITableViewController {
         
         
         dismissDetailView()
+        self.tableView.beginUpdates()
+        selectedIndex = 100
+        
+        self.tableView.endUpdates()
+        
         self.performSegue(withIdentifier: "Soccer", sender: nil)
         
         
@@ -918,6 +923,10 @@ class MenuTableViewController: UITableViewController {
             
         }
         dismissDetailView()
+        self.tableView.beginUpdates()
+        selectedIndex = 100
+        
+        self.tableView.endUpdates()
         self.performSegue(withIdentifier: "Soccer", sender: nil)
         
         

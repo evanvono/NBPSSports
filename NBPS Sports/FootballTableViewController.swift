@@ -1619,7 +1619,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
         } else if AppState.sharedInstance.signedIn {
             
-            self.performSegue(withIdentifier: "FBShowGameCreator", sender: self)
+            self.performSegue(withIdentifier: "ShowGameCreator", sender: self)
             
             
             

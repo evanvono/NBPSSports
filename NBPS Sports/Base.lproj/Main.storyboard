@@ -1252,7 +1252,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                         <outlet property="spectatorView" destination="w6Q-1X-3SH" id="Mhl-8t-nbV"/>
                         <outlet property="spinner" destination="dhN-Ml-xG8" id="IQI-WG-nsB"/>
                         <outlet property="timePicker" destination="zIe-TA-YaX" id="kDS-bg-ibN"/>
-                        <segue destination="hg0-33-3AS" kind="show" identifier="FBShowGameCreator" id="p0l-bo-pO9"/>
+                        <segue destination="hg0-33-3AS" kind="show" identifier="ShowGameCreator" id="p0l-bo-pO9"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qnt-8R-HVN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1617,7 +1617,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gas-p3-HcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4674" y="-688"/>
+            <point key="canvasLocation" x="5338" y="29"/>
         </scene>
         <!--New Game View Controller-->
         <scene sceneID="vVB-67-cXe">
@@ -1685,17 +1685,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajg-N1-dGK">
                                                 <rect key="frame" x="0.0" y="0.0" width="172" height="79"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Team" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="joo-Vu-IhH">
-                                                        <rect key="frame" x="33" y="0.0" width="106" height="20"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="20.5" id="aJw-X3-NTU"/>
-                                                            <constraint firstAttribute="width" constant="106" id="ajD-mx-IdY"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QBk-JM-TnA">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QBk-JM-TnA">
                                                         <rect key="frame" x="8" y="28" width="156" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1704,29 +1694,27 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                             <action selector="didTouchHTeam:" destination="hg0-33-3AS" eventType="touchUpInside" id="OK1-S8-YAX"/>
                                                         </connections>
                                                     </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTP-B9-t7O">
+                                                        <rect key="frame" x="0.0" y="0.0" width="172" height="25"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="2Yw-5i-wfk"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="17"/>
+                                                        <state key="normal" title="Home Team"/>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="joo-Vu-IhH" firstAttribute="centerX" secondItem="ajg-N1-dGK" secondAttribute="centerX" id="3z4-rs-CIY"/>
-                                                    <constraint firstItem="QBk-JM-TnA" firstAttribute="top" secondItem="joo-Vu-IhH" secondAttribute="bottom" constant="8" id="8hm-Fe-jkk"/>
                                                     <constraint firstItem="QBk-JM-TnA" firstAttribute="leading" secondItem="ajg-N1-dGK" secondAttribute="leading" constant="8" id="FFp-8E-WZr"/>
+                                                    <constraint firstItem="WTP-B9-t7O" firstAttribute="top" secondItem="ajg-N1-dGK" secondAttribute="top" id="Gr0-lF-moP"/>
+                                                    <constraint firstItem="WTP-B9-t7O" firstAttribute="leading" secondItem="ajg-N1-dGK" secondAttribute="leading" id="QWA-lG-ClT"/>
+                                                    <constraint firstAttribute="trailing" secondItem="WTP-B9-t7O" secondAttribute="trailing" id="Wd6-Ni-SWw"/>
                                                     <constraint firstAttribute="trailing" secondItem="QBk-JM-TnA" secondAttribute="trailing" constant="8" id="hLM-wY-kZ9"/>
-                                                    <constraint firstItem="joo-Vu-IhH" firstAttribute="top" secondItem="ajg-N1-dGK" secondAttribute="top" id="uHl-46-kTb"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Fn-p5-FPh">
                                                 <rect key="frame" x="172" y="0.0" width="172" height="79"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Away Team" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyg-xV-cuw">
-                                                        <rect key="frame" x="33" y="0.0" width="106" height="20"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="106" id="9pe-el-sGC"/>
-                                                            <constraint firstAttribute="height" constant="20.5" id="xZM-Nl-CUY"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2iq-fy-31J">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2iq-fy-31J">
                                                         <rect key="frame" x="8" y="28" width="156" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1735,13 +1723,21 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                             <action selector="didTouchATeam:" destination="hg0-33-3AS" eventType="touchUpInside" id="vEL-sE-9Ip"/>
                                                         </connections>
                                                     </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gAR-3b-vdq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="172" height="25"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="QRc-NG-YlB"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="17"/>
+                                                        <state key="normal" title="Away Team"/>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="2iq-fy-31J" firstAttribute="top" secondItem="Zyg-xV-cuw" secondAttribute="bottom" constant="8" id="3pT-K5-UXc"/>
+                                                    <constraint firstItem="gAR-3b-vdq" firstAttribute="leading" secondItem="9Fn-p5-FPh" secondAttribute="leading" id="5Ci-n5-q0E"/>
                                                     <constraint firstAttribute="trailing" secondItem="2iq-fy-31J" secondAttribute="trailing" constant="8" id="7gl-uA-tbJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gAR-3b-vdq" secondAttribute="trailing" id="Oge-TS-UXX"/>
                                                     <constraint firstItem="2iq-fy-31J" firstAttribute="leading" secondItem="9Fn-p5-FPh" secondAttribute="leading" constant="8" id="bfg-Ym-7Nj"/>
-                                                    <constraint firstItem="Zyg-xV-cuw" firstAttribute="top" secondItem="9Fn-p5-FPh" secondAttribute="top" id="eq9-47-kID"/>
-                                                    <constraint firstItem="Zyg-xV-cuw" firstAttribute="centerX" secondItem="9Fn-p5-FPh" secondAttribute="centerX" id="tg7-za-wud"/>
+                                                    <constraint firstItem="gAR-3b-vdq" firstAttribute="top" secondItem="9Fn-p5-FPh" secondAttribute="top" id="gYD-l9-kWs"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -1766,7 +1762,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zq7-Mr-00G">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zq7-Mr-00G">
                                                         <rect key="frame" x="55" y="29" width="62" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="62" id="j3a-Il-E3f"/>
@@ -1798,7 +1794,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SSc-KD-JX7">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SSc-KD-JX7">
                                                         <rect key="frame" x="55" y="32" width="62" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="62" id="Esg-RR-eqN"/>
@@ -1848,13 +1844,11 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                     </view>
                     <connections>
                         <outlet property="awayNameField" destination="2iq-fy-31J" id="q7b-Fb-7W4"/>
-                        <outlet property="awayNameLabel" destination="Zyg-xV-cuw" id="0D7-A3-7uz"/>
                         <outlet property="awayScoreField" destination="SSc-KD-JX7" id="3r8-JN-XMr"/>
                         <outlet property="awayScoreLabel" destination="Cvk-If-efp" id="3aC-pO-onn"/>
                         <outlet property="datePicker" destination="ZeT-lc-kJf" id="7Fe-iq-OBj"/>
                         <outlet property="defaultLabel" destination="gPh-Nk-JlG" id="YlI-9O-cyG"/>
                         <outlet property="homeNameField" destination="QBk-JM-TnA" id="5Lv-7s-vX6"/>
-                        <outlet property="homeNameLabel" destination="joo-Vu-IhH" id="doX-En-Dc4"/>
                         <outlet property="homeScoreField" destination="zq7-Mr-00G" id="Viu-hn-RB9"/>
                         <outlet property="homeScoreLabel" destination="Ilm-Kj-2hu" id="fTa-FC-CR4"/>
                         <outlet property="sportPicker" destination="7Sf-m0-mf2" id="S5F-xP-P6x"/>
@@ -1862,7 +1856,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ufj-HC-J0C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3526" y="-332"/>
+            <point key="canvasLocation" x="4672.8000000000002" y="29.23538230884558"/>
         </scene>
         <!--Home-->
         <scene sceneID="4o1-ZP-hFg">
@@ -3940,7 +3934,11 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                     <navigationItem key="navigationItem" title="Soccer" id="Bi7-mW-YaX">
                         <leftBarButtonItems>
                             <barButtonItem image="Menu-Icon" id="7ev-3J-Tl6"/>
-                            <barButtonItem title="Roster" style="done" id="BpO-LF-bCe"/>
+                            <barButtonItem title="Roster" style="done" id="BpO-LF-bCe">
+                                <connections>
+                                    <segue destination="i2d-pn-V6z" kind="presentation" id="2EN-9a-OnQ"/>
+                                </connections>
+                            </barButtonItem>
                         </leftBarButtonItems>
                         <rightBarButtonItems>
                             <barButtonItem image="Twitter-Icon" id="AEi-lO-9kC">
@@ -3986,6 +3984,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                         <outlet property="spectatorView" destination="A4M-ve-t6j" id="MWj-16-8v1"/>
                         <outlet property="spinner" destination="NZy-eu-3fi" id="sSe-kN-K5T"/>
                         <outlet property="timePicker" destination="8yl-Jf-QJ1" id="GqE-Po-87j"/>
+                        <segue destination="hg0-33-3AS" kind="show" identifier="ShowGameCreator" id="Ua3-Sg-6GU"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mn1-hM-e5T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4206,6 +4205,8 @@ For further questions or quieries reguarding elegibility of becoming or responsi
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="V9m-hl-6bs"/>
+        <segue reference="Ua3-Sg-6GU"/>
+        <segue reference="bec-D8-Jej"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.72470990349999997" green="0.66341911590000002" blue="0.38087964019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
