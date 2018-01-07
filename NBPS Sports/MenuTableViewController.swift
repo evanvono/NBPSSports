@@ -785,10 +785,16 @@ class MenuTableViewController: UITableViewController {
     
     
     
-    @IBAction func didTapGolf(_ sender: Any) {
+    @IBAction func didTapGolf(_ sender: UIButton) {
         
+        
+        
+        
+        openGenderOption(sender: sender)
         
         print("tappedGolf")
+        
+        /*
         if Int(golfView.frame.height) == 44 {
             
             //collapseGenders()
@@ -863,7 +869,7 @@ class MenuTableViewController: UITableViewController {
             self.tableView.endUpdates()
             
         }
-
+ */
         
     }
     @IBAction func didTapVolleyball(_ sender: Any) {

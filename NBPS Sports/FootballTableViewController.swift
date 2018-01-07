@@ -41,8 +41,6 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     
     
     
-    
-    
     var homeScoreVal: Int!
     var awayScoreVal: Int!
     var gameDateVal: Date!
@@ -51,12 +49,14 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     
     var blurEffect: UIBlurEffect!
     var blurEffectView: UIVisualEffectView!
+    var tintView:UIView!
     
     var currentGame: String!
     var checkTimer:Timer!
     
     var ref: FIRDatabaseReference!
     fileprivate var _refHandle: FIRDatabaseHandle?
+    var connectedRef: FIRDatabaseReference!
     
 
     var  pastGame = true
@@ -64,6 +64,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var editorOpen:Bool!
+    
+    
     
     var pickerComponents = [Dictionary<String,String>]()
     
@@ -91,13 +93,24 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     
     override func viewDidLoad() {
         
-       
-        
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.isTranslucent = false
 
         
+        self.hideKeyboardWhenTappedAround()
+        
+        
+        
+        tintView = UIView(frame: CGRect(x: 0 , y: 0, width: self.view.bounds.width, height: self.view.bounds.height + 200))
+        self.tintView.backgroundColor = UIColor.darkGray
+        self.tintView.isUserInteractionEnabled = false
+        self.tintView.alpha = 0.0
+
+        editorOpen = false
+
+        
+        self.navigationController?.view.addSubview(tintView)
         
         
         if AppState.sharedInstance.signedIn {
@@ -107,7 +120,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         } else {
             
             self.tableView.allowsSelection = false
-            
+
         }
         
         self.automaticallyAdjustsScrollViewInsets = false
@@ -132,6 +145,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         
         editorView.layer.cornerRadius = 10
+        editorView.layer.masksToBounds = true
+
         
         
         editorOpen = false
@@ -152,6 +167,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
             
         }
+        
+        
         /*
         let when = DispatchTime.now() + 5 // change 2 to desired number of seconds
         DispatchQueue.main.asyncAfter(deadline: when) {
@@ -181,7 +198,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         NotificationCenter.default.addObserver(self, selector: #selector(FootballTableViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    deinit {
+  /*  deinit {
         
         
         
@@ -201,23 +218,13 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         self.ref.child("Sports").removeAllObservers()
         self.ref.child("Sports").child("Football").removeAllObservers()
     }
-    
+    */
     override func viewDidDisappear(_ animated: Bool) {
-        if let refHandle = _refHandle {
-            
-            
-            self.ref.child("Sports").removeObserver(withHandle: refHandle)
-            
-            FIRDatabase.database().reference(withPath: ".info/connected").removeAllObservers()
-            
-            
-        }
         
+        ref.removeAllObservers()
         checkTimer.invalidate()
         
         
-        self.ref.child("Sports").removeAllObservers()
-        self.ref.child("Sports").child("Football").removeAllObservers()
     }
     
     
@@ -225,7 +232,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         
         
-        let connectedRef = FIRDatabase.database().reference(withPath: ".info/connected")
+        connectedRef = FIRDatabase.database().reference(withPath: ".info/connected")
         _refHandle = connectedRef.observe(.value, with: { snapshot in
             
             
@@ -358,7 +365,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     
     func animateIn(){
         
-        
+        editorOpen = true
         self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableViewScrollPosition.top, animated: false)
         //self.navigationController?.navigationBar.isHidden = true
         
@@ -372,7 +379,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         editorView.frame = CGRect(x: self.view.bounds.width/2 , y: self.view.bounds.height/2-40, width: self.view.bounds.width-30, height: 380)
         
-        self.view.addSubview(editorView)
+        self.navigationController?.view.addSubview(editorView)
         editorView.center = CGPoint(x: self.view.center.x, y: self.view.center.y - 40)
             
             //self.view.center
@@ -429,7 +436,6 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         
         let boolState = (currGame["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "editing").value as! Bool
-        //bookmark
         
         isEditingSwitch.setOn(boolState, animated: true)
         
@@ -440,6 +446,12 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         editorView.alpha = 0
         
+        self.tintView.frame = CGRect(x: 0 , y: 0, width: self.view.bounds.width, height: self.view.bounds.height + 200)
+        
+        
+        self.tintView.isUserInteractionEnabled = true
+        
+        /*
         self.blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
         
         self.blurEffectView = UIVisualEffectView(effect: self.blurEffect)
@@ -449,17 +461,19 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         self.blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.view.insertSubview(self.blurEffectView, at: self.view.subviews.count - 2)
        // self.blurEffectView.alpha = 0.0
-        
+        */
         
         self.tableView.isScrollEnabled = false
 
-        self.blurEffectView.isUserInteractionEnabled = true
+        //self.blurEffectView.isUserInteractionEnabled = true
         UIView.animate(withDuration: 0.4) {
             
             
             
             
             self.editorView.alpha = 1
+            
+            self.tintView.alpha = 0.5
             
             self.editorView.transform = CGAffineTransform.identity
             
@@ -472,10 +486,14 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
     }
     func animateOut(){
         
+        editorOpen = false
+        
         self.tableView.scrollToRow(at: IndexPath(row: selectedPath[1], section: selectedPath[0]), at: UITableViewScrollPosition.top, animated: false)
 
         
-        self.blurEffectView.isUserInteractionEnabled = false
+                self.tintView.isUserInteractionEnabled = false
+        
+        //self.blurEffectView.isUserInteractionEnabled = false
         
         //self.navigationController?.navigationBar.isHidden = false
         UIView.animate(withDuration: 0.2, animations: {
@@ -484,16 +502,18 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             
             self.editorView.alpha = 0
             
-            self.blurEffectView.effect = nil
+         //   self.blurEffectView.effect = nil
             
-            
+            self.tintView.alpha = 0.0
+
             
             self.tableView.isScrollEnabled = true
             
         }) { (success:Bool) in
             
+            
             self.editorView.removeFromSuperview()
-            self.blurEffectView.removeFromSuperview()
+          //  self.blurEffectView.removeFromSuperview()
 
             self.editorView.transform = CGAffineTransform.init(scaleX: 1, y:1)
         
@@ -501,6 +521,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
        // navigationController?.hidesBarsOnSwipe = true
         
         //self.navigationController?.navigationBar.isTranslucent = false
+        
+        self.tableView.reloadData()
 
     }
     @IBAction func didChangeSwitch(_ sender: Any) {
@@ -845,6 +867,15 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                     
                     if (self.games[i][j]["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "game").value as! Int == snapshot.childSnapshot(forPath: "game").value as! Int {
                         
+                        self.games[i][j]["Snapshot"] = snapshot
+                        
+                        if self.editorOpen == false {
+                            
+                            self.tableView.reloadData()
+                            
+                            
+                        }
+                        /*
                         section = i
                         row = j
                         
@@ -852,7 +883,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                         self.games[section][row]["snapshot"] = snapshot
                         
                         
-                        let cell = self.tableView.cellForRow(at: IndexPath(row: row, section: section))
+                        let cell = (self.navigationController?.viewControllers[0] as! UITableViewController).tableView.cellForRow(at: IndexPath(row: Int(row), section: Int(section)))
                         
                         let homeTeam = snapshot.childSnapshot(forPath: "homeTeam").value as! String
                         
@@ -895,7 +926,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                         
                         cell?.reloadInputViews()
 
-                        
+                        */
                         
                         break
                     }
@@ -905,7 +936,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                 
                 
             }
-        
+            
         
             
         })
@@ -1023,7 +1054,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             var state = "Default"
             //Past
             
-            
+            /*
             
             if date.year < today.year {
                 //past
@@ -1061,6 +1092,27 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
             } else if date.year > today.year {
                 //future
                 state = "Future"
+                
+            }*/
+            
+            if Int(date.timeIntervalSinceNow) > 0 {
+                
+                state = "Future"
+                
+            } else if Int(date.timeIntervalSinceNow) == 0{
+                
+                
+                state = "Today"
+            } else if Int(date.timeIntervalSinceNow) < 0 {
+                
+                if date.year == today.year && date.month == today.month && date.year == today.year {
+                    
+                    state = "Today"
+                    
+                } else {
+                    
+                    state = "Past"
+                }
                 
             }
         
@@ -1146,6 +1198,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                 
             } else if state == "Today" {
                 
+                
+                
                 print("\n\n\(homeTeam) vs \(awayTeam)\n\(date)\nToday\n\n")
 
                 
@@ -1163,8 +1217,13 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                 print("\n\n\nToday")
                 print("\n\n happens at \(date.hour):\(date.minute) and today is \(todayHour):\(todayMinute)\n\n\n")
                 
+                (cell.contentView.viewWithTag(5) as! UIImageView).image = UIImage(named: "")
+                (cell.contentView.viewWithTag(6) as! UIImageView).image = UIImage(named: "")
                 
                 if date.hour < todayHour || (date.hour == todayHour && date.minute <= todayMinute) {
+                    
+                    (cell.contentView.viewWithTag(2) as! UILabel).alpha = 1.0
+                    (cell.contentView.viewWithTag(1) as! UILabel).alpha = 1.0
                     
                     print("game has started")
                     
@@ -1174,7 +1233,7 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                     
                     (cell.contentView.viewWithTag(7) as! UILabel).text = gameTime
                     
-                    if gameTime == "Final" {
+                    if (cell.contentView.viewWithTag(7) as! UILabel).text == "Final" || (cell.contentView.viewWithTag(7) as! UILabel).text == "final" {
                         
                         (cell.contentView.viewWithTag(21) as! UIImageView).image = UIImage(named: "")
                         
@@ -1247,12 +1306,14 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                     
                 } else {
                     
+                    (cell.contentView.viewWithTag(2) as! UILabel).alpha = 1.0
+                    (cell.contentView.viewWithTag(1) as! UILabel).alpha = 1.0
+                    
                     (cell.contentView.viewWithTag(7) as! UILabel).alpha = 0.0
                     (cell.contentView.viewWithTag(15) as! UILabel).alpha = 1.0
                     (cell.contentView.viewWithTag(16) as! UILabel).alpha = 1.0
                     
-                    (cell.contentView.viewWithTag(2) as! UILabel).text = ""
-                    (cell.contentView.viewWithTag(1) as! UILabel).text = ""
+                    
                     
                     (cell.contentView.viewWithTag(15) as! UILabel).text = "\(hour):"+String(format: "%02d", date.minute)+" \(post)"
                     
@@ -1271,8 +1332,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                 
                 (cell.contentView.viewWithTag(7) as! UILabel).alpha = 0.0
                 
-                (cell.contentView.viewWithTag(2) as! UILabel).text = ""
-                (cell.contentView.viewWithTag(1) as! UILabel).text = ""
+                (cell.contentView.viewWithTag(2) as! UILabel).alpha = 0.0
+                (cell.contentView.viewWithTag(1) as! UILabel).alpha = 0.0
                 
                 
                 (cell.contentView.viewWithTag(15) as! UILabel).alpha = 1.0
@@ -1690,9 +1751,9 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                     self.tableView.reloadData()
                     
                     
-                    self.blurEffectView.removeFromSuperview()
+                    //self.blurEffectView.removeFromSuperview()
                     
-                    self.view.insertSubview(self.blurEffectView, at: self.view.subviews.count-2)
+                    //self.view.insertSubview(self.blurEffectView, at: self.view.subviews.count-2)
                     print("completed supposed tableView update")
                     
                     self.editorProgress.stopAnimating()

@@ -24,6 +24,7 @@
 		20472BBF1E69C8E30065205A /* Unknown.png in Resources */ = {isa = PBXBuildFile; fileRef = 20472BBC1E69C8E30065205A /* Unknown.png */; };
 		20472BC01E69C8E30065205A /* Football-Lineup.png in Resources */ = {isa = PBXBuildFile; fileRef = 20472BBD1E69C8E30065205A /* Football-Lineup.png */; };
 		20472BC11E69C8E30065205A /* Football.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 20472BBE1E69C8E30065205A /* Football.jpg */; };
+		2048F61E20025ADF0090BE89 /* BSoccerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2048F61D20025ADF0090BE89 /* BSoccerViewController.swift */; };
 		204ADA681ECA7677002C4076 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204ADA671ECA7677002C4076 /* Constants.swift */; };
 		204ADA6A1ECA78AA002C4076 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204ADA691ECA78AA002C4076 /* AppState.swift */; };
 		20597E991F4F7D6200F432FA /* VolleyballTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20597E981F4F7D6200F432FA /* VolleyballTableViewController.swift */; };
@@ -92,6 +93,7 @@
 		20472BBC1E69C8E30065205A /* Unknown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Unknown.png; sourceTree = "<group>"; };
 		20472BBD1E69C8E30065205A /* Football-Lineup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Football-Lineup.png"; sourceTree = "<group>"; };
 		20472BBE1E69C8E30065205A /* Football.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Football.jpg; sourceTree = "<group>"; };
+		2048F61D20025ADF0090BE89 /* BSoccerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSoccerViewController.swift; sourceTree = "<group>"; };
 		204ADA671ECA7677002C4076 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		204ADA691ECA78AA002C4076 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		20597E981F4F7D6200F432FA /* VolleyballTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolleyballTableViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 				207C24C41F6F737C00787D39 /* InitialLoadController.swift */,
 				20EF9E451E645DE700F45DBB /* ViewController.swift */,
 				20DBD3CF1E6C85F800D4D690 /* FootballTableViewController.swift */,
+				2048F61D20025ADF0090BE89 /* BSoccerViewController.swift */,
 				206AC6011F391C3F00303CB1 /* BBasketballTableViewController.swift */,
 				20597E981F4F7D6200F432FA /* VolleyballTableViewController.swift */,
 				2074DF921EE8647000D91041 /* NewGameViewController.swift */,
@@ -530,6 +533,7 @@
 				20A2B18B1F3815BC008D93D1 /* Section.swift in Sources */,
 				206AC6021F391C3F00303CB1 /* BBasketballTableViewController.swift in Sources */,
 				20848E9D1EE70F4B0050432D /* TransitionViewController.swift in Sources */,
+				2048F61E20025ADF0090BE89 /* BSoccerViewController.swift in Sources */,
 				20F4EE291F0986A0004CBF45 /* StackViewCell.swift in Sources */,
 				2074DF931EE8647000D91041 /* NewGameViewController.swift in Sources */,
 				20DBD3D01E6C85F800D4D690 /* FootballTableViewController.swift in Sources */,

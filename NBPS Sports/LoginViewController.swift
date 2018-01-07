@@ -42,16 +42,17 @@ class LoginViewController: UIViewController {
         self.hideKeyboardWhenTappedAround()
 
         // Do any additional setup after loading the view.
-        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+      //  NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(LoginViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
     }
-    
+    /*
     func keyboardWillShow(notification: NSNotification) {
         
         if keyboardShowing == false {
             
             if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+                
                 if self.view.frame.origin.y == 0{
                     self.view.frame.origin.y -= keyboardSize.height
                 }
@@ -73,7 +74,7 @@ class LoginViewController: UIViewController {
             keyboardShowing = false
             
         }
-    }
+    }*/
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -274,8 +274,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         let par = (i.components(separatedBy: "</p></div>")[0])
                         
                         
-                        let str = par.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+                        let str1 = par.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+                        let str = str1.replacingOccurrences(of: "&amp;", with: "&", options: .regularExpression, range: nil)
+                        
                         self.descriptions.append(str)
+                        
                         
                     }
         
@@ -324,12 +327,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         
                         
                         let str = i.components(separatedBy: "\"></tp")[0].replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+                        
                         self.titles.append(str)
+                        
+                        
                         
                     }
                 }
                 
-                
+                /*
+ 
+ 
+                 let str1 = i.components(separatedBy: "\"></tp")[0].replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+                 //let str = str1.replacingOccurrences(of: "&amp", with: "&")
+ 
+ 
+                */
                 while self.titles.count % 5 != 0 {
                     
                     self.titles.append(" ")
@@ -454,7 +467,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         //blurView.
         self.blurEffectView.isUserInteractionEnabled = true
         
-        detailContainer.frame = CGRect(x: self.view.bounds.width/2 , y: self.view.bounds.height/2+60, width: self.view.bounds.width-30, height: 300.0)
+        detailContainer.frame = CGRect(x: self.view.bounds.width/2 , y: self.view.bounds.height/2+60, width: self.view.bounds.width-30, height: 400.0)
         
         self.view.addSubview(detailContainer)
         detailContainer.center = self.view.center

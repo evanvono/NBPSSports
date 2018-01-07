@@ -59,8 +59,8 @@ class VolleyballTableViewController: UITableViewController, UITextFieldDelegate,
     
     
     
-    var homeScoreVal = [Int]()
-    var awayScoreVal = [Int]()
+    var homeScoreVal = Int()
+    var awayScoreVal = Int()
     var gameDateVal: Date!
     
     var selectedPath = [Int]()
@@ -148,6 +148,7 @@ class VolleyballTableViewController: UITableViewController, UITextFieldDelegate,
         
         
         editorView.layer.cornerRadius = 10
+        editorView.layer.masksToBounds = true
         
         
         editorOpen = false
@@ -428,29 +429,7 @@ class VolleyballTableViewController: UITableViewController, UITextFieldDelegate,
         let time = (currGame["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "time").value as! String
         
         let possession = (currGame["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "possession").value as! String
-        
-        if possession == "Home" {
-            
-            homeVolleyball.tintColor = UIColor.green
-            
-            awayVolleyball.tintColor = UIColor.black
-            
-            
-            
-        } else if possession == "Away" {
-            
-            awayVolleyball.tintColor = UIColor.green
-            
-            homeVolleyball.tintColor = UIColor.black
-            
-        } else {
-            
-            
-            homeVolleyball.tintColor = UIColor.black
-            
-            awayVolleyball.tintColor = UIColor.black
-            
-        }
+       
         
         
         for i in 0..<timePickerComponents.count {
@@ -469,7 +448,9 @@ class VolleyballTableViewController: UITableViewController, UITextFieldDelegate,
         
         
         let boolState = (currGame["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "editing").value as! Bool
-        //bookmark
+        
+        
+        
         
         isEditingSwitch.setOn(boolState, animated: true)
         
@@ -1104,18 +1085,20 @@ class VolleyballTableViewController: UITableViewController, UITextFieldDelegate,
             
             
             
-            for i in 5..<17 {
+            for i in 5..<15 {
                 
                 let label = (cell.contentView.viewWithTag(i) as! UILabel)
                 
+                
                 if i%2 == 1 {
                     
-                    
-                    label.text = String(homeScore[((i-5)/2)])
+                    let index = Int(((i-3)/2)-1)
+                    label.text = "\(homeScore[index])"
                     
                 } else {
-                    
-                    label.text = String(awayScore[((i-6)/2)])
+                    let index = Int(((i-3)/2)-1)
+
+                    label.text = "\(awayScore[index])"
                     
                 }
                 
@@ -1123,6 +1106,26 @@ class VolleyballTableViewController: UITableViewController, UITextFieldDelegate,
                 label.layer.borderColor = UIColor.black.cgColor
             }
             
+            for i in 0...4 {
+                
+                if homeScore[i] != awayScore[i]{
+                    
+                    
+                    if homeScore[i] > awayScore[i] {
+                        
+                        homeScoreVal += 1
+                        
+                    } else {
+                        
+                        awayScoreVal += 1
+                        
+                    }
+                    
+                }
+            
+                
+            
+            }
             
             if state == "Past"{
                 
@@ -1133,19 +1136,21 @@ class VolleyballTableViewController: UITableViewController, UITextFieldDelegate,
                 
                 print("\n\n\(homeTeam) vs \(awayTeam)\n\(date)\nPast\n\n")
                 
-                (cell.contentView.viewWithTag(7) as! UILabel).text = "Final"
-                (cell.contentView.viewWithTag(7) as! UILabel).alpha = 1.0
+                (cell.contentView.viewWithTag(21) as! UILabel).text = "Final"
+                (cell.contentView.viewWithTag(21) as! UILabel).alpha = 1.0
                 
-                (cell.contentView.viewWithTag(15) as! UILabel).alpha = 0.0
+                (cell.contentView.viewWithTag(19) as! UILabel).alpha = 0.0
                 
-                (cell.contentView.viewWithTag(16) as! UILabel).alpha = 0.0
+                (cell.contentView.viewWithTag(20) as! UILabel).alpha = 0.0
                 
-                (cell.contentView.viewWithTag(21) as! UIImageView).image = UIImage(named: "")
+                (cell.contentView.viewWithTag(23) as! UIImageView).image = UIImage(named: "")
                 
-                (cell.contentView.viewWithTag(22) as! UIImageView).image = UIImage(named: "")
+                (cell.contentView.viewWithTag(24) as! UIImageView).image = UIImage(named: "")
                 
                 
+                //bookmark
                 
+                /*
                 
                 if (homeScore[homeScore.count] > awayScore[awayScore.count]){
                     
@@ -1176,7 +1181,7 @@ class VolleyballTableViewController: UITableViewController, UITextFieldDelegate,
                     
                 }
                 
-                
+                */
                 
             } else if state == "Today" {
                 
@@ -1548,10 +1553,11 @@ class VolleyballTableViewController: UITableViewController, UITextFieldDelegate,
             
             currentGame = game
             
+            /*
             homeScoreVal = snapshot?.childSnapshot(forPath: "homeScore").value as! [Int]
             
             awayScoreVal = snapshot?.childSnapshot(forPath: "awayScore").value as! [Int]
-            
+            */
             
             let homeTeamStr = snapshot?.childSnapshot(forPath: "homeTeam").value as! String
             
