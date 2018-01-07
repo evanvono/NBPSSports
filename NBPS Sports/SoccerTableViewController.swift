@@ -18,31 +18,32 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
     
     
     //Editor View
+    
+    
     @IBOutlet weak var editField: UITextField!
     @IBOutlet weak var editorLabel: UILabel!
     @IBOutlet var editorView: UIView!
     @IBOutlet weak var picker: UIPickerView!
-    @IBOutlet weak var homeLabel: UILabel!
-    @IBOutlet weak var awayLabel: UILabel!
     @IBOutlet weak var homeScoreLabel: UILabel!
     @IBOutlet weak var awayScoreLabel: UILabel!
     @IBOutlet weak var homeScoreStepper: UIStepper!
     @IBOutlet weak var awayScoreStepper: UIStepper!
+  //  @IBOutlet weak var homeLabel: UILabel!
+    //@IBOutlet weak var awayLabel: UILabel!
     @IBOutlet weak var gameDatePicker: UIDatePicker!
-    @IBOutlet weak var isEditingSwitch: UISwitch!
     @IBOutlet weak var editorNavigationBar: UINavigationBar!
     @IBOutlet weak var editorProgress: UIActivityIndicatorView!
     @IBOutlet weak var timePicker: UIPickerView!
+    @IBOutlet var spectatorView: UIView!
     
     
     
-    //Spectator View
-    @IBOutlet weak var spectatorView: UIView!
     
     //*********************IMPORTANT***********************
     
-    var databaseRef:String = "SpTitle"
-    var fullTitle: String = "Sport Title"
+    var databaseRef:String = AppState.sharedInstance.databaseRef
+    var fullTitle: String = AppState.sharedInstance.fullTitle
+    
     
     //*****************************************************
     
@@ -100,6 +101,9 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
         
         super.viewDidLoad()
         
+        self.title = fullTitle
+        
+        
         self.navigationController?.navigationBar.isTranslucent = false
         
         
@@ -141,6 +145,13 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
             let imageView = UIImageView(image: #imageLiteral(resourceName: "Girls-Soccer-Blurred"))
             imageView.contentMode = UIViewContentMode.scaleAspectFill
             tableView.backgroundView = imageView
+        } else if databaseRef == "BBasketball" || databaseRef == "GBasketball" {
+            
+            let imageView = UIImageView(image: #imageLiteral(resourceName: "Gym-Blurred"))
+            imageView.contentMode = UIViewContentMode.scaleAspectFill
+            tableView.backgroundView = imageView
+
+            
         }
         
         
@@ -208,6 +219,8 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
         getNewData()
         
         getChangedData()
+        
+        self.tableView.reloadData()
         
         NotificationCenter.default.addObserver(self, selector: #selector(FootballTableViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(FootballTableViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -309,7 +322,13 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
         pickerComponents.append(["Title":"Home Team", "Value":"homeTeam"])
         pickerComponents.append(["Title":"Away Team", "Value":"awayTeam"])
         
-        let times = ["Upcoming","Pregame","Delayed","Q1","Q2","Half","Q3","Q4","OT","Final","Canceled"]
+        var times = ["Upcoming","Pregame","Delayed","Q1","Q2","Half","Q3","Q4","OT","Final","Canceled"]
+        
+        if AppState.sharedInstance.databaseRef == "BSoccer" || AppState.sharedInstance.databaseRef == "GSoccer" {
+            
+            times = ["Upcoming", "Pregame", "Delayed", "H1", "Half", "H2", "OT", "PK", "Final", "Canceled"]
+        }
+        
         
         for i in times {
             
@@ -409,7 +428,7 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
         gameDatePicker.date = currGame["Date"] as! Date!
         let time = (currGame["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "time").value as! String
         
-        let possession = (currGame["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "possession").value as! String
+        /*let possession = (currGame["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "possession").value as! String
         
         if possession == "Home" {
             
@@ -433,7 +452,7 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
           //  awayBall.tintColor = UIColor.black
             
         }
-        
+        */
         
         for i in 0..<timePickerComponents.count {
             
@@ -450,9 +469,7 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
         }
         
         
-        let boolState = (currGame["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "editing").value as! Bool
         
-        isEditingSwitch.setOn(boolState, animated: true)
         
         
         
@@ -549,17 +566,12 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
         let gameDirec = ref.child("Sports").child(databaseRef).child(currentGame)
         
         
-        gameDirec.child("editing").setValue(isEditingSwitch.isOn)
         
-        pastSnapshot.setValue(isEditingSwitch.isOn, forKey: "editing")
+        
         //bookmark
         
         
-        if isEditingSwitch.isOn {
-            
-            
-            
-        }
+        
     }
     
     
@@ -1042,7 +1054,7 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
             let gameTime = (snapshot.childSnapshot(forPath: "time").value as! String)
             
             
-            let ballState = (snapshot.childSnapshot(forPath: "possession").value as! String)
+           // let ballState = (snapshot.childSnapshot(forPath: "possession").value as! String)
             
             let game = String(snapshot.childSnapshot(forPath: "game").value as! Int)
             
@@ -1156,7 +1168,7 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
                 (cell.contentView.viewWithTag(2) as! UILabel).alpha = 1.0
                 
                 ref = FIRDatabase.database().reference()
-                ref.child("Sports").child(databaseRef).child(game).child("possession").setValue("None")
+                //ref.child("Sports").child(databaseRef).child(game).child("possession").setValue("None")
                 
                 ref.child("Sports").child(databaseRef).child(game).child("time").setValue("Final")
                 
@@ -1292,7 +1304,7 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
                         
                     } else {
                         
-                        if ballState == "Home" {
+                        /*if ballState == "Home" {
                             
                             //(cell.contentView.viewWithTag(22) as! UIImageView).image = #imageLiteral(resourceName: "small-Football")
                             
@@ -1310,7 +1322,7 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
                             
                             (cell.contentView.viewWithTag(22) as! UIImageView).image  = UIImage(named: "")
                             
-                        }
+                        }*/
                         
                         
                         
@@ -1338,7 +1350,7 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
                 
             } else if state == "Future" {
                 
-                ref.child("Sports").child(databaseRef).child(game).child("possession").setValue("None")
+               // ref.child("Sports").child(databaseRef).child(game).child("possession").setValue("None")
                 
                 ref.child("Sports").child(databaseRef).child(game).child("time").setValue("Upcoming")
                 
@@ -1604,11 +1616,11 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
             
             let homeTeamStr = snapshot?.childSnapshot(forPath: "homeTeam").value as! String
             
-            homeLabel.text = "Home"
+         //   homeLabel.text = "Home"
             
             let awayTeamStr = snapshot?.childSnapshot(forPath: "awayTeam").value as! String
             
-            awayLabel.text = "Away"
+           // awayLabel.text = "Away"
             
             let homeVal = snapshot?.childSnapshot(forPath: "homeScore").value as! Int
             
@@ -1654,9 +1666,7 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
         let currGame = games[selectedPath[0]][selectedPath[1]]
         gameDatePicker.date = currGame["Date"] as! Date!
         
-        let boolState = (currGame["Snapshot"] as! FIRDataSnapshot).childSnapshot(forPath: "editing").value as! Bool
         
-        isEditingSwitch.setOn(boolState, animated: true)
         
         
     }
@@ -1711,11 +1721,10 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
         
         var homeTeam = pastSnapshot.childSnapshot(forPath: "homeTeam").value as! String
         var awayTeam = pastSnapshot.childSnapshot(forPath: "awayTeam").value as! String
-        var possession = pastSnapshot.childSnapshot(forPath: "possession").value as! String
+       // var possession = pastSnapshot.childSnapshot(forPath: "possession").value as! String
         
         let game = pastSnapshot.childSnapshot(forPath: "game").value as! Int
         
-        let isEditing = isEditingSwitch.isOn
         
         
         if editField.text != "" {
@@ -1744,7 +1753,7 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
             "date": dateInt as Int,
             "editing": isEditing as Bool,
             "time": time as String,
-            "possession": possession as String
+            //"possession": possession as String
             
             
             ] as [String : Any]

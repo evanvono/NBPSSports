@@ -621,29 +621,28 @@ class MenuTableViewController: UITableViewController {
         
         
     }
-    
-    @IBAction func didTapCancel(_ sender: UIButton) {
-        
-        
+    func dismissDetailView(){
         
         UIView.animate(withDuration: 0.2, animations: {
             
             self.detailView.transform = CGAffineTransform.init(scaleX: 0.6, y:0.6)
             
             self.blurContainer.layer.opacity = 0.0
-        
+            
         }) { (completion) in
             
-       
+            
             self.detailView.removeFromSuperview()
             self.detailView.transform = CGAffineTransform.identity
-
             
             
         }
         blurContainer.isUserInteractionEnabled = false
         
+    }
+    @IBAction func didTapCancel(_ sender: UIButton) {
         
+        dismissDetailView()
         
     }
     
@@ -869,7 +868,7 @@ class MenuTableViewController: UITableViewController {
     
     @IBAction func didTapBoys(_ sender: UIButton) {
         
-        let sport = (sender.superview?.viewWithTag(1) as! UILabel).text?.components(separatedBy: "arsity ")[1]
+        let sport = (sender.superview?.viewWithTag(1) as! UILabel).text?.components(separatedBy: "arsity ")[1] as! String
         
         print("tapped boys \(sport)")
         
@@ -879,12 +878,18 @@ class MenuTableViewController: UITableViewController {
             AppState.sharedInstance.databaseRef = "BSoccer"
             AppState.sharedInstance.fullTitle = "Boys Soccer"
             
+        } else if sport == "Basketball" {
             
-            
+            AppState.sharedInstance.databaseRef = "BBasketball"
+            AppState.sharedInstance.fullTitle = "Boys Basketball"
             
             
         }
+        
+        
+        dismissDetailView()
         self.performSegue(withIdentifier: "Soccer", sender: nil)
+        
         
         
         
@@ -892,21 +897,29 @@ class MenuTableViewController: UITableViewController {
     
     @IBAction func didTapGirls(_ sender: UIButton) {
        
-        let sport = (sender.superview?.viewWithTag(1) as! UILabel).text?.components(separatedBy: "arsity ")[1]
+        let sport = (sender.superview?.viewWithTag(1) as! UILabel).text?.components(separatedBy: "arsity ")[1] as! String
         
         
         print("tapped girls \(sport)")
 
         self.performSegue(withIdentifier: "Soccer", sender: nil)
         
+        
         if sport == "Soccer" {
             
             AppState.sharedInstance.databaseRef = "GSoccer"
             AppState.sharedInstance.fullTitle = "Girls Soccer"
             
+        } else if sport == "Basketball" {
+            
+            AppState.sharedInstance.databaseRef = "GBasketball"
+            AppState.sharedInstance.fullTitle = "Girls Basketball"
+            
+            
         }
-
-
+        dismissDetailView()
+        self.performSegue(withIdentifier: "Soccer", sender: nil)
+        
         
     }
     

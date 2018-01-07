@@ -22,6 +22,8 @@ class RosterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         rosterHolder.layer.cornerRadius = 10
         rosterHolder.layer.masksToBounds = true
         //www.nbpsathletics.org/teams/787681-Varsity-Football-football-team-website/rosters/876550
