@@ -574,6 +574,11 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
         
     }
     
+    public func getSport() -> String {
+        
+        return databaseRef
+        
+    }
     
     func getNewData(){
         
@@ -1574,6 +1579,8 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
                 } else {
                     
                     let alert = UIAlertController(title: "No Twitter Accounts Available", message: "You must log in using the Twitter app to use this functionality.", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
                     self.present(alert, animated: false, completion: nil)
                     
                 }

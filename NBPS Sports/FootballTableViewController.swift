@@ -97,6 +97,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         
         self.navigationController?.navigationBar.isTranslucent = false
 
+        AppState.sharedInstance.displayName = "Football"
+        AppState.sharedInstance.databaseRef = "Football"
         
         self.hideKeyboardWhenTappedAround()
         
@@ -197,6 +199,14 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         NotificationCenter.default.addObserver(self, selector: #selector(FootballTableViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(FootballTableViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    public func getSport() -> String {
+        
+        return "Football"
+        
+        
+        
     }
   /*  deinit {
         
@@ -1547,6 +1557,8 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
                 } else {
                     
                     let alert = UIAlertController(title: "No Twitter Accounts Available", message: "You must log in using the Twitter app to use this functionality.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
+
                     self.present(alert, animated: false, completion: nil)
                     
                 }

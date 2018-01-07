@@ -29,13 +29,45 @@ class RosterViewController: UIViewController, UITableViewDelegate, UITableViewDa
         //www.nbpsathletics.org/teams/787681-Varsity-Football-football-team-website/rosters/876550
 
         // Do any additional setup after loading the view.
-        
-        getRSS(urlStr: "http://www.nbpsathletics.org/teams/787681-Varsity-Football-football-team-website/rosters/876550")
            
         
-        
+        getRoster()
         
     }
+    
+    func getRoster(){
+        
+        
+        var url = ""
+        
+        let sport = AppState.sharedInstance.databaseRef
+        
+        if sport == "Football"{
+            
+            url = "http://www.nbpsathletics.org/teams/787681-Varsity-Football-football-team-website/rosters/876550"
+            
+        } else if sport == "BSoccer" {
+            
+            url = "http://www.nbpsathletics.org/teams/787790-Soccer-Boys-Varsity-soccer-team-website/rosters/884662"
+            
+        } else if sport == "GSoccer" {
+            
+            url = "http://www.nbpsathletics.org/teams/787793-Soccer-Girls-Varsity-soccer-team-website/rosters/884665"
+            
+        } else if sport == "BBasketball" {
+            
+            url = "http://www.nbpsathletics.org/teams/787795-Basketball-Boys-Varsity-basketball-team-website/rosters/888076"
+            
+        } else if sport == "GBasketball" {
+            
+            url = "http://www.nbpsathletics.org/teams/787800-Basketball-Girls-Varsity-basketball-team-website/rosters/888079"
+            
+        }
+        
+        getData(urlStr: url)
+        
+    }
+    
     @IBAction func tappedClose(_ sender: Any) {
         
         dismiss(animated: true, completion: nil)
@@ -66,7 +98,7 @@ class RosterViewController: UIViewController, UITableViewDelegate, UITableViewDa
     */
     
     
-    func getRSS(urlStr: String){
+    func getData(urlStr: String){
         
         
         let url = NSURL(string: urlStr)

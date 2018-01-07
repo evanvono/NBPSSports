@@ -1685,7 +1685,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ajg-N1-dGK">
                                                 <rect key="frame" x="0.0" y="0.0" width="172" height="79"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QBk-JM-TnA">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QBk-JM-TnA">
                                                         <rect key="frame" x="8" y="28" width="156" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1701,12 +1701,18 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="17"/>
                                                         <state key="normal" title="Home Team"/>
+                                                        <connections>
+                                                            <action selector="didTapHome:" destination="hg0-33-3AS" eventType="touchUpInside" id="Clz-o6-DTJ"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
+                                                    <constraint firstItem="QBk-JM-TnA" firstAttribute="top" secondItem="WTP-B9-t7O" secondAttribute="bottom" constant="3" id="9nz-WT-2Gz"/>
+                                                    <constraint firstItem="QBk-JM-TnA" firstAttribute="leading" secondItem="ajg-N1-dGK" secondAttribute="leading" constant="8" id="FF5-pW-8p5"/>
                                                     <constraint firstItem="QBk-JM-TnA" firstAttribute="leading" secondItem="ajg-N1-dGK" secondAttribute="leading" constant="8" id="FFp-8E-WZr"/>
                                                     <constraint firstItem="WTP-B9-t7O" firstAttribute="top" secondItem="ajg-N1-dGK" secondAttribute="top" id="Gr0-lF-moP"/>
                                                     <constraint firstItem="WTP-B9-t7O" firstAttribute="leading" secondItem="ajg-N1-dGK" secondAttribute="leading" id="QWA-lG-ClT"/>
+                                                    <constraint firstAttribute="trailing" secondItem="QBk-JM-TnA" secondAttribute="trailing" constant="8" id="SSU-jy-hi5"/>
                                                     <constraint firstAttribute="trailing" secondItem="WTP-B9-t7O" secondAttribute="trailing" id="Wd6-Ni-SWw"/>
                                                     <constraint firstAttribute="trailing" secondItem="QBk-JM-TnA" secondAttribute="trailing" constant="8" id="hLM-wY-kZ9"/>
                                                 </constraints>
@@ -1714,7 +1720,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Fn-p5-FPh">
                                                 <rect key="frame" x="172" y="0.0" width="172" height="79"/>
                                                 <subviews>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2iq-fy-31J">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2iq-fy-31J">
                                                         <rect key="frame" x="8" y="28" width="156" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1730,14 +1736,20 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="OriyaSangamMN" family="Oriya Sangam MN" pointSize="17"/>
                                                         <state key="normal" title="Away Team"/>
+                                                        <connections>
+                                                            <action selector="didTapAway:" destination="hg0-33-3AS" eventType="touchUpInside" id="bUb-tE-X3x"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="gAR-3b-vdq" firstAttribute="leading" secondItem="9Fn-p5-FPh" secondAttribute="leading" id="5Ci-n5-q0E"/>
                                                     <constraint firstAttribute="trailing" secondItem="2iq-fy-31J" secondAttribute="trailing" constant="8" id="7gl-uA-tbJ"/>
+                                                    <constraint firstItem="2iq-fy-31J" firstAttribute="top" secondItem="gAR-3b-vdq" secondAttribute="bottom" constant="3" id="J5k-wI-CK8"/>
+                                                    <constraint firstItem="2iq-fy-31J" firstAttribute="leading" secondItem="9Fn-p5-FPh" secondAttribute="leading" constant="8" id="KoW-kk-Xbx"/>
                                                     <constraint firstAttribute="trailing" secondItem="gAR-3b-vdq" secondAttribute="trailing" id="Oge-TS-UXX"/>
                                                     <constraint firstItem="2iq-fy-31J" firstAttribute="leading" secondItem="9Fn-p5-FPh" secondAttribute="leading" constant="8" id="bfg-Ym-7Nj"/>
                                                     <constraint firstItem="gAR-3b-vdq" firstAttribute="top" secondItem="9Fn-p5-FPh" secondAttribute="top" id="gYD-l9-kWs"/>
+                                                    <constraint firstAttribute="trailing" secondItem="2iq-fy-31J" secondAttribute="trailing" constant="8" id="uzr-pe-Z72"/>
                                                 </constraints>
                                             </view>
                                         </subviews>

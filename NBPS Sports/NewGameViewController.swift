@@ -14,8 +14,7 @@ class NewGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var sportPicker: UIPickerView!
     @IBOutlet weak var datePicker: UIDatePicker!
     
-    @IBOutlet weak var homeNameLabel: UILabel!
-    @IBOutlet weak var awayNameLabel: UILabel!
+
     @IBOutlet weak var homeScoreLabel: UILabel!
     @IBOutlet weak var awayScoreLabel: UILabel!
     @IBOutlet weak var defaultLabel: UILabel! //explains default values for each entry or other tips
@@ -308,23 +307,29 @@ class NewGameViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func didTapHome(_ sender: Any) {
+        
+        homeNameField.text = "North Broward Prep"
+        
+        if awayNameField.text == "North Broward Prep"{
+            
+            awayNameField.text = ""
+        }
+        
+    }
+    
+    @IBAction func didTapAway(_ sender: Any) {
+        
+        awayNameField.text = "North Broward Prep"
+        if homeNameField.text == "North Broward Prep"{
+            
+            homeNameField.text = ""
+        }
+        
+    }
     deinit {
         
-        
-        /*
-        
-        if let refHandle = _refHandle {
-            
-            
-            self.ref.child("Sports").removeObserver(withHandle: refHandle)
-            
-            print("removed _refHandle")
-            
-        }
-        self.ref.child("Sports").removeAllObservers()
-        self.ref.child("Sports").child("Football").removeAllObservers()
-         */
+        ref.removeAllObservers()
     }
 }
 

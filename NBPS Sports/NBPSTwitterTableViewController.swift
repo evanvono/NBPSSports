@@ -57,8 +57,14 @@ class NBPSTwitterTableViewController:  TWTRTimelineViewController {
                 if (result == TWTRComposerResult.cancelled) {
                     print("Tweet composition cancelled")
                 }
-                else {
-                    print("Sending tweet!")
+                else if (result == TWTRComposerResult.done){
+                    
+                    let alert = UIAlertController(title: "Success!", message: "Your Tweet has been posted. Rep the prep!", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
+                    
+                    self.present(alert, animated: false, completion: nil)
+                
+                    
                 }
                 
             })
@@ -74,6 +80,8 @@ class NBPSTwitterTableViewController:  TWTRTimelineViewController {
                 } else {
                     
                     let alert = UIAlertController(title: "No Twitter Accounts Available", message: "You must log in using the Twitter app to use this functionality.", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel, handler: nil))
+
                     self.present(alert, animated: false, completion: nil)
                     
                 }
