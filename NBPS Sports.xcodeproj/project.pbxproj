@@ -13,6 +13,7 @@
 		200DC0A21F36B03A00E66BBE /* Splash-Edited.png in Resources */ = {isa = PBXBuildFile; fileRef = 200DC0A11F36B03A00E66BBE /* Splash-Edited.png */; };
 		2023F0531EA17EB40041E165 /* BaseballTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023F0521EA17EB40041E165 /* BaseballTableViewController.swift */; };
 		2023F0551EA1845B0041E165 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023F0541EA1845B0041E165 /* LoginViewController.swift */; };
+		202EF08B2003172200299DEF /* GameWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202EF08A2003172200299DEF /* GameWebViewController.swift */; };
 		203B2EE21EBBDABC009F1488 /* TwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203B2EE11EBBDABC009F1488 /* TwitchViewController.swift */; };
 		204414B51F093F0900F866C4 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204414B11F093F0900F866C4 /* TwitterCore.framework */; };
 		204414B61F093F0900F866C4 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 204414B21F093F0900F866C4 /* TwitterKit.framework */; };
@@ -79,6 +80,7 @@
 		200DC0A11F36B03A00E66BBE /* Splash-Edited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Splash-Edited.png"; sourceTree = "<group>"; };
 		2023F0521EA17EB40041E165 /* BaseballTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseballTableViewController.swift; sourceTree = "<group>"; };
 		2023F0541EA1845B0041E165 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		202EF08A2003172200299DEF /* GameWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameWebViewController.swift; sourceTree = "<group>"; };
 		203B2EE11EBBDABC009F1488 /* TwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitchViewController.swift; sourceTree = "<group>"; };
 		204414B11F093F0900F866C4 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		204414B21F093F0900F866C4 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				20472BC21E69C8E80065205A /* images */,
 				20EF9E4C1E645DE700F45DBB /* LaunchScreen.storyboard */,
 				20EF9E471E645DE700F45DBB /* Main.storyboard */,
+				202EF08A2003172200299DEF /* GameWebViewController.swift */,
 				20EF9E431E645DE700F45DBB /* AppDelegate.swift */,
 				204ADA691ECA78AA002C4076 /* AppState.swift */,
 				207C24C41F6F737C00787D39 /* InitialLoadController.swift */,
@@ -538,6 +541,7 @@
 				2074DF931EE8647000D91041 /* NewGameViewController.swift in Sources */,
 				20DBD3D01E6C85F800D4D690 /* FootballTableViewController.swift in Sources */,
 				20D0C9101F76AE8600B8CBF6 /* RosterViewController.swift in Sources */,
+				202EF08B2003172200299DEF /* GameWebViewController.swift in Sources */,
 				204414BD1F09484900F866C4 /* NBPSTwitterTableViewController.swift in Sources */,
 				20472BBB1E69C6660065205A /* SWRevealViewController.m in Sources */,
 				203B2EE21EBBDABC009F1488 /* TwitchViewController.swift in Sources */,
@@ -707,6 +711,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "NBPS Sports/NBPS Sports-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -729,6 +734,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "NBPS Sports/NBPS Sports-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

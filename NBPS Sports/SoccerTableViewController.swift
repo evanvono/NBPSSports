@@ -226,7 +226,11 @@ class SoccerTableViewController: UITableViewController, UITextFieldDelegate, UIP
         NotificationCenter.default.addObserver(self, selector: #selector(FootballTableViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    /*  deinit {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        editField.endEditing(true)
+        return false
+    }    /*  deinit {
      
      
      

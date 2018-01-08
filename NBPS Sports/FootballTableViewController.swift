@@ -199,14 +199,20 @@ class FootballTableViewController: UITableViewController, UITextFieldDelegate, U
         NotificationCenter.default.addObserver(self, selector: #selector(FootballTableViewController.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(FootballTableViewController.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
     }
     
+   
     public func getSport() -> String {
         
         return "Football"
         
         
         
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        editField.endEditing(true)
+        return false
     }
   /*  deinit {
         

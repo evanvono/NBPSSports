@@ -806,11 +806,19 @@ class MenuTableViewController: UITableViewController {
     }
     @IBAction func didTapVolleyball(_ sender: Any) {
         
+        AppState.sharedInstance.ArticleURL = URL(string: "http://www.nbpsathletics.org/teams/787683-Varsity-Volleyball-volleyball-team-website/events?view_mode=list")!
         
-        self.performSegue(withIdentifier: "Volleyball", sender: nil)
+        closeAndWeb()
         
-        closeMenu(index: 1)
         
+        
+    }
+    @IBAction func didTapCrossCountry(_ sender: Any) {
+        
+        
+        AppState.sharedInstance.ArticleURL = URL(string: "http://www.nbpsathletics.org/clubs/4564/events?view_mode=list")!
+        
+        closeAndWeb()
         
         
     }
@@ -842,6 +850,8 @@ class MenuTableViewController: UITableViewController {
         openGenderOption(sender: sender)
         
     }
+    
+   
     
     func openMenu(index: Int){
         
@@ -878,14 +888,32 @@ class MenuTableViewController: UITableViewController {
             AppState.sharedInstance.databaseRef = "BSoccer"
             AppState.sharedInstance.fullTitle = "Boys Soccer"
             
+            closeAndSoccer()
         } else if sport == "Basketball" {
             
             AppState.sharedInstance.databaseRef = "BBasketball"
             AppState.sharedInstance.fullTitle = "Boys Basketball"
             
+            closeAndSoccer()
+            
+        } else if sport == "Golf" {
+            
+
+            AppState.sharedInstance.ArticleURL = URL(string: "http://www.nbpsathletics.org/teams/787689-Golf-Varsity-Boys-golf-team-website/events?view_mode=list")!
+            
+            closeAndWeb()
+            
+        } else if sport == "Swimming" {
+            
+            AppState.sharedInstance.ArticleURL = URL(string: "http://www.nbpsathletics.org/teams/787785-Swimming-Boys-Varsity-swimming-team-website/events?view_mode=list")!
+            
+            closeAndWeb()
             
         }
         
+    }
+    
+    func closeAndSoccer(){
         
         dismissDetailView()
         self.tableView.beginUpdates()
@@ -895,8 +923,17 @@ class MenuTableViewController: UITableViewController {
         
         self.performSegue(withIdentifier: "Soccer", sender: nil)
         
+    }
+    
+    func closeAndWeb(){
         
+        dismissDetailView()
+        self.tableView.beginUpdates()
+        selectedIndex = 100
         
+        self.tableView.endUpdates()
+        
+        self.performSegue(withIdentifier: "MenuToWebView", sender: nil)
         
     }
     
@@ -907,7 +944,6 @@ class MenuTableViewController: UITableViewController {
         
         print("tapped girls \(sport)")
 
-        self.performSegue(withIdentifier: "Soccer", sender: nil)
         
         
         if sport == "Soccer" {
@@ -915,19 +951,29 @@ class MenuTableViewController: UITableViewController {
             AppState.sharedInstance.databaseRef = "GSoccer"
             AppState.sharedInstance.fullTitle = "Girls Soccer"
             
+            closeAndSoccer()
         } else if sport == "Basketball" {
             
             AppState.sharedInstance.databaseRef = "GBasketball"
             AppState.sharedInstance.fullTitle = "Girls Basketball"
             
+            closeAndSoccer()
+            
+        } else if sport == "Golf" {
+            
+            AppState.sharedInstance.ArticleURL = URL(string: "http://www.nbpsathletics.org/teams/787690-Golf-Varsity-Girls-golf-team-website/events?view_mode=list")!
+
+            closeAndWeb()
+
+            
+        } else if sport == "Swimming" {
+            
+            AppState.sharedInstance.ArticleURL = URL(string: "http://www.nbpsathletics.org/teams/787784-Swimming-Girls-Varsity-swimming-team-website/events?view_mode=list")!
+            
+            closeAndWeb()
             
         }
-        dismissDetailView()
-        self.tableView.beginUpdates()
-        selectedIndex = 100
         
-        self.tableView.endUpdates()
-        self.performSegue(withIdentifier: "Soccer", sender: nil)
         
         
     }
