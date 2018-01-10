@@ -263,30 +263,41 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                // print("\n\n\n\n\(content)\n\n\n\n")
                 
                 
-                var arr = [String]()
+                //var arr = [String]()
                 
-                arr = content.components(separatedBy: "<img alt='image'")
+                var string = content.components(separatedBy: "<div id='post")
+                string.remove(at: 0)
                 
-                var i = arr[1]
+                //var i = arr[1]
+                
+                
+                for j in string {
                     
+                    
+                
                 var article = ""
-                    
-                var array = i.components(separatedBy: "</p>")
+                
+                
+                var array = j.components(separatedBy: "<p>")
                 
                 array.remove(at: 0)
                 for str in array {
                         
                         
                     //let par = (i.components(separatedBy: "<p class='document'>")[0])
+                    
                         
                     if str.contains("<p class='document'>"){
                         
+                        let finalPar = str.components(separatedBy: "<p class='document'>")[0]
+                        article.append("\(finalPar)")
+                        
                         break
                         
-                    } else {
+                    } else if str.contains("</p>"){
                         
-                        let str1 = str.replacingOccurrences(of: "\n", with: "", options: .regularExpression, range: nil)
-                        article.append("\(str1)\n")
+                       // let str1 = str.replacingOccurrences(of: "\n", with: "", options: .regularExpression, range: nil)
+                        article.append("\(str)\n")
                         
                     }
                     
@@ -296,12 +307,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 print(article)
                 let str = article.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
                 let str1 = str.replacingOccurrences(of: "&amp;", with: "&", options: .regularExpression, range: nil)
+                //let str2 = str1.replacingOccurrences(of: "\n", with: "", options: .regularExpression, range: nil)
                // let str2 = str1.replacingOccurrences(of: "more editing options", with: "", options: .regularExpression, range: nil)
 
                 
                 self.descriptions.append(str1)
         
-                
+                }
                 
                 var arr1 = [String]()
                 

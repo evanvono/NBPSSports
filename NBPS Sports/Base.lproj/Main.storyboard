@@ -1252,7 +1252,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                             </barButtonItem>
                             <barButtonItem width="8" style="plain" id="muX-D2-0eS">
                                 <view key="customView" contentMode="scaleToFill" id="eje-G1-MDi">
-                                    <rect key="frame" x="268" y="5.5" width="42" height="33"/>
+                                    <rect key="frame" x="265.5" y="5.5" width="42" height="33"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="dhN-Ml-xG8">
@@ -1948,7 +1948,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                         <textView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" editable="NO" text="Body" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiy-SE-XtM">
                                                             <rect key="frame" x="8" y="58" width="310" height="61"/>
                                                             <color key="textColor" red="0.182112366" green="0.22954937819999999" blue="0.42884287240000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                         </textView>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3/05/17" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILw-ZX-aeF">
@@ -1966,7 +1966,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="48" id="O6y-YP-16p"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" name="Beantown" family="Untitled" pointSize="22"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
                                                             <color key="textColor" red="0.72470990349999997" green="0.66341911590000002" blue="0.38087964019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                             <userDefinedRuntimeAttributes>
@@ -2978,7 +2978,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                             </barButtonItem>
                             <barButtonItem width="8" style="plain" id="ybX-4c-iyb">
                                 <view key="customView" contentMode="scaleToFill" id="m40-rq-dBd">
-                                    <rect key="frame" x="268" y="5.5" width="42" height="33"/>
+                                    <rect key="frame" x="265.5" y="5.5" width="42" height="33"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="c1D-w5-bjn">
@@ -4000,7 +4000,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                             </barButtonItem>
                             <barButtonItem width="8" style="plain" id="TPD-aE-7oO">
                                 <view key="customView" contentMode="scaleToFill" id="U95-N2-a82">
-                                    <rect key="frame" x="268" y="5.5" width="42" height="33"/>
+                                    <rect key="frame" x="265.5" y="5.5" width="42" height="33"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="NZy-eu-3fi">
