@@ -696,7 +696,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9A0A055936AB3D9741529DD3 /* Pods-NBPS Sports.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "NBPS Sports/NBPS Sports.entitlements";
 				DEVELOPMENT_TEAM = N7TTKWGN6A;
@@ -719,7 +719,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 23D1215639B6DF0E16272AD3 /* Pods-NBPS Sports.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "NBPS Sports/NBPS Sports.entitlements";
 				DEVELOPMENT_TEAM = N7TTKWGN6A;
