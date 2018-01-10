@@ -18,7 +18,7 @@ class ComingSoonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backgroundImage.image = AppState.sharedInstance.comingSoonImage
+        //backgroundImage.image = AppState.sharedInstance.comingSoonImage
         
         mainLabel.text = AppState.sharedInstance.sportDescription
         

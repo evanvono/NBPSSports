@@ -803,6 +803,15 @@ class MenuTableViewController: UITableViewController {
         }
  */
         
+    
+        
+    }
+    
+    func comingSoon(){
+        
+        self.performSegue(withIdentifier: "MenuToComingSoon", sender: nil)
+        
+        
     }
     @IBAction func didTapVolleyball(_ sender: Any) {
         
@@ -851,7 +860,27 @@ class MenuTableViewController: UITableViewController {
         
     }
     
-   
+    @IBAction func didTapBaseball(_ sender: UIButton) {
+        comingSoon()
+        
+    }
+    @IBAction func didTapLacrosse(_ sender: UIButton) {
+        
+        comingSoon()
+    }
+    @IBAction func didTapSoftball(_ sender: UIButton) {
+        
+        comingSoon()
+    }
+    @IBAction func didTapTennis(_ sender: UIButton) {
+        comingSoon()
+        
+    }
+    @IBAction func didTapTrackAndField(_ sender: UIButton) {
+        comingSoon()
+        
+    }
+    
     
     func openMenu(index: Int){
         

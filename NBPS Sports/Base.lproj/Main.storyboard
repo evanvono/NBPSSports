@@ -365,7 +365,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                         <action selector="didTapFallSports:" destination="FSj-Gq-oLe" eventType="touchUpInside" id="jaY-YU-RXt"/>
                                                     </connections>
                                                 </button>
-                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVu-bM-6nq">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AVu-bM-6nq">
                                                     <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                                     <subviews>
                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ua-EK-exn">
@@ -544,7 +544,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                         <action selector="didTapWinterSports:" destination="FSj-Gq-oLe" eventType="touchUpInside" id="jCf-ic-dFl"/>
                                                     </connections>
                                                 </button>
-                                                <view contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jr1-kV-QYr">
+                                                <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Jr1-kV-QYr">
                                                     <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                                     <subviews>
                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08P-5m-WgN">
@@ -565,7 +565,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                     <color key="backgroundColor" red="0.182112366" green="0.22954937819999999" blue="0.42884287240000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="375" id="0XD-RF-r27"/>
-                                                        <constraint firstAttribute="height" constant="80" id="Jem-xY-ane"/>
+                                                        <constraint firstAttribute="height" constant="44" id="Jem-xY-ane"/>
                                                         <constraint firstItem="08P-5m-WgN" firstAttribute="leading" secondItem="Jr1-kV-QYr" secondAttribute="leading" constant="30" id="Zcc-gn-Eu9"/>
                                                         <constraint firstItem="08P-5m-WgN" firstAttribute="top" secondItem="Jr1-kV-QYr" secondAttribute="top" id="cPW-Nr-AU8"/>
                                                         <constraint firstAttribute="trailing" secondItem="08P-5m-WgN" secondAttribute="trailing" id="cfp-Wj-vtV"/>
@@ -633,7 +633,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                         <action selector="didTapSpringSports:" destination="FSj-Gq-oLe" eventType="touchUpInside" id="xXk-cJ-IXR"/>
                                                     </connections>
                                                 </button>
-                                                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ry-FP-I6Z">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ry-FP-I6Z">
                                                     <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                                     <subviews>
                                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdg-jy-Ioz">
@@ -643,7 +643,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
                                                             <connections>
-                                                                <action selector="didTapBoysVarsitySoccer:" destination="FSj-Gq-oLe" eventType="touchUpInside" id="D1M-B9-p3g"/>
+                                                                <action selector="didTapBaseball:" destination="FSj-Gq-oLe" eventType="touchUpInside" id="BP7-7W-sNl"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -673,6 +673,9 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                             <state key="normal" title="Lacrosse">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="didTapLacrosse:" destination="FSj-Gq-oLe" eventType="touchUpInside" id="7Rj-rd-MhF"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.182112366" green="0.22954937819999999" blue="0.42884287240000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -698,6 +701,9 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                             <state key="normal" title="Softball">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="didTapSoftball:" destination="FSj-Gq-oLe" eventType="touchUpInside" id="MkR-2Q-VEb"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.182112366" green="0.22954937819999999" blue="0.42884287240000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -719,6 +725,9 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                             <state key="normal" title="Tennis">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="didTapTennis:" destination="FSj-Gq-oLe" eventType="touchUpInside" id="Pna-aI-pI5"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.182112366" green="0.22954937819999999" blue="0.42884287240000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -738,6 +747,9 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                                             <state key="normal" title="Track and Field">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="didTapTrackAndField:" destination="FSj-Gq-oLe" eventType="touchUpInside" id="xUP-Fc-0kr"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.182112366" green="0.22954937819999999" blue="0.42884287240000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -872,6 +884,18 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <segue destination="8Uh-2C-iQa" kind="custom" identifier="MenuToWebView" customClass="SWRevealViewControllerSeguePushController" id="t7S-s8-YAI"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="button" rowHeight="44" id="Ai6-XX-RB6">
+                                        <rect key="frame" x="0.0" y="1105" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ai6-XX-RB6" id="WMh-JU-gwM">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="c6G-5K-Huc" kind="custom" identifier="MenuToComingSoon" trigger="accessoryAction" customClass="SWRevealViewControllerSeguePushController" id="LAR-j2-mEQ"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -2165,7 +2189,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2432.8000000000002" y="-1682.608695652174"/>
+            <point key="canvasLocation" x="3438" y="-1870"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="k30-CM-syc">
@@ -2268,7 +2292,7 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Navy-Gradient" translatesAutoresizingMaskIntoConstraints="NO" id="b9j-J7-H0j">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nvcyospg.png" translatesAutoresizingMaskIntoConstraints="NO" id="b9j-J7-H0j">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NBP-Icon-Border" translatesAutoresizingMaskIntoConstraints="NO" id="731-y9-DDn">
@@ -2280,7 +2304,6 @@ For further questions or quieries reguarding elegibility of becoming or responsi
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="coming soon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKc-sf-pZB" customClass="UIOutlinedLabel" customModule="NBPS_Sports" customModuleProvider="target">
                                 <rect key="frame" x="58" y="422" width="258" height="33"/>
-                                <color key="backgroundColor" red="0.22516387811941918" green="0.23910349878465204" blue="0.59517176011029416" alpha="0.31850961538461536" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="258" id="Orb-4Z-nCF"/>
                                     <constraint firstAttribute="height" constant="33" id="YJe-Wm-pgK"/>
@@ -4321,7 +4344,6 @@ For further questions or quieries reguarding elegibility of becoming or responsi
         <image name="Home" width="30" height="30"/>
         <image name="Menu-Icon" width="25" height="25"/>
         <image name="NBP-Icon-Border" width="110" height="110"/>
-        <image name="Navy-Gradient" width="960" height="540"/>
         <image name="Safari-Button-Icon" width="25" height="25"/>
         <image name="ShadowDown" width="307" height="23"/>
         <image name="ShadowUp" width="307" height="23"/>
@@ -4336,8 +4358,8 @@ For further questions or quieries reguarding elegibility of becoming or responsi
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="V9m-hl-6bs"/>
-        <segue reference="Ua3-Sg-6GU"/>
-        <segue reference="2EN-9a-OnQ"/>
+        <segue reference="p0l-bo-pO9"/>
+        <segue reference="bec-D8-Jej"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.72470990349999997" green="0.66341911590000002" blue="0.38087964019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
