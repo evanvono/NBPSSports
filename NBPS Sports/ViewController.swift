@@ -120,7 +120,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var amt:Int = 0
     
-    var hasRepeated = false
+    var hasRepeated = 0
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -428,11 +428,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     self.mainTableView.reloadData()
                     
                     
-                    if !self.hasRepeated {
+                    if self.hasRepeated == 0 {
                         
                         self.getRSS(urlStr: "http://www.nbpsathletics.org/organizations/3072/announcements?page=2")
                         
-                        self.hasRepeated = true
+                        self.hasRepeated = 1
+                        
+                    } else if self.hasRepeated == 1 {
+                        
+                        self.getRSS(urlStr: "http://www.nbpsathletics.org/organizations/3072/announcements?page=3")
+
+                        
+                        self.hasRepeated = 2
                         
                     }
                     
