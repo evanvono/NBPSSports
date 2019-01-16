@@ -550,7 +550,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             self.popupImageView.contentMode = UIViewContentMode.scaleAspectFill
             
-            let color = AverageColorFromImage(image: AppState.sharedInstance.articleImage)
+            
+            
+            let color = UIColor.white
             //detailContainer.backgroundColor = color.withAlphaComponent(0.5)
             
             AppState.sharedInstance.myGroup.notify(queue: .main) {
@@ -611,7 +613,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         //let bottom = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
         
-        let bottom = UIColor.flatGrayColorDark().cgColor
+        let bottom = UIColor.darkGray.cgColor
         let top = UIColor(red: 10, green: 10, blue: 10, alpha: 0).cgColor
         
         let colors = [top, bottom] as CFArray
