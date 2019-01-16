@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '00B227DED18BA79C430A2A280823E9B4'
-               BlueprintName = 'AlamofireRSSParser'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'AlamofireRSSParser.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "53E27C8B2F18EAE70D2EE4415FD50D48"
+               BlueprintName = "ChameleonFramework"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "ChameleonFramework.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
