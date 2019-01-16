@@ -17,7 +17,6 @@
  */
 import UIKit
 import Firebase
-import ChameleonFramework
 import SwiftSpinner
 
 extension UIImageView {
