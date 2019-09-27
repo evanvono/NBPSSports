@@ -484,7 +484,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             AppState.sharedInstance.signedIn = false
             
             do{
-                try! FIRAuth.auth()!.signOut()
+                try FIRAuth.auth()!.signOut()
                 
             } catch{
                 
@@ -552,7 +552,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             
             
-            let color = UIColor.white
+//            let color = UIColor.white
             //detailContainer.backgroundColor = color.withAlphaComponent(0.5)
             
             AppState.sharedInstance.myGroup.notify(queue: .main) {
